@@ -1,0 +1,34 @@
+{
+  "regions": {
+    "us": {
+      "proxy": "http://user:pass@us-proxy-host:port",
+      "currency": "USD",
+      "iherb_url": "https://www.iherb.com",
+      "locale_path": ""
+    },
+    "de": {
+      "proxy": "http://user:pass@de-proxy-host:port",
+      "currency": "EUR",
+      "iherb_url": "https://www.iherb.com",
+      "locale_path": "/?lc=de&amp;rc=DE"
+    }
+  },
+  "coupons": [
+    {
+      "code": "EXAMPLE10",
+      "regions": ["*"],
+      "min_cart_value": null
+    },
+    {
+      "code": "REGIONCODE",
+      "regions": ["us"],
+      "min_cart_value": 40
+    }
+  ],
+  "defaults": {
+    "min_cart_value": 50,
+    "timeout_seconds": 60,
+    "product_categories": ["vitamins", "supplements", "beauty"],
+    "retry_delay_seconds": 5
+  }
+}
