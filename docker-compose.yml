@@ -1,0 +1,12 @@
+services:
+  validator:
+    build: ./services/validator
+    container_name: anyadeals-validator
+    restart: unless-stopped
+    ports:
+      - "8002:8002"
+    volumes:
+      - ./site/src/data:/data
+    environment:
+      - DATA_DIR=/data
+      - CONFIG_PATH=/app/config.json
