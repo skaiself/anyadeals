@@ -34,9 +34,22 @@ COUPON_NOT_APPLIED_TEXT = "not applied"
 # Only detect visible CAPTCHA challenges, not invisible background reCAPTCHA
 CAPTCHA_INDICATOR = '.g-recaptcha:not([data-size="invisible"]), iframe[src*="hcaptcha"], #captcha-container, .captcha-challenge'
 
-# Category search terms (used to build cart)
+# Category search terms (used to build cart via search — fallback method)
 CATEGORY_SEARCH_TERMS = {
     "vitamins": "vitamins",
     "supplements": "supplements",
     "beauty": "beauty products",
 }
+
+# Direct product URLs (primary method — avoids search page, less bot detection)
+# Cheap, popular products that are always in stock
+DIRECT_PRODUCT_URLS = [
+    "/pr/california-gold-nutrition-gold-c-usp-grade-vitamin-c-1-000-mg-60-veggie-capsules/61864",
+    "/pr/california-gold-nutrition-vitamin-d3-125-mcg-5-000-iu-90-fish-gelatin-softgels/70316",
+    "/pr/21st-century-calcium-magnesium-zinc-d3-90-tablets/10695",
+    "/pr/california-gold-nutrition-omega-3-premium-fish-oil-100-fish-gelatin-softgels-1-100-mg-per-softgel/62118",
+    "/pr/now-foods-vitamin-d3-k2-120-capsules/10056",
+]
+
+# Add to cart button on product detail pages
+PRODUCT_PAGE_ADD_TO_CART = '.btn-add-to-cart.btn-block, .btn-add-to-cart.btn-lg'

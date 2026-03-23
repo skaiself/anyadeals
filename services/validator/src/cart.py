@@ -13,7 +13,9 @@ from src.constants import (
     CART_REMOVE_ALL_TEXT,
     CART_URL_PATH,
     CATEGORY_SEARCH_TERMS,
+    DIRECT_PRODUCT_URLS,
     PRODUCT_CARD,
+    PRODUCT_PAGE_ADD_TO_CART,
     SEARCH_INPUT,
     SEARCH_SUBMIT,
 )
@@ -91,9 +93,32 @@ async def _get_cart_total(page: Page, base_url: str) -> float:
         return 0.0
 
 
+async def _add_product_direct(page: Page, base_url: str, product_path: str) -> bool:
+    """Add a product by navigating directly to its page. Avoids search."""
+    product_url = base_url + product_path
+    logger.info("Adding product directly: %s", product_path.split("/")[-1])
+    try:
+        await page.goto(product_url)
+        await human_delay()
+
+        add_btn = page.locator(PRODUCT_PAGE_ADD_TO_CART).first
+        if await add_btn.is_visible():
+            await add_btn.click()
+            await human_delay()
+            logger.info("Product added to cart")
+            return True
+
+        logger.warning("Add-to-cart button not found on product page")
+        return False
+    except Exception as e:
+        logger.warning("Failed to add product %s: %s", product_path, e)
+        return False
+
+
 async def _add_products_from_category(
     page: Page, base_url: str, category: str, timeout_ms: int
 ) -> bool:
+    """Fallback: add products via search. Used only if direct URLs fail."""
     search_term = CATEGORY_SEARCH_TERMS.get(category, category)
     logger.info("Searching for products: %s", search_term)
 
@@ -136,11 +161,21 @@ async def build_cart(
 ) -> float:
     logger.info("Building cart to minimum value: %.2f", min_cart_value)
 
+    # Primary method: direct product URLs (avoids search page / Cloudflare)
+    for product_path in DIRECT_PRODUCT_URLS:
+        await _add_product_direct(page, base_url, product_path)
+        total = await _get_cart_total(page, base_url)
+        logger.info("Cart total after direct add: %.2f", total)
+        if total >= min_cart_value:
+            logger.info("Cart meets minimum value: %.2f >= %.2f", total, min_cart_value)
+            return total
+
+    # Fallback: search-based method
+    logger.info("Direct URLs insufficient, falling back to search")
     for category in product_categories:
         await _add_products_from_category(page, base_url, category, timeout_ms)
         total = await _get_cart_total(page, base_url)
         logger.info("Cart total after '%s': %.2f", category, total)
-
         if total >= min_cart_value:
             logger.info("Cart meets minimum value: %.2f >= %.2f", total, min_cart_value)
             return total
