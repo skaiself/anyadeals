@@ -1,6 +1,14 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 
+export function getStaticPaths() {
+  const categories = ['supplements', 'beauty', 'grocery', 'home', 'fitness', 'pets'];
+  return [
+    { params: { category: undefined } },
+    ...categories.map((c) => ({ params: { category: c } })),
+  ];
+}
+
 const { category } = Astro.params;
 const displayCategory = category ? category.charAt(0).toUpperCase() + category.slice(1) : 'All';
 ---
