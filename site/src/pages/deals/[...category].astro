@@ -1,0 +1,21 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const { category } = Astro.params;
+const displayCategory = category ? category.charAt(0).toUpperCase() + category.slice(1) : 'All';
+---
+<BaseLayout title={`${displayCategory} Deals — AnyaDeals`}>
+  <div class="max-w-4xl mx-auto px-6 py-16">
+    <nav class="text-sm text-ink-muted mb-8">
+      <a href="/" class="hover:text-signal">Home</a>
+      <span class="mx-2">/</span>
+      <span class="text-ink">{displayCategory} Deals</span>
+    </nav>
+    <h1 class="headline-lg mb-4">{displayCategory} Deals</h1>
+    <p class="text-ink-muted text-lg">Coming soon — curated {displayCategory?.toLowerCase()} deals by Anya.</p>
+    <div class="mt-8 bg-white border border-border-raw/10 rounded-lg p-8 text-center">
+      <p class="text-ink-muted">We're working on bringing you the best {displayCategory?.toLowerCase()} deals. Check back soon!</p>
+      <a href="/" class="inline-block mt-4 text-signal hover:underline font-semibold">Back to Home</a>
+    </div>
+  </div>
+</BaseLayout>
