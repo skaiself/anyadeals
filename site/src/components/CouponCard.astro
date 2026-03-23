@@ -1,0 +1,58 @@
+---
+import CouponTicket from './CouponTicket.tsx';
+
+interface Props {
+  code: string;
+  discount: string;
+  type: string;
+  status: 'valid' | 'expired' | 'region_limited' | 'invalid' | 'discovered';
+  regions: string[];
+  lastValidated: string;
+  stackableWithReferral: boolean;
+  notes: string;
+  source: string;
+  minCartValue: number;
+}
+
+const { code, discount, type, status, regions, lastValidated, stackableWithReferral, notes, source, minCartValue } = Astro.props;
+
+const statusConfig = {
+  valid: { color: 'bg-green-500', label: 'Valid' },
+  expired: { color: 'bg-red-500', label: 'Expired' },
+  region_limited: { color: 'bg-yellow-500', label: 'Limited' },
+  invalid: { color: 'bg-red-500', label: 'Invalid' },
+  discovered: { color: 'bg-blue-500', label: 'New' },
+};
+
+const statusInfo = statusConfig[status] || statusConfig.discovered;
+
+const regionFlags: Record<string, string> = {
+  us: '🇺🇸', de: '🇩🇪', gb: '🇬🇧', fr: '🇫🇷', ca: '🇨🇦', au: '🇦🇺',
+};
+
+const lastChecked = new Date(lastValidated).toLocaleDateString('en-US', {
+  month: 'short', day: 'numeric', year: 'numeric', hour: '2-digit', minute: '2-digit', timeZoneName: 'short'
+});
+---
+<div class:list={['rounded-lg border border-border-raw/10 bg-white p-6', status === 'expired' && 'opacity-50']}>
+  <div class="flex items-center justify-between mb-4">
+    <div class="flex items-center gap-2">
+      <span class:list={['w-2.5 h-2.5 rounded-full', statusInfo.color]}></span>
+      <span class="text-xs font-semibold uppercase tracking-wider text-ink-muted">{statusInfo.label}</span>
+    </div>
+    <span class="text-xs text-ink-muted/60">Last checked: {lastChecked}</span>
+  </div>
+
+  <CouponTicket client:visible code={code} label={type.toUpperCase()} sublabel={discount} />
+
+  <div class="mt-4 flex flex-wrap gap-3 text-xs text-ink-muted">
+    <div class="flex gap-1">
+      {regions.map((r: string) => <span>{regionFlags[r] || r.toUpperCase()}</span>)}
+    </div>
+    {minCartValue > 0 && <span>Min. ${minCartValue}</span>}
+    {stackableWithReferral && <span class="text-signal font-medium">Stackable with referral</span>}
+  </div>
+
+  {source && <p class="mt-2 text-xs text-ink-muted/50">Found on {source}</p>}
+  {notes && <p class="mt-1 text-xs text-ink-muted/70 italic">{notes}</p>}
+</div>
