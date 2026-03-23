@@ -106,7 +106,11 @@ async def test_coupon(
         # Check for CAPTCHA
         await _check_captcha(page)
 
-        # Apply coupon directly (skip cart building — validity check works without items)
+        # Build cart via API (adds products without visiting www.iherb.com)
+        # Coupon input only appears when cart has items
+        await build_cart(page, base_url, min_cart_value, defaults["product_categories"], timeout_ms)
+
+        # Apply coupon — page should now be on cart with items
         result = await apply_coupon(page, base_url, code, region_key, timeout_ms)
 
         # Screenshot only on errors, not on normal "invalid coupon" results
