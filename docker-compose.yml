@@ -1,12 +1,86 @@
 services:
+  traefik:
+    image: traefik:v3.3
+    container_name: anyadeals-traefik
+    restart: unless-stopped
+    command:
+      - "--api.insecure=true"
+      - "--providers.docker=true"
+      - "--providers.docker.exposedbydefault=false"
+      - "--entrypoints.web.address=:80"
+    ports:
+      - "80:80"
+      - "8888:8080"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+    networks:
+      - pipeline
+
+  orchestrator:
+    build: ./services/orchestrator
+    container_name: anyadeals-orchestrator
+    restart: unless-stopped
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.orchestrator.rule=PathPrefix(`/`)"
+      - "traefik.http.services.orchestrator.loadbalancer.server.port=8080"
+    volumes:
+      - ./site/src/data:/data
+      - .:/repo
+    environment:
+      - DATA_DIR=/data
+      - REPO_DIR=/repo
+      - GITHUB_TOKEN=${GITHUB_TOKEN}
+    depends_on:
+      - researcher
+      - validator
+      - poster
+    networks:
+      - pipeline
+
+  researcher:
+    build: ./services/researcher
+    container_name: anyadeals-researcher
+    restart: unless-stopped
+    volumes:
+      - ./site/src/data:/data
+    environment:
+      - DATA_DIR=/data
+    networks:
+      - pipeline
+
   validator:
     build: ./services/validator
     container_name: anyadeals-validator
     restart: unless-stopped
-    ports:
-      - "8002:8002"
     volumes:
       - ./site/src/data:/data
     environment:
       - DATA_DIR=/data
       - CONFIG_PATH=/app/config.json
+    networks:
+      - pipeline
+
+  poster:
+    build: ./services/poster
+    container_name: anyadeals-poster
+    restart: unless-stopped
+    volumes:
+      - ./site/src/data:/data
+    environment:
+      - DATA_DIR=/data
+      - TWITTER_API_KEY=${TWITTER_API_KEY}
+      - TWITTER_API_SECRET=${TWITTER_API_SECRET}
+      - TWITTER_ACCESS_TOKEN=${TWITTER_ACCESS_TOKEN}
+      - TWITTER_ACCESS_SECRET=${TWITTER_ACCESS_SECRET}
+      - REDDIT_CLIENT_ID=${REDDIT_CLIENT_ID}
+      - REDDIT_CLIENT_SECRET=${REDDIT_CLIENT_SECRET}
+      - REDDIT_USERNAME=${REDDIT_USERNAME}
+      - REDDIT_PASSWORD=${REDDIT_PASSWORD}
+      - NANOBANANA_API_KEY=${NANOBANANA_API_KEY:-}
+    networks:
+      - pipeline
+
+networks:
+  pipeline:
+    driver: bridge

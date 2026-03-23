@@ -8,3 +8,9 @@ screenshots/
 __pycache__/
 *.pyc
 .venv/
+
+# Validator config with real credentials
+services/validator/config.local.json
+
+# Service configs with credentials
+services/*/config.local.json
