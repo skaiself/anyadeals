@@ -1,38 +1,62 @@
 """
 HTTP-based coupon validator using iHerb's checkout API + IPRoyal Web Unblocker.
-No browser needed — all validation via JSON API calls.
+Uses curl subprocess for reliable session/cookie handling through the unblocker proxy.
 
 Flow:
-1. GET www.iherb.com → establish session cookies
+1. GET checkout.iherb.com/cart → establish session cookies
 2. POST checkout.iherb.com/api/Carts/v3/catalog/lineItems → add product to cart
 3. POST checkout.iherb.com/api/Carts/v2/applyCoupon → test coupon code
-4. Parse response for valid/invalid status
+4. Parse JSON response for valid/invalid status
 """
 
-import httpx
+import asyncio
+import json
 import logging
-from datetime import datetime, timezone
+import os
+import tempfile
 
 from src.results import CouponResult
 
 logger = logging.getLogger("promocheckiherb")
 
-# Cheap products to add to cart (needed for coupon input to appear)
-CART_PRODUCTS = [
-    {"productId": 61864, "quantity": 1},  # Vitamin C ~$5.57
-    {"productId": 70316, "quantity": 1},  # Vitamin D3 ~$5.00
-    {"productId": 10695, "quantity": 1},  # Calcium Mag Zinc ~$4.50
-]
+CART_PRODUCT = {"productId": 61864, "quantity": 1}  # Vitamin C ~$5.57
 
-HEADERS = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-    "User-Agent": (
-        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
-        "AppleWebKit/537.36 (KHTML, like Gecko) "
-        "Chrome/134.0.0.0 Safari/537.36"
-    ),
-}
+
+async def _curl(proxy_url: str, cookie_file: str, method: str, url: str, data: dict | None = None) -> tuple[int, dict | str]:
+    """Run a curl request through the unblocker proxy with cookie persistence."""
+    cmd = [
+        "curl", "-k", "-s", "--max-time", "60",
+        "-x", proxy_url,
+        "-b", cookie_file,
+        "-c", cookie_file,
+        "-L",
+        "-H", "Content-Type: application/json",
+        "-H", "Accept: application/json",
+        "-w", "\n%{http_code}",
+    ]
+    if method == "POST" and data is not None:
+        cmd.extend(["-X", "POST", "-d", json.dumps(data)])
+    cmd.append(url)
+
+    proc = await asyncio.create_subprocess_exec(
+        *cmd,
+        stdout=asyncio.subprocess.PIPE,
+        stderr=asyncio.subprocess.PIPE,
+    )
+    stdout, stderr = await proc.communicate()
+    output = stdout.decode("utf-8", errors="replace").strip()
+
+    # Last line is the HTTP status code (from -w)
+    lines = output.rsplit("\n", 1)
+    body = lines[0] if len(lines) > 1 else ""
+    status_code = int(lines[-1]) if lines[-1].isdigit() else 0
+
+    try:
+        parsed = json.loads(body) if body.startswith("{") or body.startswith("[") else body
+    except json.JSONDecodeError:
+        parsed = body
+
+    return status_code, parsed
 
 
 async def validate_coupon(
@@ -42,127 +66,83 @@ async def validate_coupon(
     iherb_url: str = "https://www.iherb.com",
     locale_path: str = "",
 ) -> CouponResult:
-    """Validate a single coupon code via iHerb's API."""
+    """Validate a single coupon code via iHerb's API using curl + Web Unblocker."""
     logger.info("[%s/%s] Starting HTTP validation", coupon_code, region_key)
 
+    with tempfile.NamedTemporaryFile(suffix=".txt", delete=False, prefix="iherb_cookies_") as f:
+        cookie_file = f.name
+
     try:
-        async with httpx.AsyncClient(
-            proxy=proxy_url,
-            headers=HEADERS,
-            follow_redirects=True,
-            verify=False,  # Web Unblocker uses MITM — skip SSL verification
-            timeout=httpx.Timeout(60.0),
-        ) as client:
-            # Step 1: Visit checkout.iherb.com/cart to establish session cookies
-            # Using checkout domain directly — less Cloudflare protection than www
-            checkout_base = iherb_url.replace("www.iherb.com", "checkout.iherb.com")
-            logger.info("[%s/%s] Establishing session on checkout domain", coupon_code, region_key)
-            resp = await client.get(checkout_base + "/cart")
-            if resp.status_code != 200:
-                return CouponResult(
-                    coupon_code=coupon_code,
-                    region=region_key,
-                    valid="error",
-                    discount_amount="",
-                    discount_type="",
-                    error_message=f"Failed to load checkout: HTTP {resp.status_code}",
-                )
+        checkout_base = iherb_url.replace("www.iherb.com", "checkout.iherb.com")
 
-            # Step 2: Add products to cart via API
-            logger.info("[%s/%s] Adding products to cart", coupon_code, region_key)
-            for product in CART_PRODUCTS:
-                resp = await client.post(
-                    "https://checkout.iherb.com/api/Carts/v3/catalog/lineItems",
-                    json={"lineItems": [product]},
-                )
-                if resp.status_code == 200:
-                    data = resp.json()
-                    if data.get("lineItems"):
-                        logger.info("[%s/%s] Added product %d to cart", coupon_code, region_key, product["productId"])
-                        break
-            else:
-                logger.warning("[%s/%s] Could not add any products to cart", coupon_code, region_key)
+        # Step 1: Establish session on checkout domain
+        logger.info("[%s/%s] Establishing session", coupon_code, region_key)
+        status, _ = await _curl(proxy_url, cookie_file, "GET", checkout_base + "/cart")
+        if status == 0:
+            return CouponResult(coupon_code=coupon_code, region=region_key, valid="error",
+                                discount_amount="", discount_type="", error_message="Connection failed to checkout")
 
-            # Step 3: Apply coupon code
-            logger.info("[%s/%s] Applying coupon code", coupon_code, region_key)
-            resp = await client.post(
-                "https://checkout.iherb.com/api/Carts/v2/applyCoupon",
-                json={"couponCode": coupon_code},
+        # Step 2: Add product to cart via API
+        logger.info("[%s/%s] Adding product to cart", coupon_code, region_key)
+        status, data = await _curl(
+            proxy_url, cookie_file, "POST",
+            "https://checkout.iherb.com/api/Carts/v3/catalog/lineItems",
+            {"lineItems": [CART_PRODUCT]},
+        )
+        if status == 200 and isinstance(data, dict):
+            items = data.get("lineItems", [])
+            total = data.get("cartTotal", "$0")
+            logger.info("[%s/%s] Cart: %d items, total %s", coupon_code, region_key, len(items), total)
+        else:
+            logger.warning("[%s/%s] Add to cart returned %d", coupon_code, region_key, status)
+
+        # Step 3: Apply coupon code
+        logger.info("[%s/%s] Applying coupon", coupon_code, region_key)
+        status, data = await _curl(
+            proxy_url, cookie_file, "POST",
+            "https://checkout.iherb.com/api/Carts/v2/applyCoupon",
+            {"couponCode": coupon_code},
+        )
+
+        if status == 200 and isinstance(data, dict):
+            # Valid code — full cart response
+            applied_type = data.get("appliedCouponCodeType", 0)
+            discount_raw = data.get("totalDiscountRawAmount", 0)
+
+            discount_amount = str(abs(discount_raw)) if discount_raw else ""
+            discount_type = "percentage" if applied_type == 1 else "fixed" if applied_type == 2 else ""
+
+            logger.info("[%s/%s] Coupon VALID — type=%s, discount=%s", coupon_code, region_key, applied_type, discount_amount)
+            return CouponResult(
+                coupon_code=coupon_code, region=region_key, valid="true",
+                discount_amount=discount_amount, discount_type=discount_type, error_message="",
             )
 
-            if resp.status_code == 200:
-                data = resp.json()
-                # Valid code — full cart response with coupon applied
-                applied_type = data.get("appliedCouponCodeType", 0)
-                discount_raw = data.get("totalDiscountRawAmount", 0)
-                order_total = data.get("orderTotalAmount", 0)
-                breakdown = data.get("discountBreakdown", {})
+        elif status == 400 and isinstance(data, dict):
+            error_msg = data.get("message", "Invalid code")
+            reason = data.get("applyFailedReason", "")
+            logger.info("[%s/%s] Coupon INVALID — %s", coupon_code, region_key, error_msg)
+            return CouponResult(
+                coupon_code=coupon_code, region=region_key, valid="false",
+                discount_amount="", discount_type="", error_message=error_msg,
+            )
 
-                discount_amount = str(abs(discount_raw)) if discount_raw else ""
-                discount_type = "percentage" if applied_type == 1 else "fixed" if applied_type == 2 else ""
+        else:
+            error_msg = data.get("message", str(data)) if isinstance(data, dict) else str(data)[:200]
+            logger.warning("[%s/%s] Unexpected response: %d", coupon_code, region_key, status)
+            return CouponResult(
+                coupon_code=coupon_code, region=region_key, valid="error",
+                discount_amount="", discount_type="", error_message=f"HTTP {status}: {error_msg}",
+            )
 
-                logger.info(
-                    "[%s/%s] Coupon VALID — type=%s, discount=%s, total=%s",
-                    coupon_code, region_key, applied_type, discount_amount, order_total,
-                )
-                return CouponResult(
-                    coupon_code=coupon_code,
-                    region=region_key,
-                    valid="true",
-                    discount_amount=discount_amount,
-                    discount_type=discount_type,
-                    error_message="",
-                )
-
-            elif resp.status_code == 400:
-                data = resp.json()
-                error_msg = data.get("message", "")
-                reason = data.get("applyFailedReason", "")
-
-                logger.info(
-                    "[%s/%s] Coupon INVALID — %s (%s)",
-                    coupon_code, region_key, error_msg, reason,
-                )
-                return CouponResult(
-                    coupon_code=coupon_code,
-                    region=region_key,
-                    valid="false",
-                    discount_amount="",
-                    discount_type="",
-                    error_message=error_msg,
-                )
-
-            else:
-                logger.warning(
-                    "[%s/%s] Unexpected status %d",
-                    coupon_code, region_key, resp.status_code,
-                )
-                return CouponResult(
-                    coupon_code=coupon_code,
-                    region=region_key,
-                    valid="error",
-                    discount_amount="",
-                    discount_type="",
-                    error_message=f"Unexpected HTTP {resp.status_code}",
-                )
-
-    except httpx.TimeoutException as e:
-        logger.error("[%s/%s] Timeout: %s", coupon_code, region_key, e)
-        return CouponResult(
-            coupon_code=coupon_code,
-            region=region_key,
-            valid="error",
-            discount_amount="",
-            discount_type="",
-            error_message=f"Timeout: {e}",
-        )
     except Exception as e:
         logger.error("[%s/%s] Error: %s", coupon_code, region_key, e)
         return CouponResult(
-            coupon_code=coupon_code,
-            region=region_key,
-            valid="error",
-            discount_amount="",
-            discount_type="",
-            error_message=str(e),
+            coupon_code=coupon_code, region=region_key, valid="error",
+            discount_amount="", discount_type="", error_message=str(e),
         )
+    finally:
+        try:
+            os.unlink(cookie_file)
+        except OSError:
+            pass
