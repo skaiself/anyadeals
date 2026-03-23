@@ -41,15 +41,12 @@ CATEGORY_SEARCH_TERMS = {
     "beauty": "beauty products",
 }
 
-# Direct product URLs (primary method — avoids search page, less bot detection)
+# Direct product IDs (used to add to cart via checkout.iherb.com API)
 # Cheap, popular products that are always in stock
-DIRECT_PRODUCT_URLS = [
-    "/pr/california-gold-nutrition-gold-c-usp-grade-vitamin-c-1-000-mg-60-veggie-capsules/61864",
-    "/pr/california-gold-nutrition-vitamin-d3-125-mcg-5-000-iu-90-fish-gelatin-softgels/70316",
-    "/pr/21st-century-calcium-magnesium-zinc-d3-90-tablets/10695",
-    "/pr/california-gold-nutrition-omega-3-premium-fish-oil-100-fish-gelatin-softgels-1-100-mg-per-softgel/62118",
-    "/pr/now-foods-vitamin-d3-k2-120-capsules/10056",
+DIRECT_PRODUCT_IDS = [
+    61864,   # California Gold Nutrition, Vitamin C, 60 caps (~$5.57)
+    70316,   # California Gold Nutrition, Vitamin D3, 90 softgels (~$5.00)
+    10695,   # 21st Century, Calcium Magnesium Zinc + D3, 90 tabs (~$4.50)
+    62118,   # California Gold Nutrition, Omega-3, 100 softgels (~$8.00)
+    10056,   # NOW Foods, Vitamin D3 + K2, 120 caps (~$12.00)
 ]
-
-# Add to cart button on product detail pages (multiple selectors for locale variants)
-PRODUCT_PAGE_ADD_TO_CART = '.btn-add-to-cart'

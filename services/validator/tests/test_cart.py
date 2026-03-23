@@ -26,9 +26,10 @@ async def test_clear_cart(mock_delay):
 @pytest.mark.asyncio
 @patch("src.cart.human_delay", new_callable=AsyncMock)
 @patch("src.cart._get_cart_total", new=AsyncMock(return_value=55.0))
-@patch("src.cart._add_products_from_category", new=AsyncMock(return_value=True))
+@patch("src.cart._add_product_via_api", new=AsyncMock(return_value=True))
 async def test_build_cart_meets_minimum(mock_delay):
     page = AsyncMock()
+    page.goto = AsyncMock()
     result = await build_cart(
         page, "https://www.iherb.com", 50.0, ["vitamins"], timeout_ms=60000
     )
@@ -38,9 +39,10 @@ async def test_build_cart_meets_minimum(mock_delay):
 @pytest.mark.asyncio
 @patch("src.cart.human_delay", new_callable=AsyncMock)
 @patch("src.cart._get_cart_total", new=AsyncMock(return_value=10.0))
-@patch("src.cart._add_products_from_category", new=AsyncMock(return_value=False))
+@patch("src.cart._add_product_via_api", new=AsyncMock(return_value=False))
 async def test_build_cart_fails_below_minimum(mock_delay):
     page = AsyncMock()
+    page.goto = AsyncMock()
     with pytest.raises(CartError, match="Could not build cart"):
         await build_cart(
             page, "https://www.iherb.com", 50.0, ["vitamins"], timeout_ms=60000

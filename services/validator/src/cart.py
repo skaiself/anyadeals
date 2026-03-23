@@ -5,19 +5,13 @@ from playwright.async_api import Page
 
 from src.browser import human_delay
 from src.constants import (
-    ADD_TO_CART_BUTTON,
     CART_EMPTY_INDICATOR,
     CART_EMPTY_TEXT,
     CART_ITEM_REMOVE,
     CART_ITEM_REMOVE_TEXT,
     CART_REMOVE_ALL_TEXT,
     CART_URL_PATH,
-    CATEGORY_SEARCH_TERMS,
-    DIRECT_PRODUCT_URLS,
-    PRODUCT_CARD,
-    PRODUCT_PAGE_ADD_TO_CART,
-    SEARCH_INPUT,
-    SEARCH_SUBMIT,
+    DIRECT_PRODUCT_IDS,
 )
 
 logger = logging.getLogger("promocheckiherb")
@@ -67,11 +61,8 @@ async def clear_cart(page: Page, base_url: str) -> None:
     logger.info("Cart cleared")
 
 
-async def _get_cart_total(page: Page, base_url: str) -> float:
-    await page.goto(_cart_url(base_url))
-    await human_delay()
-
-    # Use text-based detection: find "Subtotal" label's sibling value
+async def _get_cart_total(page: Page, base_url: str = "") -> float:
+    # Reads total from the currently loaded cart page (no navigation)
     total_el = page.get_by_text(re.compile(r"^\$[\d.,]+$")).last
     text = await total_el.text_content() or "0"
     # Strip thousand separators and normalize decimal separator
@@ -93,63 +84,30 @@ async def _get_cart_total(page: Page, base_url: str) -> float:
         return 0.0
 
 
-async def _add_product_direct(page: Page, base_url: str, product_path: str) -> bool:
-    """Add a product by navigating directly to its page. Avoids search."""
-    product_url = base_url + product_path
-    logger.info("Adding product directly: %s", product_path.split("/")[-1])
+async def _add_product_via_api(page: Page, base_url: str, product_id: int) -> bool:
+    """Add a product to cart via checkout.iherb.com API. No product page visit needed."""
+    logger.info("Adding product via API: %d", product_id)
     try:
-        await page.goto(product_url)
-        await human_delay()
-
-        add_btn = page.locator(PRODUCT_PAGE_ADD_TO_CART).first
-        if await add_btn.is_visible():
-            await add_btn.click()
-            await human_delay()
-            logger.info("Product added to cart")
+        result = await page.evaluate("""
+            async (productId) => {
+                const resp = await fetch('https://checkout.iherb.com/api/Carts/v3/catalog/lineItems', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    credentials: 'include',
+                    body: JSON.stringify({ productId: productId, quantity: 1 })
+                });
+                return { status: resp.status, ok: resp.ok };
+            }
+        """, product_id)
+        if result.get("ok"):
+            logger.info("Product %d added to cart via API", product_id)
             return True
-
-        logger.warning("Add-to-cart button not found on product page")
-        return False
+        else:
+            logger.warning("API returned status %s for product %d", result.get("status"), product_id)
+            return False
     except Exception as e:
-        logger.warning("Failed to add product %s: %s", product_path, e)
+        logger.warning("Failed to add product %d via API: %s", product_id, e)
         return False
-
-
-async def _add_products_from_category(
-    page: Page, base_url: str, category: str, timeout_ms: int
-) -> bool:
-    """Fallback: add products via search. Used only if direct URLs fail."""
-    search_term = CATEGORY_SEARCH_TERMS.get(category, category)
-    logger.info("Searching for products: %s", search_term)
-
-    await page.goto(base_url)
-    await human_delay()
-
-    search_box = page.locator(SEARCH_INPUT)
-    await search_box.fill(search_term)
-    await human_delay()
-
-    await page.locator(SEARCH_SUBMIT).click()
-    await human_delay()
-
-    products = page.locator(PRODUCT_CARD)
-    count = await products.count()
-    if count == 0:
-        logger.warning("No products found for category: %s", category)
-        return False
-
-    add_buttons = page.locator(ADD_TO_CART_BUTTON)
-    added = 0
-    for i in range(min(await add_buttons.count(), 5)):
-        try:
-            await add_buttons.nth(i).click()
-            await human_delay()
-            added += 1
-        except Exception as e:
-            logger.warning("Failed to add product %d: %s", i, e)
-
-    logger.info("Added %d products from category '%s'", added, category)
-    return added > 0
 
 
 async def build_cart(
@@ -161,30 +119,35 @@ async def build_cart(
 ) -> float:
     logger.info("Building cart to minimum value: %.2f", min_cart_value)
 
-    # Primary method: add products via direct URLs (avoids search / Cloudflare)
-    # Add all products first, then check cart total ONCE to minimize
-    # navigation to checkout.iherb.com (which blocks repeated visits)
+    # Add products via checkout.iherb.com API (no www.iherb.com visit needed)
+    # Page must already be on checkout.iherb.com for cookies/session
     added_count = 0
-    for product_path in DIRECT_PRODUCT_URLS:
-        if await _add_product_direct(page, base_url, product_path):
+    for product_id in DIRECT_PRODUCT_IDS:
+        if await _add_product_via_api(page, base_url, product_id):
             added_count += 1
             if added_count >= 3:
-                break  # 3 products should exceed most min_cart_value
+                break
 
-    # Navigate to cart once to check total
+    # Reload cart page to see updated total
+    await page.goto(_cart_url(base_url))
+    await human_delay()
+
     total = await _get_cart_total(page, base_url)
-    logger.info("Cart total after %d direct adds: %.2f", added_count, total)
+    logger.info("Cart total after %d API adds: %.2f", added_count, total)
 
     if total >= min_cart_value:
         logger.info("Cart meets minimum value: %.2f >= %.2f", total, min_cart_value)
         return total
 
-    # If still not enough, add more products and check again
-    for product_path in DIRECT_PRODUCT_URLS[added_count:]:
-        await _add_product_direct(page, base_url, product_path)
+    # Add remaining products
+    for product_id in DIRECT_PRODUCT_IDS[added_count:]:
+        await _add_product_via_api(page, base_url, product_id)
 
+    await page.goto(_cart_url(base_url))
+    await human_delay()
     total = await _get_cart_total(page, base_url)
-    logger.info("Cart total after all direct adds: %.2f", total)
+    logger.info("Cart total after all API adds: %.2f", total)
+
     if total >= min_cart_value:
         return total
 
