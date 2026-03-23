@@ -53,6 +53,25 @@ async def apply_coupon(
         if "checkout.iherb.com/cart" not in current_url:
             await page.goto(cart_url)
             await human_delay()
+        else:
+            # Reload to ensure fresh state
+            await page.reload()
+            await human_delay()
+
+        # Debug: save screenshot to see what the page looks like
+        try:
+            await page.screenshot(path="screenshots/debug_before_coupon.png")
+            logger.info("[%s/%s] Debug screenshot saved", coupon_code, region)
+        except Exception:
+            pass
+
+        # Wait for coupon input to appear (may take time to render)
+        try:
+            await page.wait_for_selector(COUPON_INPUT, state="visible", timeout=15000)
+        except Exception:
+            # Try scrolling down — coupon input might be below the fold
+            await page.evaluate("window.scrollTo(0, document.body.scrollHeight)")
+            await human_delay()
 
         await page.locator(COUPON_INPUT).fill(coupon_code)
         await human_delay()
