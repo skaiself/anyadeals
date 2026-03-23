@@ -1,0 +1,44 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import StatusIndicator from '../components/StatusIndicator.astro';
+import dashboardData from '../data/dashboard.json';
+
+const { jobs, stats } = dashboardData;
+---
+<BaseLayout title="System Dashboard — AnyaDeals">
+  <div class="max-w-4xl mx-auto px-6 py-16">
+    <h1 class="headline-lg mb-2">System Dashboard</h1>
+    <p class="text-ink-muted mb-12 text-sm">This page updates hourly. All times in UTC.</p>
+
+    <section class="mb-12">
+      <h2 class="headline-md mb-6">Pipeline Status</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <StatusIndicator status={jobs.researcher.status} label="Researcher" lastRun={jobs.researcher.last_run} nextRun={jobs.researcher.next_run} lastError={jobs.researcher.last_error} />
+        <StatusIndicator status={jobs.validator.status} label="Validator" lastRun={jobs.validator.last_run} nextRun={jobs.validator.next_run} lastError={jobs.validator.last_error} />
+        <StatusIndicator status={jobs.poster.status} label="Poster" lastRun={jobs.poster.last_run} nextRun={jobs.poster.next_run} lastError={jobs.poster.last_error} />
+      </div>
+    </section>
+
+    <section>
+      <h2 class="headline-md mb-6">Stats</h2>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div class="bg-white rounded-lg border border-border-raw/10 p-5 text-center">
+          <p class="text-3xl font-bold text-signal">{stats.total_active_codes}</p>
+          <p class="text-xs text-ink-muted mt-1">Active Codes</p>
+        </div>
+        <div class="bg-white rounded-lg border border-border-raw/10 p-5 text-center">
+          <p class="text-3xl font-bold text-ink">{stats.total_expired_codes}</p>
+          <p class="text-xs text-ink-muted mt-1">Expired</p>
+        </div>
+        <div class="bg-white rounded-lg border border-border-raw/10 p-5 text-center">
+          <p class="text-3xl font-bold text-gold">{stats.total_posts_this_week}</p>
+          <p class="text-xs text-ink-muted mt-1">Posts This Week</p>
+        </div>
+        <div class="bg-white rounded-lg border border-border-raw/10 p-5 text-center">
+          <p class="text-3xl font-bold text-ink">{new Date(stats.last_deploy).toLocaleDateString('en-US', { month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit' })}</p>
+          <p class="text-xs text-ink-muted mt-1">Last Deploy</p>
+        </div>
+      </div>
+    </section>
+  </div>
+</BaseLayout>
