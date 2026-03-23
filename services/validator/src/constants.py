@@ -51,5 +51,5 @@ DIRECT_PRODUCT_URLS = [
     "/pr/now-foods-vitamin-d3-k2-120-capsules/10056",
 ]
 
-# Add to cart button on product detail pages
-PRODUCT_PAGE_ADD_TO_CART = '.btn-add-to-cart.btn-block, .btn-add-to-cart.btn-lg'
+# Add to cart button on product detail pages (multiple selectors for locale variants)
+PRODUCT_PAGE_ADD_TO_CART = '.btn-add-to-cart'
