@@ -47,8 +47,12 @@ async def apply_coupon(
     try:
         # Cart page is on checkout.iherb.com
         cart_url = base_url.replace("www.iherb.com", "checkout.iherb.com") + "/cart"
-        await page.goto(cart_url)
-        await human_delay()
+
+        # Only navigate if we're not already on the cart page
+        current_url = page.url or ""
+        if "checkout.iherb.com/cart" not in current_url:
+            await page.goto(cart_url)
+            await human_delay()
 
         await page.locator(COUPON_INPUT).fill(coupon_code)
         await human_delay()
