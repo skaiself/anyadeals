@@ -1,13 +1,14 @@
-import asyncio
-import csv
-import glob
+import json
 import logging
 import os
 from datetime import datetime, timezone
 from contextlib import asynccontextmanager
 
 from fastapi import FastAPI, HTTPException
+from httpx_validator import validate_coupon
 from json_writer import load_coupons_json, merge_results, write_coupons_json
+from src.config import load_config
+from src.results import CouponResult, ResultsWriter
 
 logger = logging.getLogger("validator")
 logging.basicConfig(level=logging.INFO)
@@ -52,35 +53,68 @@ async def run_validation():
     state["running"] = True
     start_time = datetime.now(timezone.utc)
     try:
-        from main import run
-        await run(CONFIG_PATH, headed=False)
+        config = load_config(CONFIG_PATH)
+        all_regions = list(config["regions"].keys())
 
-        result_files = sorted(glob.glob("results/*.csv"))
-        summary = {"codes_validated": 0}
+        # Expand coupon+region combinations
+        combinations = []
+        for coupon in config["coupons"]:
+            regions = all_regions if "*" in coupon["regions"] else coupon["regions"]
+            for region_key in regions:
+                combinations.append((coupon, region_key))
 
-        if result_files:
-            latest_csv = result_files[-1]
-            results = []
-            with open(latest_csv) as f:
-                reader = csv.DictReader(f)
-                for row in reader:
-                    results.append(row)
+        logger.info("Testing %d coupon+region combinations via HTTP", len(combinations))
 
-            coupons_path = os.path.join(DATA_DIR, "coupons.json")
-            existing = load_coupons_json(coupons_path)
-            merged = merge_results(existing, results)
-            write_coupons_json(merged, coupons_path)
+        timestamp = datetime.now(timezone.utc).strftime("%Y-%m-%d_%H-%M-%S")
+        csv_path = f"results/{timestamp}.csv"
+        results_writer = ResultsWriter(csv_path, "screenshots")
+        all_results = []
 
-            summary = {
-                "codes_validated": len(results),
-                "csv_file": latest_csv,
-            }
+        for coupon, region_key in combinations:
+            region_config = config["regions"][region_key]
+            result = await validate_coupon(
+                coupon_code=coupon["code"],
+                region_key=region_key,
+                proxy_url=region_config["proxy"],
+                iherb_url=region_config["iherb_url"],
+                locale_path=region_config.get("locale_path", ""),
+            )
+            results_writer.write_result(result)
+            all_results.append({
+                "coupon_code": result.coupon_code,
+                "region": result.region,
+                "valid": result.valid,
+                "discount_amount": result.discount_amount,
+                "discount_type": result.discount_type,
+                "error_message": result.error_message,
+            })
+
+        results_writer.close()
+
+        # Merge into coupons.json
+        coupons_path = os.path.join(DATA_DIR, "coupons.json")
+        existing = load_coupons_json(coupons_path)
+        merged = merge_results(existing, all_results)
+        write_coupons_json(merged, coupons_path)
 
         duration = (datetime.now(timezone.utc) - start_time).total_seconds()
+        summary = {
+            "codes_validated": len(all_results),
+            "valid": sum(1 for r in all_results if r["valid"] == "true"),
+            "invalid": sum(1 for r in all_results if r["valid"] == "false"),
+            "errors": sum(1 for r in all_results if r["valid"] == "error"),
+            "csv_file": csv_path,
+        }
+
         state["last_run"] = datetime.now(timezone.utc).isoformat()
         state["last_error"] = None
         state["healthy"] = True
         state["last_result"] = summary
+
+        logger.info(
+            "Done! %d valid, %d invalid, %d errors. CSV: %s",
+            summary["valid"], summary["invalid"], summary["errors"], csv_path,
+        )
 
         return {
             "status": "success",
