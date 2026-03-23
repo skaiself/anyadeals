@@ -7,7 +7,10 @@ from src.browser import human_delay
 from src.constants import (
     ADD_TO_CART_BUTTON,
     CART_EMPTY_INDICATOR,
+    CART_EMPTY_TEXT,
     CART_ITEM_REMOVE,
+    CART_ITEM_REMOVE_TEXT,
+    CART_REMOVE_ALL_TEXT,
     CART_URL_PATH,
     CATEGORY_SEARCH_TERMS,
     PRODUCT_CARD,
@@ -31,18 +34,33 @@ async def clear_cart(page: Page, base_url: str) -> None:
     await page.goto(_cart_url(base_url))
     await human_delay()
 
-    empty = page.locator(CART_EMPTY_INDICATOR)
-    if await empty.is_visible():
+    # Check if cart is empty — try text-based first, then legacy CSS selector
+    empty_text = page.get_by_text(CART_EMPTY_TEXT)
+    empty_css = page.locator(CART_EMPTY_INDICATOR)
+    if await empty_text.is_visible() or await empty_css.is_visible():
         logger.info("Cart is already empty")
         return
 
-    while True:
-        remove_buttons = page.locator(CART_ITEM_REMOVE)
-        count = await remove_buttons.count()
-        if count == 0:
-            break
-        await remove_buttons.first.click()
+    # Try "Remove all" button first (faster than removing one by one)
+    remove_all = page.get_by_role("button", name=CART_REMOVE_ALL_TEXT)
+    if await remove_all.is_visible():
+        await remove_all.click()
         await human_delay()
+        logger.info("Cart cleared via 'Remove all'")
+        return
+
+    # Fall back to removing items one by one — try text-based, then CSS
+    while True:
+        text_btn = page.get_by_role("button", name=CART_ITEM_REMOVE_TEXT)
+        css_btn = page.locator(CART_ITEM_REMOVE)
+        if await text_btn.count() > 0:
+            await text_btn.first.click()
+            await human_delay()
+        elif await css_btn.count() > 0:
+            await css_btn.first.click()
+            await human_delay()
+        else:
+            break
 
     logger.info("Cart cleared")
 

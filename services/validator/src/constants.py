@@ -2,6 +2,7 @@
 """
 CSS selectors and UI identifiers for iHerb pages.
 Centralized here for easy updates when iHerb changes their UI.
+Last updated: 2026-03-23
 """
 
 # Search
@@ -12,12 +13,18 @@ SEARCH_SUBMIT = 'button[type="submit"], .iherb-header-search-button'
 PRODUCT_CARD = '.product-card, .product-cell'
 ADD_TO_CART_BUTTON = 'button[data-ga-event-action="addToCart"], .add-to-cart'
 
-# Cart (checkout.iherb.com)
+# Cart (checkout.iherb.com/cart)
 CART_URL_PATH = "/cart"
+# iHerb 2026: remove buttons use hashed CSS classes, use text-based selectors
+CART_ITEM_REMOVE_TEXT = "Delete Product"
+CART_REMOVE_ALL_TEXT = "Remove all"
+# Legacy selector kept as fallback
 CART_ITEM_REMOVE = '.cart-item-remove, .remove-item'
+CART_EMPTY_TEXT = "Your Shopping Cart is Empty"
+# Legacy selector kept as fallback
 CART_EMPTY_INDICATOR = '.empty-cart, .cart-empty-message'
 
-# Coupon (applied on cart page, no checkout/login needed)
+# Coupon (applied on cart page at checkout.iherb.com/cart)
 COUPON_INPUT = '#coupon-input'
 COUPON_APPLY_BUTTON = '#coupon-apply'
 COUPON_ERROR_MESSAGE = "Please enter a valid promo or Rewards code."

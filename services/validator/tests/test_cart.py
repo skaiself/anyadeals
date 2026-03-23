@@ -8,10 +8,16 @@ from src.cart import build_cart, clear_cart, CartError
 async def test_clear_cart(mock_delay):
     page = AsyncMock()
     page.goto = AsyncMock()
-    # locator() is synchronous in Playwright — use MagicMock so it returns a locator mock
-    mock_locator = AsyncMock()
-    mock_locator.is_visible = AsyncMock(return_value=True)
-    page.locator = MagicMock(return_value=mock_locator)
+
+    # Mock for text-based empty cart detection (returns visible = True → cart is empty)
+    empty_text_locator = AsyncMock()
+    empty_text_locator.is_visible = AsyncMock(return_value=True)
+    page.get_by_text = MagicMock(return_value=empty_text_locator)
+
+    # Mock for CSS-based empty cart detection (fallback)
+    empty_css_locator = AsyncMock()
+    empty_css_locator.is_visible = AsyncMock(return_value=False)
+    page.locator = MagicMock(return_value=empty_css_locator)
 
     await clear_cart(page, "https://www.iherb.com")
     page.goto.assert_called_once()
