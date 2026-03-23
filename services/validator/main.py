@@ -88,9 +88,12 @@ async def test_coupon(
         page = await context.new_page()
         await stealth_async(page)
 
-        # Navigate with locale
+        # Go directly to checkout.iherb.com/cart — this domain has less
+        # Cloudflare protection than www.iherb.com. We test coupon validity
+        # without a cart (iHerb still reports valid/invalid codes on empty cart).
+        cart_url = base_url.replace("www.iherb.com", "checkout.iherb.com") + "/cart"
         try:
-            await page.goto(full_url)
+            await page.goto(cart_url)
         except PlaywrightError as e:
             if "net::" in str(e).lower() or "proxy" in str(e).lower():
                 raise ProxyError(f"Proxy connection failed: {e}")
@@ -103,19 +106,7 @@ async def test_coupon(
         # Check for CAPTCHA
         await _check_captcha(page)
 
-        # Clear cart
-        await clear_cart(page, base_url)
-
-        # Build cart
-        await build_cart(
-            page,
-            base_url,
-            min_cart_value,
-            defaults["product_categories"],
-            timeout_ms,
-        )
-
-        # Apply coupon
+        # Apply coupon directly (skip cart building — validity check works without items)
         result = await apply_coupon(page, base_url, code, region_key, timeout_ms)
 
         # Screenshot only on errors, not on normal "invalid coupon" results
