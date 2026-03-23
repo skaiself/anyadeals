@@ -217,6 +217,7 @@ async def run(config_path: str, headed: bool = False) -> None:
                 '--disable-accelerated-2d-canvas',
                 '--disable-gpu',
                 '--window-size=1280,800',
+                '--ignore-certificate-errors',
             ],
         )
 
