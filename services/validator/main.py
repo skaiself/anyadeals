@@ -77,7 +77,7 @@ async def test_coupon(
     logger.info("[%s/%s] Starting test", code, region_key)
 
     try:
-        context = await create_browser_context(browser, region_config, timeout_ms)
+        context = await create_browser_context(browser, region_config, timeout_ms, region_key)
     except PlaywrightError as e:
         if "proxy" in str(e).lower() or "connect" in str(e).lower():
             raise ProxyError(f"Proxy connection failed: {e}")
@@ -210,7 +210,20 @@ async def run(config_path: str, headed: bool = False) -> None:
     skip_regions: set[str] = set()
 
     async with async_playwright() as p:
-        browser = await p.chromium.launch(headless=not headed)
+        browser = await p.chromium.launch(
+            headless=not headed,
+            channel="chrome",
+            args=[
+                '--disable-blink-features=AutomationControlled',
+                '--disable-features=IsolateOrigins,site-per-process',
+                '--no-sandbox',
+                '--disable-setuid-sandbox',
+                '--disable-dev-shm-usage',
+                '--disable-accelerated-2d-canvas',
+                '--disable-gpu',
+                '--window-size=1280,800',
+            ],
+        )
 
         for coupon, region_key in combinations:
             code = coupon["code"]
