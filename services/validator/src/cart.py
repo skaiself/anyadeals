@@ -161,30 +161,34 @@ async def build_cart(
 ) -> float:
     logger.info("Building cart to minimum value: %.2f", min_cart_value)
 
-    # Primary method: direct product URLs (avoids search page / Cloudflare)
+    # Primary method: add products via direct URLs (avoids search / Cloudflare)
+    # Add all products first, then check cart total ONCE to minimize
+    # navigation to checkout.iherb.com (which blocks repeated visits)
+    added_count = 0
     for product_path in DIRECT_PRODUCT_URLS:
+        if await _add_product_direct(page, base_url, product_path):
+            added_count += 1
+            if added_count >= 3:
+                break  # 3 products should exceed most min_cart_value
+
+    # Navigate to cart once to check total
+    total = await _get_cart_total(page, base_url)
+    logger.info("Cart total after %d direct adds: %.2f", added_count, total)
+
+    if total >= min_cart_value:
+        logger.info("Cart meets minimum value: %.2f >= %.2f", total, min_cart_value)
+        return total
+
+    # If still not enough, add more products and check again
+    for product_path in DIRECT_PRODUCT_URLS[added_count:]:
         await _add_product_direct(page, base_url, product_path)
-        total = await _get_cart_total(page, base_url)
-        logger.info("Cart total after direct add: %.2f", total)
-        if total >= min_cart_value:
-            logger.info("Cart meets minimum value: %.2f >= %.2f", total, min_cart_value)
-            return total
 
-    # Fallback: search-based method
-    logger.info("Direct URLs insufficient, falling back to search")
-    for category in product_categories:
-        await _add_products_from_category(page, base_url, category, timeout_ms)
-        total = await _get_cart_total(page, base_url)
-        logger.info("Cart total after '%s': %.2f", category, total)
-        if total >= min_cart_value:
-            logger.info("Cart meets minimum value: %.2f >= %.2f", total, min_cart_value)
-            return total
-
-    final_total = await _get_cart_total(page, base_url)
-    if final_total >= min_cart_value:
-        return final_total
+    total = await _get_cart_total(page, base_url)
+    logger.info("Cart total after all direct adds: %.2f", total)
+    if total >= min_cart_value:
+        return total
 
     raise CartError(
         f"Could not build cart to minimum value. "
-        f"Reached {final_total:.2f}, needed {min_cart_value:.2f}"
+        f"Reached {total:.2f}, needed {min_cart_value:.2f}"
     )
