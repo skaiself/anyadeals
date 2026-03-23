@@ -53,9 +53,11 @@ async def validate_coupon(
             verify=False,  # Web Unblocker uses MITM — skip SSL verification
             timeout=httpx.Timeout(60.0),
         ) as client:
-            # Step 1: Visit iHerb to get session cookies
-            logger.info("[%s/%s] Establishing session", coupon_code, region_key)
-            resp = await client.get(iherb_url + locale_path)
+            # Step 1: Visit checkout.iherb.com/cart to establish session cookies
+            # Using checkout domain directly — less Cloudflare protection than www
+            checkout_base = iherb_url.replace("www.iherb.com", "checkout.iherb.com")
+            logger.info("[%s/%s] Establishing session on checkout domain", coupon_code, region_key)
+            resp = await client.get(checkout_base + "/cart")
             if resp.status_code != 200:
                 return CouponResult(
                     coupon_code=coupon_code,
@@ -63,7 +65,7 @@ async def validate_coupon(
                     valid="error",
                     discount_amount="",
                     discount_type="",
-                    error_message=f"Failed to load iHerb: HTTP {resp.status_code}",
+                    error_message=f"Failed to load checkout: HTTP {resp.status_code}",
                 )
 
             # Step 2: Add products to cart via API
