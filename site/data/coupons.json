@@ -1,0 +1,56 @@
+[
+  {
+    "code": "WELCOME25",
+    "type": "promo",
+    "discount": "25% off first order",
+    "regions": [
+      "us",
+      "de",
+      "gb"
+    ],
+    "min_cart_value": 40,
+    "status": "valid",
+    "first_seen": "2026-03-10",
+    "last_validated": "2026-03-22T08:00:00Z",
+    "last_failed": null,
+    "fail_count": 0,
+    "source": "couponfollow.com",
+    "stackable_with_referral": true,
+    "notes": "New customers only. Works with referral code OFR0296"
+  },
+  {
+    "code": "GOLD60",
+    "type": "promo",
+    "discount": "20% off orders over $60",
+    "regions": [
+      "us",
+      "de"
+    ],
+    "min_cart_value": 60,
+    "status": "valid",
+    "first_seen": "2026-03-15",
+    "last_validated": "2026-03-23T20:41:54.201975+00:00",
+    "last_failed": null,
+    "fail_count": 0,
+    "source": "hotdeals.com",
+    "stackable_with_referral": true,
+    "notes": "Best for large orders"
+  },
+  {
+    "code": "OLDCODE10",
+    "type": "promo",
+    "discount": "10% off sitewide",
+    "regions": [
+      "us"
+    ],
+    "min_cart_value": 20,
+    "status": "expired",
+    "first_seen": "2026-02-01",
+    "last_validated": "2026-03-10T06:00:00Z",
+    "last_failed": "2026-03-20T08:00:00Z",
+    "fail_count": 3,
+    "source": "promo-herb.com",
+    "stackable_with_referral": false,
+    "notes": "No longer valid"
+  }
+]

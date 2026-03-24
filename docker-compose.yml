@@ -1,31 +1,20 @@
 services:
-  traefik:
-    image: traefik:v3.3
-    container_name: anyadeals-traefik
-    restart: unless-stopped
-    command:
-      - "--api.insecure=true"
-      - "--providers.docker=true"
-      - "--providers.docker.exposedbydefault=false"
-      - "--entrypoints.web.address=:80"
-    ports:
-      - "80:80"
-      - "8888:8080"
-    volumes:
-      - /var/run/docker.sock:/var/run/docker.sock:ro
-    networks:
-      - pipeline
+  # NOTE: Traefik disabled — incompatible with Docker API on this host.
+  # Orchestrator dashboard exposed directly on port 8080.
+  # Re-enable Traefik when Docker API compatibility is resolved.
+  #
+  # traefik:
+  #   image: traefik:v3.4
+  #   ...
 
   orchestrator:
     build: ./services/orchestrator
     container_name: anyadeals-orchestrator
     restart: unless-stopped
-    labels:
-      - "traefik.enable=true"
-      - "traefik.http.routers.orchestrator.rule=PathPrefix(`/`)"
-      - "traefik.http.services.orchestrator.loadbalancer.server.port=8080"
+    ports:
+      - "8080:8080"
     volumes:
-      - ./site/src/data:/data
+      - ./site/data:/data
       - .:/repo
     environment:
       - DATA_DIR=/data
@@ -43,7 +32,7 @@ services:
     container_name: anyadeals-researcher
     restart: unless-stopped
     volumes:
-      - ./site/src/data:/data
+      - ./site/data:/data
     environment:
       - DATA_DIR=/data
     networks:
@@ -54,7 +43,7 @@ services:
     container_name: anyadeals-validator
     restart: unless-stopped
     volumes:
-      - ./site/src/data:/data
+      - ./site/data:/data
     environment:
       - DATA_DIR=/data
       - CONFIG_PATH=/app/config.json
@@ -66,7 +55,7 @@ services:
     container_name: anyadeals-poster
     restart: unless-stopped
     volumes:
-      - ./site/src/data:/data
+      - ./site/data:/data
     environment:
       - DATA_DIR=/data
       - TWITTER_API_KEY=${TWITTER_API_KEY}
