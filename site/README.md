@@ -1,43 +1,36 @@
-# Astro Starter Kit: Minimal
+# AnyaDeals Site
 
-```sh
-npm create astro@latest -- --template minimal
-```
+Next.js static site for displaying verified iHerb coupon codes.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## Commands
 
-## 🚀 Project Structure
+| Command            | Action                                |
+| :----------------- | :------------------------------------ |
+| `npm install`      | Install dependencies                  |
+| `npm run dev`      | Start dev server at `localhost:3000`   |
+| `npm run build`    | Build static export to `out/`         |
+| `npm test`         | Run Vitest test suite                 |
+| `npm run test:watch` | Run tests in watch mode             |
+| `npm run lint`     | Run Next.js linter                    |
 
-Inside of your Astro project, you'll see the following folders and files:
+## Pages
 
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+- `/` — Homepage with hero, trending picks, active coupon count
+- `/coupons/iherb` — Coupon stacking guide with live codes from pipeline
+- `/about` — How it works, affiliate disclosure
+- `/dashboard` — Pipeline job status and stats
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+## Data
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+The `data/` directory contains JSON files written by the backend pipeline:
 
-Any static assets, like images, can be placed in the `public/` directory.
+- `coupons.json` — Validated coupon codes (written by validator service)
+- `dashboard.json` — Pipeline status and stats (written by orchestrator)
+- `posts.json` — Social media post log (written by poster service)
+- `research.json` — Raw research output (written by researcher service)
 
-## 🧞 Commands
+These files are committed to git. The orchestrator pushes changes to trigger Cloudflare Pages rebuild.
 
-All commands are run from the root of the project, from a terminal:
+## Testing
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+52 tests across 4 files covering data layer contracts, component behavior, and JSON schema validation. See `docs/REDESIGN-GUIDE.md` for details.
