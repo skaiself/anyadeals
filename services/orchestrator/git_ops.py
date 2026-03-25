@@ -32,10 +32,10 @@ async def git_commit_and_push(message: str) -> bool:
     """Stage data files, commit, and push. Returns True on success."""
 
     # Stage data files
-    await _run_git("add", "site/src/data/")
+    await _run_git("add", "site/data/")
 
     # Check for changes
-    status, _ = await _run_git("status", "--porcelain", "site/src/data/")
+    status, _ = await _run_git("status", "--porcelain", "site/data/")
     if not status.strip():
         logger.info("No data changes to commit")
         return True

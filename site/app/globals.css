@@ -56,8 +56,6 @@ body {
   font-weight: 600;
 }
 
-/* Scroll-reveal animations handled by RevealOnScroll React component (inline styles) */
-
 /* ─── Copyable coupon block ─────────────────────── */
 .coupon-ticket {
   border: 2px solid var(--ink);
@@ -88,11 +86,6 @@ body {
 
 /* ─── Reduced motion support ────────────────────── */
 @media (prefers-reduced-motion: reduce) {
-  .reveal {
-    opacity: 1;
-    transform: none;
-    transition: none;
-  }
   *, *::before, *::after {
     animation-duration: 0.01ms !important;
     transition-duration: 0.01ms !important;

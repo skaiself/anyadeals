@@ -2,26 +2,26 @@
 
 import { useEffect, useRef, useState } from 'react';
 
+const TRANSITION = 'opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1)';
+
 export default function RevealOnScroll({ children, className = '', delay = 0 }: {
   children: React.ReactNode;
   className?: string;
   delay?: number;
 }) {
   const ref = useRef<HTMLDivElement>(null);
-  const [revealed, setRevealed] = useState(true); // Visible for SSR
+  const [revealed, setRevealed] = useState(true);
+  const [reducedMotion, setReducedMotion] = useState(false);
 
   useEffect(() => {
+    setReducedMotion(window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+
     const el = ref.current;
     if (!el) return;
 
-    // If already in viewport, keep visible (no flash)
     const rect = el.getBoundingClientRect();
-    if (rect.top < window.innerHeight * 0.92) {
-      setRevealed(true);
-      return;
-    }
+    if (rect.top < window.innerHeight * 0.92) return;
 
-    // Below viewport — hide and animate on scroll
     setRevealed(false);
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -36,17 +36,17 @@ export default function RevealOnScroll({ children, className = '', delay = 0 }: 
     return () => observer.disconnect();
   }, []);
 
-  return (
-    <div
-      ref={ref}
-      className={className}
-      style={{
+  const style: React.CSSProperties = reducedMotion
+    ? { opacity: 1, transform: 'none' }
+    : {
         opacity: revealed ? 1 : 0,
         transform: revealed ? 'translateY(0)' : 'translateY(28px)',
-        transition: 'opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1)',
-        transitionDelay: delay ? `${delay}ms` : undefined,
-      }}
-    >
+        transition: TRANSITION,
+        ...(delay ? { transitionDelay: `${delay}ms` } : undefined),
+      };
+
+  return (
+    <div ref={ref} className={className} style={style}>
       {children}
     </div>
   );
