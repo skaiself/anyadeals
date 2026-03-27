@@ -29,6 +29,13 @@ def load_config(path: str) -> dict[str, Any]:
             raise ConfigError(f"Invalid JSON in config: {e}")
 
     _validate(data)
+
+    # Override proxy URLs from environment variable if set
+    proxy_url = os.environ.get("PROXY_URL")
+    if proxy_url:
+        for region_data in data["regions"].values():
+            region_data["proxy"] = proxy_url
+
     return data
 
 

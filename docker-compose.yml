@@ -47,6 +47,7 @@ services:
     environment:
       - DATA_DIR=/data
       - CONFIG_PATH=/app/config.json
+      - PROXY_URL=${PROXY_URL}
     networks:
       - pipeline
 

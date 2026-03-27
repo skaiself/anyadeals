@@ -24,9 +24,9 @@
     }
   },
   "stats": {
-    "total_active_codes": 2,
+    "total_active_codes": 14,
     "total_expired_codes": 3,
     "total_posts_this_week": 0,
-    "last_deploy": "2026-03-27T07:00:00.001612+00:00"
+    "last_deploy": "2026-03-27T08:00:00.002600+00:00"
   }
 }
