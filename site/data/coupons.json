@@ -930,14 +930,14 @@
       "de"
     ],
     "min_cart_value": 0,
-    "status": "valid",
+    "status": "invalid",
     "first_seen": "2026-03-27",
     "last_validated": "2026-03-27T10:24:37.622353+00:00",
     "last_failed": null,
     "fail_count": 0,
     "source": "",
     "stackable_with_referral": false,
-    "notes": ""
+    "notes": "Referral/rewards code (type=2)"
   },
   {
     "code": "MAR26ANTI",
@@ -1068,14 +1068,14 @@
       "de"
     ],
     "min_cart_value": 0,
-    "status": "valid",
+    "status": "invalid",
     "first_seen": "2026-03-27",
     "last_validated": "2026-03-27T10:24:37.622353+00:00",
     "last_failed": null,
     "fail_count": 0,
     "source": "",
     "stackable_with_referral": false,
-    "notes": ""
+    "notes": "Referral/rewards code (type=2)"
   },
   {
     "code": "DRHEALTH",
@@ -1085,14 +1085,14 @@
       "us"
     ],
     "min_cart_value": 0,
-    "status": "valid",
+    "status": "invalid",
     "first_seen": "2026-03-27",
     "last_validated": "2026-03-27T10:24:37.622353+00:00",
     "last_failed": null,
     "fail_count": 0,
     "source": "",
     "stackable_with_referral": false,
-    "notes": ""
+    "notes": "Referral/rewards code (type=2)"
   },
   {
     "code": "DEAL",
@@ -1241,14 +1241,14 @@
       "de"
     ],
     "min_cart_value": 0,
-    "status": "valid",
+    "status": "invalid",
     "first_seen": "2026-03-27",
     "last_validated": "2026-03-27T10:24:37.622353+00:00",
     "last_failed": null,
     "fail_count": 0,
     "source": "",
     "stackable_with_referral": false,
-    "notes": "China (RMB) only"
+    "notes": "Referral/rewards code (type=2), China RMB only"
   },
   {
     "code": "RMB50",
@@ -1276,14 +1276,14 @@
       "de"
     ],
     "min_cart_value": 0,
-    "status": "valid",
+    "status": "invalid",
     "first_seen": "2026-03-27",
     "last_validated": "2026-03-27T10:24:37.622353+00:00",
     "last_failed": null,
     "fail_count": 0,
     "source": "",
     "stackable_with_referral": false,
-    "notes": "China (RMB) only"
+    "notes": "Referral/rewards code (type=2), China RMB only"
   },
   {
     "code": "CODES",
