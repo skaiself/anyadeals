@@ -210,7 +210,7 @@ export default function IHerbCouponsPage() {
                 {activeCoupons.map((coupon, i) => (
                   <tr
                     key={coupon.code}
-                    className={`border-b border-ink/8 last:border-b-0 hover:bg-signal/5 transition-colors duration-150 cursor-default ${i % 2 === 0 ? 'bg-transparent' : 'bg-ink/[0.02]'}`}
+                    className={`border-b border-ink/8 hover:bg-signal/5 transition-colors duration-150 cursor-default ${i % 2 === 0 ? 'bg-transparent' : 'bg-ink/[0.02]'}`}
                   >
                     <td className="px-6 py-4">
                       <code className="font-editorial font-bold text-base tracking-wider text-ink">{coupon.code}</code>
@@ -234,6 +234,25 @@ export default function IHerbCouponsPage() {
                     </td>
                   </tr>
                 ))}
+                {/* Hardcoded affiliate referral code — always last */}
+                <tr className={`hover:bg-signal/5 transition-colors duration-150 cursor-default ${activeCoupons.length % 2 === 0 ? 'bg-transparent' : 'bg-ink/[0.02]'}`}>
+                  <td className="px-6 py-4">
+                    <code className="font-editorial font-bold text-base tracking-wider text-signal">OFR0296</code>
+                  </td>
+                  <td className="px-6 py-4 text-ink-muted text-xs uppercase tracking-wider">rewards</td>
+                  <td className="px-6 py-4 font-semibold text-signal">30% off</td>
+                  <td className="px-6 py-4">
+                    <span className="inline-block px-1.5 py-0.5 text-[10px] uppercase tracking-wider font-semibold border border-signal/30 text-signal">
+                      Global
+                    </span>
+                  </td>
+                  <td className="px-6 py-4 text-ink-muted">Rewards code — enter in Referral Code field. Stacks with promo codes above.</td>
+                  <td className="px-6 py-4">
+                    <span className="inline-block px-2.5 py-0.5 text-[10px] uppercase tracking-wider font-semibold bg-signal text-cream">
+                      Active
+                    </span>
+                  </td>
+                </tr>
               </tbody>
             </table>
           </div>
