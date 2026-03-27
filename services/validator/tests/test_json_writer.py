@@ -81,16 +81,17 @@ def test_load_research_codes_format():
             json.dump(research, f)
         codes = load_research_codes(path)
         assert len(codes) == 1
-        assert codes[0] == {"code": "TEST1", "regions": ["us"], "min_cart_value": None, "source": "couponfollow"}
+        assert codes[0] == {"code": "TEST1", "regions": ["*"], "min_cart_value": None, "source": "couponfollow"}
 
 def test_load_research_codes_missing_file():
     result = load_research_codes("/nonexistent/research.json")
     assert result == []
 
-def test_load_research_codes_defaults_regions_to_wildcard():
+def test_load_research_codes_always_uses_wildcard_regions():
+    """Research codes always test all regions regardless of what the scraper set."""
     with tempfile.TemporaryDirectory() as tmpdir:
         path = os.path.join(tmpdir, "research.json")
-        research = [{"code": "X", "validation_status": "pending"}]
+        research = [{"code": "X", "regions": ["us"], "validation_status": "pending"}]
         with open(path, "w") as f:
             json.dump(research, f)
         codes = load_research_codes(path)

@@ -30,11 +30,15 @@ def load_config(path: str) -> dict[str, Any]:
 
     _validate(data)
 
-    # Override proxy URLs from environment variable if set
-    proxy_url = os.environ.get("PROXY_URL")
-    if proxy_url:
-        for region_data in data["regions"].values():
-            region_data["proxy"] = proxy_url
+    # Override proxy URLs from environment variables
+    # Per-region: PROXY_URL_US, PROXY_URL_DE, etc. Fall back to PROXY_URL.
+    default_proxy = os.environ.get("PROXY_URL")
+    for region_key, region_data in data["regions"].items():
+        region_proxy = os.environ.get(f"PROXY_URL_{region_key.upper()}")
+        if region_proxy:
+            region_data["proxy"] = region_proxy
+        elif default_proxy:
+            region_data["proxy"] = default_proxy
 
     return data
 

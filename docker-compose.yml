@@ -48,6 +48,8 @@ services:
       - DATA_DIR=/data
       - CONFIG_PATH=/app/config.json
       - PROXY_URL=${PROXY_URL}
+      - PROXY_URL_US=${PROXY_URL_US:-}
+      - PROXY_URL_DE=${PROXY_URL_DE:-}
     networks:
       - pipeline
 

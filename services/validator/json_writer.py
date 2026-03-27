@@ -124,7 +124,7 @@ def load_research_codes(path: str) -> list[dict]:
     return [
         {
             "code": entry["code"],
-            "regions": entry.get("regions", ["*"]),
+            "regions": ["*"],  # Always test in all configured regions
             "min_cart_value": None,
             "source": entry.get("source", ""),
         }
