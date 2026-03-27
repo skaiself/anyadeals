@@ -2,7 +2,7 @@
   {
     "code": "WELCOME25",
     "type": "promo",
-    "discount": "25% off first order",
+    "discount": "25% off",
     "regions": [
       "us",
       "de",
@@ -11,9 +11,9 @@
     "min_cart_value": 40,
     "status": "valid",
     "first_seen": "2026-03-10",
-    "last_validated": "2026-03-27T10:12:12.002550+00:00",
-    "last_failed": null,
-    "fail_count": 0,
+    "last_validated": "2026-03-27T10:22:05.791951+00:00",
+    "last_failed": "2026-03-27T10:24:37.622353+00:00",
+    "fail_count": 1,
     "source": "couponfollow.com",
     "stackable_with_referral": true,
     "notes": "New customers only. Works with referral code OFR0296"
@@ -29,9 +29,9 @@
     "min_cart_value": 60,
     "status": "valid",
     "first_seen": "2026-03-15",
-    "last_validated": "2026-03-27T10:12:12.002550+00:00",
-    "last_failed": null,
-    "fail_count": 0,
+    "last_validated": "2026-03-27T10:22:05.791951+00:00",
+    "last_failed": "2026-03-27T10:24:37.622353+00:00",
+    "fail_count": 1,
     "source": "hotdeals.com",
     "stackable_with_referral": true,
     "notes": "Best for large orders"
@@ -115,7 +115,7 @@
     "min_cart_value": 0,
     "status": "valid",
     "first_seen": "2026-03-27",
-    "last_validated": "2026-03-27T10:12:12.002550+00:00",
+    "last_validated": "2026-03-27T10:24:37.622353+00:00",
     "last_failed": null,
     "fail_count": 0,
     "source": "",
@@ -924,7 +924,7 @@
   {
     "code": "DRIM",
     "type": "promo",
-    "discount": "",
+    "discount": "10% off",
     "regions": [
       "us",
       "de"
@@ -932,7 +932,7 @@
     "min_cart_value": 0,
     "status": "valid",
     "first_seen": "2026-03-27",
-    "last_validated": "2026-03-27T10:12:12.002550+00:00",
+    "last_validated": "2026-03-27T10:24:37.622353+00:00",
     "last_failed": null,
     "fail_count": 0,
     "source": "",
@@ -942,7 +942,7 @@
   {
     "code": "MAR26ANTI",
     "type": "promo",
-    "discount": "",
+    "discount": "10% off",
     "regions": [
       "us",
       "de"
@@ -950,7 +950,7 @@
     "min_cart_value": 0,
     "status": "valid",
     "first_seen": "2026-03-27",
-    "last_validated": "2026-03-27T10:12:12.002550+00:00",
+    "last_validated": "2026-03-27T10:24:37.622353+00:00",
     "last_failed": null,
     "fail_count": 0,
     "source": "",
@@ -1062,7 +1062,7 @@
   {
     "code": "THEDAILYBEAST",
     "type": "promo",
-    "discount": "",
+    "discount": "10% off",
     "regions": [
       "us",
       "de"
@@ -1070,9 +1070,9 @@
     "min_cart_value": 0,
     "status": "valid",
     "first_seen": "2026-03-27",
-    "last_validated": "2026-03-27T09:53:20.995552+00:00",
-    "last_failed": "2026-03-27T10:12:12.002550+00:00",
-    "fail_count": 2,
+    "last_validated": "2026-03-27T10:24:37.622353+00:00",
+    "last_failed": null,
+    "fail_count": 0,
     "source": "",
     "stackable_with_referral": false,
     "notes": ""
@@ -1080,16 +1080,16 @@
   {
     "code": "DRHEALTH",
     "type": "promo",
-    "discount": "",
+    "discount": "10% off",
     "regions": [
       "us"
     ],
     "min_cart_value": 0,
     "status": "valid",
     "first_seen": "2026-03-27",
-    "last_validated": "2026-03-27T10:09:41.140602+00:00",
-    "last_failed": "2026-03-27T10:12:12.002550+00:00",
-    "fail_count": 1,
+    "last_validated": "2026-03-27T10:24:37.622353+00:00",
+    "last_failed": null,
+    "fail_count": 0,
     "source": "",
     "stackable_with_referral": false,
     "notes": ""
@@ -1156,7 +1156,7 @@
     "min_cart_value": 0,
     "status": "valid",
     "first_seen": "2026-03-27",
-    "last_validated": "2026-03-27T10:12:12.002550+00:00",
+    "last_validated": "2026-03-27T10:24:37.622353+00:00",
     "last_failed": null,
     "fail_count": 0,
     "source": "",
@@ -1166,14 +1166,14 @@
   {
     "code": "NEW20",
     "type": "promo",
-    "discount": "20% off",
+    "discount": "15% off",
     "regions": [
       "us"
     ],
     "min_cart_value": 0,
     "status": "valid",
     "first_seen": "2026-03-27",
-    "last_validated": "2026-03-27T10:12:12.002550+00:00",
+    "last_validated": "2026-03-27T10:24:37.622353+00:00",
     "last_failed": null,
     "fail_count": 0,
     "source": "",
@@ -1190,9 +1190,9 @@
     "min_cart_value": 0,
     "status": "valid",
     "first_seen": "2026-03-27",
-    "last_validated": "2026-03-27T10:09:41.140602+00:00",
-    "last_failed": "2026-03-27T10:12:12.002550+00:00",
-    "fail_count": 1,
+    "last_validated": "2026-03-27T10:24:37.622353+00:00",
+    "last_failed": null,
+    "fail_count": 0,
     "source": "",
     "stackable_with_referral": false,
     "notes": ""
@@ -1200,7 +1200,7 @@
   {
     "code": "IHERB22OFF",
     "type": "promo",
-    "discount": "22% off",
+    "discount": "30% off",
     "regions": [
       "us",
       "de"
@@ -1208,7 +1208,7 @@
     "min_cart_value": 0,
     "status": "valid",
     "first_seen": "2026-03-27",
-    "last_validated": "2026-03-27T10:12:12.002550+00:00",
+    "last_validated": "2026-03-27T10:24:37.622353+00:00",
     "last_failed": null,
     "fail_count": 0,
     "source": "",
@@ -1243,7 +1243,7 @@
     "min_cart_value": 0,
     "status": "valid",
     "first_seen": "2026-03-27",
-    "last_validated": "2026-03-27T10:12:12.002550+00:00",
+    "last_validated": "2026-03-27T10:24:37.622353+00:00",
     "last_failed": null,
     "fail_count": 0,
     "source": "",
@@ -1278,9 +1278,9 @@
     "min_cart_value": 0,
     "status": "valid",
     "first_seen": "2026-03-27",
-    "last_validated": "2026-03-27T09:53:20.995552+00:00",
-    "last_failed": "2026-03-27T10:12:12.002550+00:00",
-    "fail_count": 2,
+    "last_validated": "2026-03-27T10:24:37.622353+00:00",
+    "last_failed": null,
+    "fail_count": 0,
     "source": "",
     "stackable_with_referral": false,
     "notes": ""
@@ -1603,8 +1603,8 @@
     "status": "valid",
     "first_seen": "2026-03-27",
     "last_validated": "2026-03-27T10:12:12.002550+00:00",
-    "last_failed": null,
-    "fail_count": 0,
+    "last_failed": "2026-03-27T10:24:37.622353+00:00",
+    "fail_count": 2,
     "source": "",
     "stackable_with_referral": false,
     "notes": ""

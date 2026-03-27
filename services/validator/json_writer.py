@@ -101,7 +101,9 @@ def merge_results(existing: list[dict], results: list[dict],
                 if region not in entry.get("regions", []):
                     entry.setdefault("regions", []).append(region)
                 if amt and typ:
-                    entry["discount"] = f"{amt}% off" if typ == "percentage" else f"${amt} off"
+                    new_discount = f"{amt}% off" if typ == "percentage" else f"${amt} off"
+                    if not entry.get("discount") or entry["discount"] != new_discount:
+                        entry["discount"] = new_discount
             else:
                 entry["fail_count"] = entry.get("fail_count", 0) + 1
                 entry["last_failed"] = now

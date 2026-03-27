@@ -16,11 +16,18 @@ def load_research_json(path: str) -> list[dict]:
 
 
 def merge_research(existing: list[dict], new_codes: list[dict]) -> list[dict]:
-    """Merge new research entries into existing, dedup by code (keeps first seen)."""
+    """Merge new research entries into existing, dedup by code (keeps first seen).
+
+    If an existing entry has an empty raw_description but the new entry has one,
+    the description is updated (scrapers may improve over time).
+    """
     by_code = {entry["code"]: entry for entry in existing}
     for code_entry in new_codes:
-        if code_entry["code"] not in by_code:
-            by_code[code_entry["code"]] = code_entry
+        code = code_entry["code"]
+        if code not in by_code:
+            by_code[code] = code_entry
+        elif not by_code[code].get("raw_description") and code_entry.get("raw_description"):
+            by_code[code]["raw_description"] = code_entry["raw_description"]
     return list(by_code.values())
 
 
