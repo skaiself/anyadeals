@@ -21,7 +21,7 @@
   {
     "code": "GOLD60",
     "type": "promo",
-    "discount": "",
+    "discount": "10% off orders $60+",
     "regions": [
       "us",
       "de"
@@ -34,7 +34,7 @@
     "fail_count": 1,
     "source": "hotdeals.com",
     "stackable_with_referral": true,
-    "notes": "Best for large orders"
+    "notes": "Not valid in Israel. Expires Mar 31."
   },
   {
     "code": "OLDCODE10",
@@ -107,7 +107,7 @@
   {
     "code": "JFF855",
     "type": "promo",
-    "discount": "",
+    "discount": "5-10% off",
     "regions": [
       "us",
       "de"
@@ -120,7 +120,7 @@
     "fail_count": 0,
     "source": "",
     "stackable_with_referral": false,
-    "notes": ""
+    "notes": "Referral/rewards code"
   },
   {
     "code": "C5734282",
@@ -1235,7 +1235,7 @@
   {
     "code": "RMB299",
     "type": "promo",
-    "discount": "",
+    "discount": "\u00a530 off orders \u00a5299+",
     "regions": [
       "us",
       "de"
@@ -1248,7 +1248,7 @@
     "fail_count": 0,
     "source": "",
     "stackable_with_referral": false,
-    "notes": ""
+    "notes": "China (RMB) only"
   },
   {
     "code": "RMB50",
@@ -1270,7 +1270,7 @@
   {
     "code": "RMB499",
     "type": "promo",
-    "discount": "",
+    "discount": "\u00a550 off orders \u00a5499+",
     "regions": [
       "us",
       "de"
@@ -1283,7 +1283,7 @@
     "fail_count": 0,
     "source": "",
     "stackable_with_referral": false,
-    "notes": ""
+    "notes": "China (RMB) only"
   },
   {
     "code": "CODES",
@@ -1594,7 +1594,7 @@
   {
     "code": "GOLD80",
     "type": "promo",
-    "discount": "",
+    "discount": "10% off orders $80+",
     "regions": [
       "us",
       "de"
@@ -1607,7 +1607,7 @@
     "fail_count": 2,
     "source": "",
     "stackable_with_referral": false,
-    "notes": ""
+    "notes": "Europe only. Expires Mar 31."
   },
   {
     "code": "AMY100",
