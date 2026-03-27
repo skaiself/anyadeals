@@ -109,12 +109,13 @@
     "type": "promo",
     "discount": "",
     "regions": [
-      "us"
+      "us",
+      "de"
     ],
     "min_cart_value": 0,
     "status": "valid",
     "first_seen": "2026-03-27",
-    "last_validated": "2026-03-27T07:39:27.154213+00:00",
+    "last_validated": "2026-03-27T09:53:20.995552+00:00",
     "last_failed": null,
     "fail_count": 0,
     "source": "",
@@ -925,12 +926,13 @@
     "type": "promo",
     "discount": "",
     "regions": [
-      "us"
+      "us",
+      "de"
     ],
     "min_cart_value": 0,
     "status": "valid",
     "first_seen": "2026-03-27",
-    "last_validated": "2026-03-27T07:39:27.154213+00:00",
+    "last_validated": "2026-03-27T09:53:20.995552+00:00",
     "last_failed": null,
     "fail_count": 0,
     "source": "",
@@ -942,12 +944,13 @@
     "type": "promo",
     "discount": "",
     "regions": [
-      "us"
+      "us",
+      "de"
     ],
     "min_cart_value": 0,
     "status": "valid",
     "first_seen": "2026-03-27",
-    "last_validated": "2026-03-27T07:39:27.154213+00:00",
+    "last_validated": "2026-03-27T09:53:20.995552+00:00",
     "last_failed": null,
     "fail_count": 0,
     "source": "",
@@ -1061,12 +1064,13 @@
     "type": "promo",
     "discount": "",
     "regions": [
-      "us"
+      "us",
+      "de"
     ],
     "min_cart_value": 0,
     "status": "valid",
     "first_seen": "2026-03-27",
-    "last_validated": "2026-03-27T07:39:27.154213+00:00",
+    "last_validated": "2026-03-27T09:53:20.995552+00:00",
     "last_failed": null,
     "fail_count": 0,
     "source": "",
@@ -1084,8 +1088,8 @@
     "status": "valid",
     "first_seen": "2026-03-27",
     "last_validated": "2026-03-27T07:39:27.154213+00:00",
-    "last_failed": null,
-    "fail_count": 0,
+    "last_failed": "2026-03-27T09:53:20.995552+00:00",
+    "fail_count": 1,
     "source": "",
     "stackable_with_referral": false,
     "notes": ""
@@ -1146,12 +1150,13 @@
     "type": "promo",
     "discount": "",
     "regions": [
-      "us"
+      "us",
+      "de"
     ],
     "min_cart_value": 0,
     "status": "valid",
     "first_seen": "2026-03-27",
-    "last_validated": "2026-03-27T07:39:27.154213+00:00",
+    "last_validated": "2026-03-27T09:53:20.995552+00:00",
     "last_failed": null,
     "fail_count": 0,
     "source": "",
@@ -1168,9 +1173,9 @@
     "min_cart_value": 0,
     "status": "valid",
     "first_seen": "2026-03-27",
-    "last_validated": "2026-03-27T07:39:27.154213+00:00",
-    "last_failed": null,
-    "fail_count": 0,
+    "last_validated": "2026-03-27T09:08:24.146311+00:00",
+    "last_failed": "2026-03-27T09:53:20.995552+00:00",
+    "fail_count": 1,
     "source": "",
     "stackable_with_referral": false,
     "notes": ""
@@ -1186,8 +1191,8 @@
     "status": "valid",
     "first_seen": "2026-03-27",
     "last_validated": "2026-03-27T07:39:27.154213+00:00",
-    "last_failed": null,
-    "fail_count": 0,
+    "last_failed": "2026-03-27T09:53:20.995552+00:00",
+    "fail_count": 1,
     "source": "",
     "stackable_with_referral": false,
     "notes": ""
@@ -1197,12 +1202,13 @@
     "type": "promo",
     "discount": "",
     "regions": [
-      "us"
+      "us",
+      "de"
     ],
     "min_cart_value": 0,
     "status": "valid",
     "first_seen": "2026-03-27",
-    "last_validated": "2026-03-27T07:39:27.154213+00:00",
+    "last_validated": "2026-03-27T09:53:20.995552+00:00",
     "last_failed": null,
     "fail_count": 0,
     "source": "",
@@ -1231,12 +1237,13 @@
     "type": "promo",
     "discount": "",
     "regions": [
-      "us"
+      "us",
+      "de"
     ],
     "min_cart_value": 0,
     "status": "valid",
     "first_seen": "2026-03-27",
-    "last_validated": "2026-03-27T07:39:27.154213+00:00",
+    "last_validated": "2026-03-27T09:53:20.995552+00:00",
     "last_failed": null,
     "fail_count": 0,
     "source": "",
@@ -1265,12 +1272,13 @@
     "type": "promo",
     "discount": "",
     "regions": [
-      "us"
+      "us",
+      "de"
     ],
     "min_cart_value": 0,
     "status": "valid",
     "first_seen": "2026-03-27",
-    "last_validated": "2026-03-27T07:39:27.154213+00:00",
+    "last_validated": "2026-03-27T09:53:20.995552+00:00",
     "last_failed": null,
     "fail_count": 0,
     "source": "",
@@ -1588,12 +1596,13 @@
     "type": "promo",
     "discount": "",
     "regions": [
-      "us"
+      "us",
+      "de"
     ],
     "min_cart_value": 0,
     "status": "valid",
     "first_seen": "2026-03-27",
-    "last_validated": "2026-03-27T07:39:27.154213+00:00",
+    "last_validated": "2026-03-27T09:53:20.995552+00:00",
     "last_failed": null,
     "fail_count": 0,
     "source": "",
