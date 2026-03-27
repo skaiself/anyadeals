@@ -201,6 +201,7 @@ export default function IHerbCouponsPage() {
                   <th className="text-left px-6 py-4 text-xs uppercase tracking-widest font-semibold" scope="col">Code</th>
                   <th className="text-left px-6 py-4 text-xs uppercase tracking-widest font-semibold" scope="col">Type</th>
                   <th className="text-left px-6 py-4 text-xs uppercase tracking-widest font-semibold" scope="col">Discount</th>
+                  <th className="text-left px-6 py-4 text-xs uppercase tracking-widest font-semibold" scope="col">Regions</th>
                   <th className="text-left px-6 py-4 text-xs uppercase tracking-widest font-semibold" scope="col">Notes</th>
                   <th className="text-left px-6 py-4 text-xs uppercase tracking-widest font-semibold" scope="col">Status</th>
                 </tr>
@@ -216,6 +217,15 @@ export default function IHerbCouponsPage() {
                     </td>
                     <td className="px-6 py-4 text-ink-muted text-xs uppercase tracking-wider">{coupon.type}</td>
                     <td className="px-6 py-4 font-semibold text-signal">{coupon.discount}</td>
+                    <td className="px-6 py-4">
+                      <div className="flex flex-wrap gap-1">
+                        {coupon.regions.map((r) => (
+                          <span key={r} className="inline-block px-1.5 py-0.5 text-[10px] uppercase tracking-wider font-semibold border border-ink/15 text-ink-muted">
+                            {r}
+                          </span>
+                        ))}
+                      </div>
+                    </td>
                     <td className="px-6 py-4 text-ink-muted">{coupon.notes || '—'}</td>
                     <td className="px-6 py-4">
                       <span className="inline-block px-2.5 py-0.5 text-[10px] uppercase tracking-wider font-semibold bg-ink text-cream">
@@ -244,6 +254,15 @@ export default function IHerbCouponsPage() {
                       </td>
                       <td className="px-6 py-4 text-ink-muted text-xs uppercase tracking-wider">{coupon.type}</td>
                       <td className="px-6 py-4 text-ink-muted">{coupon.discount}</td>
+                      <td className="px-6 py-4">
+                        <div className="flex flex-wrap gap-1">
+                          {coupon.regions.map((r) => (
+                            <span key={r} className="inline-block px-1.5 py-0.5 text-[10px] uppercase tracking-wider font-semibold border border-ink/10 text-ink-muted">
+                              {r}
+                            </span>
+                          ))}
+                        </div>
+                      </td>
                       <td className="px-6 py-4 text-ink-muted">{coupon.notes || '—'}</td>
                       <td className="px-6 py-4">
                         <span className="inline-block px-2.5 py-0.5 text-[10px] uppercase tracking-wider font-semibold bg-ink-muted/20 text-ink-muted">
