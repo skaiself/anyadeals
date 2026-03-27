@@ -19,7 +19,7 @@ from src.results import CouponResult
 
 logger = logging.getLogger("promocheckiherb")
 
-CART_PRODUCT = {"productId": 61864, "quantity": 1}  # Vitamin C ~$5.57
+CART_PRODUCT = {"productId": 61864, "quantity": 20}  # Vitamin C ~$5.57 × 20 ≈ $111
 
 
 async def _curl(proxy_url: str, cookie_file: str, method: str, url: str, data: dict | None = None) -> tuple[int, dict | str]:
@@ -107,12 +107,36 @@ async def validate_coupon(
         if status == 200 and isinstance(data, dict):
             # Valid code — full cart response
             applied_type = data.get("appliedCouponCodeType", 0)
-            discount_raw = data.get("totalDiscountRawAmount", 0)
 
-            discount_amount = str(abs(discount_raw)) if discount_raw else ""
-            discount_type = "percentage" if applied_type == 1 else "fixed" if applied_type == 2 else ""
+            # Try multiple discount fields — iHerb's API isn't consistent
+            discount_raw = (
+                data.get("totalDiscountRawAmount")
+                or data.get("couponDiscountRawAmount")
+                or data.get("totalSavingsRawAmount")
+                or data.get("discountRawAmount")
+                or 0
+            )
 
-            logger.info("[%s/%s] Coupon VALID — type=%s, discount=%s", coupon_code, region_key, applied_type, discount_amount)
+            # For percentage coupons, check couponDiscountPercent
+            discount_pct = data.get("couponDiscountPercent", 0)
+
+            if applied_type == 1 and discount_pct:
+                # Percentage coupon — use the percentage value directly
+                discount_amount = str(abs(discount_pct))
+                discount_type = "percentage"
+            elif discount_raw:
+                discount_amount = str(abs(discount_raw))
+                discount_type = "percentage" if applied_type == 1 else "fixed" if applied_type == 2 else ""
+            else:
+                discount_amount = ""
+                discount_type = "percentage" if applied_type == 1 else "fixed" if applied_type == 2 else ""
+
+            # Log response keys for debugging discount extraction
+            discount_keys = {k: v for k, v in data.items()
+                            if any(w in k.lower() for w in ("discount", "coupon", "saving", "promo"))}
+            logger.info("[%s/%s] Coupon VALID — type=%s, discount=%s, fields=%s",
+                        coupon_code, region_key, applied_type, discount_amount, discount_keys)
+
             return CouponResult(
                 coupon_code=coupon_code, region=region_key, valid="true",
                 discount_amount=discount_amount, discount_type=discount_type, error_message="",

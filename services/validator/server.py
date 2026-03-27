@@ -114,7 +114,7 @@ async def run_validation():
         # Merge into coupons.json
         coupons_path = os.path.join(DATA_DIR, "coupons.json")
         existing = load_coupons_json(coupons_path)
-        merged = merge_results(existing, all_results)
+        merged = merge_results(existing, all_results, research_path=research_path)
         write_coupons_json(merged, coupons_path)
 
         # Update research.json validation statuses

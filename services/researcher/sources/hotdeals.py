@@ -2,6 +2,7 @@
 
 import re
 from sources.base import BaseScraper, logger
+from sources.couponfollow import _strip_html
 
 
 class HotDealsScraper(BaseScraper):
@@ -26,12 +27,13 @@ class HotDealsScraper(BaseScraper):
                 if code in ("HTTP", "HTML", "HEAD", "BODY", "META", "LINK", "NONE", "TRUE", "FALSE", "NULL"):
                     continue
                 seen.add(code)
-                context = block[:200].strip()
+                context = block[:500].strip()
+                description = _strip_html(context)[:200]
                 results.append({
                     "code": code,
                     "source": self.name,
-                    "raw_description": "",
-                    "raw_context": context,
+                    "raw_description": description,
+                    "raw_context": context[:200],
                 })
 
         logger.info("[%s] Found %d potential codes", self.name, len(results))

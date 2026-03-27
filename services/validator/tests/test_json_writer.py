@@ -2,7 +2,7 @@ import json
 import os
 import tempfile
 import pytest
-from json_writer import merge_results, write_coupons_json, load_coupons_json, load_research_codes, update_research_status
+from json_writer import merge_results, write_coupons_json, load_coupons_json, load_research_codes, update_research_status, parse_discount_from_text
 
 def test_new_valid_coupon_added():
     existing = []
@@ -136,3 +136,62 @@ def test_update_research_status_valid_wins_over_error():
 
 def test_update_research_status_missing_file_noop():
     update_research_status("/nonexistent/research.json", [{"coupon_code": "A", "valid": "true"}])
+
+
+# --- parse_discount_from_text tests ---
+
+def test_parse_percentage_discount():
+    assert parse_discount_from_text("25% off your order") == ("25", "percentage")
+
+def test_parse_percentage_no_off():
+    assert parse_discount_from_text("Save 10%") == ("10", "percentage")
+
+def test_parse_fixed_discount():
+    assert parse_discount_from_text("$15 off orders over $50") == ("15", "fixed")
+
+def test_parse_decimal_percentage():
+    assert parse_discount_from_text("22.5% discount") == ("22.5", "percentage")
+
+def test_parse_no_discount():
+    assert parse_discount_from_text("Free shipping on all orders") == ("", "")
+
+def test_parse_empty_string():
+    assert parse_discount_from_text("") == ("", "")
+
+def test_parse_none():
+    assert parse_discount_from_text(None) == ("", "")
+
+def test_parse_percentage_preferred_over_fixed():
+    """When both patterns present, percentage match (earlier in text) wins."""
+    assert parse_discount_from_text("20% off, save $10") == ("20", "percentage")
+
+
+# --- merge_results with research fallback tests ---
+
+def test_merge_uses_api_discount_when_available():
+    results = [{"coupon_code": "X", "region": "us", "valid": "true", "discount_amount": "15", "discount_type": "percentage"}]
+    merged = merge_results([], results)
+    assert merged[0]["discount"] == "15% off"
+
+def test_merge_falls_back_to_research_text():
+    with tempfile.TemporaryDirectory() as tmpdir:
+        rpath = os.path.join(tmpdir, "research.json")
+        with open(rpath, "w") as f:
+            json.dump([{"code": "SAVE20", "raw_description": "20% off sitewide", "raw_context": ""}], f)
+        results = [{"coupon_code": "SAVE20", "region": "us", "valid": "true", "discount_amount": "", "discount_type": ""}]
+        merged = merge_results([], results, research_path=rpath)
+        assert merged[0]["discount"] == "20% off"
+
+def test_merge_no_research_no_crash():
+    results = [{"coupon_code": "X", "region": "us", "valid": "true", "discount_amount": "", "discount_type": ""}]
+    merged = merge_results([], results, research_path=None)
+    assert merged[0]["discount"] == ""
+
+def test_merge_research_fills_source():
+    with tempfile.TemporaryDirectory() as tmpdir:
+        rpath = os.path.join(tmpdir, "research.json")
+        with open(rpath, "w") as f:
+            json.dump([{"code": "X", "source": "reddit/r/iherb", "raw_description": "", "raw_context": ""}], f)
+        results = [{"coupon_code": "X", "region": "us", "valid": "true", "discount_amount": "10", "discount_type": "fixed"}]
+        merged = merge_results([], results, research_path=rpath)
+        assert merged[0]["source"] == "reddit/r/iherb"

@@ -1,17 +1,59 @@
 import json
 import os
+import re
 from datetime import datetime, timezone
 
 
-def merge_results(existing: list[dict], results: list[dict]) -> list[dict]:
-    """Merge CSV-style validation results into existing coupons.json data."""
+def parse_discount_from_text(text: str) -> tuple[str, str]:
+    """Extract discount amount and type from descriptive text.
+
+    Returns (amount, type) where type is "percentage" or "fixed".
+    Returns ("", "") if no discount found.
+    """
+    if not text:
+        return "", ""
+    # Match patterns like "25% off", "25 percent", "25%"
+    pct_match = re.search(r'(\d+(?:\.\d+)?)\s*%\s*(?:off|discount)?', text, re.IGNORECASE)
+    if pct_match:
+        return pct_match.group(1), "percentage"
+    # Match patterns like "$10 off", "$10 discount", "10 dollars off"
+    fixed_match = re.search(r'\$\s*(\d+(?:\.\d+)?)\s*(?:off|discount)?', text, re.IGNORECASE)
+    if fixed_match:
+        return fixed_match.group(1), "fixed"
+    return "", ""
+
+
+def merge_results(existing: list[dict], results: list[dict],
+                  research_path: str | None = None) -> list[dict]:
+    """Merge CSV-style validation results into existing coupons.json data.
+
+    If research_path is provided and a coupon has no discount from the API,
+    falls back to parsing discount from the research entry's description/context.
+    """
     now = datetime.now(timezone.utc).isoformat()
     coupon_map = {c["code"]: dict(c) for c in existing}
+
+    # Load research data for fallback discount parsing
+    research_by_code = {}
+    if research_path and os.path.exists(research_path):
+        with open(research_path) as f:
+            for entry in json.load(f):
+                research_by_code[entry["code"]] = entry
 
     for r in results:
         code = r["coupon_code"]
         region = r["region"]
         is_valid = r["valid"] == "true"
+
+        # Resolve discount: API first, then research text fallback
+        amt = r.get("discount_amount", "")
+        typ = r.get("discount_type", "")
+        if not amt and code in research_by_code:
+            re_entry = research_by_code[code]
+            text = f"{re_entry.get('raw_description', '')} {re_entry.get('raw_context', '')}"
+            amt, typ = parse_discount_from_text(text)
+            if not typ and r.get("discount_type"):
+                typ = r["discount_type"]
 
         if code in coupon_map:
             entry = coupon_map[code]
@@ -22,9 +64,7 @@ def merge_results(existing: list[dict], results: list[dict]) -> list[dict]:
                 entry["last_failed"] = None
                 if region not in entry.get("regions", []):
                     entry.setdefault("regions", []).append(region)
-                if r.get("discount_amount") and r.get("discount_type"):
-                    amt = r["discount_amount"]
-                    typ = r["discount_type"]
+                if amt and typ:
                     entry["discount"] = f"{amt}% off" if typ == "percentage" else f"${amt} off"
             else:
                 entry["fail_count"] = entry.get("fail_count", 0) + 1
@@ -32,9 +72,8 @@ def merge_results(existing: list[dict], results: list[dict]) -> list[dict]:
                 if entry["fail_count"] >= 3:
                     entry["status"] = "expired"
         else:
-            is_pct = r.get("discount_type") == "percentage"
-            amt = r.get("discount_amount", "")
-            discount = f"{amt}% off" if is_pct and amt else f"${amt} off" if amt else ""
+            discount = f"{amt}% off" if typ == "percentage" and amt else f"${amt} off" if amt else ""
+            source = research_by_code.get(code, {}).get("source", "")
             new_entry = {
                 "code": code,
                 "type": "promo",
@@ -46,7 +85,7 @@ def merge_results(existing: list[dict], results: list[dict]) -> list[dict]:
                 "last_validated": now if is_valid else "",
                 "last_failed": now if not is_valid else None,
                 "fail_count": 0 if is_valid else 1,
-                "source": "",
+                "source": source,
                 "stackable_with_referral": False,
                 "notes": "",
             }
