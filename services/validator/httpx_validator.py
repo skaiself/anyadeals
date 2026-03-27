@@ -21,6 +21,9 @@ logger = logging.getLogger("promocheckiherb")
 
 CART_PRODUCT = {"productId": 61864, "quantity": 20}  # Vitamin C ~$5.57 × 20 ≈ $111
 
+# Our affiliate code — the only referral code we accept
+AFFILIATE_CODE = "OFR0296"
+
 
 async def _curl(proxy_url: str, cookie_file: str, method: str, url: str, data: dict | None = None) -> tuple[int, dict | str]:
     """Run a curl request through the unblocker proxy with cookie persistence."""
@@ -107,6 +110,14 @@ async def validate_coupon(
         if status == 200 and isinstance(data, dict):
             # Valid code — full cart response
             applied_type = data.get("appliedCouponCodeType", 0)
+
+            # Type 2 = referral/rewards code — reject unless it's our affiliate code
+            if applied_type == 2 and coupon_code.upper() != AFFILIATE_CODE:
+                logger.info("[%s/%s] Coupon is a REFERRAL code (type=2), rejecting", coupon_code, region_key)
+                return CouponResult(
+                    coupon_code=coupon_code, region=region_key, valid="false",
+                    discount_amount="", discount_type="", error_message="Referral code (not promo)",
+                )
 
             # Try multiple discount fields — iHerb's API isn't consistent
             discount_raw = (

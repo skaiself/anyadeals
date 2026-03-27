@@ -113,14 +113,14 @@
       "de"
     ],
     "min_cart_value": 0,
-    "status": "valid",
+    "status": "invalid",
     "first_seen": "2026-03-27",
     "last_validated": "2026-03-27T10:24:37.622353+00:00",
     "last_failed": null,
     "fail_count": 0,
     "source": "",
     "stackable_with_referral": false,
-    "notes": "Referral/rewards code"
+    "notes": "Referral code \u2014 competes with OFR0296"
   },
   {
     "code": "C5734282",
