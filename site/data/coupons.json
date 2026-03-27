@@ -30,8 +30,8 @@
     "status": "valid",
     "first_seen": "2026-03-15",
     "last_validated": "2026-03-23T20:41:54.201975+00:00",
-    "last_failed": null,
-    "fail_count": 0,
+    "last_failed": "2026-03-27T07:39:27.154213+00:00",
+    "fail_count": 2,
     "source": "hotdeals.com",
     "stackable_with_referral": true,
     "notes": "Best for large orders"
@@ -52,5 +52,1586 @@
     "source": "promo-herb.com",
     "stackable_with_referral": false,
     "notes": "No longer valid"
+  },
+  {
+    "code": "EXAMPLE10",
+    "type": "promo",
+    "discount": "",
+    "regions": [
+      "us"
+    ],
+    "min_cart_value": 0,
+    "status": "expired",
+    "first_seen": "2026-03-27",
+    "last_validated": "",
+    "last_failed": "2026-03-27T06:30:41.546612+00:00",
+    "fail_count": 6,
+    "source": "",
+    "stackable_with_referral": false,
+    "notes": ""
+  },
+  {
+    "code": "REGIONCODE",
+    "type": "promo",
+    "discount": "",
+    "regions": [
+      "us"
+    ],
+    "min_cart_value": 0,
+    "status": "expired",
+    "first_seen": "2026-03-27",
+    "last_validated": "",
+    "last_failed": "2026-03-27T06:30:41.546612+00:00",
+    "fail_count": 3,
+    "source": "",
+    "stackable_with_referral": false,
+    "notes": ""
+  },
+  {
+    "code": "DOCTYPE",
+    "type": "promo",
+    "discount": "",
+    "regions": [
+      "us"
+    ],
+    "min_cart_value": 0,
+    "status": "invalid",
+    "first_seen": "2026-03-27",
+    "last_validated": "",
+    "last_failed": "2026-03-27T07:39:27.154213+00:00",
+    "fail_count": 2,
+    "source": "",
+    "stackable_with_referral": false,
+    "notes": ""
+  },
+  {
+    "code": "JFF855",
+    "type": "promo",
+    "discount": "",
+    "regions": [
+      "us"
+    ],
+    "min_cart_value": 0,
+    "status": "valid",
+    "first_seen": "2026-03-27",
+    "last_validated": "2026-03-27T07:39:27.154213+00:00",
+    "last_failed": null,
+    "fail_count": 0,
+    "source": "",
+    "stackable_with_referral": false,
+    "notes": ""
+  },
+  {
+    "code": "C5734282",
+    "type": "promo",
+    "discount": "",
+    "regions": [
+      "us"
+    ],
+    "min_cart_value": 0,
+    "status": "invalid",
+    "first_seen": "2026-03-27",
+    "last_validated": "",
+    "last_failed": "2026-03-27T07:39:27.154213+00:00",
+    "fail_count": 2,
+    "source": "",
+    "stackable_with_referral": false,
+    "notes": ""
+  },
+  {
+    "code": "CODE",
+    "type": "promo",
+    "discount": "",
+    "regions": [
+      "us"
+    ],
+    "min_cart_value": 0,
+    "status": "invalid",
+    "first_seen": "2026-03-27",
+    "last_validated": "",
+    "last_failed": "2026-03-27T07:39:27.154213+00:00",
+    "fail_count": 2,
+    "source": "",
+    "stackable_with_referral": false,
+    "notes": ""
+  },
+  {
+    "code": "C6048649",
+    "type": "promo",
+    "discount": "",
+    "regions": [
+      "us"
+    ],
+    "min_cart_value": 0,
+    "status": "invalid",
+    "first_seen": "2026-03-27",
+    "last_validated": "",
+    "last_failed": "2026-03-27T07:39:27.154213+00:00",
+    "fail_count": 2,
+    "source": "",
+    "stackable_with_referral": false,
+    "notes": ""
+  },
+  {
+    "code": "C5254352",
+    "type": "promo",
+    "discount": "",
+    "regions": [
+      "us"
+    ],
+    "min_cart_value": 0,
+    "status": "invalid",
+    "first_seen": "2026-03-27",
+    "last_validated": "",
+    "last_failed": "2026-03-27T07:39:27.154213+00:00",
+    "fail_count": 2,
+    "source": "",
+    "stackable_with_referral": false,
+    "notes": ""
+  },
+  {
+    "code": "C6466135",
+    "type": "promo",
+    "discount": "",
+    "regions": [
+      "us"
+    ],
+    "min_cart_value": 0,
+    "status": "invalid",
+    "first_seen": "2026-03-27",
+    "last_validated": "",
+    "last_failed": "2026-03-27T07:39:27.154213+00:00",
+    "fail_count": 2,
+    "source": "",
+    "stackable_with_referral": false,
+    "notes": ""
+  },
+  {
+    "code": "C6482177",
+    "type": "promo",
+    "discount": "",
+    "regions": [
+      "us"
+    ],
+    "min_cart_value": 0,
+    "status": "invalid",
+    "first_seen": "2026-03-27",
+    "last_validated": "",
+    "last_failed": "2026-03-27T07:39:27.154213+00:00",
+    "fail_count": 2,
+    "source": "",
+    "stackable_with_referral": false,
+    "notes": ""
+  },
+  {
+    "code": "C5303494",
+    "type": "promo",
+    "discount": "",
+    "regions": [
+      "us"
+    ],
+    "min_cart_value": 0,
+    "status": "invalid",
+    "first_seen": "2026-03-27",
+    "last_validated": "",
+    "last_failed": "2026-03-27T07:39:27.154213+00:00",
+    "fail_count": 2,
+    "source": "",
+    "stackable_with_referral": false,
+    "notes": ""
+  },
+  {
+    "code": "C5989272",
+    "type": "promo",
+    "discount": "",
+    "regions": [
+      "us"
+    ],
+    "min_cart_value": 0,
+    "status": "invalid",
+    "first_seen": "2026-03-27",
+    "last_validated": "",
+    "last_failed": "2026-03-27T07:39:27.154213+00:00",
+    "fail_count": 2,
+    "source": "",
+    "stackable_with_referral": false,
+    "notes": ""
+  },
+  {
+    "code": "P757804",
+    "type": "promo",
+    "discount": "",
+    "regions": [
+      "us"
+    ],
+    "min_cart_value": 0,
+    "status": "invalid",
+    "first_seen": "2026-03-27",
+    "last_validated": "",
+    "last_failed": "2026-03-27T07:39:27.154213+00:00",
+    "fail_count": 2,
+    "source": "",
+    "stackable_with_referral": false,
+    "notes": ""
+  },
+  {
+    "code": "PROMO",
+    "type": "promo",
+    "discount": "",
+    "regions": [
+      "us"
+    ],
+    "min_cart_value": 0,
+    "status": "invalid",
+    "first_seen": "2026-03-27",
+    "last_validated": "",
+    "last_failed": "2026-03-27T07:39:27.154213+00:00",
+    "fail_count": 2,
+    "source": "",
+    "stackable_with_referral": false,
+    "notes": ""
+  },
+  {
+    "code": "C6395292",
+    "type": "promo",
+    "discount": "",
+    "regions": [
+      "us"
+    ],
+    "min_cart_value": 0,
+    "status": "invalid",
+    "first_seen": "2026-03-27",
+    "last_validated": "",
+    "last_failed": "2026-03-27T07:39:27.154213+00:00",
+    "fail_count": 2,
+    "source": "",
+    "stackable_with_referral": false,
+    "notes": ""
+  },
+  {
+    "code": "C6396087",
+    "type": "promo",
+    "discount": "",
+    "regions": [
+      "us"
+    ],
+    "min_cart_value": 0,
+    "status": "invalid",
+    "first_seen": "2026-03-27",
+    "last_validated": "",
+    "last_failed": "2026-03-27T07:39:27.154213+00:00",
+    "fail_count": 2,
+    "source": "",
+    "stackable_with_referral": false,
+    "notes": ""
+  },
+  {
+    "code": "C6405792",
+    "type": "promo",
+    "discount": "",
+    "regions": [
+      "us"
+    ],
+    "min_cart_value": 0,
+    "status": "invalid",
+    "first_seen": "2026-03-27",
+    "last_validated": "",
+    "last_failed": "2026-03-27T07:39:27.154213+00:00",
+    "fail_count": 2,
+    "source": "",
+    "stackable_with_referral": false,
+    "notes": ""
+  },
+  {
+    "code": "P754433",
+    "type": "promo",
+    "discount": "",
+    "regions": [
+      "us"
+    ],
+    "min_cart_value": 0,
+    "status": "invalid",
+    "first_seen": "2026-03-27",
+    "last_validated": "",
+    "last_failed": "2026-03-27T07:39:27.154213+00:00",
+    "fail_count": 2,
+    "source": "",
+    "stackable_with_referral": false,
+    "notes": ""
+  },
+  {
+    "code": "P726975",
+    "type": "promo",
+    "discount": "",
+    "regions": [
+      "us"
+    ],
+    "min_cart_value": 0,
+    "status": "invalid",
+    "first_seen": "2026-03-27",
+    "last_validated": "",
+    "last_failed": "2026-03-27T07:39:27.154213+00:00",
+    "fail_count": 2,
+    "source": "",
+    "stackable_with_referral": false,
+    "notes": ""
+  },
+  {
+    "code": "C5241680",
+    "type": "promo",
+    "discount": "",
+    "regions": [
+      "us"
+    ],
+    "min_cart_value": 0,
+    "status": "invalid",
+    "first_seen": "2026-03-27",
+    "last_validated": "",
+    "last_failed": "2026-03-27T07:39:27.154213+00:00",
+    "fail_count": 2,
+    "source": "",
+    "stackable_with_referral": false,
+    "notes": ""
+  },
+  {
+    "code": "C5813741",
+    "type": "promo",
+    "discount": "",
+    "regions": [
+      "us"
+    ],
+    "min_cart_value": 0,
+    "status": "invalid",
+    "first_seen": "2026-03-27",
+    "last_validated": "",
+    "last_failed": "2026-03-27T07:39:27.154213+00:00",
+    "fail_count": 2,
+    "source": "",
+    "stackable_with_referral": false,
+    "notes": ""
+  },
+  {
+    "code": "P725337",
+    "type": "promo",
+    "discount": "",
+    "regions": [
+      "us"
+    ],
+    "min_cart_value": 0,
+    "status": "invalid",
+    "first_seen": "2026-03-27",
+    "last_validated": "",
+    "last_failed": "2026-03-27T07:39:27.154213+00:00",
+    "fail_count": 2,
+    "source": "",
+    "stackable_with_referral": false,
+    "notes": ""
+  },
+  {
+    "code": "P756677",
+    "type": "promo",
+    "discount": "",
+    "regions": [
+      "us"
+    ],
+    "min_cart_value": 0,
+    "status": "invalid",
+    "first_seen": "2026-03-27",
+    "last_validated": "",
+    "last_failed": "2026-03-27T07:39:27.154213+00:00",
+    "fail_count": 2,
+    "source": "",
+    "stackable_with_referral": false,
+    "notes": ""
+  },
+  {
+    "code": "WITH",
+    "type": "promo",
+    "discount": "",
+    "regions": [
+      "us"
+    ],
+    "min_cart_value": 0,
+    "status": "invalid",
+    "first_seen": "2026-03-27",
+    "last_validated": "",
+    "last_failed": "2026-03-27T07:39:27.154213+00:00",
+    "fail_count": 2,
+    "source": "",
+    "stackable_with_referral": false,
+    "notes": ""
+  },
+  {
+    "code": "P756669",
+    "type": "promo",
+    "discount": "",
+    "regions": [
+      "us"
+    ],
+    "min_cart_value": 0,
+    "status": "invalid",
+    "first_seen": "2026-03-27",
+    "last_validated": "",
+    "last_failed": "2026-03-27T07:39:27.154213+00:00",
+    "fail_count": 2,
+    "source": "",
+    "stackable_with_referral": false,
+    "notes": ""
+  },
+  {
+    "code": "P753573",
+    "type": "promo",
+    "discount": "",
+    "regions": [
+      "us"
+    ],
+    "min_cart_value": 0,
+    "status": "invalid",
+    "first_seen": "2026-03-27",
+    "last_validated": "",
+    "last_failed": "2026-03-27T07:39:27.154213+00:00",
+    "fail_count": 2,
+    "source": "",
+    "stackable_with_referral": false,
+    "notes": ""
+  },
+  {
+    "code": "FREE",
+    "type": "promo",
+    "discount": "",
+    "regions": [
+      "us"
+    ],
+    "min_cart_value": 0,
+    "status": "invalid",
+    "first_seen": "2026-03-27",
+    "last_validated": "",
+    "last_failed": "2026-03-27T07:39:27.154213+00:00",
+    "fail_count": 2,
+    "source": "",
+    "stackable_with_referral": false,
+    "notes": ""
+  },
+  {
+    "code": "SHIPPING",
+    "type": "promo",
+    "discount": "",
+    "regions": [
+      "us"
+    ],
+    "min_cart_value": 0,
+    "status": "invalid",
+    "first_seen": "2026-03-27",
+    "last_validated": "",
+    "last_failed": "2026-03-27T07:39:27.154213+00:00",
+    "fail_count": 2,
+    "source": "",
+    "stackable_with_referral": false,
+    "notes": ""
+  },
+  {
+    "code": "P752607",
+    "type": "promo",
+    "discount": "",
+    "regions": [
+      "us"
+    ],
+    "min_cart_value": 0,
+    "status": "invalid",
+    "first_seen": "2026-03-27",
+    "last_validated": "",
+    "last_failed": "2026-03-27T07:39:27.154213+00:00",
+    "fail_count": 2,
+    "source": "",
+    "stackable_with_referral": false,
+    "notes": ""
+  },
+  {
+    "code": "P752149",
+    "type": "promo",
+    "discount": "",
+    "regions": [
+      "us"
+    ],
+    "min_cart_value": 0,
+    "status": "invalid",
+    "first_seen": "2026-03-27",
+    "last_validated": "",
+    "last_failed": "2026-03-27T07:39:27.154213+00:00",
+    "fail_count": 2,
+    "source": "",
+    "stackable_with_referral": false,
+    "notes": ""
+  },
+  {
+    "code": "P752148",
+    "type": "promo",
+    "discount": "",
+    "regions": [
+      "us"
+    ],
+    "min_cart_value": 0,
+    "status": "invalid",
+    "first_seen": "2026-03-27",
+    "last_validated": "",
+    "last_failed": "2026-03-27T07:39:27.154213+00:00",
+    "fail_count": 2,
+    "source": "",
+    "stackable_with_referral": false,
+    "notes": ""
+  },
+  {
+    "code": "P751315",
+    "type": "promo",
+    "discount": "",
+    "regions": [
+      "us"
+    ],
+    "min_cart_value": 0,
+    "status": "invalid",
+    "first_seen": "2026-03-27",
+    "last_validated": "",
+    "last_failed": "2026-03-27T07:39:27.154213+00:00",
+    "fail_count": 2,
+    "source": "",
+    "stackable_with_referral": false,
+    "notes": ""
+  },
+  {
+    "code": "P749288",
+    "type": "promo",
+    "discount": "",
+    "regions": [
+      "us"
+    ],
+    "min_cart_value": 0,
+    "status": "invalid",
+    "first_seen": "2026-03-27",
+    "last_validated": "",
+    "last_failed": "2026-03-27T07:39:27.154213+00:00",
+    "fail_count": 2,
+    "source": "",
+    "stackable_with_referral": false,
+    "notes": ""
+  },
+  {
+    "code": "P747569",
+    "type": "promo",
+    "discount": "",
+    "regions": [
+      "us"
+    ],
+    "min_cart_value": 0,
+    "status": "invalid",
+    "first_seen": "2026-03-27",
+    "last_validated": "",
+    "last_failed": "2026-03-27T07:39:27.154213+00:00",
+    "fail_count": 2,
+    "source": "",
+    "stackable_with_referral": false,
+    "notes": ""
+  },
+  {
+    "code": "P747099",
+    "type": "promo",
+    "discount": "",
+    "regions": [
+      "us"
+    ],
+    "min_cart_value": 0,
+    "status": "invalid",
+    "first_seen": "2026-03-27",
+    "last_validated": "",
+    "last_failed": "2026-03-27T07:39:27.154213+00:00",
+    "fail_count": 2,
+    "source": "",
+    "stackable_with_referral": false,
+    "notes": ""
+  },
+  {
+    "code": "P746530",
+    "type": "promo",
+    "discount": "",
+    "regions": [
+      "us"
+    ],
+    "min_cart_value": 0,
+    "status": "invalid",
+    "first_seen": "2026-03-27",
+    "last_validated": "",
+    "last_failed": "2026-03-27T07:39:27.154213+00:00",
+    "fail_count": 2,
+    "source": "",
+    "stackable_with_referral": false,
+    "notes": ""
+  },
+  {
+    "code": "P746133",
+    "type": "promo",
+    "discount": "",
+    "regions": [
+      "us"
+    ],
+    "min_cart_value": 0,
+    "status": "invalid",
+    "first_seen": "2026-03-27",
+    "last_validated": "",
+    "last_failed": "2026-03-27T07:39:27.154213+00:00",
+    "fail_count": 2,
+    "source": "",
+    "stackable_with_referral": false,
+    "notes": ""
+  },
+  {
+    "code": "SAVE",
+    "type": "promo",
+    "discount": "",
+    "regions": [
+      "us"
+    ],
+    "min_cart_value": 0,
+    "status": "invalid",
+    "first_seen": "2026-03-27",
+    "last_validated": "",
+    "last_failed": "2026-03-27T07:39:27.154213+00:00",
+    "fail_count": 2,
+    "source": "",
+    "stackable_with_referral": false,
+    "notes": ""
+  },
+  {
+    "code": "P733097",
+    "type": "promo",
+    "discount": "",
+    "regions": [
+      "us"
+    ],
+    "min_cart_value": 0,
+    "status": "invalid",
+    "first_seen": "2026-03-27",
+    "last_validated": "",
+    "last_failed": "2026-03-27T07:39:27.154213+00:00",
+    "fail_count": 2,
+    "source": "",
+    "stackable_with_referral": false,
+    "notes": ""
+  },
+  {
+    "code": "P727872",
+    "type": "promo",
+    "discount": "",
+    "regions": [
+      "us"
+    ],
+    "min_cart_value": 0,
+    "status": "invalid",
+    "first_seen": "2026-03-27",
+    "last_validated": "",
+    "last_failed": "2026-03-27T07:39:27.154213+00:00",
+    "fail_count": 2,
+    "source": "",
+    "stackable_with_referral": false,
+    "notes": ""
+  },
+  {
+    "code": "P727871",
+    "type": "promo",
+    "discount": "",
+    "regions": [
+      "us"
+    ],
+    "min_cart_value": 0,
+    "status": "invalid",
+    "first_seen": "2026-03-27",
+    "last_validated": "",
+    "last_failed": "2026-03-27T07:39:27.154213+00:00",
+    "fail_count": 2,
+    "source": "",
+    "stackable_with_referral": false,
+    "notes": ""
+  },
+  {
+    "code": "P724670",
+    "type": "promo",
+    "discount": "",
+    "regions": [
+      "us"
+    ],
+    "min_cart_value": 0,
+    "status": "invalid",
+    "first_seen": "2026-03-27",
+    "last_validated": "",
+    "last_failed": "2026-03-27T07:39:27.154213+00:00",
+    "fail_count": 2,
+    "source": "",
+    "stackable_with_referral": false,
+    "notes": ""
+  },
+  {
+    "code": "C6439140",
+    "type": "promo",
+    "discount": "",
+    "regions": [
+      "us"
+    ],
+    "min_cart_value": 0,
+    "status": "invalid",
+    "first_seen": "2026-03-27",
+    "last_validated": "",
+    "last_failed": "2026-03-27T07:39:27.154213+00:00",
+    "fail_count": 2,
+    "source": "",
+    "stackable_with_referral": false,
+    "notes": ""
+  },
+  {
+    "code": "C6436573",
+    "type": "promo",
+    "discount": "",
+    "regions": [
+      "us"
+    ],
+    "min_cart_value": 0,
+    "status": "invalid",
+    "first_seen": "2026-03-27",
+    "last_validated": "",
+    "last_failed": "2026-03-27T07:39:27.154213+00:00",
+    "fail_count": 2,
+    "source": "",
+    "stackable_with_referral": false,
+    "notes": ""
+  },
+  {
+    "code": "C5827968",
+    "type": "promo",
+    "discount": "",
+    "regions": [
+      "us"
+    ],
+    "min_cart_value": 0,
+    "status": "invalid",
+    "first_seen": "2026-03-27",
+    "last_validated": "",
+    "last_failed": "2026-03-27T07:39:27.154213+00:00",
+    "fail_count": 2,
+    "source": "",
+    "stackable_with_referral": false,
+    "notes": ""
+  },
+  {
+    "code": "C6427392",
+    "type": "promo",
+    "discount": "",
+    "regions": [
+      "us"
+    ],
+    "min_cart_value": 0,
+    "status": "invalid",
+    "first_seen": "2026-03-27",
+    "last_validated": "",
+    "last_failed": "2026-03-27T07:39:27.154213+00:00",
+    "fail_count": 2,
+    "source": "",
+    "stackable_with_referral": false,
+    "notes": ""
+  },
+  {
+    "code": "C5867555",
+    "type": "promo",
+    "discount": "",
+    "regions": [
+      "us"
+    ],
+    "min_cart_value": 0,
+    "status": "invalid",
+    "first_seen": "2026-03-27",
+    "last_validated": "",
+    "last_failed": "2026-03-27T07:39:27.154213+00:00",
+    "fail_count": 2,
+    "source": "",
+    "stackable_with_referral": false,
+    "notes": ""
+  },
+  {
+    "code": "C6377792",
+    "type": "promo",
+    "discount": "",
+    "regions": [
+      "us"
+    ],
+    "min_cart_value": 0,
+    "status": "invalid",
+    "first_seen": "2026-03-27",
+    "last_validated": "",
+    "last_failed": "2026-03-27T07:39:27.154213+00:00",
+    "fail_count": 2,
+    "source": "",
+    "stackable_with_referral": false,
+    "notes": ""
+  },
+  {
+    "code": "C5691654",
+    "type": "promo",
+    "discount": "",
+    "regions": [
+      "us"
+    ],
+    "min_cart_value": 0,
+    "status": "invalid",
+    "first_seen": "2026-03-27",
+    "last_validated": "",
+    "last_failed": "2026-03-27T07:39:27.154213+00:00",
+    "fail_count": 2,
+    "source": "",
+    "stackable_with_referral": false,
+    "notes": ""
+  },
+  {
+    "code": "C6367724",
+    "type": "promo",
+    "discount": "",
+    "regions": [
+      "us"
+    ],
+    "min_cart_value": 0,
+    "status": "invalid",
+    "first_seen": "2026-03-27",
+    "last_validated": "",
+    "last_failed": "2026-03-27T07:39:27.154213+00:00",
+    "fail_count": 2,
+    "source": "",
+    "stackable_with_referral": false,
+    "notes": ""
+  },
+  {
+    "code": "C5971049",
+    "type": "promo",
+    "discount": "",
+    "regions": [
+      "us"
+    ],
+    "min_cart_value": 0,
+    "status": "invalid",
+    "first_seen": "2026-03-27",
+    "last_validated": "",
+    "last_failed": "2026-03-27T07:39:27.154213+00:00",
+    "fail_count": 2,
+    "source": "",
+    "stackable_with_referral": false,
+    "notes": ""
+  },
+  {
+    "code": "DRIM",
+    "type": "promo",
+    "discount": "",
+    "regions": [
+      "us"
+    ],
+    "min_cart_value": 0,
+    "status": "valid",
+    "first_seen": "2026-03-27",
+    "last_validated": "2026-03-27T07:39:27.154213+00:00",
+    "last_failed": null,
+    "fail_count": 0,
+    "source": "",
+    "stackable_with_referral": false,
+    "notes": ""
+  },
+  {
+    "code": "MAR26ANTI",
+    "type": "promo",
+    "discount": "",
+    "regions": [
+      "us"
+    ],
+    "min_cart_value": 0,
+    "status": "valid",
+    "first_seen": "2026-03-27",
+    "last_validated": "2026-03-27T07:39:27.154213+00:00",
+    "last_failed": null,
+    "fail_count": 0,
+    "source": "",
+    "stackable_with_referral": false,
+    "notes": ""
+  },
+  {
+    "code": "M944",
+    "type": "promo",
+    "discount": "",
+    "regions": [
+      "us"
+    ],
+    "min_cart_value": 0,
+    "status": "invalid",
+    "first_seen": "2026-03-27",
+    "last_validated": "",
+    "last_failed": "2026-03-27T07:39:27.154213+00:00",
+    "fail_count": 2,
+    "source": "",
+    "stackable_with_referral": false,
+    "notes": ""
+  },
+  {
+    "code": "M512",
+    "type": "promo",
+    "discount": "",
+    "regions": [
+      "us"
+    ],
+    "min_cart_value": 0,
+    "status": "invalid",
+    "first_seen": "2026-03-27",
+    "last_validated": "",
+    "last_failed": "2026-03-27T07:39:27.154213+00:00",
+    "fail_count": 2,
+    "source": "",
+    "stackable_with_referral": false,
+    "notes": ""
+  },
+  {
+    "code": "DRJAMES",
+    "type": "promo",
+    "discount": "",
+    "regions": [
+      "us"
+    ],
+    "min_cart_value": 0,
+    "status": "invalid",
+    "first_seen": "2026-03-27",
+    "last_validated": "",
+    "last_failed": "2026-03-27T07:39:27.154213+00:00",
+    "fail_count": 2,
+    "source": "",
+    "stackable_with_referral": false,
+    "notes": ""
+  },
+  {
+    "code": "JJYOSH",
+    "type": "promo",
+    "discount": "",
+    "regions": [
+      "us"
+    ],
+    "min_cart_value": 0,
+    "status": "invalid",
+    "first_seen": "2026-03-27",
+    "last_validated": "",
+    "last_failed": "2026-03-27T07:39:27.154213+00:00",
+    "fail_count": 2,
+    "source": "",
+    "stackable_with_referral": false,
+    "notes": ""
+  },
+  {
+    "code": "MYAPP15",
+    "type": "promo",
+    "discount": "",
+    "regions": [
+      "us"
+    ],
+    "min_cart_value": 0,
+    "status": "invalid",
+    "first_seen": "2026-03-27",
+    "last_validated": "",
+    "last_failed": "2026-03-27T07:39:27.154213+00:00",
+    "fail_count": 2,
+    "source": "",
+    "stackable_with_referral": false,
+    "notes": ""
+  },
+  {
+    "code": "GOLD120",
+    "type": "promo",
+    "discount": "",
+    "regions": [
+      "us"
+    ],
+    "min_cart_value": 0,
+    "status": "invalid",
+    "first_seen": "2026-03-27",
+    "last_validated": "",
+    "last_failed": "2026-03-27T07:39:27.154213+00:00",
+    "fail_count": 2,
+    "source": "",
+    "stackable_with_referral": false,
+    "notes": ""
+  },
+  {
+    "code": "THEDAILYBEAST",
+    "type": "promo",
+    "discount": "",
+    "regions": [
+      "us"
+    ],
+    "min_cart_value": 0,
+    "status": "valid",
+    "first_seen": "2026-03-27",
+    "last_validated": "2026-03-27T07:39:27.154213+00:00",
+    "last_failed": null,
+    "fail_count": 0,
+    "source": "",
+    "stackable_with_referral": false,
+    "notes": ""
+  },
+  {
+    "code": "DRHEALTH",
+    "type": "promo",
+    "discount": "",
+    "regions": [
+      "us"
+    ],
+    "min_cart_value": 0,
+    "status": "valid",
+    "first_seen": "2026-03-27",
+    "last_validated": "2026-03-27T07:39:27.154213+00:00",
+    "last_failed": null,
+    "fail_count": 0,
+    "source": "",
+    "stackable_with_referral": false,
+    "notes": ""
+  },
+  {
+    "code": "DEAL",
+    "type": "promo",
+    "discount": "",
+    "regions": [
+      "us"
+    ],
+    "min_cart_value": 0,
+    "status": "invalid",
+    "first_seen": "2026-03-27",
+    "last_validated": "",
+    "last_failed": "2026-03-27T07:39:27.154213+00:00",
+    "fail_count": 2,
+    "source": "",
+    "stackable_with_referral": false,
+    "notes": ""
+  },
+  {
+    "code": "BOGO",
+    "type": "promo",
+    "discount": "",
+    "regions": [
+      "us"
+    ],
+    "min_cart_value": 0,
+    "status": "invalid",
+    "first_seen": "2026-03-27",
+    "last_validated": "",
+    "last_failed": "2026-03-27T07:39:27.154213+00:00",
+    "fail_count": 2,
+    "source": "",
+    "stackable_with_referral": false,
+    "notes": ""
+  },
+  {
+    "code": "EUAPP20",
+    "type": "promo",
+    "discount": "",
+    "regions": [
+      "us"
+    ],
+    "min_cart_value": 0,
+    "status": "invalid",
+    "first_seen": "2026-03-27",
+    "last_validated": "",
+    "last_failed": "2026-03-27T07:39:27.154213+00:00",
+    "fail_count": 2,
+    "source": "",
+    "stackable_with_referral": false,
+    "notes": ""
+  },
+  {
+    "code": "UKCOL15",
+    "type": "promo",
+    "discount": "",
+    "regions": [
+      "us"
+    ],
+    "min_cart_value": 0,
+    "status": "valid",
+    "first_seen": "2026-03-27",
+    "last_validated": "2026-03-27T07:39:27.154213+00:00",
+    "last_failed": null,
+    "fail_count": 0,
+    "source": "",
+    "stackable_with_referral": false,
+    "notes": ""
+  },
+  {
+    "code": "NEW20",
+    "type": "promo",
+    "discount": "",
+    "regions": [
+      "us"
+    ],
+    "min_cart_value": 0,
+    "status": "valid",
+    "first_seen": "2026-03-27",
+    "last_validated": "2026-03-27T07:39:27.154213+00:00",
+    "last_failed": null,
+    "fail_count": 0,
+    "source": "",
+    "stackable_with_referral": false,
+    "notes": ""
+  },
+  {
+    "code": "EU15N",
+    "type": "promo",
+    "discount": "",
+    "regions": [
+      "us"
+    ],
+    "min_cart_value": 0,
+    "status": "valid",
+    "first_seen": "2026-03-27",
+    "last_validated": "2026-03-27T07:39:27.154213+00:00",
+    "last_failed": null,
+    "fail_count": 0,
+    "source": "",
+    "stackable_with_referral": false,
+    "notes": ""
+  },
+  {
+    "code": "IHERB22OFF",
+    "type": "promo",
+    "discount": "",
+    "regions": [
+      "us"
+    ],
+    "min_cart_value": 0,
+    "status": "valid",
+    "first_seen": "2026-03-27",
+    "last_validated": "2026-03-27T07:39:27.154213+00:00",
+    "last_failed": null,
+    "fail_count": 0,
+    "source": "",
+    "stackable_with_referral": false,
+    "notes": ""
+  },
+  {
+    "code": "RMB30",
+    "type": "promo",
+    "discount": "",
+    "regions": [
+      "us"
+    ],
+    "min_cart_value": 0,
+    "status": "invalid",
+    "first_seen": "2026-03-27",
+    "last_validated": "",
+    "last_failed": "2026-03-27T07:39:27.154213+00:00",
+    "fail_count": 2,
+    "source": "",
+    "stackable_with_referral": false,
+    "notes": ""
+  },
+  {
+    "code": "RMB299",
+    "type": "promo",
+    "discount": "",
+    "regions": [
+      "us"
+    ],
+    "min_cart_value": 0,
+    "status": "valid",
+    "first_seen": "2026-03-27",
+    "last_validated": "2026-03-27T07:39:27.154213+00:00",
+    "last_failed": null,
+    "fail_count": 0,
+    "source": "",
+    "stackable_with_referral": false,
+    "notes": ""
+  },
+  {
+    "code": "RMB50",
+    "type": "promo",
+    "discount": "",
+    "regions": [
+      "us"
+    ],
+    "min_cart_value": 0,
+    "status": "invalid",
+    "first_seen": "2026-03-27",
+    "last_validated": "",
+    "last_failed": "2026-03-27T07:39:27.154213+00:00",
+    "fail_count": 2,
+    "source": "",
+    "stackable_with_referral": false,
+    "notes": ""
+  },
+  {
+    "code": "RMB499",
+    "type": "promo",
+    "discount": "",
+    "regions": [
+      "us"
+    ],
+    "min_cart_value": 0,
+    "status": "valid",
+    "first_seen": "2026-03-27",
+    "last_validated": "2026-03-27T07:39:27.154213+00:00",
+    "last_failed": null,
+    "fail_count": 0,
+    "source": "",
+    "stackable_with_referral": false,
+    "notes": ""
+  },
+  {
+    "code": "CODES",
+    "type": "promo",
+    "discount": "",
+    "regions": [
+      "us"
+    ],
+    "min_cart_value": 0,
+    "status": "invalid",
+    "first_seen": "2026-03-27",
+    "last_validated": "",
+    "last_failed": "2026-03-27T07:39:27.154213+00:00",
+    "fail_count": 2,
+    "source": "",
+    "stackable_with_referral": false,
+    "notes": ""
+  },
+  {
+    "code": "FOUND",
+    "type": "promo",
+    "discount": "",
+    "regions": [
+      "us"
+    ],
+    "min_cart_value": 0,
+    "status": "invalid",
+    "first_seen": "2026-03-27",
+    "last_validated": "",
+    "last_failed": "2026-03-27T07:39:27.154213+00:00",
+    "fail_count": 2,
+    "source": "",
+    "stackable_with_referral": false,
+    "notes": ""
+  },
+  {
+    "code": "MERCHANT",
+    "type": "promo",
+    "discount": "",
+    "regions": [
+      "us"
+    ],
+    "min_cart_value": 0,
+    "status": "invalid",
+    "first_seen": "2026-03-27",
+    "last_validated": "",
+    "last_failed": "2026-03-27T07:39:27.154213+00:00",
+    "fail_count": 2,
+    "source": "",
+    "stackable_with_referral": false,
+    "notes": ""
+  },
+  {
+    "code": "FFFFFF",
+    "type": "promo",
+    "discount": "",
+    "regions": [
+      "us"
+    ],
+    "min_cart_value": 0,
+    "status": "invalid",
+    "first_seen": "2026-03-27",
+    "last_validated": "",
+    "last_failed": "2026-03-27T07:39:27.154213+00:00",
+    "fail_count": 2,
+    "source": "",
+    "stackable_with_referral": false,
+    "notes": ""
+  },
+  {
+    "code": "KINK3D",
+    "type": "promo",
+    "discount": "",
+    "regions": [
+      "us"
+    ],
+    "min_cart_value": 0,
+    "status": "invalid",
+    "first_seen": "2026-03-27",
+    "last_validated": "",
+    "last_failed": "2026-03-27T07:39:27.154213+00:00",
+    "fail_count": 2,
+    "source": "",
+    "stackable_with_referral": false,
+    "notes": ""
+  },
+  {
+    "code": "EVISU",
+    "type": "promo",
+    "discount": "",
+    "regions": [
+      "us"
+    ],
+    "min_cart_value": 0,
+    "status": "invalid",
+    "first_seen": "2026-03-27",
+    "last_validated": "",
+    "last_failed": "2026-03-27T07:39:27.154213+00:00",
+    "fail_count": 2,
+    "source": "",
+    "stackable_with_referral": false,
+    "notes": ""
+  },
+  {
+    "code": "DMCA",
+    "type": "promo",
+    "discount": "",
+    "regions": [
+      "us"
+    ],
+    "min_cart_value": 0,
+    "status": "invalid",
+    "first_seen": "2026-03-27",
+    "last_validated": "",
+    "last_failed": "2026-03-27T07:39:27.154213+00:00",
+    "fail_count": 2,
+    "source": "",
+    "stackable_with_referral": false,
+    "notes": ""
+  },
+  {
+    "code": "PROTECTED",
+    "type": "promo",
+    "discount": "",
+    "regions": [
+      "us"
+    ],
+    "min_cart_value": 0,
+    "status": "invalid",
+    "first_seen": "2026-03-27",
+    "last_validated": "",
+    "last_failed": "2026-03-27T07:39:27.154213+00:00",
+    "fail_count": 2,
+    "source": "",
+    "stackable_with_referral": false,
+    "notes": ""
+  },
+  {
+    "code": "AFFILIATE",
+    "type": "promo",
+    "discount": "",
+    "regions": [
+      "us"
+    ],
+    "min_cart_value": 0,
+    "status": "invalid",
+    "first_seen": "2026-03-27",
+    "last_validated": "",
+    "last_failed": "2026-03-27T07:39:27.154213+00:00",
+    "fail_count": 2,
+    "source": "",
+    "stackable_with_referral": false,
+    "notes": ""
+  },
+  {
+    "code": "BEFORE",
+    "type": "promo",
+    "discount": "",
+    "regions": [
+      "us"
+    ],
+    "min_cart_value": 0,
+    "status": "invalid",
+    "first_seen": "2026-03-27",
+    "last_validated": "",
+    "last_failed": "2026-03-27T07:39:27.154213+00:00",
+    "fail_count": 2,
+    "source": "",
+    "stackable_with_referral": false,
+    "notes": ""
+  },
+  {
+    "code": "IFPDL94",
+    "type": "promo",
+    "discount": "",
+    "regions": [
+      "us"
+    ],
+    "min_cart_value": 0,
+    "status": "invalid",
+    "first_seen": "2026-03-27",
+    "last_validated": "",
+    "last_failed": "2026-03-27T07:39:27.154213+00:00",
+    "fail_count": 2,
+    "source": "",
+    "stackable_with_referral": false,
+    "notes": ""
+  },
+  {
+    "code": "YYYY",
+    "type": "promo",
+    "discount": "",
+    "regions": [
+      "us"
+    ],
+    "min_cart_value": 0,
+    "status": "invalid",
+    "first_seen": "2026-03-27",
+    "last_validated": "",
+    "last_failed": "2026-03-27T07:39:27.154213+00:00",
+    "fail_count": 2,
+    "source": "",
+    "stackable_with_referral": false,
+    "notes": ""
+  },
+  {
+    "code": "COUPONS",
+    "type": "promo",
+    "discount": "",
+    "regions": [
+      "us"
+    ],
+    "min_cart_value": 0,
+    "status": "invalid",
+    "first_seen": "2026-03-27",
+    "last_validated": "",
+    "last_failed": "2026-03-27T07:39:27.154213+00:00",
+    "fail_count": 2,
+    "source": "",
+    "stackable_with_referral": false,
+    "notes": ""
+  },
+  {
+    "code": "GOSHOP15",
+    "type": "promo",
+    "discount": "",
+    "regions": [
+      "us"
+    ],
+    "min_cart_value": 0,
+    "status": "invalid",
+    "first_seen": "2026-03-27",
+    "last_validated": "",
+    "last_failed": "2026-03-27T07:39:27.154213+00:00",
+    "fail_count": 2,
+    "source": "",
+    "stackable_with_referral": false,
+    "notes": ""
+  },
+  {
+    "code": "V814",
+    "type": "promo",
+    "discount": "",
+    "regions": [
+      "us"
+    ],
+    "min_cart_value": 0,
+    "status": "invalid",
+    "first_seen": "2026-03-27",
+    "last_validated": "",
+    "last_failed": "2026-03-27T07:39:27.154213+00:00",
+    "fail_count": 2,
+    "source": "",
+    "stackable_with_referral": false,
+    "notes": ""
+  },
+  {
+    "code": "EMAILVIP",
+    "type": "promo",
+    "discount": "",
+    "regions": [
+      "us"
+    ],
+    "min_cart_value": 0,
+    "status": "invalid",
+    "first_seen": "2026-03-27",
+    "last_validated": "",
+    "last_failed": "2026-03-27T07:39:27.154213+00:00",
+    "fail_count": 2,
+    "source": "",
+    "stackable_with_referral": false,
+    "notes": ""
+  },
+  {
+    "code": "RIDEUBER2026FT",
+    "type": "promo",
+    "discount": "",
+    "regions": [
+      "us"
+    ],
+    "min_cart_value": 0,
+    "status": "invalid",
+    "first_seen": "2026-03-27",
+    "last_validated": "",
+    "last_failed": "2026-03-27T07:39:27.154213+00:00",
+    "fail_count": 2,
+    "source": "",
+    "stackable_with_referral": false,
+    "notes": ""
+  },
+  {
+    "code": "KIAORA50NZ",
+    "type": "promo",
+    "discount": "",
+    "regions": [
+      "us"
+    ],
+    "min_cart_value": 0,
+    "status": "invalid",
+    "first_seen": "2026-03-27",
+    "last_validated": "",
+    "last_failed": "2026-03-27T07:39:27.154213+00:00",
+    "fail_count": 2,
+    "source": "",
+    "stackable_with_referral": false,
+    "notes": ""
+  },
+  {
+    "code": "GOLD80",
+    "type": "promo",
+    "discount": "",
+    "regions": [
+      "us"
+    ],
+    "min_cart_value": 0,
+    "status": "valid",
+    "first_seen": "2026-03-27",
+    "last_validated": "2026-03-27T07:39:27.154213+00:00",
+    "last_failed": null,
+    "fail_count": 0,
+    "source": "",
+    "stackable_with_referral": false,
+    "notes": ""
+  },
+  {
+    "code": "AMY100",
+    "type": "promo",
+    "discount": "",
+    "regions": [
+      "us"
+    ],
+    "min_cart_value": 0,
+    "status": "invalid",
+    "first_seen": "2026-03-27",
+    "last_validated": "",
+    "last_failed": "2026-03-27T07:39:27.154213+00:00",
+    "fail_count": 2,
+    "source": "",
+    "stackable_with_referral": false,
+    "notes": ""
+  },
+  {
+    "code": "CLUB",
+    "type": "promo",
+    "discount": "",
+    "regions": [
+      "us"
+    ],
+    "min_cart_value": 0,
+    "status": "invalid",
+    "first_seen": "2026-03-27",
+    "last_validated": "",
+    "last_failed": "2026-03-27T07:39:27.154213+00:00",
+    "fail_count": 2,
+    "source": "",
+    "stackable_with_referral": false,
+    "notes": ""
   }
 ]

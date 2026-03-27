@@ -1,1 +1,1382 @@
-[]
+[
+  {
+    "code": "DOCTYPE",
+    "source": "couponfollow",
+    "discovered_at": "2026-03-27T04:44:51.384382+00:00",
+    "raw_description": "",
+    "raw_context": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"utf-8\" />\n    <link rel=\"preconnect dns-prefetch\" href=\"https//static.",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "invalid"
+  },
+  {
+    "code": "JFF855",
+    "source": "couponfollow",
+    "discovered_at": "2026-03-27T04:44:51.384382+00:00",
+    "raw_description": "",
+    "raw_context": "code: JFF855 at checkout and find 10\\u002B more",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "valid"
+  },
+  {
+    "code": "C5734282",
+    "source": "couponfollow",
+    "discovered_at": "2026-03-27T04:44:51.384382+00:00",
+    "raw_description": "",
+    "raw_context": "couponfollow.com/site/iherb.com#C5734282\" data-has-",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "invalid"
+  },
+  {
+    "code": "CODE",
+    "source": "couponfollow",
+    "discovered_at": "2026-03-27T04:44:51.384382+00:00",
+    "raw_description": "",
+    "raw_context": "CODE \u2022 &#10004; Verified\n        </div>\n        <a class=\"link details-link\" href=\"https://click.",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "invalid"
+  },
+  {
+    "code": "C6048649",
+    "source": "couponfollow",
+    "discovered_at": "2026-03-27T04:44:51.384382+00:00",
+    "raw_description": "",
+    "raw_context": "couponfollow.com/site/iherb.com#C6048649\" data-has-",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "invalid"
+  },
+  {
+    "code": "C5254352",
+    "source": "couponfollow",
+    "discovered_at": "2026-03-27T04:44:51.384382+00:00",
+    "raw_description": "",
+    "raw_context": "couponfollow.com/site/iherb.com#C5254352\" data-has-",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "invalid"
+  },
+  {
+    "code": "C6466135",
+    "source": "couponfollow",
+    "discovered_at": "2026-03-27T04:44:51.384382+00:00",
+    "raw_description": "",
+    "raw_context": "couponfollow.com/site/iherb.com#C6466135\" data-has-",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "invalid"
+  },
+  {
+    "code": "C6482177",
+    "source": "couponfollow",
+    "discovered_at": "2026-03-27T04:44:51.384382+00:00",
+    "raw_description": "",
+    "raw_context": "couponfollow.com/site/iherb.com#C6482177\" data-has-",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "invalid"
+  },
+  {
+    "code": "C5303494",
+    "source": "couponfollow",
+    "discovered_at": "2026-03-27T04:44:51.384382+00:00",
+    "raw_description": "",
+    "raw_context": "couponfollow.com/site/iherb.com#C5303494\" data-has-",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "invalid"
+  },
+  {
+    "code": "C5989272",
+    "source": "couponfollow",
+    "discovered_at": "2026-03-27T04:44:51.384382+00:00",
+    "raw_description": "",
+    "raw_context": "couponfollow.com/site/iherb.com#C5989272\" data-has-",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "invalid"
+  },
+  {
+    "code": "P757804",
+    "source": "couponfollow",
+    "discovered_at": "2026-03-27T04:44:51.384382+00:00",
+    "raw_description": "",
+    "raw_context": "couponfollow.com/site/iherb.com#P757804\" data-email=\"https://click.",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "error"
+  },
+  {
+    "code": "PROMO",
+    "source": "couponfollow",
+    "discovered_at": "2026-03-27T04:44:51.384382+00:00",
+    "raw_description": "",
+    "raw_context": "PROMO \u2022 Expires soon!\n        </div>\n        <a class=\"link details-link\" href=\"https://click.",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "invalid"
+  },
+  {
+    "code": "C6395292",
+    "source": "couponfollow",
+    "discovered_at": "2026-03-27T04:44:51.384382+00:00",
+    "raw_description": "",
+    "raw_context": "couponfollow.com/site/iherb.com#C6395292\" data-has-",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "error"
+  },
+  {
+    "code": "C6396087",
+    "source": "couponfollow",
+    "discovered_at": "2026-03-27T04:44:51.384382+00:00",
+    "raw_description": "",
+    "raw_context": "couponfollow.com/site/iherb.com#C6396087\" data-has-",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "invalid"
+  },
+  {
+    "code": "C6405792",
+    "source": "couponfollow",
+    "discovered_at": "2026-03-27T04:44:51.384382+00:00",
+    "raw_description": "",
+    "raw_context": "couponfollow.com/site/iherb.com#C6405792\" data-has-",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "invalid"
+  },
+  {
+    "code": "P754433",
+    "source": "couponfollow",
+    "discovered_at": "2026-03-27T04:44:51.384382+00:00",
+    "raw_description": "",
+    "raw_context": "couponfollow.com/site/iherb.com#P754433\" data-email=\"https://click.",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "invalid"
+  },
+  {
+    "code": "P726975",
+    "source": "couponfollow",
+    "discovered_at": "2026-03-27T04:44:51.384382+00:00",
+    "raw_description": "",
+    "raw_context": "couponfollow.com/site/iherb.com#P726975\" data-email=\"https://click.",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "invalid"
+  },
+  {
+    "code": "C5241680",
+    "source": "couponfollow",
+    "discovered_at": "2026-03-27T04:44:51.384382+00:00",
+    "raw_description": "",
+    "raw_context": "couponfollow.com/site/iherb.com#C5241680\" data-has-",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "error"
+  },
+  {
+    "code": "C5813741",
+    "source": "couponfollow",
+    "discovered_at": "2026-03-27T04:44:51.384382+00:00",
+    "raw_description": "",
+    "raw_context": "couponfollow.com/site/iherb.com#C5813741\" data-has-",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "invalid"
+  },
+  {
+    "code": "P725337",
+    "source": "couponfollow",
+    "discovered_at": "2026-03-27T04:44:51.384382+00:00",
+    "raw_description": "",
+    "raw_context": "couponfollow.com/site/iherb.com#P725337\" data-email=\"https://click.",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "invalid"
+  },
+  {
+    "code": "P756677",
+    "source": "couponfollow",
+    "discovered_at": "2026-03-27T04:44:51.384382+00:00",
+    "raw_description": "",
+    "raw_context": "couponfollow.com/site/iherb.com#P756677\" data-email=\"https://click.",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "invalid"
+  },
+  {
+    "code": "WITH",
+    "source": "couponfollow",
+    "discovered_at": "2026-03-27T04:44:51.384382+00:00",
+    "raw_description": "",
+    "raw_context": "discount-box ex\" data-nosnippet=\"true\">\n        \n        \n        <div class=\"text\">$2</div>\n        <div class=\"suffix\">WITH",
+    "discount_type": "fixed",
+    "discount_value": 2,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "invalid"
+  },
+  {
+    "code": "P756669",
+    "source": "couponfollow",
+    "discovered_at": "2026-03-27T04:44:51.384382+00:00",
+    "raw_description": "",
+    "raw_context": "couponfollow.com/site/iherb.com#P756669\" data-email=\"https://click.",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "invalid"
+  },
+  {
+    "code": "P753573",
+    "source": "couponfollow",
+    "discovered_at": "2026-03-27T04:44:51.384382+00:00",
+    "raw_description": "",
+    "raw_context": "couponfollow.com/site/iherb.com#P753573\" data-email=\"https://click.",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "error"
+  },
+  {
+    "code": "FREE",
+    "source": "couponfollow",
+    "discovered_at": "2026-03-27T04:44:51.384382+00:00",
+    "raw_description": "",
+    "raw_context": "discount-box ex\" data-nosnippet=\"true\">\n        \n        \n        <div class=\"text\">FREE</div>\n        <div class=\"suffix\">SHIPPING</div>\n    </div>\n    <div class=\"offer-details\">\n        \n        <h",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "invalid"
+  },
+  {
+    "code": "SHIPPING",
+    "source": "couponfollow",
+    "discovered_at": "2026-03-27T04:44:51.384382+00:00",
+    "raw_description": "",
+    "raw_context": "discount-box ex\" data-nosnippet=\"true\">\n        \n        \n        <div class=\"text\">FREE</div>\n        <div class=\"suffix\">SHIPPING</div>\n    </div>\n    <div class=\"offer-details\">\n        \n        <h",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "invalid"
+  },
+  {
+    "code": "P752607",
+    "source": "couponfollow",
+    "discovered_at": "2026-03-27T04:44:51.384382+00:00",
+    "raw_description": "",
+    "raw_context": "couponfollow.com/site/iherb.com#P752607\" data-email=\"https://click.",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "invalid"
+  },
+  {
+    "code": "P752149",
+    "source": "couponfollow",
+    "discovered_at": "2026-03-27T04:44:51.384382+00:00",
+    "raw_description": "",
+    "raw_context": "couponfollow.com/site/iherb.com#P752149\" data-email=\"https://click.",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "invalid"
+  },
+  {
+    "code": "P752148",
+    "source": "couponfollow",
+    "discovered_at": "2026-03-27T04:44:51.384382+00:00",
+    "raw_description": "",
+    "raw_context": "couponfollow.com/site/iherb.com#P752148\" data-email=\"https://click.",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "error"
+  },
+  {
+    "code": "P751315",
+    "source": "couponfollow",
+    "discovered_at": "2026-03-27T04:44:51.384382+00:00",
+    "raw_description": "",
+    "raw_context": "couponfollow.com/site/iherb.com#P751315\" data-email=\"https://click.",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "invalid"
+  },
+  {
+    "code": "P749288",
+    "source": "couponfollow",
+    "discovered_at": "2026-03-27T04:44:51.384382+00:00",
+    "raw_description": "",
+    "raw_context": "couponfollow.com/site/iherb.com#P749288\" data-email=\"https://click.",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "invalid"
+  },
+  {
+    "code": "P747569",
+    "source": "couponfollow",
+    "discovered_at": "2026-03-27T04:44:51.384382+00:00",
+    "raw_description": "",
+    "raw_context": "couponfollow.com/site/iherb.com#P747569\" data-email=\"https://click.",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "invalid"
+  },
+  {
+    "code": "P747099",
+    "source": "couponfollow",
+    "discovered_at": "2026-03-27T04:44:51.384382+00:00",
+    "raw_description": "",
+    "raw_context": "couponfollow.com/site/iherb.com#P747099\" data-email=\"https://click.",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "invalid"
+  },
+  {
+    "code": "P746530",
+    "source": "couponfollow",
+    "discovered_at": "2026-03-27T04:44:51.384382+00:00",
+    "raw_description": "",
+    "raw_context": "couponfollow.com/site/iherb.com#P746530\" data-email=\"https://click.",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "error"
+  },
+  {
+    "code": "P746133",
+    "source": "couponfollow",
+    "discovered_at": "2026-03-27T04:44:51.384382+00:00",
+    "raw_description": "",
+    "raw_context": "couponfollow.com/site/iherb.com#P746133\" data-email=\"https://click.",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "invalid"
+  },
+  {
+    "code": "SAVE",
+    "source": "couponfollow",
+    "discovered_at": "2026-03-27T04:44:51.384382+00:00",
+    "raw_description": "",
+    "raw_context": "discount-box ex\" data-nosnippet=\"true\">\n        \n        \n        <div class=\"text\">SAVE</div>\n        <div class=\"suffix\">WITH",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "error"
+  },
+  {
+    "code": "P733097",
+    "source": "couponfollow",
+    "discovered_at": "2026-03-27T04:44:51.384382+00:00",
+    "raw_description": "",
+    "raw_context": "couponfollow.com/site/iherb.com#P733097\" data-email=\"https://click.",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "error"
+  },
+  {
+    "code": "P727872",
+    "source": "couponfollow",
+    "discovered_at": "2026-03-27T04:44:51.384382+00:00",
+    "raw_description": "",
+    "raw_context": "couponfollow.com/site/iherb.com#P727872\" data-email=\"https://click.",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "error"
+  },
+  {
+    "code": "P727871",
+    "source": "couponfollow",
+    "discovered_at": "2026-03-27T04:44:51.384382+00:00",
+    "raw_description": "",
+    "raw_context": "couponfollow.com/site/iherb.com#P727871\" data-email=\"https://click.",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "invalid"
+  },
+  {
+    "code": "P724670",
+    "source": "couponfollow",
+    "discovered_at": "2026-03-27T04:44:51.384382+00:00",
+    "raw_description": "",
+    "raw_context": "couponfollow.com/site/iherb.com#P724670\" data-email=\"https://click.",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "invalid"
+  },
+  {
+    "code": "C6439140",
+    "source": "couponfollow",
+    "discovered_at": "2026-03-27T04:44:51.384382+00:00",
+    "raw_description": "",
+    "raw_context": "couponfollow.com/site/iherb.com#C6439140\" data-has-",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "invalid"
+  },
+  {
+    "code": "C6436573",
+    "source": "couponfollow",
+    "discovered_at": "2026-03-27T04:44:51.384382+00:00",
+    "raw_description": "",
+    "raw_context": "couponfollow.com/site/iherb.com#C6436573\" data-has-",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "invalid"
+  },
+  {
+    "code": "C5827968",
+    "source": "couponfollow",
+    "discovered_at": "2026-03-27T04:44:51.384382+00:00",
+    "raw_description": "",
+    "raw_context": "couponfollow.com/site/iherb.com#C5827968\" data-has-",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "error"
+  },
+  {
+    "code": "C6427392",
+    "source": "couponfollow",
+    "discovered_at": "2026-03-27T04:44:51.384382+00:00",
+    "raw_description": "",
+    "raw_context": "couponfollow.com/site/iherb.com#C6427392\" data-has-",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "invalid"
+  },
+  {
+    "code": "C5867555",
+    "source": "couponfollow",
+    "discovered_at": "2026-03-27T04:44:51.384382+00:00",
+    "raw_description": "",
+    "raw_context": "couponfollow.com/site/iherb.com#C5867555\" data-has-",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "invalid"
+  },
+  {
+    "code": "C6377792",
+    "source": "couponfollow",
+    "discovered_at": "2026-03-27T04:44:51.384382+00:00",
+    "raw_description": "",
+    "raw_context": "couponfollow.com/site/iherb.com#C6377792\" data-has-",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "invalid"
+  },
+  {
+    "code": "C5691654",
+    "source": "couponfollow",
+    "discovered_at": "2026-03-27T04:44:51.384382+00:00",
+    "raw_description": "",
+    "raw_context": "couponfollow.com/site/iherb.com#C5691654\" data-has-",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "invalid"
+  },
+  {
+    "code": "C6367724",
+    "source": "couponfollow",
+    "discovered_at": "2026-03-27T04:44:51.384382+00:00",
+    "raw_description": "",
+    "raw_context": "couponfollow.com/site/iherb.com#C6367724\" data-has-",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "error"
+  },
+  {
+    "code": "C5971049",
+    "source": "couponfollow",
+    "discovered_at": "2026-03-27T04:44:51.384382+00:00",
+    "raw_description": "",
+    "raw_context": "couponfollow.com/site/iherb.com#C5971049\" data-has-",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "error"
+  },
+  {
+    "code": "DRIM",
+    "source": "hotdeals",
+    "discovered_at": "2026-03-27T04:44:51.384382+00:00",
+    "raw_description": "",
+    "raw_context": "Code &quot;DRIM&quot; on Vitamins & Supplements, Grocery & Gourmet Food, and more. Use the best iHerb",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "valid"
+  },
+  {
+    "code": "MAR26ANTI",
+    "source": "hotdeals",
+    "discovered_at": "2026-03-27T04:44:51.384382+00:00",
+    "raw_description": "",
+    "raw_context": "Codes is MAR26ANTI, and it gives shoppers 10",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "valid"
+  },
+  {
+    "code": "M944",
+    "source": "hotdeals",
+    "discovered_at": "2026-03-27T04:44:51.384382+00:00",
+    "raw_description": "",
+    "raw_context": "codes\" data-v-555b83d0><span data-v-555b83d0>Hertz</span> <div data-v-555b83d0></div></a></li><!--]--></ul> <!----></li><!--]--></ul></nav> <div class=\"header-new-search\" data-v-8a02fb1f data-v-50d76d",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "invalid"
+  },
+  {
+    "code": "M512",
+    "source": "hotdeals",
+    "discovered_at": "2026-03-27T04:44:51.384382+00:00",
+    "raw_description": "",
+    "raw_context": "code></div> <div class=\"offer-card-btn-icon\" data-v-736d1717></div><!--]--></div> <!----></div> <button class=\"offer-card-toggle-details\" data-v-736d1717>See Details <svg xmlns=\"http://www.w3.org/2000",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "invalid"
+  },
+  {
+    "code": "DRJAMES",
+    "source": "hotdeals",
+    "discovered_at": "2026-03-27T04:44:51.384382+00:00",
+    "raw_description": "",
+    "raw_context": "code class=\"text-overflow-right__inner\" data-v-cfd9b583>DRJAMES</",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "error"
+  },
+  {
+    "code": "JJYOSH",
+    "source": "hotdeals",
+    "discovered_at": "2026-03-27T04:44:51.384382+00:00",
+    "raw_description": "",
+    "raw_context": "code class=\"text-overflow-right__inner\" data-v-cfd9b583>JJYOSH</",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "error"
+  },
+  {
+    "code": "MYAPP15",
+    "source": "hotdeals",
+    "discovered_at": "2026-03-27T04:44:51.384382+00:00",
+    "raw_description": "",
+    "raw_context": "code class=\"text-overflow-right__inner\" data-v-cfd9b583>MYAPP15</",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "error"
+  },
+  {
+    "code": "GOLD60",
+    "source": "hotdeals",
+    "discovered_at": "2026-03-27T04:44:51.384382+00:00",
+    "raw_description": "",
+    "raw_context": "code class=\"text-overflow-right__inner\" data-v-cfd9b583>GOLD60</",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "error"
+  },
+  {
+    "code": "GOLD120",
+    "source": "hotdeals",
+    "discovered_at": "2026-03-27T04:44:51.384382+00:00",
+    "raw_description": "",
+    "raw_context": "code class=\"text-overflow-right__inner\" data-v-cfd9b583>GOLD120</",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "error"
+  },
+  {
+    "code": "THEDAILYBEAST",
+    "source": "hotdeals",
+    "discovered_at": "2026-03-27T04:44:51.384382+00:00",
+    "raw_description": "",
+    "raw_context": "code class=\"text-overflow-right__inner\" data-v-cfd9b583>THEDAILYBEAST</",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "valid"
+  },
+  {
+    "code": "DRHEALTH",
+    "source": "hotdeals",
+    "discovered_at": "2026-03-27T04:44:51.384382+00:00",
+    "raw_description": "",
+    "raw_context": "code-item\" data-v-736d1717>DRHEALTH</div><div class=\"aggregate-",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "valid"
+  },
+  {
+    "code": "DEAL",
+    "source": "hotdeals",
+    "discovered_at": "2026-03-27T04:44:51.384382+00:00",
+    "raw_description": "",
+    "raw_context": "code\" data-v-736d1717>DEAL</div> <!----> <!----></div> <h3 class=\"offer-title\" data-v-736d1717>Free Shipping When You Spend $30 or More</h3> <p class=\"offer-description\" data-v-736d1717>Claim your fre",
+    "discount_type": "fixed",
+    "discount_value": 30,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "error"
+  },
+  {
+    "code": "BOGO",
+    "source": "hotdeals",
+    "discovered_at": "2026-03-27T04:44:51.384382+00:00",
+    "raw_description": "",
+    "raw_context": "discount-box\" data-v-736d1717><!----> <!--[--><div class=\"text text-xl\" data-v-736d1717>BOGO</div> <div class=\"suffix\" data-v-736d1717></div><!--]--></div> <div class=\"offer-details\" data-v-736d1717><",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "error"
+  },
+  {
+    "code": "EUAPP20",
+    "source": "hotdeals",
+    "discovered_at": "2026-03-27T04:44:51.384382+00:00",
+    "raw_description": "",
+    "raw_context": "code class=\"text-overflow-right__inner\" data-v-cfd9b583>EUAPP20</",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "error"
+  },
+  {
+    "code": "UKCOL15",
+    "source": "hotdeals",
+    "discovered_at": "2026-03-27T04:44:51.384382+00:00",
+    "raw_description": "",
+    "raw_context": "code class=\"text-overflow-right__inner\" data-v-cfd9b583>UKCOL15</",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "valid"
+  },
+  {
+    "code": "NEW20",
+    "source": "hotdeals",
+    "discovered_at": "2026-03-27T04:44:51.384382+00:00",
+    "raw_description": "",
+    "raw_context": "code class=\"text-overflow-right__inner\" data-v-cfd9b583>NEW20</",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "valid"
+  },
+  {
+    "code": "EU15N",
+    "source": "hotdeals",
+    "discovered_at": "2026-03-27T04:44:51.384382+00:00",
+    "raw_description": "",
+    "raw_context": "code class=\"text-overflow-right__inner\" data-v-cfd9b583>EU15N</",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "valid"
+  },
+  {
+    "code": "IHERB22OFF",
+    "source": "hotdeals",
+    "discovered_at": "2026-03-27T04:44:51.384382+00:00",
+    "raw_description": "",
+    "raw_context": "code class=\"text-overflow-right__inner\" data-v-cfd9b583>IHERB22OFF</",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "valid"
+  },
+  {
+    "code": "RMB30",
+    "source": "hotdeals",
+    "discovered_at": "2026-03-27T04:44:51.384382+00:00",
+    "raw_description": "",
+    "raw_context": "promos for big savings\u2014yes, do it!</p></li><li data-v-ae7eee1c><div class=\"title-text\" data-v-ae7eee1c>iHerb's Generous Return Policy:</div> <p data-v-ae7eee1c>To save money, iHerb offers a 60-day mon",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "error"
+  },
+  {
+    "code": "RMB299",
+    "source": "hotdeals",
+    "discovered_at": "2026-03-27T04:44:51.384382+00:00",
+    "raw_description": "",
+    "raw_context": "promos for big savings\u2014yes, do it!</p></li><li data-v-ae7eee1c><div class=\"title-text\" data-v-ae7eee1c>iHerb's Generous Return Policy:</div> <p data-v-ae7eee1c>To save money, iHerb offers a 60-day mon",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "valid"
+  },
+  {
+    "code": "RMB50",
+    "source": "hotdeals",
+    "discovered_at": "2026-03-27T04:44:51.384382+00:00",
+    "raw_description": "",
+    "raw_context": "promos for big savings\u2014yes, do it!</p></li><li data-v-ae7eee1c><div class=\"title-text\" data-v-ae7eee1c>iHerb's Generous Return Policy:</div> <p data-v-ae7eee1c>To save money, iHerb offers a 60-day mon",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "error"
+  },
+  {
+    "code": "RMB499",
+    "source": "hotdeals",
+    "discovered_at": "2026-03-27T04:44:51.384382+00:00",
+    "raw_description": "",
+    "raw_context": "promos for big savings\u2014yes, do it!</p></li><li data-v-ae7eee1c><div class=\"title-text\" data-v-ae7eee1c>iHerb's Generous Return Policy:</div> <p data-v-ae7eee1c>To save money, iHerb offers a 60-day mon",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "valid"
+  },
+  {
+    "code": "CODES",
+    "source": "hotdeals",
+    "discovered_at": "2026-03-27T04:44:51.384382+00:00",
+    "raw_description": "",
+    "raw_context": "CODES FOUND!</span></div></div></div> <div class=\"cpbotoffer\" data-v-820e850d><span class=\"up_con\" data-v-820e850d>",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "error"
+  },
+  {
+    "code": "FOUND",
+    "source": "hotdeals",
+    "discovered_at": "2026-03-27T04:44:51.384382+00:00",
+    "raw_description": "",
+    "raw_context": "CODES FOUND!</span></div></div></div> <div class=\"cpbotoffer\" data-v-820e850d><span class=\"up_con\" data-v-820e850d>",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "error"
+  },
+  {
+    "code": "MERCHANT",
+    "source": "hotdeals",
+    "discovered_at": "2026-03-27T04:44:51.384382+00:00",
+    "raw_description": "",
+    "raw_context": "Coupon Success</span> <!----> <span style=\"color:#ee6762;\" data-v-820e850d>\u2003 High  <i class=\"icons\" data-v-820e850d><img src=\"/hotdeals_assets/red.C0dIbZSP.gif\" alt=\"arrow\" data-v-820e850d></i></span>",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "error"
+  },
+  {
+    "code": "FFFFFF",
+    "source": "hotdeals",
+    "discovered_at": "2026-03-27T04:44:51.384382+00:00",
+    "raw_description": "",
+    "raw_context": "codes\" data-v-7e6667f9><div class=\"img-box\" style=\"background-color:#FFFFFF;\" data-track-click=\"/term/similartermlist/termlogo1\" data-deal-id=\"6095\" data-business-type=\"NonProCon\" data-v-7e6667f9><img",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "invalid"
+  },
+  {
+    "code": "KINK3D",
+    "source": "hotdeals",
+    "discovered_at": "2026-03-27T04:44:51.384382+00:00",
+    "raw_description": "",
+    "raw_context": "codes\" data-v-8fe613f1>KINK3D",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "error"
+  },
+  {
+    "code": "EVISU",
+    "source": "hotdeals",
+    "discovered_at": "2026-03-27T04:44:51.384382+00:00",
+    "raw_description": "",
+    "raw_context": "code\" data-v-8fe613f1>EVISU",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "invalid"
+  },
+  {
+    "code": "DMCA",
+    "source": "hotdeals",
+    "discovered_at": "2026-03-27T04:44:51.384382+00:00",
+    "raw_description": "",
+    "raw_context": "Discounts</a></li><!--]--> <!----></ul></section><!--]--></div></div> <!----> <!----> <!----> <div class=\"dmca--choose-country\" data-v-ec5ce87f><div class=\"footer-dmca\" data-v-ec5ce87f><a href=\"https:",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "error"
+  },
+  {
+    "code": "PROTECTED",
+    "source": "hotdeals",
+    "discovered_at": "2026-03-27T04:44:51.384382+00:00",
+    "raw_description": "",
+    "raw_context": "Discounts</a></li><!--]--> <!----></ul></section><!--]--></div></div> <!----> <!----> <!----> <div class=\"dmca--choose-country\" data-v-ec5ce87f><div class=\"footer-dmca\" data-v-ec5ce87f><a href=\"https:",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "error"
+  },
+  {
+    "code": "AFFILIATE",
+    "source": "hotdeals",
+    "discovered_at": "2026-03-27T04:44:51.384382+00:00",
+    "raw_description": "",
+    "raw_context": "% off on All Items\",\"DRIM\",\"CPT_worked\",\"2024-12-06 09:49:15\",\"999805be44d74248225f7b064e2a1bab\",[],\"2026-01-23 12:32:21\",\"2026-04-09 21:19:22\",\"cpq|AFFILIATE,CP_high_quality_c,social|tiktok\",\"Worked",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "invalid"
+  },
+  {
+    "code": "BEFORE",
+    "source": "hotdeals",
+    "discovered_at": "2026-03-27T04:44:51.384382+00:00",
+    "raw_description": "",
+    "raw_context": "Coupons\",\"BEFORE YOU GO...\",\"Can't Find",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "error"
+  },
+  {
+    "code": "IFPDL94",
+    "source": "hotdeals",
+    "discovered_at": "2026-03-27T04:44:51.384382+00:00",
+    "raw_description": "",
+    "raw_context": "Code\",\"Deal\",\"eg:IFPDL94\",\"Please enter the",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "error"
+  },
+  {
+    "code": "YYYY",
+    "source": "hotdeals",
+    "discovered_at": "2026-03-27T04:44:51.384382+00:00",
+    "raw_description": "",
+    "raw_context": "Discount Description\",\"Tell us more about the offer\",\"Please enter the offer details\",\"Expiration Date\",\"MM/DD/YYYY\",\"Please select an expiration date\",\"Email\",\"Submit Offer\",\"Thanks for submitting yo",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "invalid"
+  },
+  {
+    "code": "COUPONS",
+    "source": "hotdeals",
+    "discovered_at": "2026-03-27T04:44:51.384382+00:00",
+    "raw_description": "",
+    "raw_context": "COUPONS FOUND!\",\"",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "error"
+  },
+  {
+    "code": "GOSHOP15",
+    "source": "hotdeals",
+    "discovered_at": "2026-03-27T04:44:51.384382+00:00",
+    "raw_description": "",
+    "raw_context": "% off Sitewide\",\"GOSHOP15\",\"L291dC8yNDQ1NjI3MjE/c3ZySWQ9aGQwMSZjYT1wcm9tb19jb2RlXzFfdGl0JnB0PU1FUkNIQU5UJnB2PTQ4MSZhZnNyYz0x\",{\"id\":1577,\"name\":1898,\"path\":1899,\"Image\":2077,\"FontColor\":6,\"Transparent",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "invalid"
+  },
+  {
+    "code": "V814",
+    "source": "hotdeals",
+    "discovered_at": "2026-03-27T04:44:51.384382+00:00",
+    "raw_description": "",
+    "raw_context": "% off Storewide at Amtrak\",\"V814\",\"L291dC8zODAwNjQ2NzU/c3ZySWQ9aGQwMSZjYT1wcm9tb19jb2RlXzFfdGl0JnB0PU1FUkNIQU5UJnB2PTYxMjkmYWZzcmM9MQ==\",{\"id\":1583,\"name\":2093,\"path\":2094,\"Image\":2095,\"FontColor\":10,",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "invalid"
+  },
+  {
+    "code": "EMAILVIP",
+    "source": "hotdeals",
+    "discovered_at": "2026-03-27T04:44:51.384382+00:00",
+    "raw_description": "",
+    "raw_context": "Discount on Selected Items\",\"EMAILVIP\",\"L291dC82MDQ0MDYzNzk/c3ZySWQ9aGQwMSZjYT1wcm9tb19jb2RlXzFfdGl0JnB0PU1FUkNIQU5UJnB2PTg1NTcmYWZzcmM9MQ==\",{\"id\":1578,\"name\":2102,\"path\":2103,\"Image\":2104,\"FontColor",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "error"
+  },
+  {
+    "code": "RIDEUBER2026FT",
+    "source": "hotdeals",
+    "discovered_at": "2026-03-27T04:44:51.384382+00:00",
+    "raw_description": "",
+    "raw_context": "% off Your Purchase\",\"RIDEUBER2026FT\",\"L291dC82MTU5MjIyNjY/c3ZySWQ9aGQwMSZjYT1wcm9tb19jb2RlXzFfdGl0JnB0PU1FUkNIQU5UJnB2PTI3NDMzJmFmc3JjPTE=\",{\"id\":1582,\"name\":2112,\"path\":2113,\"Image\":2114,\"FontColor\"",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "error"
+  },
+  {
+    "code": "KIAORA50NZ",
+    "source": "hotdeals",
+    "discovered_at": "2026-03-27T04:44:51.384382+00:00",
+    "raw_description": "",
+    "raw_context": "% off\",\"KIAORA50NZ\",\"40%\",\"L291dC82MjA3NDk5NjA/c3ZySWQ9aGQwMSZjYT1wcm9tb19jb2RlXzFfdGl0JnB0PU1FUkNIQU5UJnB2PTkwNzIxJmFmc3JjPTE=\",[1576,1577,1578,1579,1580,1581,1582,1583],\"Go-To Stores\",{\"login\":2132,",
+    "discount_type": "percentage",
+    "discount_value": 40,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "invalid"
+  },
+  {
+    "code": "GOLD80",
+    "source": "hotdeals",
+    "discovered_at": "2026-03-27T06:30:37.719432+00:00",
+    "raw_description": "",
+    "raw_context": "code class=\"text-overflow-right__inner\" data-v-cfd9b583>GOLD80</",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "valid"
+  },
+  {
+    "code": "AMY100",
+    "source": "hotdeals",
+    "discovered_at": "2026-03-27T06:30:37.719432+00:00",
+    "raw_description": "",
+    "raw_context": "code class=\"text-overflow-right__inner\" data-v-cfd9b583>AMY100</",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "error"
+  },
+  {
+    "code": "CLUB",
+    "source": "hotdeals",
+    "discovered_at": "2026-03-27T06:30:37.719432+00:00",
+    "raw_description": "",
+    "raw_context": "% off BJs Membership\",\"CLUB\",\"L291dC81NjIwNzMyNzU/c3ZySWQ9aGQwMSZjYT1wcm9tb19jb2RlXzFfdGl0JnB0PU1FUkNIQU5UJnB2PTg1NTcmYWZzcmM9MQ==\",{\"id\":1596,\"name\":2119,\"path\":2120,\"Image\":2121,\"FontColor\":207,\"Tra",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "invalid"
+  }
+]
