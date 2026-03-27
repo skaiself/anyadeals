@@ -70,3 +70,53 @@ def load_coupons_json(path: str) -> list[dict]:
         return []
     with open(path) as f:
         return json.load(f)
+
+
+def load_research_codes(path: str) -> list[dict]:
+    """Load research.json and return pending codes in config-coupon format.
+
+    Returns list of dicts with keys: code, regions, min_cart_value, source.
+    Only includes entries with validation_status == "pending".
+    """
+    if not os.path.exists(path):
+        return []
+    with open(path) as f:
+        research = json.load(f)
+    return [
+        {
+            "code": entry["code"],
+            "regions": entry.get("regions", ["*"]),
+            "min_cart_value": None,
+            "source": entry.get("source", ""),
+        }
+        for entry in research
+        if entry.get("validation_status") == "pending"
+    ]
+
+
+def update_research_status(research_path: str, results: list[dict]) -> None:
+    """Update validation_status in research.json based on validation results."""
+    if not os.path.exists(research_path):
+        return
+    with open(research_path) as f:
+        research = json.load(f)
+
+    status_map = {}
+    for r in results:
+        code = r["coupon_code"]
+        if r["valid"] == "true":
+            status_map[code] = "valid"
+        elif r["valid"] == "false":
+            status_map.setdefault(code, "invalid")
+        else:
+            status_map.setdefault(code, "error")
+
+    for entry in research:
+        if entry["code"] in status_map:
+            entry["validation_status"] = status_map[entry["code"]]
+
+    tmp_path = research_path + ".tmp"
+    os.makedirs(os.path.dirname(research_path) or ".", exist_ok=True)
+    with open(tmp_path, "w") as f:
+        json.dump(research, f, indent=2, default=str)
+    os.replace(tmp_path, research_path)

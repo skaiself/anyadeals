@@ -6,7 +6,13 @@ from contextlib import asynccontextmanager
 
 from fastapi import FastAPI, HTTPException
 from httpx_validator import validate_coupon
-from json_writer import load_coupons_json, merge_results, write_coupons_json
+from json_writer import (
+    load_coupons_json,
+    load_research_codes,
+    merge_results,
+    update_research_status,
+    write_coupons_json,
+)
 from src.config import load_config
 from src.results import CouponResult, ResultsWriter
 
@@ -56,12 +62,26 @@ async def run_validation():
         config = load_config(CONFIG_PATH)
         all_regions = list(config["regions"].keys())
 
+        # Merge config coupons with pending research codes
+        research_path = os.path.join(DATA_DIR, "research.json")
+        research_codes = load_research_codes(research_path)
+        config_codes = set(c["code"] for c in config["coupons"])
+        all_coupons = list(config["coupons"]) + [
+            rc for rc in research_codes if rc["code"] not in config_codes
+        ]
+        logger.info(
+            "Loaded %d config coupons + %d pending research codes",
+            len(config["coupons"]),
+            len(all_coupons) - len(config["coupons"]),
+        )
+
         # Expand coupon+region combinations
         combinations = []
-        for coupon in config["coupons"]:
+        for coupon in all_coupons:
             regions = all_regions if "*" in coupon["regions"] else coupon["regions"]
             for region_key in regions:
-                combinations.append((coupon, region_key))
+                if region_key in config["regions"]:
+                    combinations.append((coupon, region_key))
 
         logger.info("Testing %d coupon+region combinations via HTTP", len(combinations))
 
@@ -96,6 +116,9 @@ async def run_validation():
         existing = load_coupons_json(coupons_path)
         merged = merge_results(existing, all_results)
         write_coupons_json(merged, coupons_path)
+
+        # Update research.json validation statuses
+        update_research_status(research_path, all_results)
 
         duration = (datetime.now(timezone.utc) - start_time).total_seconds()
         summary = {

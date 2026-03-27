@@ -59,6 +59,29 @@ The orchestrator runs on a schedule:
 - **Tue & Fri 10:00 UTC** — post to Reddit
 - **Every hour** — update dashboard stats
 
+## Troubleshooting
+
+### Services report `healthy: false` with `FileNotFoundError`
+
+If all backend services fail with errors like `No such file or directory: '/data/coupons.json'`, the Docker volume mounts are stale. This happens when containers were created before the data directory was moved or restructured. Fix by recreating them:
+
+```bash
+docker compose down && docker compose up -d
+```
+
+### Healthcheck endpoints
+
+Each service exposes a `/status` endpoint:
+
+```bash
+curl http://localhost:8080/status                                    # Orchestrator
+docker exec anyadeals-researcher curl -s http://localhost:8001/status # Researcher
+docker exec anyadeals-validator curl -s http://localhost:8002/status  # Validator
+docker exec anyadeals-poster curl -s http://localhost:8003/status     # Poster
+```
+
+Note: researcher, validator, and poster ports are internal to the Docker network, so healthchecks must be run via `docker exec`.
+
 ## Tech Stack
 
 - **Frontend:** Next.js 15 + React 19 + Tailwind CSS 3 + TypeScript
