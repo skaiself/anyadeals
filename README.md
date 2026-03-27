@@ -48,9 +48,17 @@ npm test           # Run test suite (52 tests)
 ## Running the Pipeline
 
 ```bash
-cp .env.example .env   # Fill in API keys
+cp .env.example .env   # Fill in API keys (PROXY_URL required for validation)
 docker compose up -d
 ```
+
+The `PROXY_URL` environment variable is required for the validator to test coupons against iHerb. It should point to an IPRoyal Web Unblocker proxy (or similar). Without it, validation will fail with connection errors.
+
+### Pipeline flow
+
+1. **Researcher** scrapes web sources → writes discovered codes to `site/data/research.json` (status: `pending`)
+2. **Validator** reads pending codes from `research.json` + any static codes from `config.json` → tests each against iHerb checkout → writes valid codes to `site/data/coupons.json` and updates `research.json` statuses
+3. **Orchestrator** commits data changes to GitHub → triggers Cloudflare Pages rebuild
 
 The orchestrator runs on a schedule:
 - **6:00 & 18:00 UTC** — research + validate + git push

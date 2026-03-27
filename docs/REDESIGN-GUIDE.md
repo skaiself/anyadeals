@@ -6,8 +6,8 @@ Instructions for an AI agent (or human) to redesign the AnyaDeals frontend while
 
 AnyaDeals is an automated iHerb coupon pipeline:
 
-1. **Researcher** service scrapes coupon codes from the web
-2. **Validator** service tests each code against iHerb checkout (Playwright + proxies)
+1. **Researcher** service scrapes coupon codes from the web → writes to `research.json` (status: `pending`)
+2. **Validator** service reads pending codes from `research.json` + static codes from `config.json` → tests each against iHerb checkout (HTTP + Web Unblocker proxy) → writes valid codes to `coupons.json` and updates `research.json` statuses
 3. **Orchestrator** commits validated results to GitHub, triggering a site rebuild
 4. **Poster** service shares valid codes on Twitter/X and Reddit
 5. **Static site** (Next.js) displays the verified codes to visitors
@@ -142,7 +142,9 @@ Impact.com tracking script is loaded in the root layout. The iHerb referral code
 │   │   ├── scraper.py                       # Web scrapers
 │   │   └── claude_parser.py                 # Claude CLI for code extraction
 │   ├── validator/
-│   │   ├── server.py                        # FastAPI (port 8002)
+│   │   ├── server.py                        # FastAPI (port 8002), reads research.json + config.json
+│   │   ├── json_writer.py                   # Read/write coupons.json + research.json integration
+│   │   ├── src/config.py                    # Config loader (PROXY_URL env override)
 │   │   ├── main.py                          # Playwright browser validation
 │   │   └── httpx_validator.py               # HTTP-based validation with proxies
 │   └── poster/
