@@ -2,7 +2,7 @@ import json
 import os
 import tempfile
 import pytest
-from json_writer import merge_results, write_coupons_json, load_coupons_json, load_research_codes, update_research_status, parse_discount_from_text
+from json_writer import merge_results, write_coupons_json, load_coupons_json, load_research_codes, update_research_status, parse_discount_from_text, parse_discount_from_code
 
 def test_new_valid_coupon_added():
     existing = []
@@ -167,6 +167,44 @@ def test_parse_percentage_preferred_over_fixed():
     assert parse_discount_from_text("20% off, save $10") == ("20", "percentage")
 
 
+# --- parse_discount_from_code tests ---
+
+def test_code_parse_with_off_suffix():
+    assert parse_discount_from_code("IHERB22OFF", "percentage") == ("22", "percentage")
+
+def test_code_parse_single_number():
+    assert parse_discount_from_code("NEW20", "percentage") == ("20", "percentage")
+
+def test_code_parse_single_number_15():
+    assert parse_discount_from_code("EU15N", "percentage") == ("15", "percentage")
+
+def test_code_parse_skips_fixed_type():
+    """Fixed discounts from code names are too ambiguous."""
+    assert parse_discount_from_code("RMB299", "fixed") == ("", "")
+
+def test_code_parse_rejects_high_percentage():
+    assert parse_discount_from_code("GOLD80", "percentage") == ("", "")
+
+def test_code_parse_rejects_low_percentage():
+    assert parse_discount_from_code("SAVE3", "percentage") == ("", "")
+
+def test_code_parse_no_number():
+    assert parse_discount_from_code("DRIM", "percentage") == ("", "")
+
+def test_code_parse_no_type():
+    assert parse_discount_from_code("NEW20", "") == ("", "")
+
+def test_code_parse_empty_code():
+    assert parse_discount_from_code("", "percentage") == ("", "")
+
+def test_code_parse_off_suffix_priority():
+    assert parse_discount_from_code("SAVE10OFF", "percentage") == ("10", "percentage")
+
+def test_code_parse_rejects_ambiguous_multi_number():
+    """Multiple numbers without OFF suffix — too ambiguous."""
+    assert parse_discount_from_code("MAR26ANTI", "percentage") == ("", "")
+
+
 # --- merge_results with research fallback tests ---
 
 def test_merge_uses_api_discount_when_available():
@@ -183,8 +221,14 @@ def test_merge_falls_back_to_research_text():
         merged = merge_results([], results, research_path=rpath)
         assert merged[0]["discount"] == "20% off"
 
-def test_merge_no_research_no_crash():
-    results = [{"coupon_code": "X", "region": "us", "valid": "true", "discount_amount": "", "discount_type": ""}]
+def test_merge_falls_back_to_code_name():
+    """When API and research text have no discount, parse from code name."""
+    results = [{"coupon_code": "NEW20", "region": "us", "valid": "true", "discount_amount": "", "discount_type": "percentage"}]
+    merged = merge_results([], results, research_path=None)
+    assert merged[0]["discount"] == "20% off"
+
+def test_merge_no_discount_anywhere():
+    results = [{"coupon_code": "DRIM", "region": "us", "valid": "true", "discount_amount": "", "discount_type": "fixed"}]
     merged = merge_results([], results, research_path=None)
     assert merged[0]["discount"] == ""
 
