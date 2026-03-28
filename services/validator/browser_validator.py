@@ -279,6 +279,12 @@ def change_shipping_region(page: Page, region_key: str) -> bool:
         # (e.g. Korea shows "Special note" about PCCC customs clearance)
         _dismiss_post_region_popup(page)
 
+        # Debug: save screenshot after region change to diagnose issues
+        try:
+            page.screenshot(path=f"/tmp/debug_after_region_{region_key}.png")
+        except Exception:
+            pass
+
         logger.info("Shipping region changed to %s", region_key)
         return True
 
@@ -300,31 +306,34 @@ def _dismiss_post_region_popup(page: Page) -> None:
 
     Some regions (e.g. Korea) show a "Special note" modal about customs.
     Look for Close/OK buttons in visible modals and click them.
+    Also try pressing Escape as a fallback.
     """
     try:
-        # Look for Close button in a modal
-        close_btn = page.locator('button:has-text("Close"):visible').first
-        if close_btn.count() > 0:
-            close_btn.click()
-            page.wait_for_timeout(1000)
-            logger.info("Dismissed post-region popup (Close)")
-            return
+        # Try multiple approaches to dismiss popups/modals
+        # Approach 1: Find and click Close button
+        for btn in page.locator('button:visible').all():
+            try:
+                text = btn.inner_text(timeout=1000).strip()
+                if text in ("Close", "OK", "Got it", "I understand"):
+                    btn.click(force=True)
+                    page.wait_for_timeout(1000)
+                    logger.info("Dismissed post-region popup (%s)", text)
+                    return
+            except Exception:
+                continue
 
-        # Look for OK button
-        ok_btn = page.locator('button:has-text("OK"):visible').first
-        if ok_btn.count() > 0:
-            ok_btn.click()
-            page.wait_for_timeout(1000)
-            logger.info("Dismissed post-region popup (OK)")
-            return
-
-        # Look for X close button on any modal
-        x_btn = page.locator('[aria-label="Close"]:visible, button[class*="close"]:visible').first
+        # Approach 2: Click X close button on modal
+        x_btn = page.locator('[aria-label="Close"]:visible').first
         if x_btn.count() > 0:
-            x_btn.click()
+            x_btn.click(force=True)
             page.wait_for_timeout(1000)
             logger.info("Dismissed post-region popup (X)")
             return
+
+        # Approach 3: Press Escape to close any modal
+        page.keyboard.press("Escape")
+        page.wait_for_timeout(1000)
+        logger.debug("Pressed Escape to dismiss any modal")
 
     except Exception as e:
         logger.debug("No post-region popup to dismiss: %s", e)
