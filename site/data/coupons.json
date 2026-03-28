@@ -4,8 +4,7 @@
     "type": "promo",
     "discount": "22% off",
     "regions": [
-      "us",
-      "gb"
+      "us"
     ],
     "min_cart_value": 40,
     "status": "valid",
@@ -15,14 +14,18 @@
     "fail_count": 1,
     "source": "couponfollow.com",
     "stackable_with_referral": true,
-    "notes": "Browser-verified US"
+    "notes": "US only. Not eligible: DE, GB, RS, HR"
   },
   {
     "code": "GOLD60",
     "type": "promo",
     "discount": "10% off",
     "regions": [
-      "us"
+      "us",
+      "de",
+      "gb",
+      "rs",
+      "hr"
     ],
     "min_cart_value": 60,
     "status": "valid",
@@ -32,7 +35,7 @@
     "fail_count": 1,
     "source": "hotdeals.com",
     "stackable_with_referral": true,
-    "notes": "Browser-verified US"
+    "notes": "Browser-verified: works globally (US, DE, GB, RS, HR)"
   },
   {
     "code": "OLDCODE10",
@@ -942,7 +945,11 @@
     "type": "promo",
     "discount": "10% off",
     "regions": [
-      "us"
+      "us",
+      "de",
+      "gb",
+      "rs",
+      "hr"
     ],
     "min_cart_value": 0,
     "status": "valid",
@@ -952,7 +959,7 @@
     "fail_count": 0,
     "source": "",
     "stackable_with_referral": false,
-    "notes": "Browser-verified US"
+    "notes": "Browser-verified: works globally (US, DE, GB, RS, HR)"
   },
   {
     "code": "M944",
@@ -1208,7 +1215,7 @@
     "fail_count": 0,
     "source": "",
     "stackable_with_referral": false,
-    "notes": "Browser-verified US"
+    "notes": "US only. Not eligible: DE, GB, RS, HR"
   },
   {
     "code": "RMB30",
@@ -1703,7 +1710,7 @@
     "fail_count": 0,
     "source": "reddit/search",
     "stackable_with_referral": false,
-    "notes": "Browser-verified US"
+    "notes": "US only. Not eligible: DE, GB, RS, HR"
   },
   {
     "code": "THANKYOU15",
@@ -1720,7 +1727,7 @@
     "fail_count": 0,
     "source": "reddit/search",
     "stackable_with_referral": false,
-    "notes": "Browser-verified US. Applied to eligible items."
+    "notes": "US only. Browser-verified applied."
   },
   {
     "code": "BAK22",

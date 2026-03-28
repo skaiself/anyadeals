@@ -378,72 +378,69 @@ def run_validation(
     """
     results: list[dict[str, Any]] = []
 
-    with sync_playwright() as pw:
-        # Use IPRoyal Web Unblocker as proxy to bypass CAPTCHA
-        proxy_url = os.environ.get("BROWSER_PROXY_URL") or os.environ.get("PROXY_URL", "")
-        launch_opts = {
-            "headless": headless,
-            "channel": "chrome",
-            "args": [
-                "--disable-blink-features=AutomationControlled",
-                "--no-sandbox",
-                "--disable-dev-shm-usage",
-                "--disable-gpu",
-                "--ignore-certificate-errors",
-            ],
-        }
-        if proxy_url:
-            launch_opts["proxy"] = {"server": proxy_url}
-            logger.info("Using proxy: %s", proxy_url)
+    proxy_url = os.environ.get("BROWSER_PROXY_URL") or os.environ.get("PROXY_URL", "")
+    launch_opts = {
+        "headless": headless,
+        "channel": "chrome",
+        "args": [
+            "--disable-blink-features=AutomationControlled",
+            "--no-sandbox",
+            "--disable-dev-shm-usage",
+            "--disable-gpu",
+            "--ignore-certificate-errors",
+        ],
+    }
+    if proxy_url:
+        launch_opts["proxy"] = {"server": proxy_url}
+        logger.info("Using proxy: %s", proxy_url)
 
-        browser = pw.chromium.launch(**launch_opts)
+    # Launch a fresh browser per region to avoid session degradation
+    for region_idx, region in enumerate(regions):
+        logger.info("=== Testing region: %s (%d/%d) ===", region, region_idx + 1, len(regions))
 
-        context = browser.new_context(
-            user_agent=USER_AGENT,
-            viewport={"width": 1280, "height": 900},
-            locale="en-US",
-            ignore_https_errors=True,
-        )
+        with sync_playwright() as pw:
+            browser = pw.chromium.launch(**launch_opts)
+            context = browser.new_context(
+                user_agent=USER_AGENT,
+                viewport={"width": 1280, "height": 900},
+                locale="en-US",
+                ignore_https_errors=True,
+            )
+            context.add_init_script("""
+                Object.defineProperty(navigator, 'webdriver', { get: () => false });
+            """)
+            page = context.new_page()
+            page.set_default_timeout(timeout_ms)
 
-        # Mask webdriver detection
-        context.add_init_script("""
-            Object.defineProperty(navigator, 'webdriver', { get: () => false });
-        """)
+            # Add product to cart (fresh session each region)
+            if not add_product_to_cart(page):
+                logger.error("Failed to add product for region %s, skipping", region)
+                for code in codes:
+                    _ensure_code_entry(results, code)
+                    _find_code_entry(results, code)["results"][region] = {
+                        "valid": False, "discount": "", "min_cart": 0,
+                        "message": "Failed to add product to cart",
+                    }
+                browser.close()
+                continue
 
-        page = context.new_page()
-        page.set_default_timeout(timeout_ms)
-
-        # Step 1: Add product to cart
-        if not add_product_to_cart(page):
-            logger.error("Failed to add product to cart, aborting")
-            browser.close()
-            return results
-
-        # Step 2: For each region, test all codes
-        for region_idx, region in enumerate(regions):
-            logger.info("=== Testing region: %s (%d/%d) ===", region, region_idx + 1, len(regions))
-
-            # Change shipping region (skip for the first region if it's US, which is default)
-            if region_idx > 0 or region != "us":
+            # Change shipping region (skip for US which is default)
+            if region != "us":
                 if not change_shipping_region(page, region):
                     logger.warning("Failed to change region to %s, skipping", region)
-                    # Record error for all codes in this region
                     for code in codes:
                         _ensure_code_entry(results, code)
-                        entry = _find_code_entry(results, code)
-                        entry["results"][region] = {
-                            "valid": False,
-                            "discount": "",
-                            "min_cart": 0,
+                        _find_code_entry(results, code)["results"][region] = {
+                            "valid": False, "discount": "", "min_cart": 0,
                             "message": f"Failed to change region to {region}",
                         }
+                    browser.close()
                     continue
 
             # Test each code
             for code in codes:
                 _ensure_code_entry(results, code)
                 entry = _find_code_entry(results, code)
-
                 result = test_coupon_code(page, code)
                 entry["results"][region] = result
                 logger.info(
@@ -451,7 +448,7 @@ def run_validation(
                     code, region, result["valid"], result.get("discount", ""),
                 )
 
-        browser.close()
+            browser.close()
 
     return results
 
