@@ -48,12 +48,16 @@ REMOVE_PROMO_BUTTON = 'button[aria-label="Remove Promo Code"]'
 # Region config: country display name, optional zip code
 REGION_CONFIG: dict[str, dict[str, Any]] = {
     "us": {"country": "United States", "zip": "32301"},
+    "kr": {"country": "South Korea", "zip": ""},
+    "jp": {"country": "Japan", "zip": ""},
     "de": {"country": "Germany", "zip": ""},
     "gb": {"country": "United Kingdom", "zip": ""},
     "au": {"country": "Australia", "zip": ""},
+    "sa": {"country": "Saudi Arabia", "zip": ""},
     "ca": {"country": "Canada", "zip": ""},
-    "jp": {"country": "Japan", "zip": ""},
-    "kr": {"country": "South Korea", "zip": ""},
+    "cn": {"country": "China", "zip": ""},
+    "rs": {"country": "Serbia", "zip": ""},
+    "hr": {"country": "Croatia", "zip": ""},
 }
 
 # Patterns for interpreting promo result messages
@@ -158,9 +162,10 @@ def add_product_to_cart(page: Page) -> bool:
 
 
 def change_shipping_region(page: Page, region_key: str) -> bool:
-    """Change the shipping region on the cart page.
+    """Change the shipping region via the Ship to modal.
 
-    Returns True if the region was changed successfully.
+    The modal has a React combobox (not a <select>), so we type
+    the country name to filter and select from the dropdown.
     """
     config = REGION_CONFIG.get(region_key)
     if not config:
@@ -173,54 +178,73 @@ def change_shipping_region(page: Page, region_key: str) -> bool:
     logger.info("Changing shipping region to %s (%s)", region_key, country_name)
 
     try:
-        # Click the "Ship to" button
-        ship_to_btn = page.locator('button:has-text("Ship to")').first
-        ship_to_btn.wait_for(state="visible", timeout=10000)
-        ship_to_btn.click()
-        page.wait_for_timeout(1500)
+        # Click the "Ship to" span near cart heading
+        ship_to = page.locator('text=/Ship to/i').first
+        ship_to.wait_for(state="visible", timeout=5000)
+        ship_to.click()
+        page.wait_for_timeout(3000)
 
-        # Select country from dropdown
-        country_select = page.locator(
-            'select:near(:text("Country")), '
-            'select:near(:text("Region")), '
-            '[data-testid="country-select"], '
-            'select[name="country"]'
-        ).first
-        country_select.wait_for(state="visible", timeout=10000)
-        country_select.select_option(label=country_name)
+        # Country selector is #cart-country-select (React Select component)
+        # Must use keyboard: Ctrl+A, Backspace, type, ArrowDown, Enter
+        country_input = page.locator('#cart-country-select')
+        country_input.wait_for(state="visible", timeout=8000)
+        country_input.click()
+        page.keyboard.press("Control+A")
+        page.keyboard.press("Backspace")
+        page.wait_for_timeout(300)
+        page.keyboard.type(country_name, delay=80)
+        page.wait_for_timeout(1500)
+        page.keyboard.press("ArrowDown")
+        page.wait_for_timeout(300)
+        page.keyboard.press("Enter")
+        page.wait_for_timeout(1000)
+        logger.info("Selected country: %s", country_name)
+
         page.wait_for_timeout(1000)
 
-        # Fill zip code if needed
+        # Fill zip code if needed (clear old one first)
         if zip_code:
-            zip_input = page.locator(
-                'input[name="zipCode"], '
-                'input[placeholder*="Zip"], '
-                'input[placeholder*="zip"], '
-                'input[placeholder*="Postal"], '
-                'input:near(:text("Zip"))'
-            ).first
             try:
-                zip_input.wait_for(state="visible", timeout=5000)
+                zip_input = page.locator('input[placeholder*="Zip" i], '
+                                         'input[placeholder*="Postal" i]').first
+                zip_input.wait_for(state="visible", timeout=3000)
+                zip_input.fill("")
                 zip_input.fill(zip_code)
-                page.wait_for_timeout(500)
             except PlaywrightTimeout:
-                logger.info("No zip code input found for %s, continuing", region_key)
+                logger.info("No zip input for %s", region_key)
+        else:
+            # Clear zip for countries that don't need it
+            try:
+                zip_input = page.locator('input[placeholder*="Zip" i], '
+                                         'input[placeholder*="Postal" i]').first
+                if zip_input.is_visible():
+                    zip_input.fill("")
+            except Exception:
+                pass
 
-        # Click Save button
-        save_btn = page.locator(
-            'button:has-text("Save"), '
-            'button:has-text("Apply"), '
-            'button[type="submit"]:near(:text("Country"))'
-        ).first
-        save_btn.wait_for(state="visible", timeout=5000)
-        save_btn.click()
-        page.wait_for_timeout(3000)
+        # Click Save — iterate buttons to find exact match (avoid "Save for later")
+        saved = False
+        for btn in page.locator('button').all():
+            if btn.inner_text().strip() == "Save" and btn.is_visible():
+                btn.click(force=True)
+                saved = True
+                break
+        if not saved:
+            logger.error("Save button not found")
+            return False
+        page.wait_for_timeout(6000)
 
         logger.info("Shipping region changed to %s", region_key)
         return True
 
     except PlaywrightTimeout:
         logger.error("Timeout changing shipping region to %s", region_key)
+        # Try closing any open modal
+        try:
+            page.keyboard.press("Escape")
+            page.wait_for_timeout(1000)
+        except Exception:
+            pass
         return False
     except Exception as e:
         logger.error("Error changing shipping region to %s: %s", region_key, e)
@@ -468,7 +492,7 @@ Examples:
     parser.add_argument(
         "--regions",
         nargs="+",
-        default=["us", "de"],
+        default=["us"],
         choices=list(REGION_CONFIG.keys()),
         help="Shipping regions to test (default: us de)",
     )
