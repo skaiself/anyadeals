@@ -44,12 +44,12 @@
     "min_cart_value": 60,
     "status": "valid",
     "first_seen": "2026-03-15",
-    "last_validated": "2026-03-28T14:32:18.654978+00:00",
+    "last_validated": "2026-03-28T18:24:20.479446+00:00",
     "last_failed": null,
     "fail_count": 0,
     "source": "hotdeals.com",
     "stackable_with_referral": true,
-    "notes": "Browser-verified: works globally (US, DE, GB, RS, HR)"
+    "notes": "10% off orders $60+. All users. Expires Mar 31."
   },
   {
     "code": "OLDCODE10",
@@ -957,7 +957,7 @@
   {
     "code": "MAR26ANTI",
     "type": "promo",
-    "discount": "10% off",
+    "discount": "15% off",
     "regions": [
       "at",
       "au",
@@ -984,12 +984,12 @@
     "min_cart_value": 0,
     "status": "valid",
     "first_seen": "2026-03-27",
-    "last_validated": "2026-03-28T14:32:18.654978+00:00",
+    "last_validated": "2026-03-28T18:24:20.479446+00:00",
     "last_failed": null,
     "fail_count": 0,
     "source": "",
     "stackable_with_referral": false,
-    "notes": "Browser-verified: works globally (US, DE, GB, RS, HR)"
+    "notes": "15% off Antioxidants category only. All users. Expires Apr 1."
   },
   {
     "code": "M944",
@@ -1242,12 +1242,12 @@
     "min_cart_value": 0,
     "status": "region_limited",
     "first_seen": "2026-03-27",
-    "last_validated": "2026-03-28T14:32:18.654978+00:00",
+    "last_validated": "2026-03-28T18:24:20.479446+00:00",
     "last_failed": null,
     "fail_count": 0,
     "source": "",
     "stackable_with_referral": false,
-    "notes": "Not eligible: AT, AU, CA, CH, CN, DE, FR, GB, HK, HR, IN, IT, JP, KR, NL, RS, SE, TW"
+    "notes": "22% off orders $60+. All users. 2 uses per customer. US/SA/IE only."
   },
   {
     "code": "RMB30",
@@ -1697,18 +1697,16 @@
     "code": "JPSAKURA26",
     "type": "promo",
     "discount": "25% off",
-    "regions": [
-      "us"
-    ],
+    "regions": [],
     "min_cart_value": 0,
-    "status": "region_limited",
+    "status": "invalid",
     "first_seen": "2026-03-27",
     "last_validated": "2026-03-27T18:00:35.043221+00:00",
-    "last_failed": null,
-    "fail_count": 0,
+    "last_failed": "2026-03-28T18:24:20.479446+00:00",
+    "fail_count": 1,
     "source": "hotdeals",
     "stackable_with_referral": false,
-    "notes": "Not eligible for US shipping"
+    "notes": "Not eligible: US"
   },
   {
     "code": "DVO4205",
@@ -1739,12 +1737,12 @@
     "min_cart_value": 0,
     "status": "region_limited",
     "first_seen": "2026-03-28",
-    "last_validated": "2026-03-28T14:32:18.654978+00:00",
+    "last_validated": "2026-03-28T18:24:20.479446+00:00",
     "last_failed": null,
     "fail_count": 0,
     "source": "reddit/search",
     "stackable_with_referral": false,
-    "notes": "Not eligible: AT, AU, CA, CH, CN, DE, FR, GB, HK, HR, IN, IT, JP, KR, NL, RS, SE, TW"
+    "notes": "22% off orders $60+. All users. 2 uses per customer. US/SA/IE only."
   },
   {
     "code": "THANKYOU15",
@@ -1758,12 +1756,12 @@
     "min_cart_value": 0,
     "status": "region_limited",
     "first_seen": "2026-03-28",
-    "last_validated": "2026-03-28T14:32:18.654978+00:00",
+    "last_validated": "2026-03-28T18:24:20.479446+00:00",
     "last_failed": null,
     "fail_count": 0,
     "source": "reddit/search",
     "stackable_with_referral": false,
-    "notes": "Not eligible: AT, AU, CA, CH, CN, DE, FR, GB, HK, HR, IN, IT, JP, KR, NL, RS, SE, TW"
+    "notes": "15% off sitewide. All users. US/SA/IE only. Expires Apr 1."
   },
   {
     "code": "BAK22",
@@ -1898,7 +1896,7 @@
   {
     "code": "RENEWLIFE",
     "type": "promo",
-    "discount": "",
+    "discount": "20% off",
     "regions": [
       "ie",
       "jp",
@@ -1908,17 +1906,17 @@
     "min_cart_value": 0,
     "status": "region_limited",
     "first_seen": "2026-03-28",
-    "last_validated": "2026-03-28T14:32:18.654978+00:00",
+    "last_validated": "2026-03-28T18:24:20.479446+00:00",
     "last_failed": null,
     "fail_count": 0,
     "source": "reddit/search",
     "stackable_with_referral": false,
-    "notes": "Not eligible: AT, AU, CA, CH, CN, DE, FR, GB, HK, HR, IN, IT, KR, NL, RS, SE, TW"
+    "notes": "20% off Renew Life brand products only. All users. Expires Mar 31."
   },
   {
     "code": "RAINBOWLIGHT",
     "type": "promo",
-    "discount": "",
+    "discount": "20% off",
     "regions": [
       "ie",
       "sa",
@@ -1927,17 +1925,17 @@
     "min_cart_value": 0,
     "status": "region_limited",
     "first_seen": "2026-03-28",
-    "last_validated": "2026-03-28T14:32:18.654978+00:00",
+    "last_validated": "2026-03-28T18:24:20.479446+00:00",
     "last_failed": null,
     "fail_count": 0,
     "source": "reddit/search",
     "stackable_with_referral": false,
-    "notes": "Not eligible: AT, AU, CA, CH, CN, DE, FR, GB, HK, HR, IN, IT, JP, KR, NL, RS, SE, TW"
+    "notes": "20% off Rainbow Light brand products only. All users. Expires Mar 31."
   },
   {
     "code": "NATURALVIT",
     "type": "promo",
-    "discount": "",
+    "discount": "20% off",
     "regions": [
       "au",
       "ie",
@@ -1947,11 +1945,11 @@
     "min_cart_value": 0,
     "status": "region_limited",
     "first_seen": "2026-03-28",
-    "last_validated": "2026-03-28T14:32:18.654978+00:00",
+    "last_validated": "2026-03-28T18:24:20.479446+00:00",
     "last_failed": null,
     "fail_count": 0,
     "source": "reddit/search",
     "stackable_with_referral": false,
-    "notes": "Not eligible: AT, CA, CH, CN, DE, FR, GB, HK, HR, IN, IT, JP, KR, NL, RS, SE, TW"
+    "notes": "20% off Natural Vitality brand products only. All users. Expires Mar 31."
   }
 ]
