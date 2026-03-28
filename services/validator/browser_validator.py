@@ -369,6 +369,10 @@ def run_validation(
                 "--ignore-certificate-errors",
             ],
         }
+        if proxy_url:
+            launch_opts["proxy"] = {"server": proxy_url}
+            logger.info("Using proxy: %s", proxy_url)
+
         browser = pw.chromium.launch(**launch_opts)
 
         context = browser.new_context(
