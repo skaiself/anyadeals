@@ -1763,18 +1763,16 @@
     "code": "ARWAOM",
     "type": "promo",
     "discount": "",
-    "regions": [
-      "us"
-    ],
+    "regions": [],
     "min_cart_value": 0,
-    "status": "region_limited",
+    "status": "invalid",
     "first_seen": "2026-03-28",
     "last_validated": "2026-03-28T06:03:04.558739+00:00",
     "last_failed": null,
     "fail_count": 0,
     "source": "reddit/search",
     "stackable_with_referral": false,
-    "notes": "Not eligible for US shipping"
+    "notes": "Not eligible for US shipping. No valid region found."
   },
   {
     "code": "SAIB30",
@@ -1797,18 +1795,16 @@
     "code": "MASTERCARD30",
     "type": "promo",
     "discount": "30% off",
-    "regions": [
-      "us"
-    ],
+    "regions": [],
     "min_cart_value": 0,
-    "status": "region_limited",
+    "status": "invalid",
     "first_seen": "2026-03-28",
     "last_validated": "2026-03-28T06:03:04.558739+00:00",
     "last_failed": null,
     "fail_count": 0,
     "source": "reddit/search",
     "stackable_with_referral": false,
-    "notes": "Not eligible for US shipping"
+    "notes": "Not eligible for US shipping. No valid region found."
   },
   {
     "code": "NEW15",
@@ -1865,18 +1861,16 @@
     "code": "GOLD100",
     "type": "promo",
     "discount": "",
-    "regions": [
-      "us"
-    ],
+    "regions": [],
     "min_cart_value": 0,
-    "status": "region_limited",
+    "status": "invalid",
     "first_seen": "2026-03-28",
     "last_validated": "2026-03-28T06:03:04.558739+00:00",
     "last_failed": null,
     "fail_count": 0,
     "source": "reddit/search",
     "stackable_with_referral": false,
-    "notes": "Not eligible for US shipping"
+    "notes": "Not eligible for US shipping. No valid region found."
   },
   {
     "code": "RENEWLIFE",
