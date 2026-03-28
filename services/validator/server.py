@@ -156,3 +156,70 @@ async def run_validation():
         }
     finally:
         state["running"] = False
+
+
+@app.post("/browser-validate")
+async def run_browser_validation(regions: str = "us,de"):
+    """Run Playwright-based browser validation for all valid codes."""
+    if state["running"]:
+        raise HTTPException(status_code=409, detail="Validation already running")
+
+    state["running"] = True
+    start_time = datetime.now(timezone.utc)
+    try:
+        import asyncio
+        import subprocess
+
+        coupons_path = os.path.join(DATA_DIR, "coupons.json")
+        existing = load_coupons_json(coupons_path)
+        valid_codes = [c["code"] for c in existing if c.get("status") in ("valid", "region_limited")]
+
+        if not valid_codes:
+            return {"status": "success", "summary": "No valid codes to browser-validate"}
+
+        logger.info("Browser-validating %d codes in regions: %s", len(valid_codes), regions)
+
+        region_list = regions.split(",")
+        results_path = "/tmp/browser_results.json"
+
+        proc = await asyncio.create_subprocess_exec(
+            "python", "browser_validator.py",
+            "--codes", *valid_codes,
+            "--regions", *region_list,
+            "--headless",
+            "--output", results_path,
+            stdout=asyncio.subprocess.PIPE,
+            stderr=asyncio.subprocess.PIPE,
+        )
+        stdout, stderr = await proc.communicate()
+
+        if proc.returncode != 0:
+            error_msg = stderr.decode("utf-8", errors="replace")[:500]
+            logger.error("Browser validation failed: %s", error_msg)
+            return {"status": "failure", "error": error_msg}
+
+        # Process results
+        from browser_validate import load_browser_results, merge_browser_results
+        browser_results = load_browser_results(results_path)
+        updated, summary = merge_browser_results(existing, browser_results)
+        write_coupons_json(updated, coupons_path)
+
+        duration = (datetime.now(timezone.utc) - start_time).total_seconds()
+        state["last_run"] = datetime.now(timezone.utc).isoformat()
+        state["healthy"] = True
+
+        logger.info("Browser validation complete: %s", summary)
+        return {
+            "status": "success",
+            "duration_seconds": round(duration, 1),
+            "codes_tested": len(valid_codes),
+            "summary": summary,
+        }
+
+    except Exception as e:
+        state["last_error"] = str(e)
+        state["last_run"] = datetime.now(timezone.utc).isoformat()
+        logger.exception("Browser validation failed")
+        return {"status": "failure", "error": str(e)}
+    finally:
+        state["running"] = False

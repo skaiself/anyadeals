@@ -98,6 +98,15 @@ class PipelineScheduler:
             logger.info("Validation: %s", result.get("summary", {}))
             await update_dashboard("validator", result)
 
+            # Step 2: Browser-based validation for region-specific testing
+            try:
+                browser_result = await self.validator.trigger_run(
+                    endpoint="/browser-validate", params={"regions": "us,de"}
+                )
+                logger.info("Browser validation: %s", browser_result.get("summary", {}))
+            except Exception as e:
+                logger.warning("Browser validation skipped: %s", e)
+
             await git_commit_and_push("Pipeline run: research + validation")
 
         except Exception as e:

@@ -14,10 +14,10 @@ class ServiceClient:
         self.base_url = base_url.rstrip("/")
         self.timeout = timeout
 
-    async def trigger_run(self) -> dict:
-        """POST /run and return result. Raises on HTTP error."""
+    async def trigger_run(self, endpoint: str = "/run", params: dict | None = None) -> dict:
+        """POST to an endpoint and return result. Raises on HTTP error."""
         async with httpx.AsyncClient(timeout=self.timeout) as client:
-            resp = await client.post(f"{self.base_url}/run")
+            resp = await client.post(f"{self.base_url}{endpoint}", params=params)
             resp.raise_for_status()
             return resp.json()
 
