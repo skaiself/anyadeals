@@ -13,6 +13,7 @@ Usage:
 import argparse
 import json
 import logging
+import os
 import re
 import sys
 import time
@@ -126,26 +127,15 @@ def add_product_to_cart(page: Page) -> bool:
     logger.info("Navigating to product page to add to cart")
     try:
         # Go to the product page and click Add to Cart (sets proper session)
-        page.goto("https://www.iherb.com/pr/california-gold-nutrition-gold-c-vitamin-c-1000-mg-60-veggie-capsules/61864",
-                   wait_until="domcontentloaded", timeout=45000)
-        page.wait_for_timeout(3000)
+        page.goto("https://www.iherb.com/pr/61864",
+                   wait_until="commit", timeout=60000)
 
-        # Save debug screenshot to see what page loaded
-        page.screenshot(path="/tmp/debug_product_page.png")
-        logger.info("Saved product page debug screenshot")
-
-        # Click Add to Cart button
-        add_btn = page.locator('button:has-text("Add to Cart")').first
-        try:
-            add_btn.wait_for(state="visible", timeout=15000)
-            add_btn.click()
-            logger.info("Clicked Add to Cart on product page")
-            page.wait_for_timeout(4000)
-        except PlaywrightTimeout:
-            logger.warning("Add to Cart button not found, trying alternate selector")
-            alt_btn = page.locator('#product-action-btn, [data-ga-event-action="addToCart"]').first
-            alt_btn.click()
-            page.wait_for_timeout(4000)
+        # Wait for Add to Cart button to appear (page loads JS lazily)
+        add_btn = page.locator('button:has-text("Add to Cart"):visible').first
+        add_btn.wait_for(state="visible", timeout=20000)
+        add_btn.click()
+        logger.info("Clicked Add to Cart on product page")
+        page.wait_for_timeout(4000)
 
         # Navigate to cart
         page.goto(CART_URL, wait_until="domcontentloaded", timeout=30000)
@@ -366,21 +356,26 @@ def run_validation(
     results: list[dict[str, Any]] = []
 
     with sync_playwright() as pw:
-        browser = pw.chromium.launch(
-            headless=headless,
-            channel="chrome",
-            args=[
+        # Use IPRoyal Web Unblocker as proxy to bypass CAPTCHA
+        proxy_url = os.environ.get("PROXY_URL", "")
+        launch_opts = {
+            "headless": headless,
+            "channel": "chrome",
+            "args": [
                 "--disable-blink-features=AutomationControlled",
                 "--no-sandbox",
                 "--disable-dev-shm-usage",
                 "--disable-gpu",
+                "--ignore-certificate-errors",
             ],
-        )
+        }
+        browser = pw.chromium.launch(**launch_opts)
 
         context = browser.new_context(
             user_agent=USER_AGENT,
             viewport={"width": 1280, "height": 900},
             locale="en-US",
+            ignore_https_errors=True,
         )
 
         # Mask webdriver detection
