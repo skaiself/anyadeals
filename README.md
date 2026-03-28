@@ -52,13 +52,14 @@ cp .env.example .env   # Fill in API keys (PROXY_URL required for validation)
 docker compose up -d
 ```
 
-The `PROXY_URL` environment variable is required for the validator to test coupons against iHerb. It should point to an IPRoyal Web Unblocker proxy (or similar). Without it, validation will fail with connection errors.
+The `PROXY_URL` environment variable is required for the validator to test coupons against iHerb. It should point to an IPRoyal Web Unblocker proxy (or similar) for Step 1 (API) validation. Step 2 (Browser) validation uses a local GOST proxy on port 8088 (see `/home/skaiself/repo/dockerproxy/`). iHerb blocks server IPs directly (403), Web Unblocker bypasses but breaks sessions, the local GOST proxy works for browser-based validation.
 
 ### Pipeline flow
 
-1. **Researcher** scrapes web sources → writes discovered codes to `site/data/research.json` (status: `pending`)
-2. **Validator** reads pending codes from `research.json` + any static codes from `config.json` → tests each against iHerb checkout → writes valid codes to `site/data/coupons.json` and updates `research.json` statuses
-3. **Orchestrator** commits data changes to GitHub → triggers Cloudflare Pages rebuild
+1. **Researcher** scrapes web sources (CouponFollow, HotDeals, Reddit, Generic) → writes discovered codes to `site/data/research.json` (status: `pending`)
+2. **Validator Step 1 (API)** reads pending codes from `research.json` + any static codes from `config.json` → tests each via httpx + Web Unblocker proxy → detects valid/invalid and code type (promo vs referral)
+3. **Validator Step 2 (Browser)** codes that pass Step 1 are tested in Playwright via local GOST proxy (port 8088) → launches fresh browser per region → adds items from checkout.iherb.com "Recommended for you" (same-domain session persistence) → applies coupon → extracts discount amount and regional eligibility → writes valid codes to `site/data/coupons.json` and updates `research.json` statuses
+4. **Orchestrator** commits data changes to GitHub → triggers Cloudflare Pages rebuild
 
 The orchestrator runs on a schedule:
 - **6:00 & 18:00 UTC** — research + validate + git push
@@ -68,6 +69,22 @@ The orchestrator runs on a schedule:
 - **Every hour** — update dashboard stats
 
 ## Troubleshooting
+
+### Browser validation region issues
+
+- **Working regions:** US, DE, GB, RS, HR
+- **Timeout regions:** KR, AU, CA — coupon input times out after region switch
+- **Failing regions:** JP, SA, CN — React Select (`#cart-country-select`) doesn't accept keyboard input
+- **Region switching method:** Ctrl+A → Backspace → type country name → ArrowDown → Enter on the React Select input
+- **Session tip:** Fresh browser is launched per region to avoid session degradation
+
+### Referral code filtering
+
+Referral codes (`appliedCouponCodeType=2`) are automatically rejected except OFR0296 (our affiliate code). This prevents competing referral codes from appearing on the site.
+
+### Discount extraction fallback
+
+Discount amounts are extracted using a 3-tier fallback: API response → research text parsing → code name parser (looks for numbers 5-50 at end of code name, e.g. "IHERB22OFF" → 22%).
 
 ### Services report `healthy: false` with `FileNotFoundError`
 
