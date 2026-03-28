@@ -45,25 +45,30 @@ COUPON_APPLY = 'button:has-text("Apply"):near(#coupon-input)'
 PROMO_RESULT_CLASS = ".css-1x4pyzj"
 REMOVE_PROMO_BUTTON = 'button[aria-label="Remove Promo Code"]'
 
-# Region config: country display name, optional zip code
+# Region config: country display name as shown in iHerb dropdown, zip code
+# The "Ship to" dropdown uses specific names (e.g. "Korea, Republic of")
+# Save button is DISABLED without a zip/postal code, so all regions need one
 REGION_CONFIG: dict[str, dict[str, Any]] = {
     "us": {"country": "United States", "zip": "32301"},
-    "kr": {"country": "South Korea", "zip": ""},
-    "jp": {"country": "Japan", "zip": ""},
-    "de": {"country": "Germany", "zip": ""},
-    "gb": {"country": "United Kingdom", "zip": ""},
-    "au": {"country": "Australia", "zip": ""},
-    "sa": {"country": "Saudi Arabia", "zip": ""},
-    "ca": {"country": "Canada", "zip": ""},
-    "cn": {"country": "China", "zip": ""},
-    "rs": {"country": "Serbia", "zip": ""},
-    "hr": {"country": "Croatia", "zip": ""},
+    "kr": {"country": "Korea, Republic of", "zip": "06164"},
+    "jp": {"country": "Japan", "zip": "100-0001"},
+    "de": {"country": "Germany", "zip": "10115"},
+    "gb": {"country": "United Kingdom", "zip": "SW1A 1AA"},
+    "au": {"country": "Australia", "zip": "2000"},
+    "sa": {"country": "Saudi Arabia", "zip": "11564"},
+    "ca": {"country": "Canada", "zip": "M5V 3L9"},
+    "cn": {"country": "China", "zip": "100000"},
+    "rs": {"country": "Serbia", "zip": "11000"},
+    "hr": {"country": "Croatia", "zip": "10000"},
 }
 
 # Patterns for interpreting promo result messages
 DISCOUNT_PCT_PATTERN = re.compile(r"(\d+)%\s*off\s+with", re.IGNORECASE)
 DISCOUNT_FIXED_PATTERN = re.compile(r"\$(\d+(?:\.\d+)?)\s*off\s+with", re.IGNORECASE)
 MIN_CART_PATTERN = re.compile(r"Add\s+\$(\d+(?:\.\d+)?)\s+to\s+unlock\s+(\d+)%\s*off", re.IGNORECASE)
+# "THANKYOU15 applied / Save up to $1.20 with this 15% off promo!"
+APPLIED_PCT_PATTERN = re.compile(r"(\d+)%\s*off\s*promo", re.IGNORECASE)
+APPLIED_SAVE_PATTERN = re.compile(r"applied.*?(\d+)%\s*off", re.IGNORECASE | re.DOTALL)
 NOT_ELIGIBLE_REGION = re.compile(r"shipping destination is not eligible", re.IGNORECASE)
 INVALID_CODE_PATTERN = re.compile(r"valid promo or Rewards code", re.IGNORECASE)
 WRONG_PRODUCT_PATTERN = re.compile(r"Items in cart are not eligible", re.IGNORECASE)
@@ -98,6 +103,22 @@ def parse_promo_message(text: str) -> dict[str, Any]:
         result["valid"] = True
         result["discount"] = f"{pct}% off"
         result["min_cart"] = min_cart
+        return result
+
+    # "CODE applied / Save up to $X with this Y% off promo!" — valid
+    m = APPLIED_PCT_PATTERN.search(text)
+    if m:
+        pct = int(m.group(1))
+        result["valid"] = True
+        result["discount"] = f"{pct}% off"
+        return result
+
+    # "CODE applied ... Y% off" — fallback for other applied patterns
+    m = APPLIED_SAVE_PATTERN.search(text)
+    if m:
+        pct = int(m.group(1))
+        result["valid"] = True
+        result["discount"] = f"{pct}% off"
         return result
 
     # "shipping destination is not eligible" — invalid for region
@@ -164,8 +185,10 @@ def add_product_to_cart(page: Page) -> bool:
 def change_shipping_region(page: Page, region_key: str) -> bool:
     """Change the shipping region via the Ship to modal.
 
-    The modal has a React combobox (not a <select>), so we type
-    the country name to filter and select from the dropdown.
+    The modal has a searchable dropdown for country selection. We click the
+    dropdown to open it, type the country name to filter, then click the
+    matching option. A zip/postal code is required (Save is disabled without it).
+    After saving, some regions show a "Special note" popup that must be dismissed.
     """
     config = REGION_CONFIG.get(region_key)
     if not config:
@@ -178,31 +201,52 @@ def change_shipping_region(page: Page, region_key: str) -> bool:
     logger.info("Changing shipping region to %s (%s)", region_key, country_name)
 
     try:
-        # Click the "Ship to" span near cart heading
+        # Click the "Ship to ..." link near cart heading to open the modal
         ship_to = page.locator('text=/Ship to/i').first
         ship_to.wait_for(state="visible", timeout=5000)
         ship_to.click()
         page.wait_for_timeout(3000)
 
-        # Country selector is #cart-country-select (React Select component)
-        # Must use keyboard: Ctrl+A, Backspace, type, ArrowDown, Enter
-        country_input = page.locator('#cart-country-select')
+        # The modal has a "Country/Region" searchable dropdown input
+        # Click on it to open, select all text, type country name to filter
+        country_input = page.locator(
+            'input[class*="country"], '
+            'input[aria-label*="Country" i], '
+            'input[aria-label*="Region" i], '
+            '#cart-country-select'
+        ).first
+
+        # Fallback: find input inside the modal near "Country/Region" label
+        if not country_input.is_visible():
+            modal = page.locator('text="Ship to"').locator('..').locator('..')
+            country_input = modal.locator('input').first
+
         country_input.wait_for(state="visible", timeout=8000)
         country_input.click()
+        page.wait_for_timeout(500)
+
+        # Select all existing text and replace with country name
         page.keyboard.press("Control+A")
-        page.keyboard.press("Backspace")
-        page.wait_for_timeout(300)
-        page.keyboard.type(country_name, delay=80)
+        page.wait_for_timeout(200)
+        page.keyboard.type(country_name, delay=50)
         page.wait_for_timeout(1500)
-        page.keyboard.press("ArrowDown")
-        page.wait_for_timeout(300)
-        page.keyboard.press("Enter")
-        page.wait_for_timeout(1000)
-        logger.info("Selected country: %s", country_name)
+
+        # Click the matching dropdown option
+        option = page.locator(f'text="{country_name}"').first
+        try:
+            option.wait_for(state="visible", timeout=5000)
+            option.click()
+            logger.info("Selected country: %s", country_name)
+        except PlaywrightTimeout:
+            # Fallback: press ArrowDown + Enter for keyboard selection
+            logger.info("Option not clickable, trying keyboard selection")
+            page.keyboard.press("ArrowDown")
+            page.wait_for_timeout(300)
+            page.keyboard.press("Enter")
 
         page.wait_for_timeout(1000)
 
-        # Fill zip code if needed (clear old one first)
+        # Fill zip/postal code — Save button is disabled without it
         if zip_code:
             try:
                 zip_input = page.locator('input[placeholder*="Zip" i], '
@@ -210,36 +254,36 @@ def change_shipping_region(page: Page, region_key: str) -> bool:
                 zip_input.wait_for(state="visible", timeout=3000)
                 zip_input.fill("")
                 zip_input.fill(zip_code)
+                logger.info("Filled zip code: %s", zip_code)
             except PlaywrightTimeout:
-                logger.info("No zip input for %s", region_key)
-        else:
-            # Clear zip for countries that don't need it
-            try:
-                zip_input = page.locator('input[placeholder*="Zip" i], '
-                                         'input[placeholder*="Postal" i]').first
-                if zip_input.is_visible():
-                    zip_input.fill("")
-            except Exception:
-                pass
+                logger.warning("No zip input for %s", region_key)
+
+        page.wait_for_timeout(500)
 
         # Click Save — iterate buttons to find exact match (avoid "Save for later")
         saved = False
         for btn in page.locator('button').all():
-            if btn.inner_text().strip() == "Save" and btn.is_visible():
-                btn.click(force=True)
-                saved = True
-                break
+            try:
+                if btn.inner_text(timeout=1000).strip() == "Save" and btn.is_visible():
+                    btn.click(force=True)
+                    saved = True
+                    break
+            except Exception:
+                continue
         if not saved:
             logger.error("Save button not found")
             return False
         page.wait_for_timeout(6000)
+
+        # Dismiss any popup that appears after region change
+        # (e.g. Korea shows "Special note" about PCCC customs clearance)
+        _dismiss_post_region_popup(page)
 
         logger.info("Shipping region changed to %s", region_key)
         return True
 
     except PlaywrightTimeout:
         logger.error("Timeout changing shipping region to %s", region_key)
-        # Try closing any open modal
         try:
             page.keyboard.press("Escape")
             page.wait_for_timeout(1000)
@@ -249,6 +293,41 @@ def change_shipping_region(page: Page, region_key: str) -> bool:
     except Exception as e:
         logger.error("Error changing shipping region to %s: %s", region_key, e)
         return False
+
+
+def _dismiss_post_region_popup(page: Page) -> None:
+    """Dismiss any popup/modal that appears after changing shipping region.
+
+    Some regions (e.g. Korea) show a "Special note" modal about customs.
+    Look for Close/OK buttons in visible modals and click them.
+    """
+    try:
+        # Look for Close button in a modal
+        close_btn = page.locator('button:has-text("Close"):visible').first
+        if close_btn.count() > 0:
+            close_btn.click()
+            page.wait_for_timeout(1000)
+            logger.info("Dismissed post-region popup (Close)")
+            return
+
+        # Look for OK button
+        ok_btn = page.locator('button:has-text("OK"):visible').first
+        if ok_btn.count() > 0:
+            ok_btn.click()
+            page.wait_for_timeout(1000)
+            logger.info("Dismissed post-region popup (OK)")
+            return
+
+        # Look for X close button on any modal
+        x_btn = page.locator('[aria-label="Close"]:visible, button[class*="close"]:visible').first
+        if x_btn.count() > 0:
+            x_btn.click()
+            page.wait_for_timeout(1000)
+            logger.info("Dismissed post-region popup (X)")
+            return
+
+    except Exception as e:
+        logger.debug("No post-region popup to dismiss: %s", e)
 
 
 def test_coupon_code(page: Page, code: str) -> dict[str, Any]:

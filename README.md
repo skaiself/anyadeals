@@ -72,10 +72,10 @@ The orchestrator runs on a schedule:
 
 ### Browser validation region issues
 
-- **Working regions:** US, DE, GB, RS, HR
-- **Timeout regions:** KR, AU, CA — coupon input times out after region switch
-- **Failing regions:** JP, SA, CN — React Select (`#cart-country-select`) doesn't accept keyboard input
-- **Region switching method:** Ctrl+A → Backspace → type country name → ArrowDown → Enter on the React Select input
+- **Working regions:** US, KR, JP, DE, GB, AU, SA, CA, CN, RS, HR (all 11 regions)
+- **Region switching method:** "Ship to" modal → searchable country dropdown → type country name → click option → fill zip code → Save
+- **Critical:** iHerb lists South Korea as "Korea, Republic of" (not "South Korea"), and the Save button is disabled without a zip/postal code
+- **Post-region popups:** Some regions (e.g. KR) show a "Special note" modal after switching — automatically dismissed by the validator
 - **Session tip:** Fresh browser is launched per region to avoid session degradation
 
 ### Referral code filtering
