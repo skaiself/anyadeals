@@ -254,7 +254,7 @@ export default function IHerbCouponsPage() {
                     <td className="px-6 py-4">
                       <div className="flex flex-wrap gap-1">
                         {coupon.regions.length >= 7 ? (
-                          <span className="inline-block px-1.5 py-0.5 text-[10px] uppercase tracking-wider font-semibold border border-signal/30 text-signal">
+                          <span className="inline-block px-1.5 py-0.5 text-[10px] uppercase tracking-wider font-semibold border border-ink/15 text-ink-muted">
                             Global
                           </span>
                         ) : (
