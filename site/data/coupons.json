@@ -19,22 +19,32 @@
     "type": "promo",
     "discount": "10% off",
     "regions": [
+      "at",
       "au",
       "ca",
+      "ch",
       "cn",
       "de",
+      "fr",
       "gb",
+      "hk",
       "hr",
+      "ie",
+      "in",
+      "it",
       "jp",
       "kr",
+      "nl",
       "rs",
       "sa",
+      "se",
+      "tw",
       "us"
     ],
     "min_cart_value": 60,
     "status": "valid",
     "first_seen": "2026-03-15",
-    "last_validated": "2026-03-28T13:44:36.336626+00:00",
+    "last_validated": "2026-03-28T14:32:18.654978+00:00",
     "last_failed": null,
     "fail_count": 0,
     "source": "hotdeals.com",
@@ -949,22 +959,32 @@
     "type": "promo",
     "discount": "10% off",
     "regions": [
+      "at",
       "au",
       "ca",
+      "ch",
       "cn",
       "de",
+      "fr",
       "gb",
+      "hk",
       "hr",
+      "ie",
+      "in",
+      "it",
       "jp",
       "kr",
+      "nl",
       "rs",
       "sa",
+      "se",
+      "tw",
       "us"
     ],
     "min_cart_value": 0,
     "status": "valid",
     "first_seen": "2026-03-27",
-    "last_validated": "2026-03-28T13:44:36.336626+00:00",
+    "last_validated": "2026-03-28T14:32:18.654978+00:00",
     "last_failed": null,
     "fail_count": 0,
     "source": "",
@@ -1215,18 +1235,19 @@
     "type": "promo",
     "discount": "22% off",
     "regions": [
+      "ie",
       "sa",
       "us"
     ],
     "min_cart_value": 0,
     "status": "region_limited",
     "first_seen": "2026-03-27",
-    "last_validated": "2026-03-28T13:44:36.336626+00:00",
+    "last_validated": "2026-03-28T14:32:18.654978+00:00",
     "last_failed": null,
     "fail_count": 0,
     "source": "",
     "stackable_with_referral": false,
-    "notes": "Not eligible: AU, CA, CN, DE, GB, HR, JP, KR, RS"
+    "notes": "Not eligible: AT, AU, CA, CH, CN, DE, FR, GB, HK, HR, IN, IT, JP, KR, NL, RS, SE, TW"
   },
   {
     "code": "RMB30",
@@ -1711,36 +1732,38 @@
     "type": "promo",
     "discount": "22% off",
     "regions": [
+      "ie",
       "sa",
       "us"
     ],
     "min_cart_value": 0,
     "status": "region_limited",
     "first_seen": "2026-03-28",
-    "last_validated": "2026-03-28T13:44:36.336626+00:00",
+    "last_validated": "2026-03-28T14:32:18.654978+00:00",
     "last_failed": null,
     "fail_count": 0,
     "source": "reddit/search",
     "stackable_with_referral": false,
-    "notes": "Not eligible: AU, CA, CN, DE, GB, HR, JP, KR, RS"
+    "notes": "Not eligible: AT, AU, CA, CH, CN, DE, FR, GB, HK, HR, IN, IT, JP, KR, NL, RS, SE, TW"
   },
   {
     "code": "THANKYOU15",
     "type": "promo",
     "discount": "15% off",
     "regions": [
+      "ie",
       "sa",
       "us"
     ],
     "min_cart_value": 0,
     "status": "region_limited",
     "first_seen": "2026-03-28",
-    "last_validated": "2026-03-28T13:44:36.336626+00:00",
+    "last_validated": "2026-03-28T14:32:18.654978+00:00",
     "last_failed": null,
     "fail_count": 0,
     "source": "reddit/search",
     "stackable_with_referral": false,
-    "notes": "Not eligible: AU, CA, CN, DE, GB, HR, JP, KR, RS"
+    "notes": "Not eligible: AT, AU, CA, CH, CN, DE, FR, GB, HK, HR, IN, IT, JP, KR, NL, RS, SE, TW"
   },
   {
     "code": "BAK22",
@@ -1877,6 +1900,7 @@
     "type": "promo",
     "discount": "",
     "regions": [
+      "ie",
       "jp",
       "sa",
       "us"
@@ -1884,30 +1908,31 @@
     "min_cart_value": 0,
     "status": "region_limited",
     "first_seen": "2026-03-28",
-    "last_validated": "2026-03-28T13:44:36.336626+00:00",
+    "last_validated": "2026-03-28T14:32:18.654978+00:00",
     "last_failed": null,
     "fail_count": 0,
     "source": "reddit/search",
     "stackable_with_referral": false,
-    "notes": "Not eligible: AU, CA, CN, DE, GB, HR, KR, RS"
+    "notes": "Not eligible: AT, AU, CA, CH, CN, DE, FR, GB, HK, HR, IN, IT, KR, NL, RS, SE, TW"
   },
   {
     "code": "RAINBOWLIGHT",
     "type": "promo",
     "discount": "",
     "regions": [
+      "ie",
       "sa",
       "us"
     ],
     "min_cart_value": 0,
     "status": "region_limited",
     "first_seen": "2026-03-28",
-    "last_validated": "2026-03-28T13:44:36.336626+00:00",
+    "last_validated": "2026-03-28T14:32:18.654978+00:00",
     "last_failed": null,
     "fail_count": 0,
     "source": "reddit/search",
     "stackable_with_referral": false,
-    "notes": "Not eligible: AU, CA, CN, DE, GB, HR, JP, KR, RS"
+    "notes": "Not eligible: AT, AU, CA, CH, CN, DE, FR, GB, HK, HR, IN, IT, JP, KR, NL, RS, SE, TW"
   },
   {
     "code": "NATURALVIT",
@@ -1915,17 +1940,18 @@
     "discount": "",
     "regions": [
       "au",
+      "ie",
       "sa",
       "us"
     ],
     "min_cart_value": 0,
     "status": "region_limited",
     "first_seen": "2026-03-28",
-    "last_validated": "2026-03-28T13:44:36.336626+00:00",
+    "last_validated": "2026-03-28T14:32:18.654978+00:00",
     "last_failed": null,
     "fail_count": 0,
     "source": "reddit/search",
     "stackable_with_referral": false,
-    "notes": "Not eligible: CA, CN, DE, GB, HR, JP, KR, RS"
+    "notes": "Not eligible: AT, CA, CH, CN, DE, FR, GB, HK, HR, IN, IT, JP, KR, NL, RS, SE, TW"
   }
 ]
