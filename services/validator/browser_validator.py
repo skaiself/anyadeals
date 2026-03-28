@@ -60,6 +60,16 @@ REGION_CONFIG: dict[str, dict[str, Any]] = {
     "cn": {"country": "China", "zip": "100000"},
     "rs": {"country": "Serbia", "zip": "11000"},
     "hr": {"country": "Croatia", "zip": "10000"},
+    "it": {"country": "Italy", "zip": "00100"},
+    "fr": {"country": "France", "zip": "75001"},
+    "at": {"country": "Austria", "zip": "1010"},
+    "nl": {"country": "Netherlands", "zip": "1012"},
+    "se": {"country": "Sweden", "zip": "111 20"},
+    "ch": {"country": "Switzerland", "zip": "8001"},
+    "ie": {"country": "Ireland", "zip": "D01"},
+    "tw": {"country": "Taiwan", "zip": "100"},
+    "in": {"country": "India", "zip": "110001"},
+    "hk": {"country": "Hong Kong", "zip": ""},
 }
 
 # Patterns for interpreting promo result messages

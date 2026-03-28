@@ -2,9 +2,13 @@
 
 import asyncio
 import logging
+import random
+from datetime import datetime, timedelta, timezone
+
 import httpx
 from apscheduler.schedulers.asyncio import AsyncIOScheduler
 from apscheduler.triggers.cron import CronTrigger
+from apscheduler.triggers.date import DateTrigger
 
 from service_client import ServiceClient
 from dashboard_writer import update_dashboard
@@ -21,26 +25,14 @@ class PipelineScheduler:
     def __init__(self):
         self.scheduler = AsyncIOScheduler()
         self.researcher = ServiceClient(RESEARCHER_URL, timeout=600)
-        self.validator = ServiceClient(VALIDATOR_URL, timeout=600)
+        self.validator = ServiceClient(VALIDATOR_URL, timeout=7200)  # Up to 2h for full browser validation
         self.poster = ServiceClient(POSTER_URL, timeout=300)
 
     def setup(self):
         """Register all scheduled jobs."""
-        # Research pipeline: twice daily at 6:00 and 18:00
-        self.scheduler.add_job(
-            self.run_research_pipeline,
-            CronTrigger(hour="6,18", minute=0),
-            id="research_pipeline",
-            name="Research + Validate + Deploy",
-        )
-
-        # Daily re-validation of existing codes at 12:00
-        self.scheduler.add_job(
-            self.run_validation_only,
-            CronTrigger(hour=12, minute=0),
-            id="daily_revalidation",
-            name="Daily Re-validation",
-        )
+        # Research + validation pipeline: schedule first random run on startup,
+        # then each run schedules the next one
+        self._schedule_next_pipeline_run()
 
         # Twitter posting: 3x/day at 9:00, 13:00, 18:00
         self.scheduler.add_job(
@@ -68,6 +60,76 @@ class PipelineScheduler:
             name="Dashboard Update + Deploy",
         )
 
+    def _schedule_next_pipeline_run(self):
+        """Schedule the next pipeline run at a random time.
+
+        Two runs per day: one in a morning window (5:00-11:00 UTC)
+        and one in an evening window (15:00-21:00 UTC).
+        Random times avoid bot detection patterns.
+        """
+        now = datetime.now(timezone.utc)
+        hour = now.hour
+
+        # Determine which window to schedule for
+        if hour < 11:
+            # We're in the morning — schedule for this morning window
+            window_start = now.replace(hour=5, minute=0, second=0, microsecond=0)
+            window_end = now.replace(hour=11, minute=0, second=0, microsecond=0)
+            if now >= window_end:
+                # Morning window passed, schedule evening
+                window_start = now.replace(hour=15, minute=0, second=0, microsecond=0)
+                window_end = now.replace(hour=21, minute=0, second=0, microsecond=0)
+        elif hour < 15:
+            # Between windows — schedule for evening
+            window_start = now.replace(hour=15, minute=0, second=0, microsecond=0)
+            window_end = now.replace(hour=21, minute=0, second=0, microsecond=0)
+        elif hour < 21:
+            # We're in the evening window
+            window_start = now.replace(hour=15, minute=0, second=0, microsecond=0)
+            window_end = now.replace(hour=21, minute=0, second=0, microsecond=0)
+            if now >= window_end:
+                # Evening window passed, schedule next morning
+                tomorrow = now + timedelta(days=1)
+                window_start = tomorrow.replace(hour=5, minute=0, second=0, microsecond=0)
+                window_end = tomorrow.replace(hour=11, minute=0, second=0, microsecond=0)
+        else:
+            # Past 21:00 — schedule next morning
+            tomorrow = now + timedelta(days=1)
+            window_start = tomorrow.replace(hour=5, minute=0, second=0, microsecond=0)
+            window_end = tomorrow.replace(hour=11, minute=0, second=0, microsecond=0)
+
+        # Pick a random time within the window
+        window_seconds = int((window_end - window_start).total_seconds())
+        random_offset = random.randint(0, max(window_seconds, 1))
+        run_time = window_start + timedelta(seconds=random_offset)
+
+        # If the random time is in the past, bump to next window
+        if run_time <= now:
+            if run_time.hour < 12:
+                window_start = now.replace(hour=15, minute=0, second=0, microsecond=0)
+                window_end = now.replace(hour=21, minute=0, second=0, microsecond=0)
+            else:
+                tomorrow = now + timedelta(days=1)
+                window_start = tomorrow.replace(hour=5, minute=0, second=0, microsecond=0)
+                window_end = tomorrow.replace(hour=11, minute=0, second=0, microsecond=0)
+            window_seconds = int((window_end - window_start).total_seconds())
+            random_offset = random.randint(0, max(window_seconds, 1))
+            run_time = window_start + timedelta(seconds=random_offset)
+
+        # Remove any existing pipeline job before adding new one
+        try:
+            self.scheduler.remove_job("pipeline_run")
+        except Exception:
+            pass
+
+        self.scheduler.add_job(
+            self.run_research_pipeline,
+            DateTrigger(run_date=run_time),
+            id="pipeline_run",
+            name=f"Pipeline (random: {run_time.strftime('%H:%M UTC')})",
+        )
+        logger.info("Next pipeline run scheduled for %s UTC", run_time.strftime("%Y-%m-%d %H:%M"))
+
     def start(self):
         self.scheduler.start()
         logger.info("Scheduler started with %d jobs", len(self.scheduler.get_jobs()))
@@ -87,41 +149,30 @@ class PipelineScheduler:
         ]
 
     async def run_research_pipeline(self):
-        """Chained: research -> validate -> git push."""
-        logger.info("Starting research pipeline")
+        """Chained: research -> browser validate -> git push.
+
+        After completion, schedules the next random run.
+        """
+        logger.info("Starting research + browser validation pipeline")
         try:
+            # Step 1: Research (discover new codes)
             result = await self.researcher.trigger_run()
             logger.info("Research: %s", result.get("summary", {}))
             await update_dashboard("researcher", result)
 
+            # Step 2: Browser-only validation (US filter + all regions)
             result = await self.validator.trigger_run()
             logger.info("Validation: %s", result.get("summary", {}))
             await update_dashboard("validator", result)
 
-            # Step 2: Browser-based validation for region-specific testing
-            try:
-                browser_result = await self.validator.trigger_run(
-                    endpoint="/browser-validate", params={"regions": "us,de"}
-                )
-                logger.info("Browser validation: %s", browser_result.get("summary", {}))
-            except Exception as e:
-                logger.warning("Browser validation skipped: %s", e)
-
-            await git_commit_and_push("Pipeline run: research + validation")
+            await git_commit_and_push("Pipeline run: research + browser validation")
 
         except Exception as e:
             logger.error("Research pipeline failed: %s", e)
             await update_dashboard("researcher", {"status": "failure", "error": str(e)})
-
-    async def run_validation_only(self):
-        """Re-validate existing codes."""
-        logger.info("Starting daily re-validation")
-        try:
-            result = await self.validator.trigger_run()
-            await update_dashboard("validator", result)
-            await git_commit_and_push("Daily re-validation")
-        except Exception as e:
-            logger.error("Re-validation failed: %s", e)
+        finally:
+            # Always schedule the next run
+            self._schedule_next_pipeline_run()
 
     async def run_posting(self, platform: str = "twitter"):
         """Post to social media. platform: 'twitter' or 'reddit'."""

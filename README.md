@@ -52,27 +52,31 @@ cp .env.example .env   # Fill in API keys (PROXY_URL required for validation)
 docker compose up -d
 ```
 
-The `PROXY_URL` environment variable is required for the validator to test coupons against iHerb. It should point to an IPRoyal Web Unblocker proxy (or similar) for Step 1 (API) validation. Step 2 (Browser) validation uses a local GOST proxy on port 8088 (see `/home/skaiself/repo/dockerproxy/`). iHerb blocks server IPs directly (403), Web Unblocker bypasses but breaks sessions, the local GOST proxy works for browser-based validation.
+The `BROWSER_PROXY_URL` environment variable is required for the validator. It should point to a local GOST proxy on port 8088 (see `/home/skaiself/repo/dockerproxy/`). iHerb blocks server IPs directly (403), the local GOST proxy forwards through residential proxies for browser-based validation. No paid Web Unblocker proxy is needed — the pipeline uses browser-only validation.
 
 ### Pipeline flow
 
 1. **Researcher** scrapes web sources (CouponFollow, HotDeals, Reddit, Generic) → writes discovered codes to `site/data/research.json` (status: `pending`)
-2. **Validator Step 1 (API)** reads pending codes from `research.json` + any static codes from `config.json` → tests each via httpx + Web Unblocker proxy → detects valid/invalid and code type (promo vs referral)
-3. **Validator Step 2 (Browser)** codes that pass Step 1 are tested in Playwright via local GOST proxy (port 8088) → launches fresh browser per region → adds items from checkout.iherb.com "Recommended for you" (same-domain session persistence) → applies coupon → extracts discount amount and regional eligibility → writes valid codes to `site/data/coupons.json` and updates `research.json` statuses
-4. **Orchestrator** commits data changes to GitHub → triggers Cloudflare Pages rebuild
+2. **Validator (Browser-only)** tests codes via Playwright through local GOST proxy (port 8088):
+   - **Phase 1:** All pending + active codes tested in US only (~45s each) — quick filter
+   - **Phase 2:** Codes that pass US → tested across all 21 regions (launches fresh browser per region)
+   - Adds items from checkout.iherb.com "Recommended for you" (same-domain session persistence) → applies coupon → extracts discount amount and regional eligibility
+   - Writes valid codes to `site/data/coupons.json` and updates `research.json` statuses
+3. **Orchestrator** commits data changes to GitHub → triggers Cloudflare Pages rebuild
 
-The orchestrator runs on a schedule:
-- **6:00 & 18:00 UTC** — research + validate + git push
-- **12:00 UTC** — re-validate existing codes
+The orchestrator runs on a randomized schedule (to avoid bot detection):
+- **2x daily** — research + validate + git push (random times within 5:00-11:00 and 15:00-21:00 UTC windows)
 - **9:00, 13:00, 18:00 UTC** — post to Twitter/X
 - **Tue & Fri 10:00 UTC** — post to Reddit
 - **Every hour** — update dashboard stats
+
+**Supported regions (21):** US, KR, JP, DE, GB, AU, SA, CA, CN, RS, HR, IT, FR, AT, NL, SE, CH, IE, TW, IN, HK
 
 ## Troubleshooting
 
 ### Browser validation region issues
 
-- **Working regions:** US, KR, JP, DE, GB, AU, SA, CA, CN, RS, HR (all 11 regions)
+- **Working regions:** US, KR, JP, DE, GB, AU, SA, CA, CN, RS, HR, IT, FR, AT, NL, SE, CH, IE, TW, IN, HK (21 regions)
 - **Region switching method:** "Ship to" modal → searchable country dropdown → type country name → click option → fill zip code → Save
 - **Critical:** iHerb lists South Korea as "Korea, Republic of" (not "South Korea"), and the Save button is disabled without a zip/postal code
 - **Post-region popups:** Some regions (e.g. KR) show a "Special note" modal after switching — automatically dismissed by the validator

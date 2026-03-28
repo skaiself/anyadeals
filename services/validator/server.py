@@ -1,20 +1,19 @@
+import asyncio
 import json
 import logging
 import os
+import subprocess
 from datetime import datetime, timezone
 from contextlib import asynccontextmanager
 
 from fastapi import FastAPI, HTTPException
-from httpx_validator import validate_coupon
 from json_writer import (
     load_coupons_json,
     load_research_codes,
-    merge_results,
     update_research_status,
     write_coupons_json,
 )
-from src.config import load_config
-from src.results import CouponResult, ResultsWriter
+from browser_validate import load_browser_results, merge_browser_results
 
 logger = logging.getLogger("validator")
 logging.basicConfig(level=logging.INFO)
@@ -28,7 +27,10 @@ state = {
 }
 
 DATA_DIR = os.environ.get("DATA_DIR", "/data")
-CONFIG_PATH = os.environ.get("CONFIG_PATH", "config.json")
+
+# All regions for full validation (after US filter pass)
+ALL_REGIONS = ["us", "kr", "jp", "de", "gb", "au", "sa", "ca", "cn", "rs", "hr",
+               "it", "fr", "at", "nl", "se", "ch", "ie", "tw", "in", "hk"]
 
 
 @asynccontextmanager
@@ -51,98 +53,145 @@ def get_status():
     }
 
 
+async def _run_browser_validator(codes: list[str], regions: list[str]) -> list[dict]:
+    """Run browser_validator.py and return parsed JSON results."""
+    if not codes:
+        return []
+
+    results_path = f"/tmp/browser_results_{os.getpid()}.json"
+
+    proc = await asyncio.create_subprocess_exec(
+        "python", "browser_validator.py",
+        "--codes", *codes,
+        "--regions", *regions,
+        "--headless",
+        stdout=asyncio.subprocess.PIPE,
+        stderr=asyncio.subprocess.PIPE,
+    )
+    stdout, stderr = await proc.communicate()
+
+    if proc.returncode != 0:
+        error_msg = stderr.decode("utf-8", errors="replace")[-500:]
+        logger.error("Browser validator failed: %s", error_msg)
+        raise RuntimeError(f"Browser validator exited with code {proc.returncode}")
+
+    # Parse JSON from stdout
+    try:
+        return json.loads(stdout.decode("utf-8"))
+    except json.JSONDecodeError:
+        logger.error("Failed to parse browser validator output")
+        raise RuntimeError("Browser validator returned invalid JSON")
+
+
 @app.post("/run")
 async def run_validation():
+    """Browser-only validation pipeline.
+
+    1. Load pending research codes + existing valid/region_limited codes
+    2. Test all codes in US only (quick filter — ~45s each)
+    3. Codes that pass US → test in all remaining regions
+    4. Update coupons.json with full regional results
+    """
     if state["running"]:
         raise HTTPException(status_code=409, detail="Validation already running")
 
     state["running"] = True
     start_time = datetime.now(timezone.utc)
     try:
-        config = load_config(CONFIG_PATH)
-        all_regions = list(config["regions"].keys())
-
-        # Merge config coupons with pending research codes
+        coupons_path = os.path.join(DATA_DIR, "coupons.json")
         research_path = os.path.join(DATA_DIR, "research.json")
+        existing = load_coupons_json(coupons_path)
+
+        # Gather all codes to test
+        # 1. Pending research codes (not yet validated)
         research_codes = load_research_codes(research_path)
-        config_codes = set(c["code"] for c in config["coupons"])
-        all_coupons = list(config["coupons"]) + [
-            rc for rc in research_codes if rc["code"] not in config_codes
-        ]
+        pending_codes = [rc["code"] for rc in research_codes]
+
+        # 2. Existing valid/region_limited codes (re-validation)
+        active_codes = [c["code"] for c in existing
+                        if c.get("status") in ("valid", "region_limited")]
+
+        all_codes = list(dict.fromkeys(pending_codes + active_codes))  # deduplicate, preserve order
+
+        if not all_codes:
+            state["last_run"] = datetime.now(timezone.utc).isoformat()
+            state["healthy"] = True
+            return {"status": "success", "summary": "No codes to validate"}
+
         logger.info(
-            "Loaded %d config coupons + %d pending research codes",
-            len(config["coupons"]),
-            len(all_coupons) - len(config["coupons"]),
+            "Browser validation: %d pending + %d active = %d unique codes",
+            len(pending_codes), len(active_codes), len(all_codes),
         )
 
-        # Expand coupon+region combinations
-        combinations = []
-        for coupon in all_coupons:
-            regions = all_regions if "*" in coupon["regions"] else coupon["regions"]
-            for region_key in regions:
-                if region_key in config["regions"]:
-                    combinations.append((coupon, region_key))
+        # Phase 1: Test all codes in US only (quick filter)
+        logger.info("Phase 1: Testing %d codes in US", len(all_codes))
+        us_results = await _run_browser_validator(all_codes, ["us"])
 
-        logger.info("Testing %d coupon+region combinations via HTTP", len(combinations))
+        # Identify codes that passed US validation
+        us_valid_codes = []
+        for item in us_results:
+            us_result = item.get("results", {}).get("us", {})
+            if us_result.get("valid"):
+                us_valid_codes.append(item["code"])
 
-        timestamp = datetime.now(timezone.utc).strftime("%Y-%m-%d_%H-%M-%S")
-        csv_path = f"results/{timestamp}.csv"
-        results_writer = ResultsWriter(csv_path, "screenshots")
-        all_results = []
+        logger.info("Phase 1 complete: %d/%d passed US filter", len(us_valid_codes), len(all_codes))
 
-        for coupon, region_key in combinations:
-            region_config = config["regions"][region_key]
-            result = await validate_coupon(
-                coupon_code=coupon["code"],
-                region_key=region_key,
-                proxy_url=region_config["proxy"],
-                iherb_url=region_config["iherb_url"],
-                locale_path=region_config.get("locale_path", ""),
-            )
-            results_writer.write_result(result)
-            all_results.append({
-                "coupon_code": result.coupon_code,
-                "region": result.region,
-                "valid": result.valid,
-                "discount_amount": result.discount_amount,
-                "discount_type": result.discount_type,
-                "error_message": result.error_message,
-            })
+        # Phase 2: Test US-valid codes in all remaining regions
+        remaining_regions = [r for r in ALL_REGIONS if r != "us"]
+        full_results = us_results  # Start with US results
 
-        results_writer.close()
+        if us_valid_codes and remaining_regions:
+            logger.info("Phase 2: Testing %d codes across %d regions",
+                        len(us_valid_codes), len(remaining_regions))
+            regional_results = await _run_browser_validator(us_valid_codes, remaining_regions)
 
-        # Merge into coupons.json
-        coupons_path = os.path.join(DATA_DIR, "coupons.json")
-        existing = load_coupons_json(coupons_path)
-        merged = merge_results(existing, all_results, research_path=research_path)
-        write_coupons_json(merged, coupons_path)
+            # Merge regional results into full_results
+            us_map = {item["code"]: item for item in full_results}
+            for item in regional_results:
+                if item["code"] in us_map:
+                    us_map[item["code"]]["results"].update(item.get("results", {}))
+                else:
+                    full_results.append(item)
 
-        # Update research.json validation statuses
-        update_research_status(research_path, all_results)
+        # Process results into coupons.json
+        updated, summary = merge_browser_results(existing, full_results)
+        write_coupons_json(updated, coupons_path)
+
+        # Update research.json statuses
+        research_api_results = []
+        for item in full_results:
+            for region, info in item.get("results", {}).items():
+                research_api_results.append({
+                    "coupon_code": item["code"],
+                    "region": region,
+                    "valid": "true" if info.get("valid") else "false",
+                    "discount_amount": "",
+                    "discount_type": "",
+                    "error_message": info.get("message", ""),
+                })
+        update_research_status(research_path, research_api_results)
 
         duration = (datetime.now(timezone.utc) - start_time).total_seconds()
-        summary = {
-            "codes_validated": len(all_results),
-            "valid": sum(1 for r in all_results if r["valid"] == "true"),
-            "invalid": sum(1 for r in all_results if r["valid"] == "false"),
-            "errors": sum(1 for r in all_results if r["valid"] == "error"),
-            "csv_file": csv_path,
+        result_summary = {
+            "total_codes": len(all_codes),
+            "us_valid": len(us_valid_codes),
+            "us_invalid": len(all_codes) - len(us_valid_codes),
+            "regions_tested": len(ALL_REGIONS) if us_valid_codes else 1,
         }
 
         state["last_run"] = datetime.now(timezone.utc).isoformat()
         state["last_error"] = None
         state["healthy"] = True
-        state["last_result"] = summary
+        state["last_result"] = result_summary
 
-        logger.info(
-            "Done! %d valid, %d invalid, %d errors. CSV: %s",
-            summary["valid"], summary["invalid"], summary["errors"], csv_path,
-        )
+        logger.info("Done! %s (%.1fs)", result_summary, duration)
+        for line in summary:
+            logger.info(line)
 
         return {
             "status": "success",
             "duration_seconds": round(duration, 1),
-            "summary": summary,
+            "summary": result_summary,
         }
 
     except Exception as e:
@@ -150,76 +199,6 @@ async def run_validation():
         state["healthy"] = False
         state["last_run"] = datetime.now(timezone.utc).isoformat()
         logger.exception("Validation run failed")
-        return {
-            "status": "failure",
-            "error": str(e),
-        }
-    finally:
-        state["running"] = False
-
-
-@app.post("/browser-validate")
-async def run_browser_validation(regions: str = "us,de"):
-    """Run Playwright-based browser validation for all valid codes."""
-    if state["running"]:
-        raise HTTPException(status_code=409, detail="Validation already running")
-
-    state["running"] = True
-    start_time = datetime.now(timezone.utc)
-    try:
-        import asyncio
-        import subprocess
-
-        coupons_path = os.path.join(DATA_DIR, "coupons.json")
-        existing = load_coupons_json(coupons_path)
-        valid_codes = [c["code"] for c in existing if c.get("status") in ("valid", "region_limited")]
-
-        if not valid_codes:
-            return {"status": "success", "summary": "No valid codes to browser-validate"}
-
-        logger.info("Browser-validating %d codes in regions: %s", len(valid_codes), regions)
-
-        region_list = regions.split(",")
-        results_path = "/tmp/browser_results.json"
-
-        proc = await asyncio.create_subprocess_exec(
-            "python", "browser_validator.py",
-            "--codes", *valid_codes,
-            "--regions", *region_list,
-            "--headless",
-            "--output", results_path,
-            stdout=asyncio.subprocess.PIPE,
-            stderr=asyncio.subprocess.PIPE,
-        )
-        stdout, stderr = await proc.communicate()
-
-        if proc.returncode != 0:
-            error_msg = stderr.decode("utf-8", errors="replace")[:500]
-            logger.error("Browser validation failed: %s", error_msg)
-            return {"status": "failure", "error": error_msg}
-
-        # Process results
-        from browser_validate import load_browser_results, merge_browser_results
-        browser_results = load_browser_results(results_path)
-        updated, summary = merge_browser_results(existing, browser_results)
-        write_coupons_json(updated, coupons_path)
-
-        duration = (datetime.now(timezone.utc) - start_time).total_seconds()
-        state["last_run"] = datetime.now(timezone.utc).isoformat()
-        state["healthy"] = True
-
-        logger.info("Browser validation complete: %s", summary)
-        return {
-            "status": "success",
-            "duration_seconds": round(duration, 1),
-            "codes_tested": len(valid_codes),
-            "summary": summary,
-        }
-
-    except Exception as e:
-        state["last_error"] = str(e)
-        state["last_run"] = datetime.now(timezone.utc).isoformat()
-        logger.exception("Browser validation failed")
         return {"status": "failure", "error": str(e)}
     finally:
         state["running"] = False
