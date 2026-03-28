@@ -2,7 +2,7 @@
   {
     "code": "WELCOME25",
     "type": "promo",
-    "discount": "25% off",
+    "discount": "22% off",
     "regions": [
       "us",
       "gb"
@@ -15,12 +15,12 @@
     "fail_count": 1,
     "source": "couponfollow.com",
     "stackable_with_referral": true,
-    "notes": "New customers only. Works with referral code OFR0296"
+    "notes": "Browser-verified US"
   },
   {
     "code": "GOLD60",
     "type": "promo",
-    "discount": "10% off orders $60+",
+    "discount": "10% off",
     "regions": [
       "us"
     ],
@@ -32,7 +32,7 @@
     "fail_count": 1,
     "source": "hotdeals.com",
     "stackable_with_referral": true,
-    "notes": "Not valid in Israel. Expires Mar 31."
+    "notes": "Browser-verified US"
   },
   {
     "code": "OLDCODE10",
@@ -952,7 +952,7 @@
     "fail_count": 0,
     "source": "",
     "stackable_with_referral": false,
-    "notes": ""
+    "notes": "Browser-verified US"
   },
   {
     "code": "M944",
@@ -1150,14 +1150,14 @@
       "us"
     ],
     "min_cart_value": 0,
-    "status": "valid",
+    "status": "expired",
     "first_seen": "2026-03-27",
     "last_validated": "2026-03-27T10:24:37.622353+00:00",
     "last_failed": null,
     "fail_count": 0,
     "source": "",
     "stackable_with_referral": false,
-    "notes": ""
+    "notes": "Browser-verified: not valid"
   },
   {
     "code": "NEW20",
@@ -1167,14 +1167,14 @@
       "us"
     ],
     "min_cart_value": 0,
-    "status": "valid",
+    "status": "expired",
     "first_seen": "2026-03-27",
     "last_validated": "2026-03-27T10:24:37.622353+00:00",
     "last_failed": null,
     "fail_count": 0,
     "source": "",
     "stackable_with_referral": false,
-    "notes": ""
+    "notes": "Browser-verified: not valid"
   },
   {
     "code": "EU15N",
@@ -1184,14 +1184,14 @@
       "us"
     ],
     "min_cart_value": 0,
-    "status": "valid",
+    "status": "expired",
     "first_seen": "2026-03-27",
     "last_validated": "2026-03-27T10:24:37.622353+00:00",
     "last_failed": null,
     "fail_count": 0,
     "source": "",
     "stackable_with_referral": false,
-    "notes": ""
+    "notes": "Browser-verified: not valid"
   },
   {
     "code": "IHERB22OFF",
@@ -1208,7 +1208,7 @@
     "fail_count": 0,
     "source": "",
     "stackable_with_referral": false,
-    "notes": "US only (Florida zip tested). Not eligible for DE shipping."
+    "notes": "Browser-verified US"
   },
   {
     "code": "RMB30",
@@ -1594,14 +1594,14 @@
       "us"
     ],
     "min_cart_value": 0,
-    "status": "valid",
+    "status": "expired",
     "first_seen": "2026-03-27",
     "last_validated": "2026-03-27T10:12:12.002550+00:00",
     "last_failed": "2026-03-27T10:24:37.622353+00:00",
     "fail_count": 2,
     "source": "",
     "stackable_with_referral": false,
-    "notes": "Europe only. Expires Mar 31."
+    "notes": "Browser-verified: not valid"
   },
   {
     "code": "AMY100",
@@ -1645,14 +1645,14 @@
       "us"
     ],
     "min_cart_value": 0,
-    "status": "valid",
+    "status": "expired",
     "first_seen": "2026-03-27",
     "last_validated": "2026-03-27T18:00:35.043221+00:00",
     "last_failed": null,
     "fail_count": 0,
     "source": "hotdeals",
     "stackable_with_referral": false,
-    "notes": ""
+    "notes": "Browser-verified: not valid"
   },
   {
     "code": "JPSAKURA26",
@@ -1662,14 +1662,14 @@
       "us"
     ],
     "min_cart_value": 0,
-    "status": "valid",
+    "status": "region_limited",
     "first_seen": "2026-03-27",
     "last_validated": "2026-03-27T18:00:35.043221+00:00",
     "last_failed": null,
     "fail_count": 0,
     "source": "hotdeals",
     "stackable_with_referral": false,
-    "notes": ""
+    "notes": "Not eligible for US shipping"
   },
   {
     "code": "DVO4205",
@@ -1679,19 +1679,19 @@
       "us"
     ],
     "min_cart_value": 0,
-    "status": "valid",
+    "status": "invalid",
     "first_seen": "2026-03-28",
     "last_validated": "2026-03-28T06:03:04.558739+00:00",
     "last_failed": null,
     "fail_count": 0,
     "source": "reddit/search",
     "stackable_with_referral": false,
-    "notes": ""
+    "notes": "Referral/rewards code (browser-verified)"
   },
   {
     "code": "WELLNESS2026",
     "type": "promo",
-    "discount": "",
+    "discount": "22% off",
     "regions": [
       "us"
     ],
@@ -1703,7 +1703,7 @@
     "fail_count": 0,
     "source": "reddit/search",
     "stackable_with_referral": false,
-    "notes": ""
+    "notes": "Browser-verified US"
   },
   {
     "code": "THANKYOU15",

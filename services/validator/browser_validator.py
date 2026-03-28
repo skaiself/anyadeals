@@ -119,30 +119,29 @@ def parse_promo_message(text: str) -> dict[str, Any]:
 
 
 def add_product_to_cart(page: Page) -> bool:
-    """Add a product to cart via the checkout API, then navigate to cart page.
+    """Add a product to cart from the checkout.iherb.com recommended section.
 
-    Uses JavaScript fetch() from within the page to add the product via API,
-    which is faster and more reliable than navigating to the product page.
+    Key: we must stay on checkout.iherb.com domain to preserve session cookies.
+    The empty cart page shows "Recommended for you" products with Add to Cart
+    buttons — clicking these adds items within the same domain session.
     """
-    logger.info("Navigating to product page to add to cart")
+    logger.info("Adding product from cart page recommendations")
     try:
-        # Go to the product page and click Add to Cart (sets proper session)
-        page.goto("https://www.iherb.com/pr/61864",
-                   wait_until="commit", timeout=60000)
+        page.goto(CART_URL, wait_until="commit", timeout=30000)
+        page.wait_for_timeout(8000)
 
-        # Wait for Add to Cart button to appear (page loads JS lazily)
+        # Click Add to Cart from recommended products on the cart page
         add_btn = page.locator('button:has-text("Add to Cart"):visible').first
-        add_btn.wait_for(state="visible", timeout=20000)
-        add_btn.click()
-        logger.info("Clicked Add to Cart on product page")
-        page.wait_for_timeout(4000)
-
-        # Navigate to cart
-        page.goto(CART_URL, wait_until="domcontentloaded", timeout=30000)
+        add_btn.click(force=True)
+        logger.info("Clicked Add to Cart from recommendations")
         page.wait_for_timeout(3000)
 
-        # Check we're not on an empty cart
-        empty_indicator = page.locator('text="Your Shopping Cart is Empty"')
+        # Reload to see cart with items
+        page.reload(wait_until="commit", timeout=30000)
+        page.wait_for_timeout(5000)
+
+        # Check we have items
+        empty_indicator = page.locator('text="Your shopping cart is empty"')
         if empty_indicator.count() > 0:
             logger.warning("Cart appears empty after adding product")
             return False
@@ -357,7 +356,7 @@ def run_validation(
 
     with sync_playwright() as pw:
         # Use IPRoyal Web Unblocker as proxy to bypass CAPTCHA
-        proxy_url = os.environ.get("PROXY_URL", "")
+        proxy_url = os.environ.get("BROWSER_PROXY_URL") or os.environ.get("PROXY_URL", "")
         launch_opts = {
             "headless": headless,
             "channel": "chrome",

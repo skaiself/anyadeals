@@ -50,6 +50,7 @@ services:
       - PROXY_URL=${PROXY_URL}
       - PROXY_URL_US=${PROXY_URL_US:-}
       - PROXY_URL_DE=${PROXY_URL_DE:-}
+      - BROWSER_PROXY_URL=${BROWSER_PROXY_URL:-}
     networks:
       - pipeline
 
