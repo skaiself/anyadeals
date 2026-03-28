@@ -1720,7 +1720,7 @@
     "fail_count": 0,
     "source": "reddit/search",
     "stackable_with_referral": false,
-    "notes": ""
+    "notes": "Browser-verified US. Applied to eligible items."
   },
   {
     "code": "BAK22",
@@ -1747,14 +1747,14 @@
       "us"
     ],
     "min_cart_value": 0,
-    "status": "valid",
+    "status": "region_limited",
     "first_seen": "2026-03-28",
     "last_validated": "2026-03-28T06:03:04.558739+00:00",
     "last_failed": null,
     "fail_count": 0,
     "source": "reddit/search",
     "stackable_with_referral": false,
-    "notes": ""
+    "notes": "Not eligible for US shipping"
   },
   {
     "code": "SAIB30",
@@ -1781,14 +1781,14 @@
       "us"
     ],
     "min_cart_value": 0,
-    "status": "valid",
+    "status": "region_limited",
     "first_seen": "2026-03-28",
     "last_validated": "2026-03-28T06:03:04.558739+00:00",
     "last_failed": null,
     "fail_count": 0,
     "source": "reddit/search",
     "stackable_with_referral": false,
-    "notes": ""
+    "notes": "Not eligible for US shipping"
   },
   {
     "code": "NEW15",
@@ -1832,14 +1832,14 @@
       "us"
     ],
     "min_cart_value": 0,
-    "status": "valid",
+    "status": "invalid",
     "first_seen": "2026-03-28",
     "last_validated": "2026-03-28T06:03:04.558739+00:00",
     "last_failed": null,
     "fail_count": 0,
     "source": "reddit/search",
     "stackable_with_referral": false,
-    "notes": ""
+    "notes": "Returning customers only (login required)"
   },
   {
     "code": "GOLD100",
@@ -1849,14 +1849,14 @@
       "us"
     ],
     "min_cart_value": 0,
-    "status": "valid",
+    "status": "region_limited",
     "first_seen": "2026-03-28",
     "last_validated": "2026-03-28T06:03:04.558739+00:00",
     "last_failed": null,
     "fail_count": 0,
     "source": "reddit/search",
     "stackable_with_referral": false,
-    "notes": ""
+    "notes": "Not eligible for US shipping"
   },
   {
     "code": "RENEWLIFE",
@@ -1873,7 +1873,7 @@
     "fail_count": 0,
     "source": "reddit/search",
     "stackable_with_referral": false,
-    "notes": ""
+    "notes": "Brand-specific: Renew Life products only"
   },
   {
     "code": "RAINBOWLIGHT",
@@ -1890,7 +1890,7 @@
     "fail_count": 0,
     "source": "reddit/search",
     "stackable_with_referral": false,
-    "notes": ""
+    "notes": "Brand-specific: Rainbow Light products only"
   },
   {
     "code": "NATURALVIT",
@@ -1907,6 +1907,6 @@
     "fail_count": 0,
     "source": "reddit/search",
     "stackable_with_referral": false,
-    "notes": ""
+    "notes": "Brand-specific: Natural Vitality products only"
   }
 ]
