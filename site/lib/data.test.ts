@@ -1,5 +1,5 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest';
-import { getCoupons, getActiveCoupons, getExpiredCoupons, getDashboard } from './data';
+import { getCoupons, getActiveCoupons, getExpiredCoupons, getDashboard, getResearchStats } from './data';
 import type { Coupon, Dashboard } from './data';
 
 // --- Test fixtures ---
@@ -263,5 +263,46 @@ describe('Dashboard JSON schema contract', () => {
     mockReadFileSync.mockReturnValue(JSON.stringify(dashboard));
     const { jobs } = getDashboard();
     expect(jobs.researcher.codes_found).toBe(5);
+  });
+});
+
+// --- getResearchStats ---
+
+describe('getResearchStats', () => {
+  it('counts total discovered entries', () => {
+    const entries = [
+      { code: 'A', validation_status: 'valid' },
+      { code: 'B', validation_status: 'invalid' },
+      { code: 'C' },
+    ];
+    mockReadFileSync.mockReturnValue(JSON.stringify(entries));
+    const stats = getResearchStats();
+    expect(stats.totalDiscovered).toBe(3);
+  });
+
+  it('counts validated entries (those with a validation_status)', () => {
+    const entries = [
+      { code: 'A', validation_status: 'valid' },
+      { code: 'B', validation_status: 'invalid' },
+      { code: 'C', validation_status: 'tested' },
+      { code: 'D' },
+    ];
+    mockReadFileSync.mockReturnValue(JSON.stringify(entries));
+    const stats = getResearchStats();
+    expect(stats.totalValidated).toBe(3);
+  });
+
+  it('returns zeros for empty research file', () => {
+    mockReadFileSync.mockReturnValue('[]');
+    const stats = getResearchStats();
+    expect(stats.totalDiscovered).toBe(0);
+    expect(stats.totalValidated).toBe(0);
+  });
+
+  it('reads from data/research.json path', () => {
+    mockReadFileSync.mockReturnValue('[]');
+    getResearchStats();
+    const calledPath = mockReadFileSync.mock.calls[0][0] as string;
+    expect(calledPath).toContain('research.json');
   });
 });

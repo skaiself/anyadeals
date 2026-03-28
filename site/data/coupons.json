@@ -3,36 +3,40 @@
     "code": "WELCOME25",
     "type": "promo",
     "discount": "22% off",
-    "regions": [
-      "us"
-    ],
+    "regions": [],
     "min_cart_value": 40,
-    "status": "valid",
+    "status": "invalid",
     "first_seen": "2026-03-10",
     "last_validated": "2026-03-27T10:22:05.791951+00:00",
-    "last_failed": "2026-03-27T10:24:37.622353+00:00",
-    "fail_count": 1,
+    "last_failed": "2026-03-28T13:44:36.336626+00:00",
+    "fail_count": 2,
     "source": "couponfollow.com",
     "stackable_with_referral": true,
-    "notes": "US only. Not eligible: DE, GB, RS, HR"
+    "notes": "Not eligible: AU, CA, CN, DE, GB, HR, JP, KR, RS, SA, US"
   },
   {
     "code": "GOLD60",
     "type": "promo",
     "discount": "10% off",
     "regions": [
-      "us",
+      "au",
+      "ca",
+      "cn",
       "de",
       "gb",
+      "hr",
+      "jp",
+      "kr",
       "rs",
-      "hr"
+      "sa",
+      "us"
     ],
     "min_cart_value": 60,
     "status": "valid",
     "first_seen": "2026-03-15",
-    "last_validated": "2026-03-27T10:22:05.791951+00:00",
-    "last_failed": "2026-03-27T10:24:37.622353+00:00",
-    "fail_count": 1,
+    "last_validated": "2026-03-28T13:44:36.336626+00:00",
+    "last_failed": null,
+    "fail_count": 0,
     "source": "hotdeals.com",
     "stackable_with_referral": true,
     "notes": "Browser-verified: works globally (US, DE, GB, RS, HR)"
@@ -945,16 +949,22 @@
     "type": "promo",
     "discount": "10% off",
     "regions": [
-      "us",
+      "au",
+      "ca",
+      "cn",
       "de",
       "gb",
+      "hr",
+      "jp",
+      "kr",
       "rs",
-      "hr"
+      "sa",
+      "us"
     ],
     "min_cart_value": 0,
     "status": "valid",
     "first_seen": "2026-03-27",
-    "last_validated": "2026-03-27T10:24:37.622353+00:00",
+    "last_validated": "2026-03-28T13:44:36.336626+00:00",
     "last_failed": null,
     "fail_count": 0,
     "source": "",
@@ -1205,17 +1215,18 @@
     "type": "promo",
     "discount": "22% off",
     "regions": [
+      "sa",
       "us"
     ],
     "min_cart_value": 0,
-    "status": "valid",
+    "status": "region_limited",
     "first_seen": "2026-03-27",
-    "last_validated": "2026-03-27T10:24:37.622353+00:00",
+    "last_validated": "2026-03-28T13:44:36.336626+00:00",
     "last_failed": null,
     "fail_count": 0,
     "source": "",
     "stackable_with_referral": false,
-    "notes": "US only. Not eligible: DE, GB, RS, HR"
+    "notes": "Not eligible: AU, CA, CN, DE, GB, HR, JP, KR, RS"
   },
   {
     "code": "RMB30",
@@ -1700,34 +1711,36 @@
     "type": "promo",
     "discount": "22% off",
     "regions": [
+      "sa",
       "us"
     ],
     "min_cart_value": 0,
-    "status": "valid",
+    "status": "region_limited",
     "first_seen": "2026-03-28",
-    "last_validated": "2026-03-28T06:03:04.558739+00:00",
+    "last_validated": "2026-03-28T13:44:36.336626+00:00",
     "last_failed": null,
     "fail_count": 0,
     "source": "reddit/search",
     "stackable_with_referral": false,
-    "notes": "US only. Not eligible: DE, GB, RS, HR"
+    "notes": "Not eligible: AU, CA, CN, DE, GB, HR, JP, KR, RS"
   },
   {
     "code": "THANKYOU15",
     "type": "promo",
     "discount": "15% off",
     "regions": [
+      "sa",
       "us"
     ],
     "min_cart_value": 0,
-    "status": "valid",
+    "status": "region_limited",
     "first_seen": "2026-03-28",
-    "last_validated": "2026-03-28T06:03:04.558739+00:00",
+    "last_validated": "2026-03-28T13:44:36.336626+00:00",
     "last_failed": null,
     "fail_count": 0,
     "source": "reddit/search",
     "stackable_with_referral": false,
-    "notes": "US only. Browser-verified applied."
+    "notes": "Not eligible: AU, CA, CN, DE, GB, HR, JP, KR, RS"
   },
   {
     "code": "BAK22",
@@ -1870,50 +1883,55 @@
     "type": "promo",
     "discount": "",
     "regions": [
+      "jp",
+      "sa",
       "us"
     ],
     "min_cart_value": 0,
-    "status": "valid",
+    "status": "region_limited",
     "first_seen": "2026-03-28",
-    "last_validated": "2026-03-28T06:03:04.558739+00:00",
+    "last_validated": "2026-03-28T13:44:36.336626+00:00",
     "last_failed": null,
     "fail_count": 0,
     "source": "reddit/search",
     "stackable_with_referral": false,
-    "notes": "Brand-specific: Renew Life products only"
+    "notes": "Not eligible: AU, CA, CN, DE, GB, HR, KR, RS"
   },
   {
     "code": "RAINBOWLIGHT",
     "type": "promo",
     "discount": "",
     "regions": [
+      "sa",
       "us"
     ],
     "min_cart_value": 0,
-    "status": "valid",
+    "status": "region_limited",
     "first_seen": "2026-03-28",
-    "last_validated": "2026-03-28T06:03:04.558739+00:00",
+    "last_validated": "2026-03-28T13:44:36.336626+00:00",
     "last_failed": null,
     "fail_count": 0,
     "source": "reddit/search",
     "stackable_with_referral": false,
-    "notes": "Brand-specific: Rainbow Light products only"
+    "notes": "Not eligible: AU, CA, CN, DE, GB, HR, JP, KR, RS"
   },
   {
     "code": "NATURALVIT",
     "type": "promo",
     "discount": "",
     "regions": [
+      "au",
+      "sa",
       "us"
     ],
     "min_cart_value": 0,
-    "status": "valid",
+    "status": "region_limited",
     "first_seen": "2026-03-28",
-    "last_validated": "2026-03-28T06:03:04.558739+00:00",
+    "last_validated": "2026-03-28T13:44:36.336626+00:00",
     "last_failed": null,
     "fail_count": 0,
     "source": "reddit/search",
     "stackable_with_referral": false,
-    "notes": "Brand-specific: Natural Vitality products only"
+    "notes": "Not eligible: CA, CN, DE, GB, HR, JP, KR, RS"
   }
 ]

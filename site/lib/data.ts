@@ -60,3 +60,22 @@ export function getExpiredCoupons(): Coupon[] {
 export function getDashboard(): Dashboard {
   return readJson<Dashboard>('dashboard.json');
 }
+
+export interface ResearchEntry {
+  code: string;
+  validation_status?: string;
+  [key: string]: unknown;
+}
+
+export interface ResearchStats {
+  totalDiscovered: number;
+  totalValidated: number;
+}
+
+export function getResearchStats(): ResearchStats {
+  const entries = readJson<ResearchEntry[]>('research.json');
+  return {
+    totalDiscovered: entries.length,
+    totalValidated: entries.filter(e => e.validation_status && e.validation_status !== 'none').length,
+  };
+}

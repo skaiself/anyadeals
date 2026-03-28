@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import RevealOnScroll from '@/components/RevealOnScroll';
 import CouponTicket from '@/components/CouponTicket';
-import { getActiveCoupons, getExpiredCoupons } from '@/lib/data';
+import { getActiveCoupons, getExpiredCoupons, getDashboard, getResearchStats } from '@/lib/data';
 
 export const metadata: Metadata = {
   title: 'How to Stack iHerb Discounts in March 2026 — AnyaDeals',
@@ -35,9 +35,24 @@ const SUPPLEMENTS = [
   },
 ];
 
+function formatDeployDate(isoString: string): { label: string; detail: string } {
+  const date = new Date(isoString);
+  const now = new Date();
+  const isToday = date.toDateString() === now.toDateString();
+  const months = ['January', 'February', 'March', 'April', 'May', 'June',
+    'July', 'August', 'September', 'October', 'November', 'December'];
+  const hours = date.getHours().toString().padStart(2, '0');
+  const minutes = date.getMinutes().toString().padStart(2, '0');
+  const detail = `${date.getDate()} ${months[date.getMonth()]} ${date.getFullYear()}, ${hours}:${minutes} UTC`;
+  return { label: isToday ? 'Updated Today' : 'Last Updated', detail };
+}
+
 export default function IHerbCouponsPage() {
   const activeCoupons = getActiveCoupons();
   const expiredCoupons = getExpiredCoupons();
+  const dashboard = getDashboard();
+  const researchStats = getResearchStats();
+  const deployDate = formatDeployDate(dashboard.stats.last_deploy);
 
   return (
     <article className="pt-28 pb-24" aria-label="iHerb discount stacking guide">
@@ -107,21 +122,21 @@ export default function IHerbCouponsPage() {
                   </svg>
                 </div>
                 <div>
-                  <p className="text-xs font-semibold text-ink uppercase tracking-wider font-sans">Updated Today</p>
-                  <p className="text-xs text-ink-muted font-sans">14 March 2026, 10:44 CET</p>
+                  <p className="text-xs font-semibold text-ink uppercase tracking-wider font-sans">{deployDate.label}</p>
+                  <p className="text-xs text-ink-muted font-sans">{deployDate.detail}</p>
                 </div>
               </div>
               <div className="w-full h-px bg-ink/8" />
               <div className="flex items-center gap-3">
                 <div className="w-8 h-8 flex items-center justify-center border border-ink/20">
                   <svg className="w-4 h-4 text-ink-muted" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
-                    <rect x="2" y="4" width="12" height="9" />
-                    <path d="M5 4V3a3 3 0 016 0v1" strokeLinecap="square" />
+                    <path d="M8 1L3 5v5a5.78 5.78 0 005 5 5.78 5.78 0 005-5V5z" strokeLinecap="square" />
+                    <path d="M5.5 8l2 2 3-3" strokeLinecap="square" />
                   </svg>
                 </div>
                 <div>
-                  <p className="text-xs font-semibold text-ink uppercase tracking-wider font-sans">EU & Balkan Shipping</p>
-                  <p className="text-xs text-ink-muted font-sans">Ships to RS, HR, SI, MK, BA +</p>
+                  <p className="text-xs font-semibold text-ink uppercase tracking-wider font-sans">{researchStats.totalValidated} Codes Verified</p>
+                  <p className="text-xs text-ink-muted font-sans">{activeCoupons.length} active now</p>
                 </div>
               </div>
             </div>
