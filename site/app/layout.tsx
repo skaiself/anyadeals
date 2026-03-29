@@ -35,15 +35,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning className={`${libreBodoni.variable} ${publicSans.variable} ${tenorSans.variable}`}>
-      <head>
-        <meta name="impact-site-verification" content="dd95fe28-f76e-4c91-ad0b-47d7a8a0ed38" />
-      </head>
       <body className="bg-cream font-sans antialiased">
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `(function(i,m,p,a,c,t){c.ire_o=p;c[p]=c[p]||function(){(c[p].a=c[p].a||[]).push(arguments)};t=a.createElement(m);var z=a.getElementsByTagName(m)[0];t.async=1;t.src=i;z.parentNode.insertBefore(t,z)})('https://utt.impactcdn.com/P-A7113349-2d32-42ee-93d3-f386188cbac81.js','script','impactStat',document,window);impactStat('transformLinks');impactStat('trackImpression');`,
-          }}
-        />
         <NavBar />
         <main>{children}</main>
         <footer className="border-t border-ink/10 mt-24 py-12 px-6 md:px-12">
