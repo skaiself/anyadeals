@@ -6,6 +6,5 @@ set -euo pipefail
 INPUT=$(cat)
 claude -p "Parse these iHerb coupon codes and return structured JSON: $INPUT" \
     --dangerously-skip-permissions \
-    --model opus \
-    --effort max \
+    --model haiku \
     --output-format json

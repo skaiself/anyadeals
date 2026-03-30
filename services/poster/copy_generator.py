@@ -32,8 +32,7 @@ async def _run_claude_cli(prompt: str) -> str:
         cmd = [
             "claude", "-p", prompt,
             "--dangerously-skip-permissions",
-            "--model", "opus",
-            "--effort", "max",
+            "--model", "haiku",
             "--output-format", "text",
         ]
         proc = await asyncio.create_subprocess_exec(
