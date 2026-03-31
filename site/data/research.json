@@ -762,7 +762,7 @@
     ],
     "expiry_date": null,
     "confidence": "low",
-    "validation_status": "valid"
+    "validation_status": "invalid"
   },
   {
     "code": "M944",
@@ -852,7 +852,7 @@
     ],
     "expiry_date": null,
     "confidence": "low",
-    "validation_status": "error"
+    "validation_status": "valid"
   },
   {
     "code": "GOLD120",
@@ -1002,7 +1002,7 @@
     ],
     "expiry_date": null,
     "confidence": "low",
-    "validation_status": "valid"
+    "validation_status": "invalid"
   },
   {
     "code": "RMB30",
@@ -1752,7 +1752,7 @@
     ],
     "expiry_date": null,
     "confidence": "low",
-    "validation_status": "valid"
+    "validation_status": "invalid"
   },
   {
     "code": "DVO4205",
@@ -1782,7 +1782,7 @@
     ],
     "expiry_date": null,
     "confidence": "low",
-    "validation_status": "valid"
+    "validation_status": "invalid"
   },
   {
     "code": "THANKYOU15",
@@ -1797,7 +1797,7 @@
     ],
     "expiry_date": null,
     "confidence": "low",
-    "validation_status": "valid"
+    "validation_status": "invalid"
   },
   {
     "code": "BAK22",
@@ -1932,7 +1932,7 @@
     ],
     "expiry_date": null,
     "confidence": "low",
-    "validation_status": "valid"
+    "validation_status": "invalid"
   },
   {
     "code": "RAINBOWLIGHT",
@@ -1947,7 +1947,7 @@
     ],
     "expiry_date": null,
     "confidence": "low",
-    "validation_status": "valid"
+    "validation_status": "invalid"
   },
   {
     "code": "NATURALVIT",
@@ -1962,6 +1962,66 @@
     ],
     "expiry_date": null,
     "confidence": "low",
-    "validation_status": "valid"
+    "validation_status": "invalid"
+  },
+  {
+    "code": "COACH",
+    "source": "couponfollow",
+    "discovered_at": "2026-03-29T18:00:04.947970+00:00",
+    "raw_description": "coupons COACH",
+    "raw_context": "coupons</a></li>\n            <li><a class=\"link\" href=\"/site/coach.com\">COACH",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "invalid"
+  },
+  {
+    "code": "YETI",
+    "source": "couponfollow",
+    "discovered_at": "2026-03-29T18:00:04.947970+00:00",
+    "raw_description": "codes YETI",
+    "raw_context": "codes</a></li>\n            <li><a class=\"link\" href=\"/site/yeti.com\">YETI",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "invalid"
+  },
+  {
+    "code": "WORLDWIDE",
+    "source": "reddit/search",
+    "discovered_at": "2026-03-30T06:00:14.124967+00:00",
+    "raw_description": "WORLDWIDE Newest iHerb Promo Codes :)",
+    "raw_context": "Hi everyone! If you\u2019re looking for the newest working iHerb promo code for March 2026, this is the best list to use! It combines a referral discount with other promotions to stack both codes and maximize your savings :) First off, the best code that still works for many shoppers is DVO4205. It is th",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "invalid"
+  },
+  {
+    "code": "DQL3272",
+    "source": "reddit/search",
+    "discovered_at": "2026-03-30T18:00:17.938432+00:00",
+    "raw_description": "10-15% iHerb Discounts!!! DQL3272 + MAR26ANTI / NEW20 / 15NEWC / MYAPP15 / GOLD60",
+    "raw_context": "10-15% iHerb Discounts!!! DQL3272 + MAR26ANTI / NEW20 / 15NEWC / MYAPP15 / GOLD60",
+    "discount_type": "percentage",
+    "discount_value": 15,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "invalid"
   }
 ]
