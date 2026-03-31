@@ -17,7 +17,8 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . .
 
-RUN mkdir -p /data /repo
+RUN mkdir -p /data /repo \
+    && git config --global --add safe.directory /repo
 
 EXPOSE 8080
 
