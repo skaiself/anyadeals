@@ -1,0 +1,8 @@
+[Unit]
+Description=anyadeals AI copy generation
+After=network.target docker.service
+
+[Service]
+Type=oneshot
+ExecStart=/home/skaiself/repo/anyadeals/scripts/cron-poster.sh twitter
+User=skaiself

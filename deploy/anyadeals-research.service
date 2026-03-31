@@ -1,0 +1,8 @@
+[Unit]
+Description=anyadeals AI research parsing
+After=network.target docker.service
+
+[Service]
+Type=oneshot
+ExecStart=/home/skaiself/repo/anyadeals/scripts/cron-research.sh
+User=skaiself

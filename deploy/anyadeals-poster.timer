@@ -1,0 +1,9 @@
+[Unit]
+Description=anyadeals AI copy generation timer
+
+[Timer]
+OnCalendar=*-*-* 08,12,17:30:00 UTC
+Persistent=true
+
+[Install]
+WantedBy=timers.target
