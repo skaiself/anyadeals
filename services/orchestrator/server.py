@@ -5,8 +5,9 @@ import logging
 import os
 from contextlib import asynccontextmanager
 
-from fastapi import FastAPI
-from fastapi.responses import HTMLResponse
+import httpx
+from fastapi import FastAPI, Request
+from fastapi.responses import HTMLResponse, JSONResponse
 
 logger = logging.getLogger("orchestrator")
 logging.basicConfig(level=logging.INFO)
@@ -83,6 +84,35 @@ th {{ background: #0F0D0B; color: #FAF8F5; }}
 <p><small>Last updated: {stats.get('last_deploy', 'unknown')}</small></p>
 </body></html>"""
     return HTMLResponse(content=html)
+
+
+RESEARCHER_URL = "http://researcher:8001"
+POSTER_URL = "http://poster:8003"
+
+API_ROUTES = {
+    "raw-codes": {"service": RESEARCHER_URL, "path": "/raw-codes"},
+    "parsed-codes": {"service": RESEARCHER_URL, "path": "/parsed-codes"},
+    "best-coupon": {"service": POSTER_URL, "path": "/best-coupon"},
+    "copy": {"service": POSTER_URL, "path": "/copy"},
+}
+
+
+@app.api_route("/api/{endpoint}", methods=["GET", "POST"])
+async def api_proxy(endpoint: str, request: Request):
+    """Proxy /api/* requests to internal services."""
+    route = API_ROUTES.get(endpoint)
+    if not route:
+        return JSONResponse(status_code=404, content={"detail": f"Unknown endpoint: {endpoint}"})
+
+    url = f"{route['service']}{route['path']}"
+    async with httpx.AsyncClient(timeout=300) as client:
+        if request.method == "GET":
+            resp = await client.get(url)
+        else:
+            body = await request.body()
+            resp = await client.post(url, content=body, headers={"content-type": "application/json"})
+
+    return JSONResponse(status_code=resp.status_code, content=resp.json())
 
 
 @app.post("/trigger/{service_name}")
