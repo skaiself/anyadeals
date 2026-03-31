@@ -6,7 +6,7 @@ import os
 from datetime import datetime, timezone
 from contextlib import asynccontextmanager
 
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, HTTPException, Request
 
 logger = logging.getLogger("researcher")
 logging.basicConfig(level=logging.INFO)
@@ -108,3 +108,21 @@ def get_raw_codes():
     with open(raw_path) as f:
         raw = json.load(f)
     return raw[:50]
+
+
+@app.post("/parsed-codes")
+async def post_parsed_codes(request: Request):
+    """Accept AI-parsed codes and merge into research.json."""
+    body = await request.json()
+    if not isinstance(body, list):
+        raise HTTPException(status_code=422, detail="Expected a JSON array")
+
+    from json_writer import load_research_json, merge_research, write_research_json
+
+    data_dir = os.environ.get("DATA_DIR", "/data")
+    research_path = os.path.join(data_dir, "research.json")
+    existing = load_research_json(research_path)
+    merged = merge_research(existing, body)
+    write_research_json(merged, research_path)
+
+    return {"status": "ok", "merged_total": len(merged)}

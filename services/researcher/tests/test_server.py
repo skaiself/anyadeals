@@ -77,3 +77,36 @@ async def test_get_raw_codes_limits_to_50(data_dir):
         resp = await client.get("/raw-codes")
     assert resp.status_code == 200
     assert len(resp.json()) == 50
+
+
+@pytest.mark.asyncio
+async def test_post_parsed_codes_merges_into_research(data_dir):
+    existing = [{"code": "OLD1", "source": "test", "raw_description": "old"}]
+    (data_dir / "research.json").write_text(json.dumps(existing))
+
+    new_codes = [
+        {"code": "GOLD60", "source": "retailmenot", "raw_description": "20% off $60+",
+         "discount_type": "percentage", "discount_value": 20, "regions": ["us"],
+         "discovered_at": "2026-03-31T00:00:00Z", "raw_context": "",
+         "expiry_date": None, "confidence": "high", "validation_status": "pending"},
+    ]
+
+    transport = ASGITransport(app=app)
+    async with AsyncClient(transport=transport, base_url="http://test") as client:
+        resp = await client.post("/parsed-codes", json=new_codes)
+    assert resp.status_code == 200
+    data = resp.json()
+    assert data["merged_total"] == 2
+
+    research = json.loads((data_dir / "research.json").read_text())
+    codes = [r["code"] for r in research]
+    assert "OLD1" in codes
+    assert "GOLD60" in codes
+
+
+@pytest.mark.asyncio
+async def test_post_parsed_codes_rejects_non_list(data_dir):
+    transport = ASGITransport(app=app)
+    async with AsyncClient(transport=transport, base_url="http://test") as client:
+        resp = await client.post("/parsed-codes", json={"not": "a list"})
+    assert resp.status_code == 422
