@@ -7,6 +7,7 @@ from datetime import datetime, timezone
 from contextlib import asynccontextmanager
 
 from fastapi import FastAPI, HTTPException
+from pydantic import BaseModel
 
 logger = logging.getLogger("poster")
 logging.basicConfig(level=logging.INFO)
@@ -56,6 +57,39 @@ def get_best_coupon():
         raise HTTPException(status_code=404, detail="No valid coupons")
     best = max(valid, key=lambda c: c.get("last_validated", ""))
     return best
+
+
+class CopyRequest(BaseModel):
+    coupon_code: str
+    copy_text: str
+    platform: str = "twitter"
+
+
+@app.post("/copy")
+async def post_copy(req: CopyRequest):
+    """Accept AI-generated copy and store for next posting run."""
+    data_dir = os.environ.get("DATA_DIR", "/data")
+    coupons_path = os.path.join(data_dir, "coupons.json")
+    if not os.path.exists(coupons_path):
+        raise HTTPException(status_code=404, detail="No coupons file")
+    with open(coupons_path) as f:
+        coupons = json.load(f)
+
+    coupon = next((c for c in coupons if c["code"] == req.coupon_code), None)
+    if not coupon:
+        raise HTTPException(status_code=404, detail=f"Coupon {req.coupon_code} not found")
+
+    # Store the AI copy for pickup by the next scheduled posting run
+    copy_path = os.path.join(data_dir, "ai_copy.json")
+    copy_data = {
+        "coupon_code": req.coupon_code,
+        "copy_text": req.copy_text,
+        "platform": req.platform,
+    }
+    with open(copy_path, "w") as f:
+        json.dump(copy_data, f, indent=2)
+
+    return {"status": "accepted", "coupon_code": req.coupon_code, "platform": req.platform}
 
 
 @app.post("/run")
