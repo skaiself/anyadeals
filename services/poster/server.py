@@ -42,6 +42,22 @@ def get_status():
     }
 
 
+@app.get("/best-coupon")
+def get_best_coupon():
+    """Return the top valid coupon (most recently validated)."""
+    data_dir = os.environ.get("DATA_DIR", "/data")
+    coupons_path = os.path.join(data_dir, "coupons.json")
+    if not os.path.exists(coupons_path):
+        raise HTTPException(status_code=404, detail="No coupons file found")
+    with open(coupons_path) as f:
+        coupons = json.load(f)
+    valid = [c for c in coupons if c.get("status") == "valid"]
+    if not valid:
+        raise HTTPException(status_code=404, detail="No valid coupons")
+    best = max(valid, key=lambda c: c.get("last_validated", ""))
+    return best
+
+
 @app.post("/run")
 async def run_posting(platform: str = "all"):
     """Run posting. platform: 'twitter', 'reddit', or 'all'."""
