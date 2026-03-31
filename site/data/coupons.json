@@ -21,27 +21,31 @@
     "regions": [
       "au",
       "ca",
+      "ch",
       "cn",
       "gb",
       "hk",
+      "hr",
       "ie",
       "in",
       "it",
       "jp",
       "kr",
+      "nl",
       "sa",
+      "se",
       "tw",
       "us"
     ],
     "min_cart_value": 60,
     "status": "region_limited",
     "first_seen": "2026-03-15",
-    "last_validated": "2026-03-31T06:14:39.041690+00:00",
+    "last_validated": "2026-03-31T21:08:46.116893+00:00",
     "last_failed": null,
     "fail_count": 0,
     "source": "hotdeals.com",
     "stackable_with_referral": true,
-    "notes": "Not eligible: AT, CH, DE, FR, HR, NL, RS, SE"
+    "notes": "Not eligible: AT, DE, FR, RS"
   },
   {
     "code": "OLDCODE10",
