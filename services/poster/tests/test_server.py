@@ -127,7 +127,7 @@ async def test_run_uses_stored_ai_copy(tmp_path, monkeypatch):
     # Mock out the actual posting and image generation so we don't need real credentials
     async def mock_generate_copy(c):
         return "fallback"
-    async def mock_generate_image(c):
+    def mock_generate_image(c):
         return None
 
     monkeypatch.setattr("copy_generator.generate_copy", mock_generate_copy)

@@ -136,7 +136,7 @@ async def run_posting(platform: str = "all"):
             copy_text = await generate_copy(best)
 
         from image_generator import generate_image
-        image_path = await generate_image(best)
+        image_path = generate_image(best)
 
         posts_created = 0
         posts_path = os.path.join(data_dir, "posts.json")
