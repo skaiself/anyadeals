@@ -1,5 +1,6 @@
 """Researcher service — discovers iHerb promo codes from web sources."""
 
+import json
 import logging
 import os
 from datetime import datetime, timezone
@@ -57,6 +58,11 @@ async def run_research():
         raw_codes = await run_all_scrapers()
         logger.info("Scraped %d raw code entries", len(raw_codes))
 
+        # Save raw codes for external AI processing
+        raw_path = os.path.join(DATA_DIR, "raw_codes.json")
+        with open(raw_path, "w") as f:
+            json.dump(raw_codes[:50], f, indent=2, default=str)
+
         # Step 2: Parse and deduplicate with Claude CLI
         parsed_codes = await parse_and_deduplicate(raw_codes)
         logger.info("Parsed %d unique codes", len(parsed_codes))
@@ -90,3 +96,15 @@ async def run_research():
         return {"status": "failure", "error": str(e)}
     finally:
         state["running"] = False
+
+
+@app.get("/raw-codes")
+def get_raw_codes():
+    """Return latest raw scraped entries for external AI parsing."""
+    data_dir = os.environ.get("DATA_DIR", "/data")
+    raw_path = os.path.join(data_dir, "raw_codes.json")
+    if not os.path.exists(raw_path):
+        return []
+    with open(raw_path) as f:
+        raw = json.load(f)
+    return raw[:50]
