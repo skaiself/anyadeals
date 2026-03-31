@@ -106,3 +106,42 @@ async def test_post_copy_rejects_unknown_coupon(tmp_path):
             "platform": "twitter",
         })
     assert resp.status_code == 404
+
+
+@pytest.mark.asyncio
+async def test_run_uses_stored_ai_copy(tmp_path, monkeypatch):
+    os.environ["DATA_DIR"] = str(tmp_path)
+    coupons = [
+        {"code": "GOLD60", "status": "valid", "last_validated": "2026-03-31T00:00:00Z",
+         "discount": "20% off $60+"},
+    ]
+    (tmp_path / "coupons.json").write_text(json.dumps(coupons))
+    (tmp_path / "posts.json").write_text("[]")
+    ai_copy = {
+        "coupon_code": "GOLD60",
+        "copy_text": "AI generated copy for GOLD60!",
+        "platform": "twitter",
+    }
+    (tmp_path / "ai_copy.json").write_text(json.dumps(ai_copy))
+
+    # Mock out the actual posting and image generation so we don't need real credentials
+    async def mock_generate_copy(c):
+        return "fallback"
+    async def mock_generate_image(c):
+        return None
+
+    monkeypatch.setattr("copy_generator.generate_copy", mock_generate_copy)
+    monkeypatch.setattr("image_generator.generate_image", mock_generate_image)
+
+    from server import state
+    state["running"] = False
+
+    from server import app
+    transport = ASGITransport(app=app)
+    async with AsyncClient(transport=transport, base_url="http://test") as client:
+        resp = await client.post("/run?platform=twitter")
+    data = resp.json()
+    assert data["status"] == "success"
+
+    # Verify ai_copy.json was consumed (deleted)
+    assert not (tmp_path / "ai_copy.json").exists()

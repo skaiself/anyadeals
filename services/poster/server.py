@@ -103,8 +103,11 @@ async def run_posting(platform: str = "all"):
     try:
         from json_writer import load_posts_json, append_post, write_posts_json
 
+        # Read DATA_DIR from env inside the function for test compatibility
+        data_dir = os.environ.get("DATA_DIR", "/data")
+
         # Load valid coupons
-        coupons_path = os.path.join(DATA_DIR, "coupons.json")
+        coupons_path = os.path.join(data_dir, "coupons.json")
         with open(coupons_path) as f:
             coupons = json.load(f)
         valid_coupons = [c for c in coupons if c.get("status") == "valid"]
@@ -114,14 +117,29 @@ async def run_posting(platform: str = "all"):
 
         best = max(valid_coupons, key=lambda c: c.get("last_validated", ""))
 
-        from copy_generator import generate_copy
-        copy_text = await generate_copy(best)
+        # Check for AI-generated copy (from cron scripts via POST /copy)
+        ai_copy_path = os.path.join(data_dir, "ai_copy.json")
+        copy_text = None
+        if os.path.exists(ai_copy_path):
+            try:
+                with open(ai_copy_path) as f:
+                    ai_copy = json.load(f)
+                if ai_copy.get("coupon_code") == best["code"]:
+                    copy_text = ai_copy["copy_text"]
+                    logger.info("Using AI-generated copy for %s", best["code"])
+                os.remove(ai_copy_path)
+            except Exception as e:
+                logger.warning("Failed to read ai_copy.json: %s", e)
+
+        if not copy_text:
+            from copy_generator import generate_copy
+            copy_text = await generate_copy(best)
 
         from image_generator import generate_image
         image_path = await generate_image(best)
 
         posts_created = 0
-        posts_path = os.path.join(DATA_DIR, "posts.json")
+        posts_path = os.path.join(data_dir, "posts.json")
         existing_posts = load_posts_json(posts_path)
 
         # Post to Twitter (if platform is 'all' or 'twitter')
