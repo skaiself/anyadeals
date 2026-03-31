@@ -1,0 +1,8 @@
+# anyadeals AI pipeline cron jobs
+# Install with: crontab -l | cat - deploy/crontab-anyadeals | crontab -
+
+# Research parsing: 2x/day at 07:00 and 19:00 UTC
+0 7,19 * * * /home/skaiself/repo/anyadeals/scripts/cron-research.sh
+
+# Twitter copy generation: 3x/day, 30min before scheduled posting (9/13/18)
+30 8,12,17 * * * /home/skaiself/repo/anyadeals/scripts/cron-poster.sh twitter
