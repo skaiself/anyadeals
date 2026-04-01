@@ -3,6 +3,8 @@
 # Runs on the host (not inside Docker). Logs to /var/log/anyadeals/cron-research.log.
 set -euo pipefail
 
+export PATH="$HOME/.local/bin:$PATH"
+
 API_BASE="http://localhost:8080/api"
 LOG_DIR="/var/log/anyadeals"
 LOG_FILE="${LOG_DIR}/cron-research.log"
