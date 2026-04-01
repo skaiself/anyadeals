@@ -7,6 +7,7 @@ import os
 logger = logging.getLogger("orchestrator")
 
 REPO_DIR = os.environ.get("REPO_DIR", "/repo")
+GITHUB_TOKEN = os.environ.get("GITHUB_TOKEN", "")
 MAX_RETRIES = 3
 RETRY_DELAY = 30  # seconds
 
@@ -46,6 +47,14 @@ async def git_commit_and_push(message: str) -> bool:
     if rc != 0:
         logger.error("git commit failed")
         return False
+
+    # Configure token-based push URL if available
+    if GITHUB_TOKEN:
+        origin_url, _ = await _run_git("remote", "get-url", "origin")
+        if origin_url.startswith("https://github.com/"):
+            repo_path = origin_url.replace("https://github.com/", "")
+            token_url = f"https://x-access-token:{GITHUB_TOKEN}@github.com/{repo_path}"
+            await _run_git("remote", "set-url", "origin", token_url)
 
     # Push with retry
     for attempt in range(1, MAX_RETRIES + 1):
