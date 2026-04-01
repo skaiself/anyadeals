@@ -852,7 +852,7 @@
     ],
     "expiry_date": null,
     "confidence": "low",
-    "validation_status": "valid"
+    "validation_status": "invalid"
   },
   {
     "code": "GOLD120",
@@ -2017,6 +2017,276 @@
     "raw_context": "10-15% iHerb Discounts!!! DQL3272 + MAR26ANTI / NEW20 / 15NEWC / MYAPP15 / GOLD60",
     "discount_type": "percentage",
     "discount_value": 15,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "invalid"
+  },
+  {
+    "code": "AMPK",
+    "source": "reddit/r/Supplements",
+    "discovered_at": "2026-04-01T20:06:18.835652+00:00",
+    "raw_description": "Supplements for weight loss",
+    "raw_context": "**\\[not affiliated with iHerb or any brands, link has no referral code\\]**\n\nA lot of people are looking for supplements to help with weight loss. The industry makes insane money off this. Let me tell you something, as someone who lost over 30 kg \u2013 there's no magic, and you can't cheat physics. The f",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "invalid"
+  },
+  {
+    "code": "B420",
+    "source": "reddit/r/Supplements",
+    "discovered_at": "2026-04-01T20:06:18.835652+00:00",
+    "raw_description": "Supplements for weight loss",
+    "raw_context": "**\\[not affiliated with iHerb or any brands, link has no referral code\\]**\n\nA lot of people are looking for supplements to help with weight loss. The industry makes insane money off this. Let me tell you something, as someone who lost over 30 kg \u2013 there's no magic, and you can't cheat physics. The f",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "invalid"
+  },
+  {
+    "code": "BNR17",
+    "source": "reddit/r/Supplements",
+    "discovered_at": "2026-04-01T20:06:18.835652+00:00",
+    "raw_description": "Supplements for weight loss",
+    "raw_context": "**\\[not affiliated with iHerb or any brands, link has no referral code\\]**\n\nA lot of people are looking for supplements to help with weight loss. The industry makes insane money off this. Let me tell you something, as someone who lost over 30 kg \u2013 there's no magic, and you can't cheat physics. The f",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "invalid"
+  },
+  {
+    "code": "LGZ7260",
+    "source": "reddit/search",
+    "discovered_at": "2026-04-01T20:06:18.835652+00:00",
+    "raw_description": "iHerb promo code for 10% off first order and 5% off subsequent orders: LGZ7260 April 2026",
+    "raw_context": "**LGZ7260**\n\nand get another 15% by ordering on the iHerb app for the first time: **MYAPP15**",
+    "discount_type": "percentage",
+    "discount_value": 10,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "invalid"
+  },
+  {
+    "code": "AIL8463",
+    "source": "reddit/search",
+    "discovered_at": "2026-04-01T20:06:18.835652+00:00",
+    "raw_description": "iherb promo 22%",
+    "raw_context": "use AIL8463 for 10% new user\n\n\\+++ STACK WITH\n\n26CRHX86 for 22+% off! (ending soon!)",
+    "discount_type": "percentage",
+    "discount_value": 22,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "invalid"
+  },
+  {
+    "code": "STACK",
+    "source": "reddit/search",
+    "discovered_at": "2026-04-01T20:06:18.835652+00:00",
+    "raw_description": "iherb promo 22%",
+    "raw_context": "use AIL8463 for 10% new user\n\n\\+++ STACK WITH\n\n26CRHX86 for 22+% off! (ending soon!)",
+    "discount_type": "percentage",
+    "discount_value": 22,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "invalid"
+  },
+  {
+    "code": "ATHLETE22",
+    "source": "reddit/search",
+    "discovered_at": "2026-04-01T20:06:18.835652+00:00",
+    "raw_description": "iHerb Promo Codes April 2026 \u2014 Verified Working Coupons (All Countries, Updated Daily)",
+    "raw_context": "This is a\u00a0**fresh April 2026 update**\u00a0of iHerb promo codes.  \nAll coupons listed below are\u00a0**tested and currently working**.\n\n\ud83d\udc49\u00a0**Important:**\u00a0Always enter the code\u00a0**DMU6301**\u00a0first \u2014 it is a\u00a0**verified iHerb promo code**, works in all countries, gives guaranteed 10% off, has\u00a0**no expiration date**",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "invalid"
+  },
+  {
+    "code": "ERICA22",
+    "source": "reddit/search",
+    "discovered_at": "2026-04-01T20:06:18.835652+00:00",
+    "raw_description": "iHerb Promo Codes April 2026 \u2014 Verified Working Coupons (All Countries, Updated Daily)",
+    "raw_context": "This is a\u00a0**fresh April 2026 update**\u00a0of iHerb promo codes.  \nAll coupons listed below are\u00a0**tested and currently working**.\n\n\ud83d\udc49\u00a0**Important:**\u00a0Always enter the code\u00a0**DMU6301**\u00a0first \u2014 it is a\u00a0**verified iHerb promo code**, works in all countries, gives guaranteed 10% off, has\u00a0**no expiration date**",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "invalid"
+  },
+  {
+    "code": "KOC22",
+    "source": "reddit/search",
+    "discovered_at": "2026-04-01T20:06:18.835652+00:00",
+    "raw_description": "iHerb Promo Codes April 2026 \u2014 Verified Working Coupons (All Countries, Updated Daily)",
+    "raw_context": "This is a\u00a0**fresh April 2026 update**\u00a0of iHerb promo codes.  \nAll coupons listed below are\u00a0**tested and currently working**.\n\n\ud83d\udc49\u00a0**Important:**\u00a0Always enter the code\u00a0**DMU6301**\u00a0first \u2014 it is a\u00a0**verified iHerb promo code**, works in all countries, gives guaranteed 10% off, has\u00a0**no expiration date**",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "invalid"
+  },
+  {
+    "code": "CHRI22",
+    "source": "reddit/search",
+    "discovered_at": "2026-04-01T20:06:18.835652+00:00",
+    "raw_description": "iHerb Promo Codes April 2026 \u2014 Verified Working Coupons (All Countries, Updated Daily)",
+    "raw_context": "This is a\u00a0**fresh April 2026 update**\u00a0of iHerb promo codes.  \nAll coupons listed below are\u00a0**tested and currently working**.\n\n\ud83d\udc49\u00a0**Important:**\u00a0Always enter the code\u00a0**DMU6301**\u00a0first \u2014 it is a\u00a0**verified iHerb promo code**, works in all countries, gives guaranteed 10% off, has\u00a0**no expiration date**",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "invalid"
+  },
+  {
+    "code": "SAHTEK25",
+    "source": "reddit/search",
+    "discovered_at": "2026-04-01T20:06:18.835652+00:00",
+    "raw_description": "iHerb Promo Codes April 2026 \u2014 Verified Working Coupons (All Countries, Updated Daily)",
+    "raw_context": "This is a\u00a0**fresh April 2026 update**\u00a0of iHerb promo codes.  \nAll coupons listed below are\u00a0**tested and currently working**.\n\n\ud83d\udc49\u00a0**Important:**\u00a0Always enter the code\u00a0**DMU6301**\u00a0first \u2014 it is a\u00a0**verified iHerb promo code**, works in all countries, gives guaranteed 10% off, has\u00a0**no expiration date**",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "invalid"
+  },
+  {
+    "code": "MSTUA",
+    "source": "reddit/search",
+    "discovered_at": "2026-04-01T20:06:18.835652+00:00",
+    "raw_description": "iHerb Promo Codes April 2026 \u2014 Verified Working Coupons (All Countries, Updated Daily)",
+    "raw_context": "This is a\u00a0**fresh April 2026 update**\u00a0of iHerb promo codes.  \nAll coupons listed below are\u00a0**tested and currently working**.\n\n\ud83d\udc49\u00a0**Important:**\u00a0Always enter the code\u00a0**DMU6301**\u00a0first \u2014 it is a\u00a0**verified iHerb promo code**, works in all countries, gives guaranteed 10% off, has\u00a0**no expiration date**",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "invalid"
+  },
+  {
+    "code": "KRNEW20",
+    "source": "reddit/search",
+    "discovered_at": "2026-04-01T20:06:18.835652+00:00",
+    "raw_description": "iHerb Promo Codes April 2026 \u2014 Verified Working Coupons (All Countries, Updated Daily)",
+    "raw_context": "This is a\u00a0**fresh April 2026 update**\u00a0of iHerb promo codes.  \nAll coupons listed below are\u00a0**tested and currently working**.\n\n\ud83d\udc49\u00a0**Important:**\u00a0Always enter the code\u00a0**DMU6301**\u00a0first \u2014 it is a\u00a0**verified iHerb promo code**, works in all countries, gives guaranteed 10% off, has\u00a0**no expiration date**",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "invalid"
+  },
+  {
+    "code": "MARHABA25",
+    "source": "reddit/search",
+    "discovered_at": "2026-04-01T20:06:18.835652+00:00",
+    "raw_description": "iHerb Promo Codes April 2026 \u2014 Verified Working Coupons (All Countries, Updated Daily)",
+    "raw_context": "This is a\u00a0**fresh April 2026 update**\u00a0of iHerb promo codes.  \nAll coupons listed below are\u00a0**tested and currently working**.\n\n\ud83d\udc49\u00a0**Important:**\u00a0Always enter the code\u00a0**DMU6301**\u00a0first \u2014 it is a\u00a0**verified iHerb promo code**, works in all countries, gives guaranteed 10% off, has\u00a0**no expiration date**",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "invalid"
+  },
+  {
+    "code": "OM183",
+    "source": "hotdeals",
+    "discovered_at": "2026-04-01T20:08:13.770939+00:00",
+    "raw_description": "Get 10% OFF your order at iHerb, and enjoy a variety of items and more.",
+    "raw_context": "hotdeals.com code OM183",
+    "discount_type": "percentage",
+    "discount_value": 10,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "invalid"
+  },
+  {
+    "code": "SAVOOFR",
+    "source": "hotdeals",
+    "discovered_at": "2026-04-01T20:08:13.770939+00:00",
+    "raw_description": "Get 10% OFF today at iHerb and discover a wide range of deals.",
+    "raw_context": "hotdeals.com code SAVOOFR",
+    "discount_type": "percentage",
+    "discount_value": 10,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "invalid"
+  },
+  {
+    "code": "MAR26HSN",
+    "source": "hotdeals",
+    "discovered_at": "2026-04-01T20:08:13.770939+00:00",
+    "raw_description": "Discover 15% OFF Household Supplies and Essential Oils, plus many more options at iHerb.",
+    "raw_context": "hotdeals.com code MAR26HSN",
+    "discount_type": "percentage",
+    "discount_value": 15,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "invalid"
+  },
+  {
+    "code": "MPC5938",
+    "source": "hotdeals",
+    "discovered_at": "2026-04-01T20:08:13.770939+00:00",
+    "raw_description": "iHerb has 30% OFF Vitamins &amp; Supplements and Natural Remedies, along with other great selections throughout the store.",
+    "raw_context": "hotdeals.com code MPC5938",
+    "discount_type": "percentage",
+    "discount_value": 30,
     "regions": [
       "us"
     ],

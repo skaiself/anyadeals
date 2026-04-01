@@ -18,21 +18,9 @@
     "raw_context": "couponfollow.com/site/iherb.com#C5254352"
   },
   {
-    "code": "C6466135",
-    "source": "couponfollow",
-    "raw_description": "Save 20% Off Your First Order",
-    "raw_context": "couponfollow.com/site/iherb.com#C6466135"
-  },
-  {
-    "code": "C6482177",
-    "source": "couponfollow",
-    "raw_description": "Take 15% Off Immunity Health With Code",
-    "raw_context": "couponfollow.com/site/iherb.com#C6482177"
-  },
-  {
     "code": "C5303494",
     "source": "couponfollow",
-    "raw_description": "Up to 1% Cashback*",
+    "raw_description": "Save 20% Off Your First Order",
     "raw_context": "couponfollow.com/site/iherb.com#C5303494"
   },
   {
@@ -42,15 +30,9 @@
     "raw_context": "couponfollow.com/site/iherb.com#C5989272"
   },
   {
-    "code": "P757804",
-    "source": "couponfollow",
-    "raw_description": "Take 20% Off Natural Vitality Magnesium Supplements",
-    "raw_context": "couponfollow.com/site/iherb.com#P757804"
-  },
-  {
     "code": "C6395292",
     "source": "couponfollow",
-    "raw_description": "Last Chance Specials Up to 65% Off",
+    "raw_description": "Up to 1% Cashback*",
     "raw_context": "couponfollow.com/site/iherb.com#C6395292"
   },
   {
@@ -90,9 +72,21 @@
     "raw_context": "couponfollow.com/site/iherb.com#P725337"
   },
   {
-    "code": "P756677",
+    "code": "C6482177",
     "source": "couponfollow",
     "raw_description": "Brands Of The Week: Get Up to 20% Off",
+    "raw_context": "couponfollow.com/site/iherb.com#C6482177"
+  },
+  {
+    "code": "P757804",
+    "source": "couponfollow",
+    "raw_description": "Save 15% Off Antioxidant Essentials at iHerb",
+    "raw_context": "couponfollow.com/site/iherb.com#P757804"
+  },
+  {
+    "code": "P756677",
+    "source": "couponfollow",
+    "raw_description": "Last Chance Specials Up to 65% Off",
     "raw_context": "couponfollow.com/site/iherb.com#P756677"
   },
   {
@@ -186,9 +180,15 @@
     "raw_context": "couponfollow.com/site/iherb.com#P724670"
   },
   {
-    "code": "C6396087",
+    "code": "C6466135",
     "source": "couponfollow",
     "raw_description": "Get Up to 20% Off Brands of the Week",
+    "raw_context": "couponfollow.com/site/iherb.com#C6466135"
+  },
+  {
+    "code": "C6396087",
+    "source": "couponfollow",
+    "raw_description": "Take 15% Off Immunity Health With Code",
     "raw_context": "couponfollow.com/site/iherb.com#C6396087"
   },
   {
@@ -266,8 +266,8 @@
   {
     "code": "PROMO",
     "source": "couponfollow",
-    "raw_description": "PROMO \u2022 Expires today! <a class=\"link details-link\" href=\"https://click.",
-    "raw_context": "PROMO \u2022 Expires today!\n        </div>\n        <a class=\"link details-link\" href=\"https://click."
+    "raw_description": "PROMO <a class=\"link details-link\" href=\"https://click.",
+    "raw_context": "PROMO\n        </div>\n        <a class=\"link details-link\" href=\"https://click."
   },
   {
     "code": "WITH",
@@ -294,9 +294,9 @@
     "raw_context": "discount-box ex\" data-nosnippet=\"true\">\n        \n        \n        <div class=\"text\">SAVE</div>\n        <div class=\"suffix\">WITH"
   },
   {
-    "code": "COACH",
-    "source": "couponfollow",
-    "raw_description": "coupons COACH",
-    "raw_context": "coupons</a></li>\n            <li><a class=\"link\" href=\"/site/coach.com\">COACH"
+    "code": "EXPERIENCE",
+    "source": "reddit/r/iherb",
+    "raw_description": "BAD EXPERIENCE with IHERB AI Chatbot",
+    "raw_context": "Canadian company UNIUNI is seeking to expand operations in the United States. This is one company that Canada should be ashamed of and not allow to represent the great country of Canada. (My opinion, not a fact, not a slur on Canada.)\n\nOn a recent order from IHERB (\\*) com, delivery was to be made u"
   }
 ]
