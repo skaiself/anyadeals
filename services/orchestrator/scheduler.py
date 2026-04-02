@@ -72,36 +72,20 @@ class PipelineScheduler:
         offset = random.randint(0, max(window_seconds, 1))
         return window_start + timedelta(seconds=offset)
 
-    def _next_window(self, morning=True) -> tuple[datetime, datetime]:
-        """Return (start, end) of the next morning or evening window."""
+    def _next_window(self, start_hour: int, end_hour: int) -> tuple[datetime, datetime]:
+        """Return (start, end) for the next occurrence of a time window."""
         now = datetime.now(timezone.utc)
-        if morning:
-            start = now.replace(hour=5, minute=0, second=0, microsecond=0)
-            end = now.replace(hour=11, minute=0, second=0, microsecond=0)
-        else:
-            start = now.replace(hour=15, minute=0, second=0, microsecond=0)
-            end = now.replace(hour=21, minute=0, second=0, microsecond=0)
-        # If window is in the past, move to tomorrow
+        start = now.replace(hour=start_hour, minute=0, second=0, microsecond=0)
+        end = now.replace(hour=end_hour, minute=0, second=0, microsecond=0)
         if end <= now:
             start += timedelta(days=1)
             end += timedelta(days=1)
         return start, end
 
     def _schedule_next_research_run(self):
-        """Schedule next research-only run at a random time (2x/day)."""
-        now = datetime.now(timezone.utc)
-
-        # Pick morning or evening window based on current time
-        if now.hour < 12:
-            start, end = self._next_window(morning=True)
-        else:
-            start, end = self._next_window(morning=False)
-
+        """Schedule next research scrape: random time in 05:00-08:00 UTC."""
+        start, end = self._next_window(5, 8)
         run_time = self._random_time_in_window(start, end)
-        if run_time <= now:
-            # Bump to next window
-            start, end = self._next_window(morning=(now.hour >= 12))
-            run_time = self._random_time_in_window(start, end)
 
         try:
             self.scheduler.remove_job("research_run")
@@ -117,25 +101,9 @@ class PipelineScheduler:
         logger.info("Next research run scheduled for %s UTC", run_time.strftime("%Y-%m-%d %H:%M"))
 
     def _schedule_next_validation_run(self):
-        """Schedule next validation run at a random time (1x/day).
-
-        Picks a random batch of ~7 regions (always includes US) and
-        schedules the run at a random time in a wide window (6:00-20:00 UTC).
-        """
-        now = datetime.now(timezone.utc)
-        tomorrow = now + timedelta(days=1)
-
-        # Wide window: 6:00-20:00 UTC tomorrow
-        window_start = tomorrow.replace(hour=6, minute=0, second=0, microsecond=0)
-        window_end = tomorrow.replace(hour=20, minute=0, second=0, microsecond=0)
-
-        # If we haven't run today yet and there's time, schedule for today
-        today_end = now.replace(hour=20, minute=0, second=0, microsecond=0)
-        if now.hour < 18:
-            window_start = now + timedelta(hours=1)
-            window_end = today_end
-
-        run_time = self._random_time_in_window(window_start, window_end)
+        """Schedule next validation: random time in 13:00-18:00 UTC, random region batch."""
+        start, end = self._next_window(13, 18)
+        run_time = self._random_time_in_window(start, end)
 
         # Pick a random batch of ~7 regions (always includes US)
         non_us = [r for r in ALL_REGIONS if r != "us"]
