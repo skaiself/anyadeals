@@ -10,6 +10,7 @@ services:
   orchestrator:
     build: ./services/orchestrator
     container_name: anyadeals-orchestrator
+    user: "1000:1000"
     restart: unless-stopped
     ports:
       - "8080:8080"
@@ -30,6 +31,7 @@ services:
   researcher:
     build: ./services/researcher
     container_name: anyadeals-researcher
+    user: "1000:1000"
     restart: unless-stopped
     volumes:
       - ./site/data:/data
@@ -41,6 +43,7 @@ services:
   validator:
     build: ./services/validator
     container_name: anyadeals-validator
+    user: "1000:1000"
     restart: unless-stopped
     volumes:
       - ./site/data:/data
@@ -57,6 +60,7 @@ services:
   poster:
     build: ./services/poster
     container_name: anyadeals-poster
+    user: "1000:1000"
     restart: unless-stopped
     volumes:
       - ./site/data:/data
