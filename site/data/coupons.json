@@ -1216,11 +1216,11 @@
       "us"
     ],
     "min_cart_value": 0,
-    "status": "valid",
+    "status": "expired",
     "first_seen": "2026-03-27",
     "last_validated": "2026-04-02T15:29:45.079157+00:00",
     "last_failed": null,
-    "fail_count": 0,
+    "fail_count": 3,
     "source": "",
     "stackable_with_referral": false,
     "notes": "2 uses per customer."
@@ -1715,11 +1715,11 @@
       "us"
     ],
     "min_cart_value": 0,
-    "status": "valid",
+    "status": "expired",
     "first_seen": "2026-03-28",
     "last_validated": "2026-04-02T15:29:45.079157+00:00",
     "last_failed": null,
-    "fail_count": 0,
+    "fail_count": 3,
     "source": "reddit/search",
     "stackable_with_referral": false,
     "notes": "2 uses per customer."
