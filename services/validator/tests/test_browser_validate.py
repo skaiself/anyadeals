@@ -104,3 +104,41 @@ def test_new_coupon_with_no_valid_regions():
 
     assert n["status"] == "invalid"  # new codes get immediate status
     assert n["fail_count"] == 1
+
+
+def test_research_notes_populate_new_coupon():
+    """New coupon should get notes from research.json AI parsing."""
+    existing = []
+    browser = [_result("RENEW20", valid_regions=["us"])]
+    notes = {"RENEW20": "20% off Renew Life brand only"}
+
+    updated, _ = merge_browser_results(existing, browser, research_notes=notes)
+    r = next(c for c in updated if c["code"] == "RENEW20")
+
+    assert r["notes"] == "20% off Renew Life brand only"
+
+
+def test_research_notes_fill_empty_existing():
+    """Existing coupon with empty notes should get notes from research."""
+    existing = [_coupon("GOLD60")]
+    existing[0]["notes"] = ""
+    browser = [_result("GOLD60", valid_regions=["us", "de"])]
+    notes = {"GOLD60": "10% off orders $60+"}
+
+    updated, _ = merge_browser_results(existing, browser, research_notes=notes)
+    g = next(c for c in updated if c["code"] == "GOLD60")
+
+    assert g["notes"] == "10% off orders $60+"
+
+
+def test_research_notes_do_not_overwrite_existing():
+    """Existing coupon with notes should keep them, not overwrite from research."""
+    existing = [_coupon("GOLD60")]
+    existing[0]["notes"] = "Manually curated note"
+    browser = [_result("GOLD60", valid_regions=["us"])]
+    notes = {"GOLD60": "AI generated note"}
+
+    updated, _ = merge_browser_results(existing, browser, research_notes=notes)
+    g = next(c for c in updated if c["code"] == "GOLD60")
+
+    assert g["notes"] == "Manually curated note"

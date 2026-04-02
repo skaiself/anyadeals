@@ -167,8 +167,16 @@ async def run_validation(regions: str = ""):
                 else:
                     full_results.append(item)
 
+        # Load AI-generated notes from research.json
+        research_notes = {}
+        if os.path.exists(research_path):
+            with open(research_path) as f:
+                for entry in json.load(f):
+                    if entry.get("notes"):
+                        research_notes[entry["code"]] = entry["notes"]
+
         # Process results into coupons.json
-        updated, summary = merge_browser_results(existing, full_results)
+        updated, summary = merge_browser_results(existing, full_results, research_notes)
         write_coupons_json(updated, coupons_path)
 
         # Update research.json statuses

@@ -29,7 +29,7 @@ if [ "$COUNT" = "0" ]; then
 fi
 
 # Step 2: Parse with Claude CLI
-PROMPT="You are a coupon code analyst. Parse these raw iHerb coupon entries and return a JSON array of deduplicated codes with fields: code (uppercase), source, discovered_at (ISO), raw_description, raw_context, discount_type (percentage|fixed|free_shipping|unknown), discount_value (number), regions (array), expiry_date (ISO or null), confidence (high|medium|low), validation_status (pending). Deduplicate by code. Filter non-codes. Return ONLY the JSON array.
+PROMPT="You are a coupon code analyst. Parse these raw iHerb coupon entries and return a JSON array of deduplicated codes with fields: code (uppercase), source, discovered_at (ISO), raw_description, raw_context, discount_type (percentage|fixed|free_shipping|unknown), discount_value (number), regions (array), expiry_date (ISO or null), confidence (high|medium|low), validation_status (pending), notes (short human-readable note about restrictions e.g. '20% off Renew Life brand only' or '10% off orders \$60+' — include brand limits, min order, category. Under 80 chars. Empty string if no special conditions). Deduplicate by code. Filter non-codes. Return ONLY the JSON array.
 
 Raw data:
 ${RAW}"

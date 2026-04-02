@@ -25,6 +25,7 @@ For each unique coupon code, return a JSON array with objects containing:
 - expiry_date: ISO date if mentioned, null otherwise
 - confidence: "high" | "medium" | "low" based on source reliability
 - validation_status: "pending"
+- notes: a short human-readable note about the coupon (e.g. "20% off Renew Life brand only", "10% off orders $60+", "15% off sitewide"). Include brand restrictions, minimum order, category limits. Keep under 80 chars. Empty string if no special conditions.
 
 Rules:
 - Deduplicate: if same code appears from multiple sources, keep one entry with the best description

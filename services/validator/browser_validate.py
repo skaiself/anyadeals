@@ -22,11 +22,16 @@ def load_browser_results(path: str) -> list[dict]:
         return json.load(f)
 
 
-def merge_browser_results(existing: list[dict], browser_results: list[dict]) -> tuple[list[dict], list[str]]:
+def merge_browser_results(existing: list[dict], browser_results: list[dict], research_notes: dict[str, str] | None = None) -> tuple[list[dict], list[str]]:
     """Merge browser validation results into existing coupons data.
+
+    Args:
+        research_notes: optional {code: notes} from research.json AI parsing.
+            Used to populate notes for new coupons and fill empty notes on existing ones.
 
     Returns (updated_coupons, summary_lines).
     """
+    research_notes = research_notes or {}
     now = datetime.now(timezone.utc).isoformat()
     coupon_map = {c["code"]: dict(c) for c in existing}
     summary: list[str] = []
@@ -84,6 +89,9 @@ def merge_browser_results(existing: list[dict], browser_results: list[dict]) -> 
                     entry["discount"] = discount
                 if min_cart_value:
                     entry["min_cart_value"] = min_cart_value
+                # Fill empty notes from AI-parsed research data
+                if not entry.get("notes") and code in research_notes:
+                    entry["notes"] = research_notes[code]
             else:
                 entry["fail_count"] = entry.get("fail_count", 0) + 1
                 entry["last_failed"] = now
@@ -114,7 +122,7 @@ def merge_browser_results(existing: list[dict], browser_results: list[dict]) -> 
                 "fail_count": 0 if valid_regions else 1,
                 "source": "browser_validation",
                 "stackable_with_referral": False,
-                "notes": "",
+                "notes": research_notes.get(code, ""),
             }
             coupon_map[code] = new_entry
             summary.append(f"  {code}: NEW ({status}, regions={sorted(valid_regions)})")
