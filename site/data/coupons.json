@@ -17,7 +17,7 @@
   {
     "code": "GOLD60",
     "type": "promo",
-    "discount": "10% off",
+    "discount": "10% off orders $60+",
     "regions": [
       "ch",
       "de",
@@ -35,7 +35,7 @@
     "fail_count": 0,
     "source": "hotdeals.com",
     "stackable_with_referral": true,
-    "notes": "10% off orders $60+."
+    "notes": "Min. order $60."
   },
   {
     "code": "OLDCODE10",
@@ -943,7 +943,7 @@
   {
     "code": "MAR26ANTI",
     "type": "promo",
-    "discount": "10% off",
+    "discount": "15% off",
     "regions": [
       "ch",
       "de",
@@ -961,7 +961,7 @@
     "fail_count": 0,
     "source": "",
     "stackable_with_referral": false,
-    "notes": "15% off Antioxidants category only."
+    "notes": "Antioxidants category only."
   },
   {
     "code": "M944",
@@ -1205,7 +1205,7 @@
   {
     "code": "IHERB22OFF",
     "type": "promo",
-    "discount": "10% off",
+    "discount": "22% off orders $60+",
     "regions": [
       "ch",
       "de",
@@ -1223,7 +1223,7 @@
     "fail_count": 0,
     "source": "",
     "stackable_with_referral": false,
-    "notes": "22% off orders $60+. 2 uses per customer."
+    "notes": "2 uses per customer."
   },
   {
     "code": "RMB30",
@@ -1704,7 +1704,7 @@
   {
     "code": "WELLNESS2026",
     "type": "promo",
-    "discount": "10% off",
+    "discount": "22% off orders $60+",
     "regions": [
       "ch",
       "de",
@@ -1722,7 +1722,7 @@
     "fail_count": 0,
     "source": "reddit/search",
     "stackable_with_referral": false,
-    "notes": "22% off orders $60+. 2 uses per customer."
+    "notes": "2 uses per customer."
   },
   {
     "code": "THANKYOU15",
@@ -1739,7 +1739,7 @@
     "fail_count": 0,
     "source": "reddit/search",
     "stackable_with_referral": false,
-    "notes": "15% off sitewide."
+    "notes": ""
   },
   {
     "code": "BAK22",
@@ -1874,7 +1874,7 @@
   {
     "code": "RENEWLIFE",
     "type": "promo",
-    "discount": "15% off",
+    "discount": "20% off",
     "regions": [
       "us"
     ],
@@ -1886,12 +1886,12 @@
     "fail_count": 0,
     "source": "reddit/search",
     "stackable_with_referral": false,
-    "notes": "20% off Renew Life brand only."
+    "notes": "Renew Life brand only."
   },
   {
     "code": "RAINBOWLIGHT",
     "type": "promo",
-    "discount": "15% off",
+    "discount": "20% off",
     "regions": [
       "us"
     ],
@@ -1903,12 +1903,12 @@
     "fail_count": 0,
     "source": "reddit/search",
     "stackable_with_referral": false,
-    "notes": "20% off Rainbow Light brand only."
+    "notes": "Rainbow Light brand only."
   },
   {
     "code": "NATURALVIT",
     "type": "promo",
-    "discount": "15% off",
+    "discount": "20% off",
     "regions": [
       "us"
     ],
@@ -1920,7 +1920,7 @@
     "fail_count": 0,
     "source": "reddit/search",
     "stackable_with_referral": false,
-    "notes": "20% off Natural Vitality brand only."
+    "notes": "Natural Vitality brand only."
   },
   {
     "code": "COACH",
