@@ -49,7 +49,14 @@ async def update_dashboard(service_name: str, result: dict) -> None:
     now = datetime.now(timezone.utc).isoformat()
 
     if service_name == "_hourly":
+        # Only recalculate stats; don't update last_deploy timestamp
+        # so we avoid a git diff (and push) every hour when nothing changed
+        old_json = json.dumps(dashboard.get("stats", {}), sort_keys=True)
         _update_stats(dashboard, path)
+        new_json = json.dumps(dashboard.get("stats", {}), sort_keys=True)
+        if old_json == new_json:
+            logger.info("Dashboard stats unchanged, skipping write")
+            return
         dashboard["stats"]["last_deploy"] = now
         write_dashboard(dashboard, path)
         return
