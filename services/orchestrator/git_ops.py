@@ -29,17 +29,36 @@ async def _run_git(*args: str) -> tuple[str, int]:
     return output, proc.returncode
 
 
+def _update_deploy_timestamp() -> None:
+    """Set last_deploy in dashboard.json to now (only called when we're about to push)."""
+    import json
+    from datetime import datetime, timezone
+    path = os.path.join(REPO_DIR, "site", "data", "dashboard.json")
+    if not os.path.exists(path):
+        return
+    with open(path) as f:
+        data = json.load(f)
+    data.setdefault("stats", {})["last_deploy"] = datetime.now(timezone.utc).isoformat()
+    with open(path, "w") as f:
+        json.dump(data, f, indent=2, default=str)
+
+
 async def git_commit_and_push(message: str) -> bool:
     """Stage data files, commit, and push. Cloudflare Pages rebuilds the site on push."""
 
-    # Stage data files
-    await _run_git("add", "site/data/")
+    # Stage content files (not dashboard.json — that's runtime state)
+    await _run_git("add", "site/data/coupons.json", "site/data/research.json",
+                   "site/data/raw_codes.json", "site/data/posts.json")
 
     # Check for changes
     status, _ = await _run_git("status", "--porcelain", "site/data/")
     if not status.strip():
         logger.info("No data changes to commit")
         return True
+
+    # Update dashboard.json with deploy timestamp and stage it
+    _update_deploy_timestamp()
+    await _run_git("add", "site/data/dashboard.json")
 
     # Commit
     full_message = f"chore(pipeline): {message}"

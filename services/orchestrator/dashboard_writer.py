@@ -81,8 +81,14 @@ async def update_dashboard(service_name: str, result: dict) -> None:
     elif service_name == "poster":
         job["posts_today"] = summary.get("posts_created", 0)
 
+    old_stats = json.dumps(dashboard.get("stats", {}), sort_keys=True)
     _update_stats(dashboard, path)
-    dashboard["stats"]["last_deploy"] = now
+    new_stats = json.dumps(dashboard.get("stats", {}), sort_keys=True)
+
+    # Only update last_deploy (which triggers a git diff) when stats actually changed
+    if old_stats != new_stats:
+        dashboard["stats"]["last_deploy"] = now
+
     write_dashboard(dashboard, path)
     logger.info("Dashboard updated for %s: %s", service_name, result.get("status"))
 
