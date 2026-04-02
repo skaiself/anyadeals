@@ -29,8 +29,27 @@ async def _run_git(*args: str) -> tuple[str, int]:
     return output, proc.returncode
 
 
+async def _rebuild_site() -> bool:
+    """Run next build to regenerate static site from updated data."""
+    site_dir = os.path.join(REPO_DIR, "site")
+    logger.info("Rebuilding static site")
+    proc = await asyncio.create_subprocess_exec(
+        "npm", "run", "build",
+        cwd=site_dir,
+        stdout=asyncio.subprocess.PIPE,
+        stderr=asyncio.subprocess.PIPE,
+    )
+    stdout, stderr = await proc.communicate()
+    if proc.returncode != 0:
+        error = stderr.decode("utf-8", errors="replace").strip()[-500:]
+        logger.error("Site build failed: %s", error)
+        return False
+    logger.info("Site build succeeded")
+    return True
+
+
 async def git_commit_and_push(message: str) -> bool:
-    """Stage data files, commit, and push. Returns True on success."""
+    """Stage data files, rebuild site, commit, and push. Returns True on success."""
 
     # Stage data files
     await _run_git("add", "site/data/")
@@ -40,6 +59,10 @@ async def git_commit_and_push(message: str) -> bool:
     if not status.strip():
         logger.info("No data changes to commit")
         return True
+
+    # Rebuild static site so badges/pages reflect new data
+    await _rebuild_site()
+    await _run_git("add", "site/out/")
 
     # Commit
     full_message = f"chore(pipeline): {message}"
