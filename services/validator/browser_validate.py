@@ -85,9 +85,9 @@ def merge_browser_results(existing: list[dict], browser_results: list[dict], res
                 entry["last_validated"] = now
                 entry["fail_count"] = 0
                 entry["last_failed"] = None
-                if discount:
+                if discount and not entry.get("discount"):
                     entry["discount"] = discount
-                if min_cart_value:
+                if min_cart_value and not entry.get("min_cart_value"):
                     entry["min_cart_value"] = min_cart_value
                 # Fill empty notes from AI-parsed research data
                 if not entry.get("notes") and code in research_notes:
