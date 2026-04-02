@@ -35,7 +35,7 @@
     "fail_count": 0,
     "source": "hotdeals.com",
     "stackable_with_referral": true,
-    "notes": "10% off orders $60+. All users. Expires Mar 31."
+    "notes": "10% off orders $60+."
   },
   {
     "code": "OLDCODE10",
@@ -961,7 +961,7 @@
     "fail_count": 0,
     "source": "",
     "stackable_with_referral": false,
-    "notes": "15% off Antioxidants category only. All users. Expires Apr 1."
+    "notes": "15% off Antioxidants category only."
   },
   {
     "code": "M944",
@@ -1223,7 +1223,7 @@
     "fail_count": 0,
     "source": "",
     "stackable_with_referral": false,
-    "notes": "22% off orders $60+. All users. 2 uses per customer. US/SA/IE only."
+    "notes": "22% off orders $60+. 2 uses per customer."
   },
   {
     "code": "RMB30",
@@ -1722,7 +1722,7 @@
     "fail_count": 0,
     "source": "reddit/search",
     "stackable_with_referral": false,
-    "notes": "22% off orders $60+. All users. 2 uses per customer. US/SA/IE only."
+    "notes": "22% off orders $60+. 2 uses per customer."
   },
   {
     "code": "THANKYOU15",
@@ -1739,7 +1739,7 @@
     "fail_count": 0,
     "source": "reddit/search",
     "stackable_with_referral": false,
-    "notes": "15% off sitewide. All users. US/SA/IE only. Expires Apr 1."
+    "notes": "15% off sitewide."
   },
   {
     "code": "BAK22",
@@ -1886,7 +1886,7 @@
     "fail_count": 0,
     "source": "reddit/search",
     "stackable_with_referral": false,
-    "notes": "20% off Renew Life brand products only. All users. Expires Mar 31."
+    "notes": "20% off Renew Life brand only."
   },
   {
     "code": "RAINBOWLIGHT",
@@ -1903,7 +1903,7 @@
     "fail_count": 0,
     "source": "reddit/search",
     "stackable_with_referral": false,
-    "notes": "20% off Rainbow Light brand products only. All users. Expires Mar 31."
+    "notes": "20% off Rainbow Light brand only."
   },
   {
     "code": "NATURALVIT",
@@ -1920,7 +1920,7 @@
     "fail_count": 0,
     "source": "reddit/search",
     "stackable_with_referral": false,
-    "notes": "20% off Natural Vitality brand products only. All users. Expires Mar 31."
+    "notes": "20% off Natural Vitality brand only."
   },
   {
     "code": "COACH",
