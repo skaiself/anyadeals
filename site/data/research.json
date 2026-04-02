@@ -762,7 +762,7 @@
     ],
     "expiry_date": null,
     "confidence": "low",
-    "validation_status": "invalid"
+    "validation_status": "valid"
   },
   {
     "code": "M944",
@@ -852,7 +852,7 @@
     ],
     "expiry_date": null,
     "confidence": "low",
-    "validation_status": "invalid"
+    "validation_status": "valid"
   },
   {
     "code": "GOLD120",
@@ -1002,7 +1002,7 @@
     ],
     "expiry_date": null,
     "confidence": "low",
-    "validation_status": "invalid"
+    "validation_status": "valid"
   },
   {
     "code": "RMB30",
@@ -1782,7 +1782,7 @@
     ],
     "expiry_date": null,
     "confidence": "low",
-    "validation_status": "invalid"
+    "validation_status": "valid"
   },
   {
     "code": "THANKYOU15",
@@ -1797,7 +1797,7 @@
     ],
     "expiry_date": null,
     "confidence": "low",
-    "validation_status": "invalid"
+    "validation_status": "valid"
   },
   {
     "code": "BAK22",
@@ -1932,7 +1932,7 @@
     ],
     "expiry_date": null,
     "confidence": "low",
-    "validation_status": "invalid"
+    "validation_status": "valid"
   },
   {
     "code": "RAINBOWLIGHT",
@@ -1947,7 +1947,7 @@
     ],
     "expiry_date": null,
     "confidence": "low",
-    "validation_status": "invalid"
+    "validation_status": "valid"
   },
   {
     "code": "NATURALVIT",
@@ -1962,7 +1962,7 @@
     ],
     "expiry_date": null,
     "confidence": "low",
-    "validation_status": "invalid"
+    "validation_status": "valid"
   },
   {
     "code": "COACH",
