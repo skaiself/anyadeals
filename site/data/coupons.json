@@ -17,20 +17,34 @@
   {
     "code": "GOLD60",
     "type": "promo",
-    "discount": "10% off orders $60+",
+    "discount": "10% off",
     "regions": [
+      "at",
+      "au",
+      "ca",
       "ch",
+      "cn",
       "de",
       "fr",
+      "gb",
       "hk",
       "hr",
+      "ie",
+      "in",
+      "it",
       "jp",
+      "kr",
+      "nl",
+      "rs",
+      "sa",
+      "se",
+      "tw",
       "us"
     ],
     "min_cart_value": 60,
     "status": "valid",
     "first_seen": "2026-03-15",
-    "last_validated": "2026-04-02T15:29:45.079157+00:00",
+    "last_validated": "2026-04-02T20:43:14.129145+00:00",
     "last_failed": null,
     "fail_count": 0,
     "source": "hotdeals.com",
@@ -957,11 +971,11 @@
     "status": "valid",
     "first_seen": "2026-03-27",
     "last_validated": "2026-04-02T15:29:45.079157+00:00",
-    "last_failed": null,
-    "fail_count": 0,
+    "last_failed": "2026-04-02T20:43:14.129145+00:00",
+    "fail_count": 1,
     "source": "",
     "stackable_with_referral": false,
-    "notes": "Antioxidants category only."
+    "notes": "Not eligible: US"
   },
   {
     "code": "M944",
@@ -1216,14 +1230,14 @@
       "us"
     ],
     "min_cart_value": 0,
-    "status": "expired",
+    "status": "valid",
     "first_seen": "2026-03-27",
     "last_validated": "2026-04-02T15:29:45.079157+00:00",
-    "last_failed": null,
-    "fail_count": 3,
+    "last_failed": "2026-04-02T20:43:14.129145+00:00",
+    "fail_count": 1,
     "source": "",
     "stackable_with_referral": false,
-    "notes": "2 uses per customer."
+    "notes": "Not eligible: US"
   },
   {
     "code": "RMB30",
@@ -1715,14 +1729,14 @@
       "us"
     ],
     "min_cart_value": 0,
-    "status": "expired",
+    "status": "valid",
     "first_seen": "2026-03-28",
     "last_validated": "2026-04-02T15:29:45.079157+00:00",
-    "last_failed": null,
-    "fail_count": 3,
+    "last_failed": "2026-04-02T20:43:14.129145+00:00",
+    "fail_count": 1,
     "source": "reddit/search",
     "stackable_with_referral": false,
-    "notes": "2 uses per customer."
+    "notes": "Not eligible: US"
   },
   {
     "code": "THANKYOU15",
@@ -1735,11 +1749,11 @@
     "status": "region_limited",
     "first_seen": "2026-03-28",
     "last_validated": "2026-04-02T15:29:45.079157+00:00",
-    "last_failed": null,
-    "fail_count": 0,
+    "last_failed": "2026-04-02T20:43:14.129145+00:00",
+    "fail_count": 1,
     "source": "reddit/search",
     "stackable_with_referral": false,
-    "notes": ""
+    "notes": "Not eligible: US"
   },
   {
     "code": "BAK22",
@@ -1882,11 +1896,11 @@
     "status": "region_limited",
     "first_seen": "2026-03-28",
     "last_validated": "2026-04-02T15:29:45.079157+00:00",
-    "last_failed": null,
-    "fail_count": 0,
+    "last_failed": "2026-04-02T20:43:14.129145+00:00",
+    "fail_count": 1,
     "source": "reddit/search",
     "stackable_with_referral": false,
-    "notes": "Renew Life brand only."
+    "notes": "Not eligible: US"
   },
   {
     "code": "RAINBOWLIGHT",
@@ -1899,11 +1913,11 @@
     "status": "region_limited",
     "first_seen": "2026-03-28",
     "last_validated": "2026-04-02T15:29:45.079157+00:00",
-    "last_failed": null,
-    "fail_count": 0,
+    "last_failed": "2026-04-02T20:43:14.129145+00:00",
+    "fail_count": 1,
     "source": "reddit/search",
     "stackable_with_referral": false,
-    "notes": "Rainbow Light brand only."
+    "notes": "Not eligible: US"
   },
   {
     "code": "NATURALVIT",
@@ -1916,11 +1930,11 @@
     "status": "region_limited",
     "first_seen": "2026-03-28",
     "last_validated": "2026-04-02T15:29:45.079157+00:00",
-    "last_failed": null,
-    "fail_count": 0,
+    "last_failed": "2026-04-02T20:43:14.129145+00:00",
+    "fail_count": 1,
     "source": "reddit/search",
     "stackable_with_referral": false,
-    "notes": "Natural Vitality brand only."
+    "notes": "Not eligible: US"
   },
   {
     "code": "COACH",
@@ -2247,6 +2261,51 @@
     "first_seen": "2026-04-01",
     "last_validated": "",
     "last_failed": "2026-04-01T20:21:53.748193+00:00",
+    "fail_count": 1,
+    "source": "browser_validation",
+    "stackable_with_referral": false,
+    "notes": "Not eligible: US"
+  },
+  {
+    "code": "NEWKR15",
+    "type": "promo",
+    "discount": "",
+    "regions": [],
+    "min_cart_value": 0,
+    "status": "invalid",
+    "first_seen": "2026-04-02",
+    "last_validated": "",
+    "last_failed": "2026-04-02T20:43:14.129145+00:00",
+    "fail_count": 1,
+    "source": "browser_validation",
+    "stackable_with_referral": false,
+    "notes": "Not eligible: US"
+  },
+  {
+    "code": "VAD049",
+    "type": "promo",
+    "discount": "",
+    "regions": [],
+    "min_cart_value": 0,
+    "status": "invalid",
+    "first_seen": "2026-04-02",
+    "last_validated": "",
+    "last_failed": "2026-04-02T20:43:14.129145+00:00",
+    "fail_count": 1,
+    "source": "browser_validation",
+    "stackable_with_referral": false,
+    "notes": "Not eligible: US"
+  },
+  {
+    "code": "YEV422",
+    "type": "promo",
+    "discount": "",
+    "regions": [],
+    "min_cart_value": 0,
+    "status": "invalid",
+    "first_seen": "2026-04-02",
+    "last_validated": "",
+    "last_failed": "2026-04-02T20:43:14.129145+00:00",
     "fail_count": 1,
     "source": "browser_validation",
     "stackable_with_referral": false,
