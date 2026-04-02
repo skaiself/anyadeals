@@ -83,8 +83,8 @@ class PipelineScheduler:
         return start, end
 
     def _schedule_next_research_run(self):
-        """Schedule next research scrape: random time in 05:00-08:00 UTC."""
-        start, end = self._next_window(5, 8)
+        """Schedule next research scrape: random time in 01:00-02:00 UTC."""
+        start, end = self._next_window(1, 2)
         run_time = self._random_time_in_window(start, end)
 
         try:
@@ -101,8 +101,8 @@ class PipelineScheduler:
         logger.info("Next research run scheduled for %s UTC", run_time.strftime("%Y-%m-%d %H:%M"))
 
     def _schedule_next_validation_run(self):
-        """Schedule next validation: random time in 13:00-18:00 UTC, random region batch."""
-        start, end = self._next_window(13, 18)
+        """Schedule next validation: random time in 04:00-07:00 UTC, random region batch."""
+        start, end = self._next_window(4, 7)
         run_time = self._random_time_in_window(start, end)
 
         # Pick a random batch of ~7 regions (always includes US)
