@@ -84,12 +84,16 @@ async def _run_browser_validator(codes: list[str], regions: list[str]) -> list[d
 
 
 @app.post("/run")
-async def run_validation():
+async def run_validation(regions: str = ""):
     """Browser-only validation pipeline.
+
+    Query params:
+        regions: comma-separated region codes to test (e.g. "us,de,gb").
+                 If empty, tests US first then all remaining regions.
 
     1. Load pending research codes + existing valid/region_limited codes
     2. Test all codes in US only (quick filter — ~45s each)
-    3. Codes that pass US → test in all remaining regions
+    3. Codes that pass US → test in specified (or all) remaining regions
     4. Update coupons.json with full regional results
     """
     if state["running"]:
@@ -98,6 +102,16 @@ async def run_validation():
     state["running"] = True
     start_time = datetime.now(timezone.utc)
     try:
+        # Parse requested regions
+        if regions:
+            requested_regions = [r.strip().lower() for r in regions.split(",") if r.strip()]
+        else:
+            requested_regions = list(ALL_REGIONS)
+
+        # Always include US for the initial filter
+        if "us" not in requested_regions:
+            requested_regions.insert(0, "us")
+
         coupons_path = os.path.join(DATA_DIR, "coupons.json")
         research_path = os.path.join(DATA_DIR, "research.json")
         existing = load_coupons_json(coupons_path)
@@ -119,8 +133,8 @@ async def run_validation():
             return {"status": "success", "summary": "No codes to validate"}
 
         logger.info(
-            "Browser validation: %d pending + %d active = %d unique codes",
-            len(pending_codes), len(active_codes), len(all_codes),
+            "Browser validation: %d pending + %d active = %d unique codes, regions=%s",
+            len(pending_codes), len(active_codes), len(all_codes), requested_regions,
         )
 
         # Phase 1: Test all codes in US only (quick filter)
@@ -136,8 +150,8 @@ async def run_validation():
 
         logger.info("Phase 1 complete: %d/%d passed US filter", len(us_valid_codes), len(all_codes))
 
-        # Phase 2: Test US-valid codes in all remaining regions
-        remaining_regions = [r for r in ALL_REGIONS if r != "us"]
+        # Phase 2: Test US-valid codes in remaining requested regions
+        remaining_regions = [r for r in requested_regions if r != "us"]
         full_results = us_results  # Start with US results
 
         if us_valid_codes and remaining_regions:
