@@ -55,12 +55,6 @@ def merge_browser_results(existing: list[dict], browser_results: list[dict]) -> 
         else:
             status = "invalid"
 
-        # Build notes for ineligible regions
-        notes = ""
-        if invalid_regions:
-            not_eligible = ", ".join(r.upper() for r in sorted(invalid_regions))
-            notes = f"Not eligible: {not_eligible}"
-
         # Resolve discount and min_cart from first valid result
         discount = ""
         min_cart_value = 0
@@ -99,9 +93,6 @@ def merge_browser_results(existing: list[dict], browser_results: list[dict]) -> 
                     entry["status"] = "invalid"
                     entry["regions"] = []
 
-            if notes:
-                entry["notes"] = notes
-
             changes = []
             if old_status != entry["status"]:
                 changes.append(f"status: {old_status} -> {entry['status']}")
@@ -123,7 +114,7 @@ def merge_browser_results(existing: list[dict], browser_results: list[dict]) -> 
                 "fail_count": 0 if valid_regions else 1,
                 "source": "browser_validation",
                 "stackable_with_referral": False,
-                "notes": notes,
+                "notes": "",
             }
             coupon_map[code] = new_entry
             summary.append(f"  {code}: NEW ({status}, regions={sorted(valid_regions)})")
