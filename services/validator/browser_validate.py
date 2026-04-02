@@ -93,8 +93,11 @@ def merge_browser_results(existing: list[dict], browser_results: list[dict]) -> 
             else:
                 entry["fail_count"] = entry.get("fail_count", 0) + 1
                 entry["last_failed"] = now
-                entry["status"] = "invalid"
-                entry["regions"] = []
+                # Only invalidate after 3 consecutive failures to avoid
+                # a single bad validation run wiping all coupons
+                if entry["fail_count"] >= 3:
+                    entry["status"] = "invalid"
+                    entry["regions"] = []
 
             if notes:
                 entry["notes"] = notes
