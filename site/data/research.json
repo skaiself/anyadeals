@@ -2293,5 +2293,50 @@
     "expiry_date": null,
     "confidence": "low",
     "validation_status": "invalid"
+  },
+  {
+    "code": "NEWKR15",
+    "source": "hotdeals",
+    "discovered_at": "2026-04-02T16:07:34.149787+00:00",
+    "raw_description": "Shop iHerb now and get 5% OFF, plus enjoy more exciting deals.",
+    "raw_context": "hotdeals.com code NEWKR15",
+    "discount_type": "percentage",
+    "discount_value": 5,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "VAD049",
+    "source": "hotdeals",
+    "discovered_at": "2026-04-02T16:07:34.149787+00:00",
+    "raw_description": "$5 off New Customer Orders, $10 off New Customer Orders of $40 or More at Iherb",
+    "raw_context": "hotdeals.com code VAD049",
+    "discount_type": "fixed",
+    "discount_value": 5,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "YEV422",
+    "source": "hotdeals",
+    "discovered_at": "2026-04-02T16:07:34.149787+00:00",
+    "raw_description": "$5 off New Customer Purchases, $10 off New Customer Purchases of $40 or More at Iherb",
+    "raw_context": "hotdeals.com code YEV422",
+    "discount_type": "fixed",
+    "discount_value": 5,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
   }
 ]
