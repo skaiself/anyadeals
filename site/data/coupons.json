@@ -49,7 +49,7 @@
     "fail_count": 0,
     "source": "hotdeals.com",
     "stackable_with_referral": true,
-    "notes": "Not eligible: US"
+    "notes": ""
   },
   {
     "code": "OLDCODE10",
@@ -989,7 +989,7 @@
     "fail_count": 0,
     "source": "",
     "stackable_with_referral": false,
-    "notes": "Not eligible: US"
+    "notes": ""
   },
   {
     "code": "M944",
@@ -1247,7 +1247,7 @@
     "fail_count": 0,
     "source": "",
     "stackable_with_referral": false,
-    "notes": "Not eligible: US"
+    "notes": "Not eligible: AT, AU, CA, CH, CN, DE, FR, GB, HK, HR, IN, IT, JP, KR, NL, RS, SE, TW"
   },
   {
     "code": "RMB30",
@@ -1742,7 +1742,7 @@
     "fail_count": 0,
     "source": "reddit/search",
     "stackable_with_referral": false,
-    "notes": "Not eligible: US"
+    "notes": "Not eligible: AT, AU, CA, CH, CN, DE, FR, GB, HK, HR, IN, IT, JP, KR, NL, RS, SE, TW"
   },
   {
     "code": "THANKYOU15",
@@ -1761,7 +1761,7 @@
     "fail_count": 0,
     "source": "reddit/search",
     "stackable_with_referral": false,
-    "notes": "Not eligible: US"
+    "notes": "Not eligible: AT, AU, CA, CH, CN, DE, FR, GB, HK, HR, IN, IT, JP, KR, NL, RS, SE, TW"
   },
   {
     "code": "BAK22",
@@ -1911,7 +1911,7 @@
     "fail_count": 0,
     "source": "reddit/search",
     "stackable_with_referral": false,
-    "notes": "Not eligible: US"
+    "notes": "Not eligible: AT, AU, CA, CH, CN, DE, FR, GB, HK, HR, IN, IT, KR, NL, RS, SE, TW"
   },
   {
     "code": "RAINBOWLIGHT",
@@ -1930,7 +1930,7 @@
     "fail_count": 0,
     "source": "reddit/search",
     "stackable_with_referral": false,
-    "notes": "Not eligible: US"
+    "notes": "Not eligible: AT, AU, CA, CH, CN, DE, FR, GB, HK, HR, IN, IT, JP, KR, NL, RS, SE, TW"
   },
   {
     "code": "NATURALVIT",
@@ -1950,7 +1950,7 @@
     "fail_count": 0,
     "source": "reddit/search",
     "stackable_with_referral": false,
-    "notes": "Not eligible: US"
+    "notes": "Not eligible: AT, CA, CH, CN, DE, FR, GB, HK, HR, IN, IT, JP, KR, NL, RS, SE, TW"
   },
   {
     "code": "COACH",
