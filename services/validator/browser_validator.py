@@ -89,6 +89,22 @@ def parse_promo_message(text: str) -> dict[str, Any]:
     text = text.strip()
     result: dict[str, Any] = {"valid": False, "discount": "", "min_cart": 0, "message": text}
 
+    # Check for "not applied" first — code was rejected even if discount text is present
+    if re.search(r"not applied", text, re.IGNORECASE):
+        # "Add $X to unlock Y% off" — code recognized but needs min cart
+        m = MIN_CART_PATTERN.search(text)
+        if m:
+            min_cart = float(m.group(1))
+            pct = int(m.group(2))
+            result["valid"] = True
+            result["discount"] = f"{pct}% off"
+            result["min_cart"] = min_cart
+            result["message"] = f"Not applied: needs ${min_cart:.0f} min cart"
+            return result
+        # Otherwise it's just not valid
+        result["message"] = "Code not applied"
+        return result
+
     # "X% off with CODE" — valid, discount percentage
     m = DISCOUNT_PCT_PATTERN.search(text)
     if m:
@@ -426,6 +442,15 @@ def test_coupon_code(page: Page, code: str) -> dict[str, Any]:
 
         # Parse the result
         parsed = parse_promo_message(result_text)
+        logger.info("[%s] Raw promo text: %r", code, result_text[:300])
+        logger.info("[%s] Parsed result: valid=%s discount=%s message=%s",
+                    code, parsed["valid"], parsed.get("discount", ""), parsed.get("message", "")[:100])
+
+        # Save debug screenshot for every code test
+        try:
+            page.screenshot(path=f"/tmp/debug_coupon_{code}_{page.url.split('/')[-1][:10]}.png")
+        except Exception:
+            pass
 
         # Try to remove the applied code for the next test
         _remove_promo_code(page)

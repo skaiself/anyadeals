@@ -69,17 +69,21 @@ async def _run_browser_validator(codes: list[str], regions: list[str]) -> list[d
         stderr=asyncio.subprocess.PIPE,
     )
     stdout, stderr = await proc.communicate()
+    stderr_text = stderr.decode("utf-8", errors="replace")
+
+    # Always log browser validator stderr (contains per-code results)
+    for line in stderr_text.strip().splitlines()[-50:]:
+        logger.info("[browser] %s", line.strip())
 
     if proc.returncode != 0:
-        error_msg = stderr.decode("utf-8", errors="replace")[-500:]
-        logger.error("Browser validator failed: %s", error_msg)
+        logger.error("Browser validator failed (exit %d)", proc.returncode)
         raise RuntimeError(f"Browser validator exited with code {proc.returncode}")
 
     # Parse JSON from stdout
     try:
         return json.loads(stdout.decode("utf-8"))
     except json.JSONDecodeError:
-        logger.error("Failed to parse browser validator output")
+        logger.error("Failed to parse browser validator output: %s", stdout.decode()[:500])
         raise RuntimeError("Browser validator returned invalid JSON")
 
 
