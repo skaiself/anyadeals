@@ -108,15 +108,18 @@ class PipelineScheduler:
         logger.info("Next research run scheduled for %s UTC", run_time.strftime("%Y-%m-%d %H:%M"))
 
     def _schedule_next_validation_run(self):
-        """Schedule next validation: random time in 04:00-07:00 UTC, random region batch."""
+        """Schedule next validation: random time in 04:00-07:00 UTC, all regions.
+
+        All 21 regions tested each night. The browser validator adds random
+        30-120s delays between regions to avoid bot detection.
+        """
         start, end = self._next_window(4, 7)
         run_time = self._random_time_in_window(start, end)
 
-        # Pick a random batch of ~7 regions (always includes US)
+        # Shuffle region order (US always first for the filter phase)
         non_us = [r for r in ALL_REGIONS if r != "us"]
         random.shuffle(non_us)
-        batch_size = random.randint(5, 8)
-        region_batch = ["us"] + non_us[:batch_size]
+        all_regions = ["us"] + non_us
 
         try:
             self.scheduler.remove_job("validation_run")
@@ -127,13 +130,13 @@ class PipelineScheduler:
             self.run_validation,
             DateTrigger(run_date=run_time),
             id="validation_run",
-            name=f"Validation ({len(region_batch)} regions, {run_time.strftime('%H:%M UTC')})",
-            kwargs={"regions": region_batch},
+            name=f"Validation (all {len(all_regions)} regions, {run_time.strftime('%H:%M UTC')})",
+            kwargs={"regions": all_regions},
         )
         logger.info(
             "Next validation scheduled for %s UTC with regions: %s",
             run_time.strftime("%Y-%m-%d %H:%M"),
-            ",".join(region_batch),
+            ",".join(all_regions),
         )
 
     def start(self):

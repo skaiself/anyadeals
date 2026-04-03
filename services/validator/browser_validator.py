@@ -14,6 +14,7 @@ import argparse
 import json
 import logging
 import os
+import random
 import re
 import sys
 import time
@@ -531,7 +532,12 @@ def run_validation(
         logger.info("Using proxy: %s", proxy_url)
 
     # Launch a fresh browser per region to avoid session degradation
+    # Random delay between regions to look more human-like
     for region_idx, region in enumerate(regions):
+        if region_idx > 0:
+            delay = random.randint(30, 120)
+            logger.info("Waiting %ds before next region...", delay)
+            time.sleep(delay)
         logger.info("=== Testing region: %s (%d/%d) ===", region, region_idx + 1, len(regions))
 
         with sync_playwright() as pw:
