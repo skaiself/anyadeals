@@ -2338,5 +2338,35 @@
     "expiry_date": null,
     "confidence": "low",
     "validation_status": "invalid"
+  },
+  {
+    "code": "CYX8984",
+    "source": "reddit/search",
+    "discovered_at": "2026-04-03T01:36:04.780729+00:00",
+    "raw_description": "iHerb code for 10% off first order, 5% for returning customers: CYX8984",
+    "raw_context": "\niHerb is an online retailer that sells health and wellness products, including vitamins, supplements, and natural care products. iHerb also sells groceries, baby products, and pet food. I've been using them to receive supplements and skincare (they even sell K-beauty brands such as TirTir, CosRx, S",
+    "discount_type": "percentage",
+    "discount_value": 10,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "SKIN1004",
+    "source": "reddit/search",
+    "discovered_at": "2026-04-03T01:36:04.780729+00:00",
+    "raw_description": "iHerb code for 10% off first order, 5% for returning customers: CYX8984",
+    "raw_context": "\niHerb is an online retailer that sells health and wellness products, including vitamins, supplements, and natural care products. iHerb also sells groceries, baby products, and pet food. I've been using them to receive supplements and skincare (they even sell K-beauty brands such as TirTir, CosRx, S",
+    "discount_type": "percentage",
+    "discount_value": 10,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
   }
 ]
