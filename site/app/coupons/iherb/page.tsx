@@ -266,7 +266,7 @@ export default function IHerbCouponsPage() {
                         )}
                       </div>
                     </td>
-                    <td className="px-6 py-4 text-ink-muted">{coupon.notes || '—'}</td>
+                    <td className="px-6 py-4 text-ink-muted">{coupon.notes || ''}</td>
                     <td className="px-6 py-4">
                       <span className="inline-block px-2.5 py-0.5 text-[10px] uppercase tracking-wider font-semibold bg-ink text-cream">
                         {coupon.status === 'valid' ? 'Active' : coupon.status}
@@ -309,7 +309,7 @@ export default function IHerbCouponsPage() {
                           )}
                         </div>
                       </td>
-                      <td className="px-6 py-4 text-ink-muted">{coupon.notes || '—'}</td>
+                      <td className="px-6 py-4 text-ink-muted">{coupon.notes || ''}</td>
                       <td className="px-6 py-4">
                         <span className="inline-block px-2.5 py-0.5 text-[10px] uppercase tracking-wider font-semibold bg-ink-muted/20 text-ink-muted">
                           Expired
