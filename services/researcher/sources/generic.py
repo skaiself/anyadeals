@@ -9,8 +9,14 @@ class GenericScraper(BaseScraper):
     url = ""
 
     URLS = [
-        "https://www.worthepenny.com/coupons/iherb",
-        "https://www.coupons.com/coupon-codes/iherb.com",
+        "https://www.rakuten.com/shop/iherb",
+        "https://www.savings.com/coupons/iherb.com",
+        "https://www.groupon.com/coupons/iherb",
+        "https://www.marieclaire.com/coupons/iherb.com",
+        # Blocked/broken — kept for reference:
+        # "https://www.worthepenny.com/coupons/iherb",     # 403
+        # "https://www.coupons.com/coupon-codes/iherb.com" # 404
+        # "https://www.couponcabin.com/coupons/iherb/"     # 403
     ]
 
     async def scrape(self) -> list[dict]:
