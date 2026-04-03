@@ -218,7 +218,6 @@ export default function IHerbCouponsPage() {
                   <th className="text-left px-6 py-4 text-xs uppercase tracking-widest font-semibold" scope="col">Discount</th>
                   <th className="text-left px-6 py-4 text-xs uppercase tracking-widest font-semibold" scope="col">Regions</th>
                   <th className="text-left px-6 py-4 text-xs uppercase tracking-widest font-semibold" scope="col">Notes</th>
-                  <th className="text-left px-6 py-4 text-xs uppercase tracking-widest font-semibold" scope="col">Status</th>
                 </tr>
               </thead>
               <tbody>
@@ -235,11 +234,6 @@ export default function IHerbCouponsPage() {
                     </span>
                   </td>
                   <td className="px-6 py-4 text-ink-muted">Rewards code — enter in Referral Code field. Stacks with promo codes below.</td>
-                  <td className="px-6 py-4">
-                    <span className="inline-block px-2.5 py-0.5 text-[10px] uppercase tracking-wider font-semibold bg-signal text-cream">
-                      Active
-                    </span>
-                  </td>
                 </tr>
                 {activeCoupons.map((coupon, i) => (
                   <tr
@@ -258,7 +252,7 @@ export default function IHerbCouponsPage() {
                             Global
                           </span>
                         ) : (
-                          coupon.regions.map((r) => (
+                          [...coupon.regions].sort((a, b) => a === 'us' ? -1 : b === 'us' ? 1 : a.localeCompare(b)).map((r) => (
                             <span key={r} className="inline-block px-1.5 py-0.5 text-[10px] uppercase tracking-wider font-semibold border border-ink/15 text-ink-muted">
                               {r}
                             </span>
@@ -267,11 +261,6 @@ export default function IHerbCouponsPage() {
                       </div>
                     </td>
                     <td className="px-6 py-4 text-ink-muted">{coupon.notes || ''}</td>
-                    <td className="px-6 py-4">
-                      <span className="inline-block px-2.5 py-0.5 text-[10px] uppercase tracking-wider font-semibold bg-ink text-cream">
-                        {coupon.status === 'valid' ? 'Active' : coupon.status}
-                      </span>
-                    </td>
                   </tr>
                 ))}
               </tbody>
@@ -310,11 +299,6 @@ export default function IHerbCouponsPage() {
                         </div>
                       </td>
                       <td className="px-6 py-4 text-ink-muted">{coupon.notes || ''}</td>
-                      <td className="px-6 py-4">
-                        <span className="inline-block px-2.5 py-0.5 text-[10px] uppercase tracking-wider font-semibold bg-ink-muted/20 text-ink-muted">
-                          Expired
-                        </span>
-                      </td>
                     </tr>
                   ))}
                 </tbody>
