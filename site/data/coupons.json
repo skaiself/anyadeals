@@ -975,7 +975,7 @@
     "fail_count": 1,
     "source": "",
     "stackable_with_referral": false,
-    "notes": "Not eligible: US"
+    "notes": "Antioxidants category only."
   },
   {
     "code": "M944",
@@ -1237,7 +1237,7 @@
     "fail_count": 1,
     "source": "",
     "stackable_with_referral": false,
-    "notes": "Not eligible: US"
+    "notes": "2 uses per customer."
   },
   {
     "code": "RMB30",
@@ -1736,7 +1736,7 @@
     "fail_count": 1,
     "source": "reddit/search",
     "stackable_with_referral": false,
-    "notes": "Not eligible: US"
+    "notes": "2 uses per customer."
   },
   {
     "code": "THANKYOU15",
@@ -1753,7 +1753,7 @@
     "fail_count": 1,
     "source": "reddit/search",
     "stackable_with_referral": false,
-    "notes": "Not eligible: US"
+    "notes": ""
   },
   {
     "code": "BAK22",
@@ -1900,7 +1900,7 @@
     "fail_count": 1,
     "source": "reddit/search",
     "stackable_with_referral": false,
-    "notes": "Not eligible: US"
+    "notes": "Renew Life brand only."
   },
   {
     "code": "RAINBOWLIGHT",
@@ -1917,7 +1917,7 @@
     "fail_count": 1,
     "source": "reddit/search",
     "stackable_with_referral": false,
-    "notes": "Not eligible: US"
+    "notes": "Rainbow Light brand only."
   },
   {
     "code": "NATURALVIT",
@@ -1934,7 +1934,7 @@
     "fail_count": 1,
     "source": "reddit/search",
     "stackable_with_referral": false,
-    "notes": "Not eligible: US"
+    "notes": "Natural Vitality brand only."
   },
   {
     "code": "COACH",
