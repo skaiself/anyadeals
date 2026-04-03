@@ -90,7 +90,16 @@ def parse_promo_message(text: str) -> dict[str, Any]:
     text = text.strip()
     result: dict[str, Any] = {"valid": False, "discount": "", "min_cart": 0, "message": text}
 
-    # Check for "not applied" first — code was rejected even if discount text is present
+    # Check for clear rejection signals first — these override any success patterns
+    # that might be present from a previously applied code
+
+    # "promo code has expired" — expired
+    if EXPIRED_CODE_PATTERN.search(text):
+        result["valid"] = False
+        result["message"] = "Promo code has expired"
+        return result
+
+    # Check for "not applied" — code was rejected
     if re.search(r"not applied", text, re.IGNORECASE):
         # "Add $X to unlock Y% off" — code recognized but needs min cart
         m = MIN_CART_PATTERN.search(text)
@@ -158,12 +167,6 @@ def parse_promo_message(text: str) -> dict[str, Any]:
     if INVALID_CODE_PATTERN.search(text):
         result["valid"] = False
         result["message"] = "Invalid promo code"
-        return result
-
-    # "promo code has expired" — expired code
-    if EXPIRED_CODE_PATTERN.search(text):
-        result["valid"] = False
-        result["message"] = "Promo code has expired"
         return result
 
     # "Items in cart are not eligible" — valid code, wrong product
@@ -380,10 +383,9 @@ def test_coupon_code(page: Page, code: str) -> dict[str, Any]:
     logger.info("Testing coupon code: %s", code)
 
     try:
-        # Make sure we're on the cart page
-        if "checkout.iherb.com/cart" not in page.url:
-            page.goto(CART_URL, wait_until="domcontentloaded", timeout=30000)
-            page.wait_for_timeout(2000)
+        # Reload cart page to get clean state (no leftover applied codes)
+        page.goto(CART_URL, wait_until="domcontentloaded", timeout=30000)
+        page.wait_for_timeout(3000)
 
         # Find and fill the coupon input — try multiple selectors
         coupon_input = page.locator("#coupon-input")
