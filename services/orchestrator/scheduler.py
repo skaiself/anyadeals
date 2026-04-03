@@ -73,13 +73,20 @@ class PipelineScheduler:
         return window_start + timedelta(seconds=offset)
 
     def _next_window(self, start_hour: int, end_hour: int) -> tuple[datetime, datetime]:
-        """Return (start, end) for the next occurrence of a time window."""
+        """Return (start, end) for the next occurrence of a time window.
+
+        If we're inside the window, clamp start to now (only future times).
+        If the window has passed, move to tomorrow.
+        """
         now = datetime.now(timezone.utc)
         start = now.replace(hour=start_hour, minute=0, second=0, microsecond=0)
         end = now.replace(hour=end_hour, minute=0, second=0, microsecond=0)
         if end <= now:
             start += timedelta(days=1)
             end += timedelta(days=1)
+        elif start < now:
+            # Inside the window — only pick future times
+            start = now + timedelta(minutes=1)
         return start, end
 
     def _schedule_next_research_run(self):

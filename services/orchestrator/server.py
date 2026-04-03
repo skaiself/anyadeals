@@ -124,7 +124,7 @@ async def trigger_service(service_name: str):
         asyncio.create_task(scheduler.run_research_pipeline())
         return {"status": "triggered", "job": "research_pipeline"}
     elif service_name == "validate":
-        asyncio.create_task(scheduler.validator.trigger_run())
+        asyncio.create_task(scheduler.run_validation())
         return {"status": "triggered", "job": "validation"}
     elif service_name == "post":
         asyncio.create_task(scheduler.run_posting())
