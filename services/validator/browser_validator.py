@@ -81,6 +81,7 @@ APPLIED_PCT_PATTERN = re.compile(r"(\d+)%\s*off\s*promo", re.IGNORECASE)
 APPLIED_SAVE_PATTERN = re.compile(r"applied.*?(\d+)%\s*off", re.IGNORECASE | re.DOTALL)
 NOT_ELIGIBLE_REGION = re.compile(r"shipping destination is not eligible", re.IGNORECASE)
 INVALID_CODE_PATTERN = re.compile(r"valid promo or Rewards code", re.IGNORECASE)
+EXPIRED_CODE_PATTERN = re.compile(r"promo code has expired", re.IGNORECASE)
 WRONG_PRODUCT_PATTERN = re.compile(r"Items in cart are not eligible", re.IGNORECASE)
 
 
@@ -157,6 +158,12 @@ def parse_promo_message(text: str) -> dict[str, Any]:
     if INVALID_CODE_PATTERN.search(text):
         result["valid"] = False
         result["message"] = "Invalid promo code"
+        return result
+
+    # "promo code has expired" — expired code
+    if EXPIRED_CODE_PATTERN.search(text):
+        result["valid"] = False
+        result["message"] = "Promo code has expired"
         return result
 
     # "Items in cart are not eligible" — valid code, wrong product
@@ -429,8 +436,12 @@ def test_coupon_code(page: Page, code: str) -> dict[str, Any]:
         except PlaywrightTimeout:
             # Try alternative: check for error message in any nearby element
             logger.warning("Promo result section not found for %s, checking alternatives", code)
-            error_el = page.locator('text="Please enter a valid promo or Rewards code"')
-            if error_el.count() > 0:
+            # Check for known error messages anywhere on page
+            expired_el = page.locator('text=/promo code has expired/i')
+            invalid_el = page.locator('text="Please enter a valid promo or Rewards code"')
+            if expired_el.count() > 0:
+                result_text = "We're sorry, that promo code has expired."
+            elif invalid_el.count() > 0:
                 result_text = "Please enter a valid promo or Rewards code."
             else:
                 # Try to get any text near the coupon input area
