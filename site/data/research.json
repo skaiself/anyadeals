@@ -918,7 +918,7 @@
     "code": "BOGO",
     "source": "hotdeals",
     "discovered_at": "2026-03-27T04:44:51.384382+00:00",
-    "raw_description": "",
+    "raw_description": "0% Off\" tag to activate the discount. If your selected items are priced differently, the lower-priced item will be discounted. May not be combined with other offers. Limited time offer. <a class=\"view",
     "raw_context": "discount-box\" data-v-736d1717><!----> <!--[--><div class=\"text text-xl\" data-v-736d1717>BOGO</div> <div class=\"suffix\" data-v-736d1717></div><!--]--></div> <div class=\"offer-details\" data-v-736d1717><",
     "discount_type": "unknown",
     "discount_value": 0,
@@ -1068,7 +1068,7 @@
     "code": "CODES",
     "source": "hotdeals",
     "discovered_at": "2026-03-27T04:44:51.384382+00:00",
-    "raw_description": "",
+    "raw_description": "st; Sales, Deals &amp; Promos | iHerb <meta name=\"og:description\" content=\"Find iHerb promo codes, discount codes, and",
     "raw_context": "CODES FOUND!</span></div></div></div> <div class=\"cpbotoffer\" data-v-820e850d><span class=\"up_con\" data-v-820e850d>",
     "discount_type": "unknown",
     "discount_value": 0,
@@ -2368,5 +2368,1385 @@
     "expiry_date": null,
     "confidence": "low",
     "validation_status": "invalid"
+  },
+  {
+    "code": "URICOMPONENT",
+    "source": "iherb_official",
+    "discovered_at": "2026-04-03T07:11:08.059800+00:00",
+    "raw_description": "cookies = document.cookie.split(\"; \"); for (const cookie of cookies) { const [name, value] = cookie.split(\"=\"); if (name.trim() === cookieName) { return atob(decodeURIComponent(value)); } } return nul",
+    "raw_context": "iherb.com official: URICOMPONENT",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "TIONBANNERPRIMARY",
+    "source": "iherb_official",
+    "discovered_at": "2026-04-03T07:11:08.059800+00:00",
+    "raw_description": "\": \\\"devicePlatform\\\", \\\"type\\\": \\\"custom_attribute\\\", \\\"value\\\": \\\"mobileweb\\\"}]], [\\\"or\\\", [\\\"or\\\", {\\\"match\\\": \\\"exact\\\", \\\"name\\\": \\\"bannerLocation\\\", \\\"type\\\": \\\"custom_attribute\\\", \\\"value\\\": \\\"",
+    "raw_context": "iherb.com official: TIONBANNERPRIMARY",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "TION",
+    "source": "iherb_official",
+    "discovered_at": "2026-04-03T07:11:08.059800+00:00",
+    "raw_description": "ntIds\":[],\"key\":\"category-store-category-pill-click-all\"},{\"id\":\"4555221716697088\",\"experimentIds\":[],\"key\":\"time_on_product_description\"},{\"id\":\"4597314916974592\",\"experimentIds\":[],\"key\":\"plp_store_",
+    "raw_context": "iherb.com official: TION",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "SV2ENABLED",
+    "source": "iherb_official",
+    "discovered_at": "2026-04-03T07:11:08.059800+00:00",
+    "raw_description": "Conditions\":[\"or\",\"30126200417\"]}]}],\"region\":\"US\"}; var catalogOptimizelyEventsHost = \"https://logx-experimentation.iherb.com\"; var isOptimizelyImpressionEnabled = \"True\"; var isUniversalPromosV2Enab",
+    "raw_context": "iherb.com official: SV2ENABLED",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "BANNERS",
+    "source": "iherb_official",
+    "discovered_at": "2026-04-03T07:11:08.059800+00:00",
+    "raw_description": "\"../utilities/utilities\":12}],8:[function(e,t,n){Object.defineProperty(n,\"__esModule\",{value:!0});n.Constants={serverSideRenderedHeaderVersion:{Off:\"Off\",Version1:\"V1\",Version2:\"V2\"},url:{newCustomerP",
+    "raw_context": "iherb.com official: BANNERS",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "TIONS",
+    "source": "iherb_official",
+    "discovered_at": "2026-04-03T07:11:08.059800+00:00",
+    "raw_description": "ties\":12}],8:[function(e,t,n){Object.defineProperty(n,\"__esModule\",{value:!0});n.Constants={serverSideRenderedHeaderVersion:{Off:\"Off\",Version1:\"V1\",Version2:\"V2\"},url:{newCustomerPCodeBanners:\"/info/",
+    "raw_context": "iherb.com official: TIONS",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "BANNERIMAGE",
+    "source": "iherb_official",
+    "discovered_at": "2026-04-03T07:11:08.059800+00:00",
+    "raw_description": "t_Icon.png\",medium:window.IHERB_STATIC_HOST+\"/static/i/images/placeholder/DoubleHeart_Icon_2x.png\",large:window.IHERB_STATIC_HOST+\"/static/i/images/placeholder/DoubleHeart_Icon_3x.png\"},reviews:{email",
+    "raw_context": "iherb.com official: BANNERIMAGE",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "FUNCTION",
+    "source": "iherb_official",
+    "discovered_at": "2026-04-03T07:11:08.059800+00:00",
+    "raw_description": "ction(e){try{return new URL(e).pathname}catch(e){return null}},getPriceAsNumber:function(e){if(e)return e&&\"number\"==typeof e?e:e&&\"string\"==typeof e?+e.replace(/[^0-9\\.]+[.]*/g,\"\"):void 0},getRewards",
+    "raw_context": "iherb.com official: FUNCTION",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "FROMCOOKIE",
+    "source": "iherb_official",
+    "discovered_at": "2026-04-03T07:11:08.059800+00:00",
+    "raw_description": "?t(r):(r=g(),e=!!(e=h())&&0<e.length,r&&e?void D().then(function(e){if(e&&null!=e.referralCode&&0<e.referralCode.length)return t(e.referralCode)}).catch(function(e){return n(\"\")}):t(\"\"))})},getRewards",
+    "raw_context": "iherb.com official: FROMCOOKIE",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "BASE64STRING",
+    "source": "iherb_official",
+    "discovered_at": "2026-04-03T07:11:08.059800+00:00",
+    "raw_description": "sccode\",t,365,!0,{secure:!0}),_.updateCookie(\"iher-pref1\",\"scurcode\",e,365,!0,{secure:!0}),_.updateCookie(\"iher-pref1\",\"lan\",n,365,!0,{secure:!0}),_.updateCookie(\"iher-pref1\",\"city\",u&&\"SA\"==t?(0,d.en",
+    "raw_context": "iherb.com official: BASE64STRING",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "OFCONDUCT",
+    "source": "iherb_official",
+    "discovered_at": "2026-04-03T07:11:08.059800+00:00",
+    "raw_description": "aryFree:\"/hs/dairy-free\",crueltyFree:\"/hs/cruelty-free\",nonGMO:\"/hs/non-gmo\",aboutUs:\"/info/about\",aboutDrMurray:\"/info/doctormurray\",accessibility:\"/info/accessibility\",affiliates:\"/info/affiliates\",",
+    "raw_context": "iherb.com official: OFCONDUCT",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "COPIED",
+    "source": "iherb_official",
+    "discovered_at": "2026-04-03T07:11:08.059800+00:00",
+    "raw_description": "NotifyMeSuccess\",i[i.AnswerSubmitted=6]=\"AnswerSubmitted\",i[i.QuestionSubmitted=7]=\"QuestionSubmitted\",i[i.FeedbackSubmitted=8]=\"FeedbackSubmitted\",i[i.ReviewSubmitted=9]=\"ReviewSubmitted\",i[i.Rewards",
+    "raw_context": "iherb.com official: COPIED",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "INFO",
+    "source": "iherb_official",
+    "discovered_at": "2026-04-03T07:11:08.059800+00:00",
+    "raw_description": "=function(e,t,n){var r;e&&(r={path:S(),type:null!=(r=e.type)?r:\"\",previousPath:null!=(r=e.previousPath)?r:A(),recommendedExperience:t.getExperimentStringifyKeyValuesV2(n)||void 0},O(r,e.isSpa))},n.add",
+    "raw_context": "iherb.com official: INFO",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "INFOEXISTS",
+    "source": "iherb_official",
+    "discovered_at": "2026-04-03T07:11:08.059800+00:00",
+    "raw_description": "getOwnPropertyDescriptor(n,e))})}return t}({},e);D({event:\"user_auth\",parameters:{interaction_type:e.interactionType,location_detail:e.locationDetail}})},n.gaObjectBuilder=_,n.pushToDataLayer=D,n.view",
+    "raw_context": "iherb.com official: INFOEXISTS",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "CONSENTOBJECT",
+    "source": "iherb_official",
+    "discovered_at": "2026-04-03T07:11:08.059800+00:00",
+    "raw_description": "key:\"updateTempCookie\",value:function(e){this.updateCookie(\"ihr-temse\",\"expires\",e,1/24,!0,{secure:!0})}}]);var p=I,e=(f(k,[{key:\"setUserPreference\",value:function(){this.pollCookie()}},{key:\"base64En",
+    "raw_context": "iherb.com official: CONSENTOBJECT",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "UNICODE",
+    "source": "iherb_official",
+    "discovered_at": "2026-04-03T07:11:08.059800+00:00",
+    "raw_description": "ssionService=E,M.UserService=d,M.animateSideScroll=function(e,t,n,r,o){var i=0,a=window.setInterval(function(){\"left\"==t?e.scrollLeft-=o:e.scrollLeft+=o,(i+=o)>=r&&window.clearInterval(a)},n)},M.b64De",
+    "raw_context": "iherb.com official: UNICODE",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "ENTITIES",
+    "source": "iherb_official",
+    "discovered_at": "2026-04-03T07:11:08.059800+00:00",
+    "raw_description": "):\"\"},M.debounce=function(r,o,i){var a;return function(){var e=this,t=arguments,n=i&&!a;clearTimeout(a),a=setTimeout(function(){a=null,i||r.apply(e,t)},o),n&&r.apply(e,t)}},M.decodeBase64String=L,M.de",
+    "raw_context": "iherb.com official: ENTITIES",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "POINT",
+    "source": "iherb_official",
+    "discovered_at": "2026-04-03T07:11:08.059800+00:00",
+    "raw_description": "t >6|192,63&n|128)}else if(n >12|224,n>>6&63|128,63&n|128)}else{if(!(n >18|240,n>>12&63|128,n>>6&63|128,63&n|128)}}return i}function D(e){return S.toByteArray((e=>{var t;if((e=((t=e).trim?t.trim():t.r",
+    "raw_context": "iherb.com official: POINT",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "SPECIALCHARACTERS",
+    "source": "iherb_official",
+    "discovered_at": "2026-04-03T07:11:08.059800+00:00",
+    "raw_description": "stances).push(e)},remove:function(e){e=(n.canUseDOM?R:n.instances).indexOf(e);(n.canUseDOM?R:n.instances).splice(e,1)}}},this.context=e,(this.canUseDOM=t)||(e.helmet=P({baseTag:[],bodyAttributes:{},en",
+    "raw_context": "iherb.com official: SPECIALCHARACTERS",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "LANDINGPRIMARY",
+    "source": "iherb_official",
+    "discovered_at": "2026-04-03T07:11:08.059800+00:00",
+    "raw_description": "p/18\" class=\"cms-banner-wrapper-root-link\" data-ga-promotion_id=\"107857\" data-ga-promotion_name=\"ItemLevelAutoPromo\" data-ga-creative_name=\"BOGO-free_0401-EU\" data-ga-index=\"1\" data-ga-creative_slot=\"",
+    "raw_context": "iherb.com official: LANDINGPRIMARY",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "BANNER",
+    "source": "iherb_official",
+    "discovered_at": "2026-04-03T07:11:08.059800+00:00",
+    "raw_description": "57\" data-ga-promotion_name=\"ItemLevelAutoPromo\" data-ga-creative_name=\"BOGO-free_0401-EU\" data-ga-index=\"1\" data-ga-creative_slot=\"promoLandingPrimary\" title=\"Buy One, Get One FREE\" aria-label=\"iHerb ",
+    "raw_context": "iherb.com official: BANNER",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "NEEDED",
+    "source": "iherb_official",
+    "discovered_at": "2026-04-03T07:11:08.059800+00:00",
+    "raw_description": "Offer ends 4/6/26 at 12:00:00 AM PT. No code needed. Must add at least 2 qualifying items with the \"Buy One, Get One Free\" tag to activate the discount. If your selected items are priced differently, ",
+    "raw_context": "iherb.com official: NEEDED",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "ONETIMEUSEMYAPP15",
+    "source": "iherb_official",
+    "discovered_at": "2026-04-03T07:11:08.059800+00:00",
+    "raw_description": "one;align-self: flex-start;display:block;} <",
+    "raw_context": "iherb.com official: ONETIMEUSEMYAPP15",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "TING",
+    "source": "iherb_official",
+    "discovered_at": "2026-04-03T07:11:08.059800+00:00",
+    "raw_description": "ta-ga-promotion_id=\"1475\" data-ga-promotion_name=\"Trial\" data-ga-creative_name=\"trialbanner0119\" data-ga-index=\"7\" data-ga-creative_slot=\"promoLandingPrimary\" title=\"Try it first!\" aria-label=\"Banner ",
+    "raw_context": "iherb.com official: TING",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "LANDINGBOW",
+    "source": "iherb_official",
+    "discovered_at": "2026-04-03T07:11:08.059800+00:00",
+    "raw_description": "View all Brands of the Week More ways to save at iHerb",
+    "raw_context": "iherb.com official: LANDINGBOW",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "LANDINGWAYSTOSAVE",
+    "source": "iherb_official",
+    "discovered_at": "2026-04-03T07:11:08.059800+00:00",
+    "raw_description": "Learn more Extra 10% discount on al",
+    "raw_context": "iherb.com official: LANDINGWAYSTOSAVE",
+    "discount_type": "percentage",
+    "discount_value": 10,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "OFFERS",
+    "source": "iherb_official",
+    "discovered_at": "2026-04-03T07:11:08.059800+00:00",
+    "raw_description": "tion-banner\" style=\"display: none\"> Be the first to get promo offers and reward perks straight to your inbox Be the first to get promo offer",
+    "raw_context": "iherb.com official: OFFERS",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "FIRST",
+    "source": "iherb_official",
+    "discovered_at": "2026-04-03T07:11:08.059800+00:00",
+    "raw_description": "5% OFF FIRST APP ORDER\"> <img src=\"https://cloudinary.images-iherb.com/image/upload/f_auto,q_auto:eco/images/cms/banners/pdiherbappbanner042525_003pd_sen-us.jpg\" alt=\"SHOP THE iHERB APP",
+    "raw_context": "iherb.com official: FIRST",
+    "discount_type": "percentage",
+    "discount_value": 5,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "ORDER",
+    "source": "iherb_official",
+    "discovered_at": "2026-04-03T07:11:08.059800+00:00",
+    "raw_description": "5% OFF FIRST APP ORDER\"> <img src=\"https://cloudinary.images-iherb.com/image/upload/f_auto,q_auto:eco/images/cms/banners/pdiherbappbanner042525_003pd_sen-us.jpg\" alt=\"SHOP THE iHERB APP",
+    "raw_context": "iherb.com official: ORDER",
+    "discount_type": "percentage",
+    "discount_value": 5,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "SHOP",
+    "source": "iherb_official",
+    "discovered_at": "2026-04-03T07:11:08.059800+00:00",
+    "raw_description": "5% OFF FIRST APP ORDER\"> <img src=\"https://cloudinary.images-iherb.com/image/upload/f_auto,q_auto:eco/images/cms/banners/pdiherbappbanner042525_003pd_sen-us.jpg\" alt=\"SHOP THE iHERB APP",
+    "raw_context": "iherb.com official: SHOP",
+    "discount_type": "percentage",
+    "discount_value": 5,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "Z22H2H3DHL",
+    "source": "slickdeals",
+    "discovered_at": "2026-04-03T07:11:08.059800+00:00",
+    "raw_description": "60% Off iHerb in April 2026",
+    "raw_context": "slickdeals.net code Z22H2H3DHL",
+    "discount_type": "percentage",
+    "discount_value": 60,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "READ",
+    "source": "slickdeals",
+    "discovered_at": "2026-04-03T07:11:08.059800+00:00",
+    "raw_description": "",
+    "raw_context": "slickdeals.net code READ",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "MORE",
+    "source": "slickdeals",
+    "discovered_at": "2026-04-03T07:11:08.059800+00:00",
+    "raw_description": "",
+    "raw_context": "slickdeals.net code MORE",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "ONLY",
+    "source": "slickdeals",
+    "discovered_at": "2026-04-03T07:11:08.059800+00:00",
+    "raw_description": "",
+    "raw_context": "slickdeals.net code ONLY",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "VISA",
+    "source": "slickdeals",
+    "discovered_at": "2026-04-03T07:11:08.059800+00:00",
+    "raw_description": "",
+    "raw_context": "slickdeals.net code VISA",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "NZXT",
+    "source": "slickdeals",
+    "discovered_at": "2026-04-03T07:11:08.059800+00:00",
+    "raw_description": "",
+    "raw_context": "slickdeals.net code NZXT",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "BRUNT",
+    "source": "slickdeals",
+    "discovered_at": "2026-04-03T07:11:08.059800+00:00",
+    "raw_description": "",
+    "raw_context": "slickdeals.net code BRUNT",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "SHEIN",
+    "source": "slickdeals",
+    "discovered_at": "2026-04-03T07:11:08.059800+00:00",
+    "raw_description": "",
+    "raw_context": "slickdeals.net code SHEIN",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "CHITA",
+    "source": "slickdeals",
+    "discovered_at": "2026-04-03T07:11:08.059800+00:00",
+    "raw_description": "",
+    "raw_context": "slickdeals.net code CHITA",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "NL26APR",
+    "source": "hotdeals",
+    "discovered_at": "2026-04-03T07:11:08.059800+00:00",
+    "raw_description": "Take 20% OFF your order now at iHerb and browse even more great deals.",
+    "raw_context": "hotdeals.com code NL26APR",
+    "discount_type": "percentage",
+    "discount_value": 20,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "GENERIC",
+    "source": "https://www.rakuten.com/shop/iherb",
+    "discovered_at": "2026-04-03T07:11:08.059800+00:00",
+    "raw_description": "",
+    "raw_context": "discounts offered directly by iHerb.  Hmmmm</p><p class=\"css-1me75tf\">Mimi Fein</p></div></div></div></div></div></div><div class=\"css-1yxmrz6\"><div class=\"css-rqgsqp\"><div template=\"GENERIC\" class=\"c",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "WOW123",
+    "source": "https://www.rakuten.com/shop/iherb",
+    "discovered_at": "2026-04-03T07:11:08.059800+00:00",
+    "raw_description": "",
+    "raw_context": "code WOW123 at checkout to receive your",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "OLIVE",
+    "source": "https://www.rakuten.com/shop/iherb",
+    "discovered_at": "2026-04-03T07:11:08.059800+00:00",
+    "raw_description": "",
+    "raw_context": "coupons and Cash Back\" class=\"chakra-image css-sertd6\" src=\"https://static.rakuten.com/assets/merchants/_next/static/imgs/blank-1a8815.svg\"/></div></div><div class=\"css-18rwmq9\"><div class=\"css-sjc375",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "YOUNG",
+    "source": "https://www.rakuten.com/shop/iherb",
+    "discovered_at": "2026-04-03T07:11:08.059800+00:00",
+    "raw_description": "",
+    "raw_context": "coupons and Cash Back\" class=\"chakra-image css-sertd6\" src=\"https://static.rakuten.com/assets/merchants/_next/static/imgs/blank-1a8815.svg\"/></div></div><div class=\"css-18rwmq9\"><div class=\"css-sjc375",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "OLLY",
+    "source": "https://www.rakuten.com/shop/iherb",
+    "discovered_at": "2026-04-03T07:11:08.059800+00:00",
+    "raw_description": "",
+    "raw_context": "coupons and Cash Back\" class=\"chakra-image css-sertd6\" src=\"https://static.rakuten.com/assets/merchants/_next/static/imgs/blank-1a8815.svg\"/></div></div><div class=\"css-18rwmq9\"><div class=\"css-sjc375",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "DISC59",
+    "source": "https://www.rakuten.com/shop/iherb",
+    "discovered_at": "2026-04-03T07:11:08.059800+00:00",
+    "raw_description": "",
+    "raw_context": "promotionalModal\":6991156},\"ratOptions\":{\"pgt\":\"shop_item\",\"pgn\":\"store\",\"ssc\":\"/shop/iherb\"},\"experimentsConfig\":{\"context\":{\"page_type\":\"Merchant Page\"},\"featureFlagKeys\":[\"DISC59\"]},\"branchDeepLink",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "TOPIC",
+    "source": "https://www.rakuten.com/shop/iherb",
+    "discovered_at": "2026-04-03T07:11:08.059800+00:00",
+    "raw_description": "",
+    "raw_context": "promo_store_v2\":{\"pluginVersion\":\"3\",\"tileMetaVersion\":\"2\",\"topic\":{\"id\":\"773:206\",\"type\":\"TOPIC dr_house",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "DYNAMIC",
+    "source": "https://www.rakuten.com/shop/iherb",
+    "discovered_at": "2026-04-03T07:11:08.059800+00:00",
+    "raw_description": "",
+    "raw_context": "promo_store_v2\",\"uxAttributes\":{\"type\":\"string\",\"mappingType\":\"objectMap\",\"data\":\"title\",\"meta\":{\"scope\":\"topic\",\"nodeGroup\":\"null\",\"renderingType\":\"DYNAMIC\",\"breakpointName\":\"smallSm\",\"uiKitComponent",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "MEDIA",
+    "source": "https://www.rakuten.com/shop/iherb",
+    "discovered_at": "2026-04-03T07:11:08.059800+00:00",
+    "raw_description": "",
+    "raw_context": "promo_store_v2\",\"columnsPerTile\":\"8\",\"rowsPerTopic\":\"1\",\"layoutType\":\"Carousel\",\"primaryTypes\":\"MEDIA\",\"tag\":\"GENERIC\"},\"location\":{\"x\":0,\"y\":0},\"size\":{\"w\":320,\"h\":401},\"tileSizes\":{\"smallSm\":{\"w\":28",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "TILE",
+    "source": "https://www.rakuten.com/shop/iherb",
+    "discovered_at": "2026-04-03T07:11:08.059800+00:00",
+    "raw_description": "",
+    "raw_context": "promo_store_v2\",\"columnsPerTile\":\"8\",\"rowsPerTopic\":\"1\",\"layoutType\":\"Carousel\",\"primaryTypes\":\"MEDIA\",\"tag\":\"GENERIC\"},\"location\":{\"x\":0,\"y\":0},\"size\":{\"w\":320,\"h\":401},\"tileSizes\":{\"smallSm\":{\"w\":28",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "STORE",
+    "source": "https://www.rakuten.com/shop/iherb",
+    "discovered_at": "2026-04-03T07:11:08.059800+00:00",
+    "raw_description": "",
+    "raw_context": "promotedstore_store_v1\",\"columnsPerTile\":\"8\",\"rowsPerTopic\":\"5\",\"layoutType\":\"Grid-paged\",\"primaryTypes\":\"STORE,",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "COUPON",
+    "source": "https://www.rakuten.com/shop/iherb",
+    "discovered_at": "2026-04-03T07:11:08.059800+00:00",
+    "raw_description": "",
+    "raw_context": "COUPON\"},\"location\":{\"x\":0,\"y\":0},\"size\":{\"w\":350,\"h\":145.00003051757812},\"tileSizes\":{\"smallSm\":{\"w\":350,\"h\":144.00003051757812}},\"topicSectionSizes\":{\"smallSm\":{\"w\":1,\"h\":1}}},\"tileVariants\":[],\"top",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "LEFT",
+    "source": "https://www.rakuten.com/shop/iherb",
+    "discovered_at": "2026-04-03T07:11:08.059800+00:00",
+    "raw_description": "",
+    "raw_context": "COUPON\"},\"location\":{\"x\":0,\"y\":0},\"size\":{\"w\":350,\"h\":145.00003051757812},\"tileSizes\":{\"smallSm\":{\"w\":350,\"h\":144.00003051757812}},\"topicSectionSizes\":{\"smallSm\":{\"w\":1,\"h\":1}}},\"tileVariants\":[],\"top",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "CENTER",
+    "source": "https://www.rakuten.com/shop/iherb",
+    "discovered_at": "2026-04-03T07:11:08.059800+00:00",
+    "raw_description": "",
+    "raw_context": "COUPON\"},\"location\":{\"x\":0,\"y\":0},\"size\":{\"w\":350,\"h\":145.00003051757812},\"tileSizes\":{\"smallSm\":{\"w\":350,\"h\":144.00003051757812}},\"topicSectionSizes\":{\"smallSm\":{\"w\":1,\"h\":1}}},\"tileVariants\":[],\"top",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "SEARCH",
+    "source": "https://www.rakuten.com/shop/iherb",
+    "discovered_at": "2026-04-03T07:11:08.059800+00:00",
+    "raw_description": "",
+    "raw_context": "promoted_search_store_v1\",\"columnsPerTile\":\"1\",\"rowsPerTopic\":\"1\",\"layoutType\":\"Grid-paged\",\"primaryTypes\":\"SEARCH,STORE\"},\"location\":{\"x\":0,\"y\":0},\"size\":{\"w\":375,\"h\":208},\"tileSizes\":{\"smallSm\":{\"w\"",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "ALIGN",
+    "source": "https://www.rakuten.com/shop/iherb",
+    "discovered_at": "2026-04-03T07:11:08.059800+00:00",
+    "raw_description": "",
+    "raw_context": "promo_banner_v1\",\"columnsPerTile\":\"8\",\"rowsPerTopic\":\"1\",\"layoutType\":\"Grid-paged\",\"primaryTypes\":\"MEDIA\",\"tag\":\"ALIGN\"},\"location\":{\"x\":0,\"y\":0},\"size\":{\"w\":360,\"h\":300},\"tileSizes\":{\"smallSm\":{\"w\":3",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "FIXED",
+    "source": "https://www.rakuten.com/shop/iherb",
+    "discovered_at": "2026-04-03T07:11:08.059800+00:00",
+    "raw_description": "",
+    "raw_context": "Coupon-Inverse\",\"colorStyle\":{\"styleId\":\"1bd89fefec37b2822221f79c51506ceac8baf7a9\"},\"effects\":{},\"contentSizing\":{\"h\":\"FIXED\",\"v\":\"FIXED\"},\"location\":{\"x\":114,\"y\":106.00000762939453},\"size\":{\"w\":16,\"h",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "UPPER",
+    "source": "https://www.rakuten.com/shop/iherb",
+    "discovered_at": "2026-04-03T07:11:08.059800+00:00",
+    "raw_description": "",
+    "raw_context": "Coupon Container\",\"layoutIndex\":\"2\",\"uxAttributes\":{\"type\":\"string\",\"textProperties\":{\"font\":{\"size\":12,\"name\":\"RakutenSansAppUI\",\"weightName\":\"SemiBold\",\"weight\":600},\"styleId\":\"20425feec5ced477e98b8",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "COMMERCEMEDIABRAND",
+    "source": "https://www.rakuten.com/shop/iherb",
+    "discovered_at": "2026-04-03T07:11:08.059800+00:00",
+    "raw_description": "",
+    "raw_context": "COUPON,STORE,COMMERCEMEDIABRAND\"},\"location\":{\"x\":0,\"y\":0},\"size\":{\"w\":360,\"h\":391.4285888671875},\"tileSizes\":{\"smallSm\":{\"w\":270,\"h\":253.42857360839844},\"mediumSm\":{\"w\":292,\"h\":268.952392578125}},\"to",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "STATIC",
+    "source": "https://www.rakuten.com/shop/iherb",
+    "discovered_at": "2026-04-03T07:11:08.059800+00:00",
+    "raw_description": "",
+    "raw_context": "coupons, and a $10 bonus today.*\",\"renderType\":\"STATIC\",\"showdismissicon_text\":\"true\",\"showreferrertext_text\":\"true\",\"showsignintext_text\":\"true\",\"template\":\"signup_modal_auth_ms_v2\"},\"viewEvent\":{\"__",
+    "discount_type": "fixed",
+    "discount_value": 10,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "E4E0FC",
+    "source": "https://www.rakuten.com/shop/iherb",
+    "discovered_at": "2026-04-03T07:11:08.059800+00:00",
+    "raw_description": "",
+    "raw_context": "coupons and Cash Back\",\"backgroundimage_backgroundcolor\":\"#E4E0FC\",\"ctabutton_buttontext\":\"Install [Browser_Name] Extension\",\"ctabutton_ctaurl\":\"https://www.rakuten.com/button-landing/redirect?utm=rad",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "WMF4HVR",
+    "source": "https://www.savings.com/coupons/iherb.com",
+    "discovered_at": "2026-04-03T07:11:08.059800+00:00",
+    "raw_description": "",
+    "raw_context": "coupons/iherb.com\",\nresource: \"iherb.com\"\n},\ngpc_enabled: true,navigationVersion: 'v2'\n};\n</script>\n</head>\n<body class=\"merchant v3 locale-us\">\n<!-- Google Tag Manager (noscript) -->\n<noscript><ifram",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "MAR26IH",
+    "source": "https://www.savings.com/coupons/iherb.com",
+    "discovered_at": "2026-04-03T07:11:08.059800+00:00",
+    "raw_description": "",
+    "raw_context": "code block\">MAR26IH</strong>\n</div>\n</div>\n</div>\n<div class=\"content p-0 clearfix\">\n<p class=\"m-b-0\"><strong class=\"title f-18 ga-ref\">15",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "CPAP",
+    "source": "https://www.savings.com/coupons/iherb.com",
+    "discovered_at": "2026-04-03T07:11:08.059800+00:00",
+    "raw_description": "",
+    "raw_context": "coupons/thecpapshop.com\" class=\"logo featured tbl m-0\" title=\"The CPAP Shop",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "CX90",
+    "source": "https://www.groupon.com/coupons/iherb",
+    "discovered_at": "2026-04-03T07:11:08.059800+00:00",
+    "raw_description": "",
+    "raw_context": "PromoBanner_Touch_US\",\"diversion_type\":\"CookieDiversion\"},\"LS-7621-Touch-CX90HeaderNA\":{\"experiments\":{\"LS-7621-Touch-CX90HeaderNA\":{\"name\":\"LS-7621-Touch-CX90HeaderNA\",\"tracking\":true,\"variants\":[\"Co",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "KHTML",
+    "source": "https://www.groupon.com/coupons/iherb",
+    "discovered_at": "2026-04-03T07:11:08.059800+00:00",
+    "raw_description": "",
+    "raw_context": "coupons\\/merchant\\/show\"},\"session\":{\"id\":\"b75ad8c4-ee4b-4431-9ad8-c4ee4be43118\",\"referral\":{\"source\":\"direct\"}},\"user\":{\"browserId\":\"664bf739-67c1-4108-8bf7-3967c1d108a5\",\"consumerId\":null,\"consumerI",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "BOOMR",
+    "source": "https://www.groupon.com/coupons/iherb",
+    "discovered_at": "2026-04-03T07:11:08.059800+00:00",
+    "raw_description": "",
+    "raw_context": "coupons-itier-global\"}},\n              delayBloodhound: true\n            }\n      }\n          };\n          /* eslint-disable no-undef */\n(function () {\n  window.BOOMR = { t_lstart: +new Date() };\n  (fu",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "IFRAME",
+    "source": "https://www.groupon.com/coupons/iherb",
+    "discovered_at": "2026-04-03T07:11:08.059800+00:00",
+    "raw_description": "",
+    "raw_context": "promoted = true;\n    let dom,\n      doc = document,\n      win = window;\n    window.BOOMR.snippetMethod = wasFallback ? 'if' : 'i';\n\n    const bootstrap = function (parent, scriptId) {\n      const scri",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "HOKA",
+    "source": "https://www.groupon.com/coupons/iherb",
+    "discovered_at": "2026-04-03T07:11:08.059800+00:00",
+    "raw_description": "",
+    "raw_context": "coupons/grubhub\"},{\"text\":\"HOKA",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "LGJV9YLQAJ",
+    "source": "https://www.groupon.com/coupons/iherb",
+    "discovered_at": "2026-04-03T07:11:08.059800+00:00",
+    "raw_description": "",
+    "raw_context": "CouponSearchField\" class=\"search-input\" /><ul role=\"menu\" class=\"search-list\"></ul></div></div><script type=\"application/json\">{\"searchCredentials\":{\"algoliaApiId\":\"LGJV9YLQAJ\",\"algoliaApiIndex\":\"Merc",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "M256",
+    "source": "https://www.groupon.com/coupons/iherb",
+    "discovered_at": "2026-04-03T07:11:08.059800+00:00",
+    "raw_description": "",
+    "raw_context": "% off $60 Orders</h2><span class=\"offer-expiry-badge\"><div class=\"offer-expiry-badge-icon\"><svg version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" x=\"0px\" y=\"0",
+    "discount_type": "fixed",
+    "discount_value": 60,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "C132",
+    "source": "https://www.groupon.com/coupons/iherb",
+    "discovered_at": "2026-04-03T07:11:08.059800+00:00",
+    "raw_description": "",
+    "raw_context": "% off $60 Orders</h2><span class=\"offer-expiry-badge\"><div class=\"offer-expiry-badge-icon\"><svg version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" x=\"0px\" y=\"0",
+    "discount_type": "fixed",
+    "discount_value": 60,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "OLEHENRIKSEN",
+    "source": "https://www.groupon.com/coupons/iherb",
+    "discovered_at": "2026-04-03T07:11:08.059800+00:00",
+    "raw_description": "",
+    "raw_context": "coupons/ole-henriksen\" data-bhc=\"store:ole-henriksen\" aria-label=\"OLEHENRIKSEN, 6 Offers Available\" class=\"sidebar-browse-link\"><img src=\"data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEA",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "LICENSE",
+    "source": "https://www.groupon.com/coupons/iherb",
+    "discovered_at": "2026-04-03T07:11:08.059800+00:00",
+    "raw_description": "",
+    "raw_context": "codes\\/js\"},\"digest\":{\"103.js\":\"103-ec437653fc.js\",\"103.js.map\":\"103-ec437653fc.js.map\",\"191.js\":\"191-01ae81c6a3.js\",\"191.js.LICENSE.txt\":\"191-01ae81c6a3.js.LICENSE.txt\",\"191.js.map\":\"191-01ae81c6a3.j",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "CGS07DESJB",
+    "source": "https://www.groupon.com/coupons/iherb",
+    "discovered_at": "2026-04-03T07:11:08.059800+00:00",
+    "raw_description": "",
+    "raw_context": "coupons/top-offers\"}},\"isTouch\":false,\"csrfToken\":\"mSILwbOj-wuOuiEnMcTO3IUo7wUZSptU42Oo\",\"country\":\"US\",\"ga4MeasurementIds\":{\"AE\":\"G-CGS07DESJB\",\"AU\":\"G-TPGSYVBD4B\",\"DE\":\"G-30MBFX7CVZ\",\"ES\":\"G-EX1C5CH",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "TPGSYVBD4B",
+    "source": "https://www.groupon.com/coupons/iherb",
+    "discovered_at": "2026-04-03T07:11:08.059800+00:00",
+    "raw_description": "",
+    "raw_context": "coupons/top-offers\"}},\"isTouch\":false,\"csrfToken\":\"mSILwbOj-wuOuiEnMcTO3IUo7wUZSptU42Oo\",\"country\":\"US\",\"ga4MeasurementIds\":{\"AE\":\"G-CGS07DESJB\",\"AU\":\"G-TPGSYVBD4B\",\"DE\":\"G-30MBFX7CVZ\",\"ES\":\"G-EX1C5CH",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "EX1C5CHEFH",
+    "source": "https://www.groupon.com/coupons/iherb",
+    "discovered_at": "2026-04-03T07:11:08.059800+00:00",
+    "raw_description": "",
+    "raw_context": "coupons/top-offers\"}},\"isTouch\":false,\"csrfToken\":\"mSILwbOj-wuOuiEnMcTO3IUo7wUZSptU42Oo\",\"country\":\"US\",\"ga4MeasurementIds\":{\"AE\":\"G-CGS07DESJB\",\"AU\":\"G-TPGSYVBD4B\",\"DE\":\"G-30MBFX7CVZ\",\"ES\":\"G-EX1C5CH",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "LG7GLDMKK1",
+    "source": "https://www.groupon.com/coupons/iherb",
+    "discovered_at": "2026-04-03T07:11:08.059800+00:00",
+    "raw_description": "",
+    "raw_context": "coupons/top-offers\"}},\"isTouch\":false,\"csrfToken\":\"mSILwbOj-wuOuiEnMcTO3IUo7wUZSptU42Oo\",\"country\":\"US\",\"ga4MeasurementIds\":{\"AE\":\"G-CGS07DESJB\",\"AU\":\"G-TPGSYVBD4B\",\"DE\":\"G-30MBFX7CVZ\",\"ES\":\"G-EX1C5CH",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "RRGVKK3P98",
+    "source": "https://www.groupon.com/coupons/iherb",
+    "discovered_at": "2026-04-03T07:11:08.059800+00:00",
+    "raw_description": "",
+    "raw_context": "coupons/top-offers\"}},\"isTouch\":false,\"csrfToken\":\"mSILwbOj-wuOuiEnMcTO3IUo7wUZSptU42Oo\",\"country\":\"US\",\"ga4MeasurementIds\":{\"AE\":\"G-CGS07DESJB\",\"AU\":\"G-TPGSYVBD4B\",\"DE\":\"G-30MBFX7CVZ\",\"ES\":\"G-EX1C5CH",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "Q4JDLL775S",
+    "source": "https://www.groupon.com/coupons/iherb",
+    "discovered_at": "2026-04-03T07:11:08.059800+00:00",
+    "raw_description": "",
+    "raw_context": "coupons/top-offers\"}},\"isTouch\":false,\"csrfToken\":\"mSILwbOj-wuOuiEnMcTO3IUo7wUZSptU42Oo\",\"country\":\"US\",\"ga4MeasurementIds\":{\"AE\":\"G-CGS07DESJB\",\"AU\":\"G-TPGSYVBD4B\",\"DE\":\"G-30MBFX7CVZ\",\"ES\":\"G-EX1C5CH",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "SEJ4F7V7PW",
+    "source": "https://www.groupon.com/coupons/iherb",
+    "discovered_at": "2026-04-03T07:11:08.059800+00:00",
+    "raw_description": "",
+    "raw_context": "coupons/top-offers\"}},\"isTouch\":false,\"csrfToken\":\"mSILwbOj-wuOuiEnMcTO3IUo7wUZSptU42Oo\",\"country\":\"US\",\"ga4MeasurementIds\":{\"AE\":\"G-CGS07DESJB\",\"AU\":\"G-TPGSYVBD4B\",\"DE\":\"G-30MBFX7CVZ\",\"ES\":\"G-EX1C5CH",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "METATAGS",
+    "source": "https://www.marieclaire.com/coupons/iherb.com",
+    "discovered_at": "2026-04-03T07:11:08.059800+00:00",
+    "raw_description": "",
+    "raw_context": "<!DOCTYPE html>\n<html lang=\"en-US\" data-locale=\"US\" dir=\"ltr\">\n<head>\n<!-- [METATAGS - critical] -->\n<meta charset=\"utf-8\">\n<meta name=\"viewport\" content=\"width=device-width,initial-scale=1\">\n<title>i",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "OUTNET",
+    "source": "https://www.marieclaire.com/coupons/iherb.com",
+    "discovered_at": "2026-04-03T07:11:08.059800+00:00",
+    "raw_description": "",
+    "raw_context": "coupons/freepeople.com\",\n\"@id\": \"#trending\"\n},\n{\n\"@type\": \"SiteNavigationElement\",\n\"name\": \"The OUTNET\",\n\"url\": \"https://www.marieclaire.com/",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "WWBWRXL",
+    "source": "https://www.marieclaire.com/coupons/iherb.com",
+    "discovered_at": "2026-04-03T07:11:08.059800+00:00",
+    "raw_description": "",
+    "raw_context": "code\":\"GTM-WWBWRXL\"}},\"stickyNavSearch\":{\"enabled\":false},\"flexiCriticalCss\":{\"enabled\":true},\"flexiAdvancedSearch\":{\"fields\":[\"articleName\",\"articleStrapline\",\"articleSynopsis\",\"articleBodyClean\",\"ar",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "GDPR",
+    "source": "https://www.marieclaire.com/coupons/iherb.com",
+    "discovered_at": "2026-04-03T07:11:08.059800+00:00",
+    "raw_description": "",
+    "raw_context": "Code);\n};\nwindow.dispatchOrQueueAction('vanilla.setIsArticle', true);\nwindow.vanilla.translations = {\"cmp_footer_link\":\"GDPR consent\",\"American Football\":\"Football\"};\nwindow.vanilla.getCookieByName =",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "SPONSORED",
+    "source": "https://www.marieclaire.com/coupons/iherb.com",
+    "discovered_at": "2026-04-03T07:11:08.059800+00:00",
+    "raw_description": "",
+    "raw_context": "codes body-- body--no-ads no-inbody-ads sticky-navigation voucher-template articletype-voucher\n\">\n<script type=\"text/html\" class=\"sponsored-tag-template\" style=\"display:none!important;\">\n<a href=\"SPON",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "JSON",
+    "source": "https://www.marieclaire.com/coupons/iherb.com",
+    "discovered_at": "2026-04-03T07:11:08.059800+00:00",
+    "raw_description": "",
+    "raw_context": "discount.</p>\n</div>\n</div>\n</div>\n<div class=\"clear-floats\"></div>\n<script data-id=\"vanilla-slice-authorBio-ykFpTmWxfpLLB9ZwwbRWXF-hydrate\" type=\"text/javascript\">\n    if (window.sliceHydrationLazy)",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "INSTAGRAM",
+    "source": "https://www.marieclaire.com/coupons/iherb.com",
+    "discovered_at": "2026-04-03T07:11:08.059800+00:00",
+    "raw_description": "",
+    "raw_context": "Codes\",\"authorLink\":{\"text\":\"Becky Spicer\",\"href\":\"https:\\/\\/www.marieclaire.com\\/author\\/becky-spicer\"},\"image\":{\"src\":\"https:\\/\\/cdn.mos.cms.futurecdn.net\\/LeyPZUJ7QuB34WAdfzWBFf.png\",\"alt\":\"Becky S",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "MERIT",
+    "source": "https://www.marieclaire.com/coupons/iherb.com",
+    "discovered_at": "2026-04-03T07:11:08.059800+00:00",
+    "raw_description": "",
+    "raw_context": "coupons/merit-beauty/\">\n<h3 title=\"MERIT Beauty",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "FOREO",
+    "source": "https://www.marieclaire.com/coupons/iherb.com",
+    "discovered_at": "2026-04-03T07:11:08.059800+00:00",
+    "raw_description": "",
+    "raw_context": "coupons/FOREO\" data-before-rewrite-localise=\"/",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "SSENSE",
+    "source": "https://www.marieclaire.com/coupons/iherb.com",
+    "discovered_at": "2026-04-03T07:11:08.059800+00:00",
+    "raw_description": "",
+    "raw_context": "coupons/SSENSE.com\" data-before-rewrite-localise=\"/",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "EXCLUSIVE",
+    "source": "https://www.savings.com/coupons/iherb.com",
+    "discovered_at": "2026-04-03T07:14:10.763792+00:00",
+    "raw_description": "",
+    "raw_context": "coupon-10265676.html\"/>\n<input type=\"hidden\" name=\"property-id\" value=\"VTBGV1NVNUhVek13\"/>\n<div class=\"primary \">\n<div class=\"deal-header-wrapper\">\n<header class=\"deal-merchant-name\">ZipHealth</header",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
   }
 ]
