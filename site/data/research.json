@@ -3748,5 +3748,20 @@
     "expiry_date": null,
     "confidence": "low",
     "validation_status": "pending"
+  },
+  {
+    "code": "APR26CGN",
+    "source": "reddit/search",
+    "discovered_at": "2026-04-04T01:14:11.979791+00:00",
+    "raw_description": "10-20% iherb discount codes to use! DVO4205 + NEW20/GOLD60/MYAPP15",
+    "raw_context": "Hi everybody! if anyone is looking for working promo codes you can use these :)\n\nbe sure to use DVO4205 first \ud83d\udc22\n\n* DVO4205 + NEW20: 20% off first order\u00a0\u00a0\n* DVO4205 + THANKYOU15: 15% off every order (USA ONLY)\n* DVO4205 + APR26CGN: 15% off California Gold Nutrition\n* DVO4205 + GOLD60: 10% off orders ",
+    "discount_type": "percentage",
+    "discount_value": 20,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
   }
 ]

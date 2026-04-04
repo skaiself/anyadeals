@@ -2,11 +2,11 @@
   "affiliate_code": "OFR0296",
   "jobs": {
     "researcher": {
-      "last_run": "2026-04-03T07:14:10.798161+00:00",
-      "status": "failure",
+      "last_run": "2026-04-04T01:14:11.989451+00:00",
+      "status": "success",
       "next_run": "2026-03-22T18:00:00Z",
-      "last_error": "Client error '409 Conflict' for url 'http://validator:8002/run'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/409",
-      "codes_found": 0
+      "last_error": null,
+      "codes_found": 164
     },
     "validator": {
       "last_run": "2026-04-03T07:37:37.178381+00:00",
@@ -27,6 +27,6 @@
     "total_active_codes": 1,
     "total_expired_codes": 8,
     "total_posts_this_week": 0,
-    "last_deploy": "2026-04-04T01:00:00.008573+00:00"
+    "last_deploy": "2026-04-04T01:14:11.999133+00:00"
   }
 }
