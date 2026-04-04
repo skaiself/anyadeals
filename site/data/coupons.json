@@ -1867,13 +1867,15 @@
     "code": "RENEWLIFE",
     "type": "promo",
     "discount": "20% off",
-    "regions": [],
+    "regions": [
+      "us"
+    ],
     "min_cart_value": 0,
-    "status": "invalid",
+    "status": "valid",
     "first_seen": "2026-03-28",
     "last_validated": "2026-04-02T15:29:45.079157+00:00",
-    "last_failed": "2026-04-03T05:21:56.366453+00:00",
-    "fail_count": 3,
+    "last_failed": null,
+    "fail_count": 0,
     "source": "reddit/search",
     "stackable_with_referral": false,
     "notes": "Renew Life brand only."
@@ -1882,13 +1884,15 @@
     "code": "RAINBOWLIGHT",
     "type": "promo",
     "discount": "20% off",
-    "regions": [],
+    "regions": [
+      "us"
+    ],
     "min_cart_value": 0,
-    "status": "invalid",
+    "status": "valid",
     "first_seen": "2026-03-28",
     "last_validated": "2026-04-02T15:29:45.079157+00:00",
-    "last_failed": "2026-04-03T05:21:56.366453+00:00",
-    "fail_count": 3,
+    "last_failed": null,
+    "fail_count": 0,
     "source": "reddit/search",
     "stackable_with_referral": false,
     "notes": "Rainbow Light brand only."
@@ -1897,13 +1901,15 @@
     "code": "NATURALVIT",
     "type": "promo",
     "discount": "20% off",
-    "regions": [],
+    "regions": [
+      "us"
+    ],
     "min_cart_value": 0,
-    "status": "invalid",
+    "status": "valid",
     "first_seen": "2026-03-28",
     "last_validated": "2026-04-02T15:29:45.079157+00:00",
-    "last_failed": "2026-04-03T05:21:56.366453+00:00",
-    "fail_count": 3,
+    "last_failed": null,
+    "fail_count": 0,
     "source": "reddit/search",
     "stackable_with_referral": false,
     "notes": "Natural Vitality brand only."

@@ -3793,5 +3793,695 @@
     "expiry_date": null,
     "confidence": "low",
     "validation_status": "invalid"
+  },
+  {
+    "code": "OTTO",
+    "source": "https://www.sparwelt.de/gutscheine/iherb",
+    "discovered_at": "2026-04-04T20:13:47.220477+00:00",
+    "raw_description": "",
+    "raw_context": "codes<!--]--><!--]--></a><a href=\"/gutscheine/otto\" class=\"justify-center items-center space-x-2 outline-none cursor-pointer inline-flex px-4 py-2.5 transition-colors fill-current bg-sw-blue-100 text-",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "AUTODOC",
+    "source": "https://www.sparwelt.de/gutscheine/iherb",
+    "discovered_at": "2026-04-04T20:13:47.220477+00:00",
+    "raw_description": "",
+    "raw_context": "codes<!--]--><!--]--></a><a href=\"/gutscheine/autodoc\" class=\"justify-center items-center space-x-2 outline-none cursor-pointer inline-flex px-4 py-2.5 transition-colors fill-current bg-sw-blue-100 te",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "M160",
+    "source": "https://www.sparwelt.de/gutscheine/iherb",
+    "discovered_at": "2026-04-04T20:13:47.220477+00:00",
+    "raw_description": "",
+    "raw_context": "code\" class=\"border-transparent flex justify-start items-center space-x-2 cursor-pointer md:px-6 py-3 md:border-l-2 transition-colors hover:text-emerald-600 hover:border-emerald-600 group\"><svg xmlns=",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "APP10",
+    "source": "https://www.sparwelt.de/gutscheine/iherb",
+    "discovered_at": "2026-04-04T20:13:47.220477+00:00",
+    "raw_description": "",
+    "raw_context": "code\":359,\"type\":151},\"APP10\",\"10% apo.com Gutschein bei App-Download\",\"10percent-apo.com-gutschein-bei-app-download\",\"2026-03-26T11:10:11.367Z\",\"2026-03-26T11:10:10.000Z\",{\"AvailableFrom\":365,\"Availa",
+    "discount_type": "percentage",
+    "discount_value": 10,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "GRATIS",
+    "source": "https://www.sparwelt.de/gutscheine/iherb",
+    "discovered_at": "2026-04-04T20:13:47.220477+00:00",
+    "raw_description": "",
+    "raw_context": "code\":392,\"title\":393,\"slug\":394,\"available\":47,\"updatedAt\":395,\"publishedAt\":396,\"availability\":397,\"flags\":400,\"portal_main_categories\":401,\"portal_sub_categories\":402,\"parentId\":403,\"shop\":404},\"35",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "CBD15",
+    "source": "https://www.sparwelt.de/gutscheine/iherb",
+    "discovered_at": "2026-04-04T20:13:47.220477+00:00",
+    "raw_description": "",
+    "raw_context": "code\":514,\"type\":151},\"CBD15\",\"15%-Gutschein f\u00fcr alles\",\"2024-11-05T11:22:13.973Z\",\"2024-07-30T22:00:00.000Z\",{\"AvailableFrom\":517,\"AvailableTill\":26},{\"top\":20,\"highlighted\":20,\"recommended\":20,\"very",
+    "discount_type": "percentage",
+    "discount_value": 15,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "CHAMPION",
+    "source": "https://www.sparwelt.de/gutscheine/iherb",
+    "discovered_at": "2026-04-04T20:13:47.220477+00:00",
+    "raw_description": "",
+    "raw_context": "code\":585,\"type\":151},\"CHAMPION\",\"20% Rabatt auf ausgew\u00e4hlte Brands\",\"20percent-rabatt-auf-ausgewahlte-brands\",\"2026-02-19T15:19:42.134Z\",\"2026-02-19T15:19:41.000Z\",{\"AvailableFrom\":591,\"AvailableTill",
+    "discount_type": "percentage",
+    "discount_value": 20,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "SPARWELT",
+    "source": "https://www.sparwelt.de/gutscheine/iherb",
+    "discovered_at": "2026-04-04T20:13:47.220477+00:00",
+    "raw_description": "",
+    "raw_context": "code Text\",[1378,1380],{\"id\":1379,\"pattern\":1358},38,{\"id\":1381,\"pattern\":1361},61,{\"id\":1383,\"title\":1384,\"description\":1384,\"robots\":1385,\"keywords\":26},86952,\"{title} - SPARWELT\",\"noindex_follow\",{",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "FT67HB42T6",
+    "source": "https://www.sparwelt.de/gutscheine/iherb",
+    "discovered_at": "2026-04-04T20:13:47.220477+00:00",
+    "raw_description": "",
+    "raw_context": "promotionLimit:21,previewToken:\"\",oldWordpressIP:\"35.159.104.253\",newWordpressIP:\"63.180.176.85\",layout:{},sitemapUrls:{shop:\"/gutscheine/\",mainCategory:\"/kategorien/\",subCategory:\"/kategorien/\",campa",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "M204",
+    "source": "https://www.gutscheine.de/iherb",
+    "discovered_at": "2026-04-04T20:13:47.220477+00:00",
+    "raw_description": "",
+    "raw_context": "codes</span></a><a href=\"#aehnliche-gutscheine\" class=\"flex justify-start items-center space-x-2 cursor-pointer px-3 py-1.5 border-l-[1px] transition-colors hover:text-emerald-600 hover:border-emerald",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "M520",
+    "source": "https://www.gutscheine.de/iherb",
+    "discovered_at": "2026-04-04T20:13:47.220477+00:00",
+    "raw_description": "",
+    "raw_context": "code</span></a><a href=\"#shoppen-und-sparen-im-iherb-onlineshop\" class=\"flex justify-start items-center space-x-2 cursor-pointer px-3 py-1.5 border-l-[1px] transition-colors hover:text-emerald-600 hov",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "M267",
+    "source": "https://www.gutscheine.de/iherb",
+    "discovered_at": "2026-04-04T20:13:47.220477+00:00",
+    "raw_description": "",
+    "raw_context": "code</strong>!</p></div><span class=\"cursor-pointer flex items-center justify-end space-x-2 w-fit mt-2 sw-link text-sw-blue-600\"><span>Mehr anzeigen</span><svg xmlns=\"http://www.w3.org/2000/svg\" viewB",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "FFAA00",
+    "source": "https://www.gutscheine.de/iherb",
+    "discovered_at": "2026-04-04T20:13:47.220477+00:00",
+    "raw_description": "",
+    "raw_context": "codes \u2013 April 2026 </h1><h2 id=\"gutscheine\" class=\"heading-lg sw-anchor-target\">Aktuelle iHerb Gutscheine &amp; Aktionen</h2></div><div class=\"rounded-full shadow-[inset_0_0_2px_0_rgba(0,0,0,0.25)] te",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "M299",
+    "source": "https://www.gutscheine.de/iherb",
+    "discovered_at": "2026-04-04T20:13:47.220477+00:00",
+    "raw_description": "",
+    "raw_context": "Code sparen</span></div></div><!--]--><!--]--><!--]--></div><a href=\"/neue-gutscheine\" class=\"text-green-800 hover:text-green-700 fill-green-800 hover:fill-green-700 text-sm flex justify-end py-2 item",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "FINN",
+    "source": "https://www.gutscheine.de/iherb",
+    "discovered_at": "2026-04-04T20:13:47.220477+00:00",
+    "raw_description": "",
+    "raw_context": "codes</span><span class=\"block text-xs\">23 Gutscheine</span></div></a><a href=\"/finn\" class=\"flex px-3 border-bottom min-h-[82px] p-2 space-x-3 items-center border border-gray-200 transition-colors ho",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "RESULTATE10",
+    "source": "https://www.gutscheine.de/iherb",
+    "discovered_at": "2026-04-04T20:13:47.220477+00:00",
+    "raw_description": "",
+    "raw_context": "code\":303,\"type\":158},\"RESULTATE10\",\"Bis zu 50% Rabatt + 10\u20ac-Gutschein bei Weight Watchers\",\"bis-zu-50percent-rabatt-+-10euro-gutschein-bei-weight-watchers\",\"2026-03-31T09:04:23.796Z\",\"2024-10-15T22:3",
+    "discount_type": "percentage",
+    "discount_value": 50,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "EXIT15",
+    "source": "https://www.gutscheine.de/iherb",
+    "discovered_at": "2026-04-04T20:13:47.220477+00:00",
+    "raw_description": "",
+    "raw_context": "code\":513,\"type\":158},\"EXIT15\",\"Jeztz 15% mit dem Rabatt-",
+    "discount_type": "percentage",
+    "discount_value": 15,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "DSGVO",
+    "source": "https://www.gutscheine.de/iherb",
+    "discovered_at": "2026-04-04T20:13:47.220477+00:00",
+    "raw_description": "",
+    "raw_context": "Codes. Der Google Tag Manager erfasst jedoch Ihre IP-Adresse, die auch an das Mutterunternehmen von Google in die Vereinigten Staaten \u00fcbertragen werden kann. Google ist unter dem Data Privacy Framewor",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "UTF8",
+    "source": "https://www.gutscheine.de/iherb",
+    "discovered_at": "2026-04-04T20:13:47.220477+00:00",
+    "raw_description": "",
+    "raw_context": "promotions\":2080,\"portal\":2209},[1107,1119,1130,1133,1145,1157,1169,1172,1175,1187,1199,1211,1223,1235,1247,1259,1271,1283,1295,1307,1317,1328,1340,1351,1363,1374,1386,1398,1410,1422],{\"id\":1108,\"forc",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "MEINFOTO",
+    "source": "https://www.gutscheine.de/iherb",
+    "discovered_at": "2026-04-04T20:13:47.220477+00:00",
+    "raw_description": "",
+    "raw_context": "promoId/100390/slotId/37714\",{\"url\":1239,\"alternativeText\":1240},\"uploads/provider/618bdedbeb208.png\",\"MEINFOTO Logo\",\"MEINFOTO\",\"meinfoto\",\"2024-09-24T17:09:20.939Z\",1827,{\"showBlackweekBadgeInNaviga",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "SPARWELTEFAFF5",
+    "source": "https://www.gutscheine.de/iherb",
+    "discovered_at": "2026-04-04T20:13:47.220477+00:00",
+    "raw_description": "",
+    "raw_context": "code\":2023,\"type\":158},\"SPARWELTEFAFF5 \",\"5% Gutschein auf das gesamte EcoFlow Sortiment\",\"5percent-gutschein-auf-alles-bei-ecoflow\",\"2026-04-01T08:22:41.440Z\",\"2025-10-22T14:13:12.000Z\",\"2026-03-31T2",
+    "discount_type": "percentage",
+    "discount_value": 5,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "SPRWLTVP04",
+    "source": "https://www.gutscheine.de/iherb",
+    "discovered_at": "2026-04-04T20:13:47.220477+00:00",
+    "raw_description": "",
+    "raw_context": "code\":2181,\"type\":158},\"SPRWLTVP04\",\"20\u20ac VistaPrint Gutschein - jetzt sichern!\",\"20euro-bei-vistaprint\",\"2026-03-31T09:19:46.266Z\",\"2026-03-31T21:02:00.003Z\",{\"AvailableFrom\":2028,\"AvailableTill\":2187",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "WELT",
+    "source": "https://gutscheine.welt.de/gutscheine/iherb",
+    "discovered_at": "2026-04-04T20:13:47.220477+00:00",
+    "raw_description": "",
+    "raw_context": "Codes - T\u00e4glich f\u00fcr Sie getestet!\"/><meta name=\"robots\" content=\"index, follow, max-snippet:-1\"/><link rel=\"canonical\" href=\"https://gutscheine.welt.de/gutscheine/iherb\"/><meta name=\"mobile-web-app-ca",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "M436",
+    "source": "https://gutscheine.welt.de/gutscheine/iherb",
+    "discovered_at": "2026-04-04T20:13:47.220477+00:00",
+    "raw_description": "",
+    "raw_context": "codes-fuer-Sie.html\">weitere Informationen \u00fcber Gutscheine</a>.</span></span></div><div class=\"NavigationWhiteLabel_root__YVxhR\" data-sidebar=\"false\" data-testid=\"NavigationWhitelabel\"><button class=\"",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "M441",
+    "source": "https://gutscheine.welt.de/gutscheine/iherb",
+    "discovered_at": "2026-04-04T20:13:47.220477+00:00",
+    "raw_description": "",
+    "raw_context": "Discounts_value__P5mW_ Text_root__YObq_ Text_root_variant-small-small__r0LO1\">iHerb Angebot: gratis Versand</li></ul></div></section></aside><div class=\"PageLayout_main__L7Kux\"><div class=\"VoucherType",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "MENA",
+    "source": "https://gutscheine.welt.de/gutscheine/iherb",
+    "discovered_at": "2026-04-04T20:13:47.220477+00:00",
+    "raw_description": "",
+    "raw_context": "code: 25% auf MENA</h3><div class=\"VouchersListItemContentWhiteLabel_buttonOr",
+    "discount_type": "percentage",
+    "discount_value": 25,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "ERSPARNIS",
+    "source": "https://gutscheine.welt.de/gutscheine/iherb",
+    "discovered_at": "2026-04-04T20:13:47.220477+00:00",
+    "raw_description": "",
+    "raw_context": "coupons im April 2026</h2></div><div class=\"ShopPageSection_children__ABjIA\"><div class=\"ActiveVouchersTable_tableWrapper__5FmbG\"><table class=\"ActiveVouchersTable_table__nzS61\"><thead><tr class=\"Acti",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "MF656C3",
+    "source": "https://gutscheine.welt.de/gutscheine/iherb",
+    "discovered_at": "2026-04-04T20:13:47.220477+00:00",
+    "raw_description": "",
+    "raw_context": "codeAlignmentMaxLength\\\":21},\\\"PageLayout\\\":{\\\"isSidebarLeft\\\":true},\\\"TopVoucherLayout\\\":{\\\"isSidebarLeft\\\":true},\\\"VoucherModalContentDeal\\\":{\\\"withOttoMerchantHint\\\":true}}},\\\"children\\\":[\\\"$\\\",\\\"$",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "EXISTING",
+    "source": "https://gutscheine.welt.de/gutscheine/iherb",
+    "discovered_at": "2026-04-04T20:13:47.220477+00:00",
+    "raw_description": "",
+    "raw_context": "Codes entdeckt?\\\",\\\"link\\\":\\\"/submit\\\"},\\\"TermsAndConditions\\\":{\\\"conditions\\\":\\\"Mit Ihrer Anmeldung willigen Sie in unsere \\u003ctos\\u003eNutzungsbedingungen (AGB)\\u003c/tos\\u003e und \\u003cprivacyPo",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "KOPIEREN",
+    "source": "https://gutscheine.welt.de/gutscheine/iherb",
+    "discovered_at": "2026-04-04T20:13:47.220477+00:00",
+    "raw_description": "",
+    "raw_context": "code kopieren\\\",\\\"copyText\\\":\\\"KOPIEREN\\\",\\\"copiedText\\\":\\\"KOPIERT\\\"},\\\"VoucherConditions\\\":{\\\"title\\\":\\\"Bedingungen\\\"},\\\"VoucherExpiredateLabel\\\":{\\\"today\\\":\\\"Heute letzte Chance zum Verwenden\\\",\\\"to",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "KOPIERT",
+    "source": "https://gutscheine.welt.de/gutscheine/iherb",
+    "discovered_at": "2026-04-04T20:13:47.220477+00:00",
+    "raw_description": "",
+    "raw_context": "code kopieren\\\",\\\"copyText\\\":\\\"KOPIEREN\\\",\\\"copiedText\\\":\\\"KOPIERT\\\"},\\\"VoucherConditions\\\":{\\\"title\\\":\\\"Bedingungen\\\"},\\\"VoucherExpiredateLabel\\\":{\\\"today\\\":\\\"Heute letzte Chance zum Verwenden\\\",\\\"to",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "VOUCHER",
+    "source": "https://gutscheine.welt.de/gutscheine/iherb",
+    "discovered_at": "2026-04-04T20:13:47.220477+00:00",
+    "raw_description": "",
+    "raw_context": "Discount\\\":{\\\"exclusive\\\":\\\"Exklusiv\\\",\\\"ellipsis\\\":\\\"\u2026\\\",\\\"showDetails\\\":\\\"Zus\u00e4tzliche Infos\\\",\\\"crossSellingLogo\\\":\\\"{shopName} Gutschein\\\",\\\"crossSellingShop\\\":\\\"Weitere \\u003clink\\u003e{shopName}",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "CASHBACK",
+    "source": "https://gutscheine.welt.de/gutscheine/iherb",
+    "discovered_at": "2026-04-04T20:13:47.220477+00:00",
+    "raw_description": "",
+    "raw_context": "Discount\\\":{\\\"exclusive\\\":\\\"Exklusiv\\\",\\\"ellipsis\\\":\\\"\u2026\\\",\\\"showDetails\\\":\\\"Zus\u00e4tzliche Infos\\\",\\\"crossSellingLogo\\\":\\\"{shopName} Gutschein\\\",\\\"crossSellingShop\\\":\\\"Weitere \\u003clink\\u003e{shopName}",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "PRINTABLE",
+    "source": "https://gutscheine.welt.de/gutscheine/iherb",
+    "discovered_at": "2026-04-04T20:13:47.220477+00:00",
+    "raw_description": "",
+    "raw_context": "Discount\\\":{\\\"exclusive\\\":\\\"Exklusiv\\\",\\\"ellipsis\\\":\\\"\u2026\\\",\\\"showDetails\\\":\\\"Zus\u00e4tzliche Infos\\\",\\\"crossSellingLogo\\\":\\\"{shopName} Gutschein\\\",\\\"crossSellingShop\\\":\\\"Weitere \\u003clink\\u003e{shopName}",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "EXKLUSIV",
+    "source": "https://gutscheine.welt.de/gutscheine/iherb",
+    "discovered_at": "2026-04-04T20:13:47.220477+00:00",
+    "raw_description": "",
+    "raw_context": "code\\\",\\\"exclusive\\\":\\\"EXKLUSIV\\\"},\\\"TopShopsTagCloud\\\":{\\\"title\\\":\\\"Angesagte Shops\\\",\\\"showMore\\\":{\\\"label\\\":\\\"\u00c4hnliche Angebote finden Sie hier\\\",\\\"href\\\":\\\"/gutscheine\\\"}},\\\"Top",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "DETAILS",
+    "source": "https://gutscheine.welt.de/gutscheine/iherb",
+    "discovered_at": "2026-04-04T20:13:47.220477+00:00",
+    "raw_description": "",
+    "raw_context": "coupons im {now, date, ::yyyyMMMM}\\\",\\\"head\\\":{\\\"label\\\":\\\"ERSPARNIS\\\",\\\"value\\\":\\\"DETAILS\\\",\\\"expiryDate\\\":\\\"ABLAUFDATUM\\\"},\\\"rows\\\":{\\\"expiryDate\\\":\\\"{expiredate, date, ::d.MMMMyyyy}\\\",\\\"noExpiryDat",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "ABLAUFDATUM",
+    "source": "https://gutscheine.welt.de/gutscheine/iherb",
+    "discovered_at": "2026-04-04T20:13:47.220477+00:00",
+    "raw_description": "",
+    "raw_context": "coupons im {now, date, ::yyyyMMMM}\\\",\\\"head\\\":{\\\"label\\\":\\\"ERSPARNIS\\\",\\\"value\\\":\\\"DETAILS\\\",\\\"expiryDate\\\":\\\"ABLAUFDATUM\\\"},\\\"rows\\\":{\\\"expiryDate\\\":\\\"{expiredate, date, ::d.MMMMyyyy}\\\",\\\"noExpiryDat",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "ANGEBOTE",
+    "source": "https://gutscheine.welt.de/gutscheine/iherb",
+    "discovered_at": "2026-04-04T20:13:47.220477+00:00",
+    "raw_description": "",
+    "raw_context": "Discounts\\\":\\\"Alle aktiven {shopName} Rabatte:\\\",\\\"title\\\":\\\"{shopName} Angebote am {updatedAt, date, ::dd.MM.yyyy}\\\"},\\\"ShopGrid\\\":{\\\"title\\\":\\\"Beliebte Shops\\\",\\\"showAll\\\":{\\\"link\\\":\\\"/gutscheine\\\",",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "FINDEN",
+    "source": "https://gutscheine.welt.de/gutscheine/iherb",
+    "discovered_at": "2026-04-04T20:13:47.220477+00:00",
+    "raw_description": "",
+    "raw_context": "Discounts\\\":\\\"Alle aktiven {shopName} Rabatte:\\\",\\\"title\\\":\\\"{shopName} Angebote am {updatedAt, date, ::dd.MM.yyyy}\\\"},\\\"ShopGrid\\\":{\\\"title\\\":\\\"Beliebte Shops\\\",\\\"showAll\\\":{\\\"link\\\":\\\"/gutscheine\\\",",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "HIER",
+    "source": "https://gutscheine.welt.de/gutscheine/iherb",
+    "discovered_at": "2026-04-04T20:13:47.220477+00:00",
+    "raw_description": "",
+    "raw_context": "Discounts\\\":\\\"Alle aktiven {shopName} Rabatte:\\\",\\\"title\\\":\\\"{shopName} Angebote am {updatedAt, date, ::dd.MM.yyyy}\\\"},\\\"ShopGrid\\\":{\\\"title\\\":\\\"Beliebte Shops\\\",\\\"showAll\\\":{\\\"link\\\":\\\"/gutscheine\\\",",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "ALLE",
+    "source": "https://gutscheine.welt.de/gutscheine/iherb",
+    "discovered_at": "2026-04-04T20:13:47.220477+00:00",
+    "raw_description": "",
+    "raw_context": "codes\\\"},\\\"StarRatingButton\\\":{\\\"star\\\":\\\"Mit {value} {value, plural, one {Stern} other {Sternen}} bewerten\\\"},\\\"SimilarShopsWLT\\\":{\\\"title\\\":\\\"{shopName} Kunden kaufen auch in diesen Shops\\\",\\\"showMo",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "SHOPS",
+    "source": "https://gutscheine.welt.de/gutscheine/iherb",
+    "discovered_at": "2026-04-04T20:13:47.220477+00:00",
+    "raw_description": "",
+    "raw_context": "codes\\\"},\\\"StarRatingButton\\\":{\\\"star\\\":\\\"Mit {value} {value, plural, one {Stern} other {Sternen}} bewerten\\\"},\\\"SimilarShopsWLT\\\":{\\\"title\\\":\\\"{shopName} Kunden kaufen auch in diesen Shops\\\",\\\"showMo",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "ENTDECKEN",
+    "source": "https://gutscheine.welt.de/gutscheine/iherb",
+    "discovered_at": "2026-04-04T20:13:47.220477+00:00",
+    "raw_description": "",
+    "raw_context": "codes\\\"},\\\"StarRatingButton\\\":{\\\"star\\\":\\\"Mit {value} {value, plural, one {Stern} other {Sternen}} bewerten\\\"},\\\"SimilarShopsWLT\\\":{\\\"title\\\":\\\"{shopName} Kunden kaufen auch in diesen Shops\\\",\\\"showMo",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "CBDNOL",
+    "source": "https://www.gutscheinsammler.de/gutscheine/iherb",
+    "discovered_at": "2026-04-04T20:13:47.220477+00:00",
+    "raw_description": "",
+    "raw_context": "Coupons?</h2><p>Produkte rund um die Gesundheit findest du nicht nur bei iHerb. Wenn du dich weiter umschauen m\u00f6chtest, empfehlen wir dir Shops wie zum Beispiel Wellsana, CBDNOL und PureNature. Diese",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "M432",
+    "source": "https://www.gutscheinsammler.de/gutscheine/iherb",
+    "discovered_at": "2026-04-04T20:13:47.220477+00:00",
+    "raw_description": "",
+    "raw_context": "Couponbox (US) <span class=\"FooterPortalLink_icon__A29hr\"><svg class=\"FooterPortalLink_externalLinkIcon__BvaxW\" height=\"20\" viewBox=\"0 0 512 512\" width=\"20\" xmlns=\"http://www.w3.org/2000/svg\"><path d=",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "FEHLER",
+    "source": "https://www.gutscheinsammler.de/gutscheine/iherb",
+    "discovered_at": "2026-04-04T20:13:47.220477+00:00",
+    "raw_description": "",
+    "raw_context": "code-anzeigen/{shopId}/{voucherId}?click_source={clickSource}\\u0026uuid={uuid}\\\",\\\"merchantBaseURL\\\":\\\"/gutscheine/\\\"},\\\"ShopListItem\\\":{\\\"defaultKeyword\\\":\\\"Gutscheine\\\",\\\"voucherSizeText\\\":\\\"{size}",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
   }
 ]
