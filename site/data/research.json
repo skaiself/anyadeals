@@ -3807,7 +3807,7 @@
     ],
     "expiry_date": null,
     "confidence": "low",
-    "validation_status": "pending"
+    "validation_status": "invalid"
   },
   {
     "code": "AUTODOC",
@@ -3822,7 +3822,7 @@
     ],
     "expiry_date": null,
     "confidence": "low",
-    "validation_status": "pending"
+    "validation_status": "invalid"
   },
   {
     "code": "M160",
@@ -3837,7 +3837,7 @@
     ],
     "expiry_date": null,
     "confidence": "low",
-    "validation_status": "pending"
+    "validation_status": "invalid"
   },
   {
     "code": "APP10",
@@ -3852,7 +3852,7 @@
     ],
     "expiry_date": null,
     "confidence": "low",
-    "validation_status": "pending"
+    "validation_status": "invalid"
   },
   {
     "code": "GRATIS",
@@ -3867,7 +3867,7 @@
     ],
     "expiry_date": null,
     "confidence": "low",
-    "validation_status": "pending"
+    "validation_status": "invalid"
   },
   {
     "code": "CBD15",
@@ -3882,7 +3882,7 @@
     ],
     "expiry_date": null,
     "confidence": "low",
-    "validation_status": "pending"
+    "validation_status": "invalid"
   },
   {
     "code": "CHAMPION",
@@ -3897,7 +3897,7 @@
     ],
     "expiry_date": null,
     "confidence": "low",
-    "validation_status": "pending"
+    "validation_status": "invalid"
   },
   {
     "code": "SPARWELT",
@@ -3912,7 +3912,7 @@
     ],
     "expiry_date": null,
     "confidence": "low",
-    "validation_status": "pending"
+    "validation_status": "invalid"
   },
   {
     "code": "FT67HB42T6",
@@ -3927,7 +3927,7 @@
     ],
     "expiry_date": null,
     "confidence": "low",
-    "validation_status": "pending"
+    "validation_status": "invalid"
   },
   {
     "code": "M204",
@@ -3942,7 +3942,7 @@
     ],
     "expiry_date": null,
     "confidence": "low",
-    "validation_status": "pending"
+    "validation_status": "invalid"
   },
   {
     "code": "M520",
@@ -3957,7 +3957,7 @@
     ],
     "expiry_date": null,
     "confidence": "low",
-    "validation_status": "pending"
+    "validation_status": "invalid"
   },
   {
     "code": "M267",
@@ -3972,7 +3972,7 @@
     ],
     "expiry_date": null,
     "confidence": "low",
-    "validation_status": "pending"
+    "validation_status": "invalid"
   },
   {
     "code": "FFAA00",
@@ -3987,7 +3987,7 @@
     ],
     "expiry_date": null,
     "confidence": "low",
-    "validation_status": "pending"
+    "validation_status": "invalid"
   },
   {
     "code": "M299",
@@ -4002,7 +4002,7 @@
     ],
     "expiry_date": null,
     "confidence": "low",
-    "validation_status": "pending"
+    "validation_status": "invalid"
   },
   {
     "code": "FINN",
@@ -4017,7 +4017,7 @@
     ],
     "expiry_date": null,
     "confidence": "low",
-    "validation_status": "pending"
+    "validation_status": "invalid"
   },
   {
     "code": "RESULTATE10",
@@ -4032,7 +4032,7 @@
     ],
     "expiry_date": null,
     "confidence": "low",
-    "validation_status": "pending"
+    "validation_status": "invalid"
   },
   {
     "code": "EXIT15",
@@ -4047,7 +4047,7 @@
     ],
     "expiry_date": null,
     "confidence": "low",
-    "validation_status": "pending"
+    "validation_status": "invalid"
   },
   {
     "code": "DSGVO",
@@ -4062,7 +4062,7 @@
     ],
     "expiry_date": null,
     "confidence": "low",
-    "validation_status": "pending"
+    "validation_status": "invalid"
   },
   {
     "code": "UTF8",
@@ -4077,7 +4077,7 @@
     ],
     "expiry_date": null,
     "confidence": "low",
-    "validation_status": "pending"
+    "validation_status": "invalid"
   },
   {
     "code": "MEINFOTO",
@@ -4092,7 +4092,7 @@
     ],
     "expiry_date": null,
     "confidence": "low",
-    "validation_status": "pending"
+    "validation_status": "invalid"
   },
   {
     "code": "SPARWELTEFAFF5",
@@ -4107,7 +4107,7 @@
     ],
     "expiry_date": null,
     "confidence": "low",
-    "validation_status": "pending"
+    "validation_status": "invalid"
   },
   {
     "code": "SPRWLTVP04",
@@ -4122,7 +4122,7 @@
     ],
     "expiry_date": null,
     "confidence": "low",
-    "validation_status": "pending"
+    "validation_status": "invalid"
   },
   {
     "code": "WELT",
@@ -4137,7 +4137,7 @@
     ],
     "expiry_date": null,
     "confidence": "low",
-    "validation_status": "pending"
+    "validation_status": "invalid"
   },
   {
     "code": "M436",
@@ -4152,7 +4152,7 @@
     ],
     "expiry_date": null,
     "confidence": "low",
-    "validation_status": "pending"
+    "validation_status": "invalid"
   },
   {
     "code": "M441",
@@ -4167,7 +4167,7 @@
     ],
     "expiry_date": null,
     "confidence": "low",
-    "validation_status": "pending"
+    "validation_status": "invalid"
   },
   {
     "code": "MENA",
@@ -4182,7 +4182,7 @@
     ],
     "expiry_date": null,
     "confidence": "low",
-    "validation_status": "pending"
+    "validation_status": "invalid"
   },
   {
     "code": "ERSPARNIS",
@@ -4197,7 +4197,7 @@
     ],
     "expiry_date": null,
     "confidence": "low",
-    "validation_status": "pending"
+    "validation_status": "invalid"
   },
   {
     "code": "MF656C3",
@@ -4212,7 +4212,7 @@
     ],
     "expiry_date": null,
     "confidence": "low",
-    "validation_status": "pending"
+    "validation_status": "invalid"
   },
   {
     "code": "EXISTING",
@@ -4227,7 +4227,7 @@
     ],
     "expiry_date": null,
     "confidence": "low",
-    "validation_status": "pending"
+    "validation_status": "invalid"
   },
   {
     "code": "KOPIEREN",
@@ -4242,7 +4242,7 @@
     ],
     "expiry_date": null,
     "confidence": "low",
-    "validation_status": "pending"
+    "validation_status": "invalid"
   },
   {
     "code": "KOPIERT",
@@ -4257,7 +4257,7 @@
     ],
     "expiry_date": null,
     "confidence": "low",
-    "validation_status": "pending"
+    "validation_status": "invalid"
   },
   {
     "code": "VOUCHER",
@@ -4272,7 +4272,7 @@
     ],
     "expiry_date": null,
     "confidence": "low",
-    "validation_status": "pending"
+    "validation_status": "invalid"
   },
   {
     "code": "CASHBACK",
@@ -4287,7 +4287,7 @@
     ],
     "expiry_date": null,
     "confidence": "low",
-    "validation_status": "pending"
+    "validation_status": "invalid"
   },
   {
     "code": "PRINTABLE",
@@ -4302,7 +4302,7 @@
     ],
     "expiry_date": null,
     "confidence": "low",
-    "validation_status": "pending"
+    "validation_status": "invalid"
   },
   {
     "code": "EXKLUSIV",
@@ -4317,7 +4317,7 @@
     ],
     "expiry_date": null,
     "confidence": "low",
-    "validation_status": "pending"
+    "validation_status": "invalid"
   },
   {
     "code": "DETAILS",
@@ -4332,7 +4332,7 @@
     ],
     "expiry_date": null,
     "confidence": "low",
-    "validation_status": "pending"
+    "validation_status": "invalid"
   },
   {
     "code": "ABLAUFDATUM",
@@ -4347,7 +4347,7 @@
     ],
     "expiry_date": null,
     "confidence": "low",
-    "validation_status": "pending"
+    "validation_status": "invalid"
   },
   {
     "code": "ANGEBOTE",
@@ -4362,7 +4362,7 @@
     ],
     "expiry_date": null,
     "confidence": "low",
-    "validation_status": "pending"
+    "validation_status": "invalid"
   },
   {
     "code": "FINDEN",
@@ -4377,7 +4377,7 @@
     ],
     "expiry_date": null,
     "confidence": "low",
-    "validation_status": "pending"
+    "validation_status": "invalid"
   },
   {
     "code": "HIER",
@@ -4392,7 +4392,7 @@
     ],
     "expiry_date": null,
     "confidence": "low",
-    "validation_status": "pending"
+    "validation_status": "invalid"
   },
   {
     "code": "ALLE",
@@ -4407,7 +4407,7 @@
     ],
     "expiry_date": null,
     "confidence": "low",
-    "validation_status": "pending"
+    "validation_status": "invalid"
   },
   {
     "code": "SHOPS",
@@ -4422,7 +4422,7 @@
     ],
     "expiry_date": null,
     "confidence": "low",
-    "validation_status": "pending"
+    "validation_status": "invalid"
   },
   {
     "code": "ENTDECKEN",
@@ -4437,7 +4437,7 @@
     ],
     "expiry_date": null,
     "confidence": "low",
-    "validation_status": "pending"
+    "validation_status": "invalid"
   },
   {
     "code": "CBDNOL",
@@ -4452,7 +4452,7 @@
     ],
     "expiry_date": null,
     "confidence": "low",
-    "validation_status": "pending"
+    "validation_status": "invalid"
   },
   {
     "code": "M432",
@@ -4467,7 +4467,7 @@
     ],
     "expiry_date": null,
     "confidence": "low",
-    "validation_status": "pending"
+    "validation_status": "invalid"
   },
   {
     "code": "FEHLER",
@@ -4482,6 +4482,6 @@
     ],
     "expiry_date": null,
     "confidence": "low",
-    "validation_status": "pending"
+    "validation_status": "invalid"
   }
 ]
