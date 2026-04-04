@@ -3763,5 +3763,35 @@
     "expiry_date": null,
     "confidence": "low",
     "validation_status": "pending"
+  },
+  {
+    "code": "VTBGV01UQT0",
+    "source": "https://www.savings.com/coupons/iherb.com",
+    "discovered_at": "2026-04-04T01:30:40.749361+00:00",
+    "raw_description": "",
+    "raw_context": "coupon-7290516.html\"/>\n<input type=\"hidden\" name=\"property-id\" value=\"VTBGV01UQT0=\"/>\n<div class=\"primary \">\n<div class=\"deal-header-wrapper\">\n<header class=\"deal-merchant-name\">Brick House Nutrition<",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "MD0J",
+    "source": "https://www.groupon.com/coupons/iherb",
+    "discovered_at": "2026-04-04T01:30:40.749361+00:00",
+    "raw_description": "",
+    "raw_context": "coupons/iherb\"/><!-- --><!-- --><!-- --><!-- --><!-- --><meta name=\"robots\" content=\"follow,noarchive\"/><!-- --><!-- --><!-- --><!-- --><meta name=\"csrf-token\" content=\"UCyf6cOw-MD0J-tn8KhMOCYl_WMN3Ud",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
   }
 ]
