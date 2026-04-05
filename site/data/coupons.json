@@ -1867,11 +1867,9 @@
     "code": "RENEWLIFE",
     "type": "promo",
     "discount": "20% off",
-    "regions": [
-      "us"
-    ],
+    "regions": [],
     "min_cart_value": 0,
-    "status": "valid",
+    "status": "expired",
     "first_seen": "2026-03-28",
     "last_validated": "2026-04-02T15:29:45.079157+00:00",
     "last_failed": null,
@@ -1884,11 +1882,9 @@
     "code": "RAINBOWLIGHT",
     "type": "promo",
     "discount": "20% off",
-    "regions": [
-      "us"
-    ],
+    "regions": [],
     "min_cart_value": 0,
-    "status": "valid",
+    "status": "expired",
     "first_seen": "2026-03-28",
     "last_validated": "2026-04-02T15:29:45.079157+00:00",
     "last_failed": null,
@@ -1901,11 +1897,9 @@
     "code": "NATURALVIT",
     "type": "promo",
     "discount": "20% off",
-    "regions": [
-      "us"
-    ],
+    "regions": [],
     "min_cart_value": 0,
-    "status": "valid",
+    "status": "expired",
     "first_seen": "2026-03-28",
     "last_validated": "2026-04-02T15:29:45.079157+00:00",
     "last_failed": null,

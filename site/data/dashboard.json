@@ -2,11 +2,11 @@
   "affiliate_code": "OFR0296",
   "jobs": {
     "researcher": {
-      "last_run": "2026-04-05T09:22:25.486139+00:00",
-      "status": "success",
+      "last_run": "2026-04-05T10:08:37.190708+00:00",
+      "status": "failure",
       "next_run": "2026-03-22T18:00:00Z",
-      "last_error": null,
-      "codes_found": 215
+      "last_error": "Server disconnected without sending a response.",
+      "codes_found": 0
     },
     "validator": {
       "last_run": "2026-04-05T07:15:37.390893+00:00",
@@ -24,9 +24,9 @@
     }
   },
   "stats": {
-    "total_active_codes": 4,
-    "total_expired_codes": 8,
+    "total_active_codes": 1,
+    "total_expired_codes": 11,
     "total_posts_this_week": 0,
-    "last_deploy": "2026-04-05T10:00:00.020299+00:00"
+    "last_deploy": "2026-04-05T11:00:00.027350+00:00"
   }
 }
