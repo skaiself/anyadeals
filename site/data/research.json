@@ -4483,5 +4483,65 @@
     "expiry_date": null,
     "confidence": "low",
     "validation_status": "invalid"
+  },
+  {
+    "code": "ENDS",
+    "source": "https://www.rakuten.com/shop/iherb",
+    "discovered_at": "2026-04-05T01:55:15.196318+00:00",
+    "raw_description": "",
+    "raw_context": "coupons and Cash Back\",\"image_imageurl\":\"https://static.rakuten.com/img/store/11973/iherb-logo-fullcolor-11973@4x-111325.png\",\"previousreward_rewardtext\":\"was 2%\",\"primarytag_text\":\"ENDS TOMORROW\",\"ta",
+    "discount_type": "percentage",
+    "discount_value": 2,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "TOMORROW",
+    "source": "https://www.rakuten.com/shop/iherb",
+    "discovered_at": "2026-04-05T01:55:15.196318+00:00",
+    "raw_description": "",
+    "raw_context": "coupons and Cash Back\",\"image_imageurl\":\"https://static.rakuten.com/img/store/11973/iherb-logo-fullcolor-11973@4x-111325.png\",\"previousreward_rewardtext\":\"was 2%\",\"primarytag_text\":\"ENDS TOMORROW\",\"ta",
+    "discount_type": "percentage",
+    "discount_value": 2,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "SAVE20",
+    "source": "https://www.gutscheine.de/iherb",
+    "discovered_at": "2026-04-05T01:55:15.196318+00:00",
+    "raw_description": "",
+    "raw_context": "code\":2096,\"type\":158},\"SAVE20\",\"20% Gutschein extra auf Outlet\",\"20percent-gutschein\",\"2026-03-31T10:03:00.064Z\",\"2026-03-31T10:02:43.000Z\",{\"AvailableFrom\":2102,\"AvailableTill\":2103},\"2026-03-30T22:",
+    "discount_type": "percentage",
+    "discount_value": 20,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "GET15CHARLIE",
+    "source": "https://www.gutscheine.de/iherb",
+    "discovered_at": "2026-04-05T01:55:15.196318+00:00",
+    "raw_description": "",
+    "raw_context": "code\":2175,\"type\":158},\"GET15CHARLIE\",\"Bis zu 15% Gutschein bei Meinfoto.de einl\u00f6sen\",\"15percent-gutschein-bei-meinfoto.de-einlosen\",\"2025-11-27T09:46:28.446Z\",\"2025-01-13T12:40:58.000Z\",\"2025-02-19T2",
+    "discount_type": "percentage",
+    "discount_value": 15,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
   }
 ]
