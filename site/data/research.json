@@ -4558,5 +4558,320 @@
     "expiry_date": null,
     "confidence": "low",
     "validation_status": "invalid"
+  },
+  {
+    "code": "GEPR",
+    "source": "gutschein/sparwelt.de",
+    "discovered_at": "2026-04-05T08:33:13.145258+00:00",
+    "raw_description": "",
+    "raw_context": "2026\nDie besten Rabatte und iHerb Gutscheincodes\nAlle\u00a0\n(6)\nGutscheine\u00a0\n(2)\nAngebote\u00a0\n(4)\n15%\nRabatt\nGUTSCHEIN\nGepr\u00fcft\n15% iHerb Rabattcode f\u00fcr die erste Bestellung\nGutschein anzeigen\n******\nGratis-\nVe",
+    "discount_type": "percentage",
+    "discount_value": 15,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "GIBT",
+    "source": "gutschein/sparwelt.de",
+    "discovered_at": "2026-04-05T08:33:13.145258+00:00",
+    "raw_description": "",
+    "raw_context": "chern\tAllen Kunden\n10%\tBis zu 10% Pr\u00e4mien pro geworbener Person\tAllen Kunden\nDeine Fragen zum iHerb Gutscheincode\nGibt es einen iHerb Gutschein f\u00fcr Neukunden?\n\nJa. F\u00fcr alle Erstbesteller winkt ein Wil",
+    "discount_type": "percentage",
+    "discount_value": 10,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "EINEN",
+    "source": "gutschein/sparwelt.de",
+    "discovered_at": "2026-04-05T08:33:13.145258+00:00",
+    "raw_description": "",
+    "raw_context": "n g\u00fcltig?\n\nDas steht in den Aktionsbedingungen f\u00fcr den iHerb Gutschein. In der Regel hat der Aktionscode einen limitierten G\u00fcltigkeitszeitraum. Das hei\u00dft: Ist die Promotion vorbei und der iHerb Gutsch",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "ABGELAUFEN",
+    "source": "gutschein/sparwelt.de",
+    "discovered_at": "2026-04-05T08:33:13.145258+00:00",
+    "raw_description": "",
+    "raw_context": "ktionscode einen limitierten G\u00fcltigkeitszeitraum. Das hei\u00dft: Ist die Promotion vorbei und der iHerb Gutschein abgelaufen, kann er nicht mehr eingel\u00f6st werden.\n\nKann ich den iHerb Gutschein auch f\u00fcr So",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "AUCH",
+    "source": "gutschein/sparwelt.de",
+    "discovered_at": "2026-04-05T08:33:13.145258+00:00",
+    "raw_description": "",
+    "raw_context": "vorbei und der iHerb Gutschein abgelaufen, kann er nicht mehr eingel\u00f6st werden.\n\nKann ich den iHerb Gutschein auch f\u00fcr Sonderangebote nutzen?\n\nAuch hier kommt es auf die jeweilig geltenden Gutscheinbe",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "BERECHTIGT",
+    "source": "gutschein/sparwelt.de",
+    "discovered_at": "2026-04-05T08:33:13.145258+00:00",
+    "raw_description": "",
+    "raw_context": "es auf die jeweilig geltenden Gutscheinbedingungen an, die definieren, welche Artikel f\u00fcr den iHerb Gutschein berechtigt und welche Angebote von der Gutscheinaktion ausgenommen sind.\n\nWie gebe ich den",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "NUTZT",
+    "source": "gutschein/sparwelt.de",
+    "discovered_at": "2026-04-05T08:33:13.145258+00:00",
+    "raw_description": "",
+    "raw_context": "hr sparen kannst du, wenn du die von uns recherchierten Vorteilsaktionen und einen exklusiven iHerb Gutschein nutzt!\n\nMehr anzeigen\niHerb Gutscheine\n\u00c4hnliche Gutscheine\nDeine Fragen zum iHerb Gutschei",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "WICHTIGES",
+    "source": "gutschein/sparwelt.de",
+    "discovered_at": "2026-04-05T08:33:13.145258+00:00",
+    "raw_description": "",
+    "raw_context": "n iHerb Gutschein nutzt!\n\nMehr anzeigen\niHerb Gutscheine\n\u00c4hnliche Gutscheine\nDeine Fragen zum iHerb Gutscheincode\nWichtiges zum iHerb Service\nUnser Tipp: Der 20 Prozent iHerb Gutschein f\u00fcr Neukunden\nS",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "GUTSCHEIN SICHERN",
+    "source": "gutschein/welt.de",
+    "discovered_at": "2026-04-05T08:33:13.145258+00:00",
+    "raw_description": "",
+    "raw_context": "",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "NICHT",
+    "source": "gutschein/welt.de",
+    "discovered_at": "2026-04-05T08:33:13.145258+00:00",
+    "raw_description": "",
+    "raw_context": "chtigen Informationen \u2022 Wie l\u00f6se ich einen Sensilab Gutschein ein? \u2022 Warum kann ich meinen Sensilab Gutschein nicht einl\u00f6sen? \u2022 Welche Sensilab Angebote kann ich nutzen? \u2022 Wie viel kann ich im Sensila",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "ERHALTEN",
+    "source": "gutschein/welt.de",
+    "discovered_at": "2026-04-05T08:33:13.145258+00:00",
+    "raw_description": "",
+    "raw_context": "usgew\u00e4hlte Artikel bei Sensilab\n\nZUM ANGEBOT\n\nG\u00fcltigkeit bis auf Widerruf\n\n50%\n\nAngebot\n\nMit diesem Gutschein erhalten Sie 15%\n\nGUTSCHEIN SICHERN\n\nWird bis zum 1. Jan. 2030 akzeptiert\n\n15%\n\nGutschein\n",
+    "discount_type": "percentage",
+    "discount_value": 50,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "SICHERN",
+    "source": "gutschein/welt.de",
+    "discovered_at": "2026-04-05T08:33:13.145258+00:00",
+    "raw_description": "",
+    "raw_context": "lab\n\nZUM ANGEBOT\n\nG\u00fcltigkeit bis auf Widerruf\n\n50%\n\nAngebot\n\nMit diesem Gutschein erhalten Sie 15%\n\nGUTSCHEIN SICHERN\n\nWird bis zum 1. Jan. 2030 akzeptiert\n\n15%\n\nGutschein\n\n10% Sensilab Gutschein\n\nGUT",
+    "discount_type": "percentage",
+    "discount_value": 50,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "GUTSCHEIN",
+    "source": "gutschein/welt.de",
+    "discovered_at": "2026-04-05T08:33:13.145258+00:00",
+    "raw_description": "",
+    "raw_context": "lten Sie 15%\n\nGUTSCHEIN SICHERN\n\nWird bis zum 1. Jan. 2030 akzeptiert\n\n15%\n\nGutschein\n\n10% Sensilab Gutschein\n\nGUTSCHEIN SICHERN\n\nWird bis zum 1. Juli 2026 akzeptiert\n\n10%\n\nGutschein\n\nSensilab Gutsche",
+    "discount_type": "percentage",
+    "discount_value": 15,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "SENSILAB",
+    "source": "gutschein/welt.de",
+    "discovered_at": "2026-04-05T08:33:13.145258+00:00",
+    "raw_description": "",
+    "raw_context": "%\n\nGutschein\n\n10% Sensilab Gutschein\n\nGUTSCHEIN SICHERN\n\nWird bis zum 1. Juli 2026 akzeptiert\n\n10%\n\nGutschein\n\nSensilab Gutschein: 10% auf alles\n\nGUTSCHEIN SICHERN\n\nWird bis zum 1. Juni 2026 akzeptier",
+    "discount_type": "percentage",
+    "discount_value": 10,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "BELIEBTE",
+    "source": "gutschein/welt.de",
+    "discovered_at": "2026-04-05T08:33:13.145258+00:00",
+    "raw_description": "",
+    "raw_context": "es\n\nGUTSCHEIN SICHERN\n\n15%\n\nGutschein\n\nMit diesem Gutschein erhalten Sie 5%\n\nGUTSCHEIN SICHERN\n\n5%\n\nGutschein\n\nBeliebte Shops\nSHEIN\nZooplus\nNetto\nLieferando\nadidas\nBurnhard\nSpreadshirt\nGalaxus\nBergfre",
+    "discount_type": "percentage",
+    "discount_value": 15,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "KORREKT",
+    "source": "gutschein/welt.de",
+    "discovered_at": "2026-04-05T08:33:13.145258+00:00",
+    "raw_description": "",
+    "raw_context": "an einem der folgenden Gr\u00fcnde liegen:\n\nSensilab Gutscheincode nicht korrekt: \u00dcberpr\u00fcfen Sie, ob der Code korrekt kopiert und eingef\u00fcgt wurde.\n\nEinl\u00f6sebedingungen nicht erf\u00fcllt: Rufen Sie die Gutschein",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "NOCH",
+    "source": "gutschein/welt.de",
+    "discovered_at": "2026-04-05T08:33:13.145258+00:00",
+    "raw_description": "",
+    "raw_context": "e erfolgreiche Einl\u00f6sung erreicht sein.\n\nGutschein ist ung\u00fcltig: Kontrollieren Sie, ob der Sensilab Rabattcode noch G\u00fcltigkeit hat.\n\nWelche Sensilab Angebote kann ich nutzen?\n\nNeben den Sensilab Gutsc",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "GREENFRIDAY25",
+    "source": "gutschein/welt.de",
+    "discovered_at": "2026-04-05T08:49:06.551364+00:00",
+    "raw_description": "iHerb Rabattcode: 25% auf MENA",
+    "raw_context": "gutscheine.welt.de: iHerb Rabattcode: 25% auf MENA",
+    "discount_type": "percentage",
+    "discount_value": 25,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "BUY123",
+    "source": "gutschein/welt.de",
+    "discovered_at": "2026-04-05T08:49:06.551364+00:00",
+    "raw_description": "Mit diesem Gutschein erhalten Sie 33% auf alles",
+    "raw_context": "gutscheine.welt.de: Mit diesem Gutschein erhalten Sie 33% auf alles",
+    "discount_type": "percentage",
+    "discount_value": 33,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "26CRHX86",
+    "source": "gutschein/welt.de",
+    "discovered_at": "2026-04-05T08:49:06.551364+00:00",
+    "raw_description": "25% Rabatt bei iHerb mit diesem Code",
+    "raw_context": "gutscheine.welt.de: 25% Rabatt bei iHerb mit diesem Code",
+    "discount_type": "percentage",
+    "discount_value": 25,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "WELLM26",
+    "source": "gutschein/welt.de",
+    "discovered_at": "2026-04-05T08:49:06.551364+00:00",
+    "raw_description": "Mit diesem Gutschein erhalten Sie 22%",
+    "raw_context": "gutscheine.welt.de: Mit diesem Gutschein erhalten Sie 22%",
+    "discount_type": "percentage",
+    "discount_value": 22,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
   }
 ]
