@@ -4978,5 +4978,65 @@
     "expiry_date": null,
     "confidence": "low",
     "validation_status": "pending"
+  },
+  {
+    "code": "ASOS",
+    "source": "couponfollow",
+    "discovered_at": "2026-04-06T01:29:53.438634+00:00",
+    "raw_description": "coupons ASOS",
+    "raw_context": "coupons</a></li>\n            <li><a class=\"link\" href=\"/site/asos.com\">ASOS",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "WELCOME7",
+    "source": "reddit/search",
+    "discovered_at": "2026-04-06T01:29:53.438634+00:00",
+    "raw_description": "Worldwide Newest iHerb Promo Codes April 2026 :)",
+    "raw_context": "Hi everyone! Here's a list of iHerb promo codes :) for vitamins, supplements, collagen, skincare, and other wellness products! Use referral DVO4205 first \\^\\_\\^\n\n# \ud83c\udf40 Current Promotions \ud83c\udf40\n\n# Worldwide: \n\n* Buy One, Get One Free - no code needed! applies automatically\n* Sunscreen BOGO 50% off - also n",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "TODAY",
+    "source": "https://www.rakuten.com/shop/iherb",
+    "discovered_at": "2026-04-06T01:29:53.438634+00:00",
+    "raw_description": "",
+    "raw_context": "coupons and Cash Back\",\"image_imageurl\":\"https://static.rakuten.com/img/store/11973/iherb-logo-fullcolor-11973@4x-111325.png\",\"previousreward_rewardtext\":\"was 2%\",\"primarytag_text\":\"ENDS TODAY\",\"tagli",
+    "discount_type": "percentage",
+    "discount_value": 2,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "APR26SW",
+    "source": "gutschein/welt.de",
+    "discovered_at": "2026-04-06T01:29:53.438634+00:00",
+    "raw_description": "Bis zu 20% Rabatt",
+    "raw_context": "gutscheine.welt.de: Bis zu 20% Rabatt",
+    "discount_type": "percentage",
+    "discount_value": 20,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
   }
 ]
