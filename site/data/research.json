@@ -5038,5 +5038,35 @@
     "expiry_date": null,
     "confidence": "low",
     "validation_status": "pending"
+  },
+  {
+    "code": "CALM",
+    "source": "https://www.rakuten.com/shop/iherb",
+    "discovered_at": "2026-04-06T02:00:32.616336+00:00",
+    "raw_description": "",
+    "raw_context": "coupons and Cash Back\" id=\"41d6ca018b8cfc2eb262f41a59e214b460e059be\"><div class=\"css-1qngnqa\"><div class=\"css-uj40g1\"><span role=\"img\" aria-label=\"P.CALM, Retinolagen Ampoule Shot Cream , 2.02 fl oz (",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "BCAA",
+    "source": "https://www.rakuten.com/shop/iherb",
+    "discovered_at": "2026-04-06T02:00:32.616336+00:00",
+    "raw_description": "",
+    "raw_context": "coupons and Cash Back\" id=\"7b8dbf2010afc501965e324da83c37ed17f602cf\"><div class=\"css-1qngnqa\"><div class=\"css-uj40g1\"><span role=\"img\" aria-label=\"Ronnie Coleman, Vital Edition, BCAA XS, Tropical Punc",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
   }
 ]
