@@ -5068,5 +5068,80 @@
     "expiry_date": null,
     "confidence": "low",
     "validation_status": "valid"
+  },
+  {
+    "code": "C6491480",
+    "source": "couponfollow",
+    "discovered_at": "2026-04-07T01:48:06.429901+00:00",
+    "raw_description": "Save 20% Off Your First Order",
+    "raw_context": "couponfollow.com/site/iherb.com#C6491480",
+    "discount_type": "percentage",
+    "discount_value": 20,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "C6492110",
+    "source": "couponfollow",
+    "discovered_at": "2026-04-07T01:48:06.429901+00:00",
+    "raw_description": "15% Off with iHerb Discount Code",
+    "raw_context": "couponfollow.com/site/iherb.com#C6492110",
+    "discount_type": "percentage",
+    "discount_value": 15,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "GPNLOVE",
+    "source": "https://www.groupon.com/coupons/iherb",
+    "discovered_at": "2026-04-07T01:48:06.429901+00:00",
+    "raw_description": "",
+    "raw_context": "Code GPNLOVE\",\"leaderboardButtonText\":\"Shop Now!\",\"leaderboardTextColour\":\"FFFFFF\",\"leaderboardButtonColour\":\"184C3D\",\"leaderboardPosition\":0,\"__typename\":\"VC_Leaderboard\"},\"__typename\":\"VC_Advert\"}],",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "ENDING",
+    "source": "https://www.groupon.com/coupons/iherb",
+    "discovered_at": "2026-04-07T01:48:06.429901+00:00",
+    "raw_description": "",
+    "raw_context": "coupon-advert\"><div title=\"ENDING SOON: 40",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "SOON",
+    "source": "https://www.groupon.com/coupons/iherb",
+    "discovered_at": "2026-04-07T01:48:06.429901+00:00",
+    "raw_description": "",
+    "raw_context": "coupon-advert\"><div title=\"ENDING SOON: 40",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
   }
 ]
