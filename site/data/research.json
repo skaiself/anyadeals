@@ -5143,5 +5143,35 @@
     "expiry_date": null,
     "confidence": "low",
     "validation_status": "pending"
+  },
+  {
+    "code": "NANDO",
+    "source": "https://www.rakuten.com/shop/iherb",
+    "discovered_at": "2026-04-07T01:53:58.807315+00:00",
+    "raw_description": "",
+    "raw_context": "coupons and Cash Back\" id=\"4a92b626792cb694375589034e36b3fbcb5092c8\"><div class=\"css-1qngnqa\"><div class=\"css-uj40g1\"><span role=\"img\" aria-label=\"NANDO&#x27;S, Peri-Peri Sauce, XX Hot, 9.2 oz (260 g)",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "HSSJ164",
+    "source": "https://www.groupon.com/coupons/iherb",
+    "discovered_at": "2026-04-07T01:53:58.807315+00:00",
+    "raw_description": "",
+    "raw_context": "coupons/iherb\"/><!-- --><!-- --><!-- --><!-- --><!-- --><meta name=\"robots\" content=\"follow,noarchive\"/><!-- --><!-- --><!-- --><!-- --><meta name=\"csrf-token\" content=\"lrySaRWc-0QFaJjUDIUGYnE8r3uw-HS",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
   }
 ]
