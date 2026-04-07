@@ -852,7 +852,7 @@
     ],
     "expiry_date": null,
     "confidence": "low",
-    "validation_status": "valid"
+    "validation_status": "invalid"
   },
   {
     "code": "GOLD120",
@@ -5082,7 +5082,7 @@
     ],
     "expiry_date": null,
     "confidence": "low",
-    "validation_status": "pending"
+    "validation_status": "invalid"
   },
   {
     "code": "C6492110",
@@ -5097,7 +5097,7 @@
     ],
     "expiry_date": null,
     "confidence": "low",
-    "validation_status": "pending"
+    "validation_status": "invalid"
   },
   {
     "code": "GPNLOVE",
@@ -5112,7 +5112,7 @@
     ],
     "expiry_date": null,
     "confidence": "low",
-    "validation_status": "pending"
+    "validation_status": "invalid"
   },
   {
     "code": "ENDING",
@@ -5127,7 +5127,7 @@
     ],
     "expiry_date": null,
     "confidence": "low",
-    "validation_status": "pending"
+    "validation_status": "invalid"
   },
   {
     "code": "SOON",
@@ -5142,7 +5142,7 @@
     ],
     "expiry_date": null,
     "confidence": "low",
-    "validation_status": "pending"
+    "validation_status": "invalid"
   },
   {
     "code": "NANDO",
@@ -5157,7 +5157,7 @@
     ],
     "expiry_date": null,
     "confidence": "low",
-    "validation_status": "pending"
+    "validation_status": "invalid"
   },
   {
     "code": "HSSJ164",
@@ -5172,7 +5172,7 @@
     ],
     "expiry_date": null,
     "confidence": "low",
-    "validation_status": "pending"
+    "validation_status": "invalid"
   },
   {
     "code": "SWAPR26",
@@ -5187,7 +5187,7 @@
     ],
     "expiry_date": null,
     "confidence": "low",
-    "validation_status": "pending"
+    "validation_status": "invalid"
   },
   {
     "code": "ATOLLSMY",
@@ -5202,6 +5202,6 @@
     ],
     "expiry_date": null,
     "confidence": "low",
-    "validation_status": "pending"
+    "validation_status": "invalid"
   }
 ]
