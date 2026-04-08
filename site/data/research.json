@@ -4173,7 +4173,7 @@
     "code": "MENA",
     "source": "https://gutscheine.welt.de/gutscheine/iherb",
     "discovered_at": "2026-04-04T20:13:47.220477+00:00",
-    "raw_description": "",
+    "raw_description": "72-hour Sitewide! 15% off over $60 / 20% off over $100 USD at iHerb! Use Code APR26SW. Valid for Europe and MENA. Limit 2 uses per customer with a max discount of $50 USD. Valid until 4/9. Cannot be c",
     "raw_context": "code: 25% auf MENA</h3><div class=\"VouchersListItemContentWhiteLabel_buttonOr",
     "discount_type": "percentage",
     "discount_value": 25,
@@ -5203,5 +5203,20 @@
     "expiry_date": null,
     "confidence": "low",
     "validation_status": "invalid"
+  },
+  {
+    "code": "RRRRRR",
+    "source": "gutschein/simplycodes",
+    "discovered_at": "2026-04-08T01:48:38.443842+00:00",
+    "raw_description": "",
+    "raw_context": "20% off Code Code Community Code Show Code 20% Off Select Items at iHerb. com w/Code Last used: 3d ago Uses today: 1 Last Verified: 3d ago K F S H G See 59 code verifications About this code Total use",
+    "discount_type": "percentage",
+    "discount_value": 20,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
   }
 ]
