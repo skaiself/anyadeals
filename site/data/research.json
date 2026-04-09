@@ -852,7 +852,7 @@
     ],
     "expiry_date": null,
     "confidence": "low",
-    "validation_status": "valid"
+    "validation_status": "invalid"
   },
   {
     "code": "GOLD120",
@@ -5232,7 +5232,7 @@
     ],
     "expiry_date": null,
     "confidence": "low",
-    "validation_status": "pending"
+    "validation_status": "invalid"
   },
   {
     "code": "SKINBEE50",
@@ -5247,7 +5247,7 @@
     ],
     "expiry_date": null,
     "confidence": "low",
-    "validation_status": "pending"
+    "validation_status": "invalid"
   },
   {
     "code": "GOODBUY",
@@ -5262,7 +5262,7 @@
     ],
     "expiry_date": null,
     "confidence": "low",
-    "validation_status": "pending"
+    "validation_status": "invalid"
   },
   {
     "code": "CHI22",
@@ -5277,6 +5277,6 @@
     ],
     "expiry_date": null,
     "confidence": "low",
-    "validation_status": "pending"
+    "validation_status": "invalid"
   }
 ]
