@@ -5218,5 +5218,65 @@
     "expiry_date": null,
     "confidence": "low",
     "validation_status": "invalid"
+  },
+  {
+    "code": "GOCANADA26",
+    "source": "reddit/search",
+    "discovered_at": "2026-04-09T01:05:21.609450+00:00",
+    "raw_description": "Worldwide iHerb Promo Codes (April 2026)",
+    "raw_context": "Hello again! Today I am sharing some new iHerb promo codes I've come across recently :) lots of new offers for vitamins, supplements, collagen, skincare, and other wellness products!\n\nUse referral **DVO4205** first to stack &amp; maximize savings :)\n\n# Current Codes \ud83e\udd0d\n\n# Worldwide: 15% over $60, 20%",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "SKINBEE50",
+    "source": "reddit/search",
+    "discovered_at": "2026-04-09T01:05:21.609450+00:00",
+    "raw_description": "Updated iHerb promo codes (April 2026)",
+    "raw_context": "iHerb promo codes 2026 (Verified and Working)\n\nThis thread includes active, confirmed working iHerb coupons, no expired codes. The list is updated regularly.\n\n**Start with universal iherb code SKINBEE50 and get 10% off. Every offer uses this code, it can be stacked with other offers on app and never",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "GOODBUY",
+    "source": "reddit/search",
+    "discovered_at": "2026-04-09T01:05:21.609450+00:00",
+    "raw_description": "Updated iHerb promo codes (April 2026)",
+    "raw_context": "iHerb promo codes 2026 (Verified and Working)\n\nThis thread includes active, confirmed working iHerb coupons, no expired codes. The list is updated regularly.\n\n**Start with universal iherb code SKINBEE50 and get 10% off. Every offer uses this code, it can be stacked with other offers on app and never",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "CHI22",
+    "source": "reddit/search",
+    "discovered_at": "2026-04-09T01:05:21.609450+00:00",
+    "raw_description": "Updated iHerb promo codes (April 2026)",
+    "raw_context": "iHerb promo codes 2026 (Verified and Working)\n\nThis thread includes active, confirmed working iHerb coupons, no expired codes. The list is updated regularly.\n\n**Start with universal iherb code SKINBEE50 and get 10% off. Every offer uses this code, it can be stacked with other offers on app and never",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
   }
 ]
