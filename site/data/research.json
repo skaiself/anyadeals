@@ -5293,5 +5293,35 @@
     "expiry_date": null,
     "confidence": "low",
     "validation_status": "pending"
+  },
+  {
+    "code": "MULTIPLEUSEAPR26GUT",
+    "source": "iherb_official",
+    "discovered_at": "2026-04-10T01:52:52.377803+00:00",
+    "raw_description": "isplay:block;} <a href=\"https://www.iherb.com/c/gut-health?soa=true&pcode=APR26GUT\" class=\"cms-banner-wrapper-root-link\" data-ga-promotion_id=\"8736\" data-ga-promotion_name=\"PCodeMultipleUseAPR26GUT\" d",
+    "raw_context": "iherb.com official: MULTIPLEUSEAPR26GUT",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "APR26GUT",
+    "source": "iherb_official",
+    "discovered_at": "2026-04-10T01:52:52.377803+00:00",
+    "raw_description": "ipleUseAPR26GUT\" data-ga-creative_name=\"gut-health_0408\" data-ga-index=\"1\" data-ga-creative_slot=\"promoLandingPrimary\" title=\"Gut Health\" aria-label=\"Banner promoting 15% off gut health formulas with ",
+    "raw_context": "iherb.com official: APR26GUT",
+    "discount_type": "percentage",
+    "discount_value": 15,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
   }
 ]
