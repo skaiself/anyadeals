@@ -5278,5 +5278,20 @@
     "expiry_date": null,
     "confidence": "low",
     "validation_status": "invalid"
+  },
+  {
+    "code": "C6496048",
+    "source": "couponfollow",
+    "discovered_at": "2026-04-10T01:11:05.429256+00:00",
+    "raw_description": "Save 20% Off Your First Order",
+    "raw_context": "couponfollow.com/site/iherb.com#C6496048",
+    "discount_type": "percentage",
+    "discount_value": 20,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
   }
 ]

@@ -18,21 +18,21 @@
     "raw_context": "couponfollow.com/site/iherb.com#C5254352"
   },
   {
-    "code": "C6491480",
+    "code": "C6496048",
     "source": "couponfollow",
     "raw_description": "Save 20% Off Your First Order",
-    "raw_context": "couponfollow.com/site/iherb.com#C6491480"
+    "raw_context": "couponfollow.com/site/iherb.com#C6496048"
   },
   {
-    "code": "C6492110",
+    "code": "C6491480",
     "source": "couponfollow",
-    "raw_description": "15% Off with iHerb Discount Code",
-    "raw_context": "couponfollow.com/site/iherb.com#C6492110"
+    "raw_description": "Save 15% Off Gut Health",
+    "raw_context": "couponfollow.com/site/iherb.com#C6491480"
   },
   {
     "code": "C5303494",
     "source": "couponfollow",
-    "raw_description": "Up to 1.5% Cashback*",
+    "raw_description": "Up to 1% Cashback*",
     "raw_context": "couponfollow.com/site/iherb.com#C5303494"
   },
   {
@@ -84,9 +84,15 @@
     "raw_context": "couponfollow.com/site/iherb.com#P725337"
   },
   {
-    "code": "C6482177",
+    "code": "C6492110",
     "source": "couponfollow",
     "raw_description": "Brands Of The Week: Get Up to 20% Off",
+    "raw_context": "couponfollow.com/site/iherb.com#C6492110"
+  },
+  {
+    "code": "C6482177",
+    "source": "couponfollow",
+    "raw_description": "20% Off Your Order with iHerb Promo Code",
     "raw_context": "couponfollow.com/site/iherb.com#C6482177"
   },
   {
@@ -238,12 +244,6 @@
     "source": "couponfollow",
     "raw_description": "Save 20% Off - iHerb Coupon Code",
     "raw_context": "couponfollow.com/site/iherb.com#C6377792"
-  },
-  {
-    "code": "C5691654",
-    "source": "couponfollow",
-    "raw_description": "Save 15% Off Performance Essentials",
-    "raw_context": "couponfollow.com/site/iherb.com#C5691654"
   },
   {
     "code": "DOCTYPE",
