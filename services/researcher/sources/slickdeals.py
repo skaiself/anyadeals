@@ -3,7 +3,7 @@
 import re
 from sources.base import BaseScraper, logger
 from sources.couponfollow import _strip_html
-from parsers.code_filter import is_false_positive
+from parsers.code_filter import filter_results, is_false_positive
 
 CODE_PATTERN = re.compile(r'\b([A-Z][A-Z0-9]{3,19})\b')
 
@@ -44,5 +44,6 @@ class SlickDealsScraper(BaseScraper):
                     "raw_context": f"slickdeals.net code {code}",
                 })
 
+        results = filter_results(results)
         logger.info("[%s] Found %d potential codes", self.name, len(results))
         return results
