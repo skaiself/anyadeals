@@ -2,7 +2,6 @@ import asyncio
 import json
 import logging
 import os
-import subprocess
 from datetime import datetime, timezone
 from contextlib import asynccontextmanager
 
@@ -14,6 +13,7 @@ from json_writer import (
     write_coupons_json,
 )
 from browser_validate import load_browser_results, merge_browser_results
+from browser_validator import validate_codes, ALL_REGIONS
 
 logger = logging.getLogger("validator")
 logging.basicConfig(level=logging.INFO)
@@ -27,10 +27,6 @@ state = {
 }
 
 DATA_DIR = os.environ.get("DATA_DIR", "/data")
-
-# All regions for full validation (after US filter pass)
-ALL_REGIONS = ["us", "kr", "jp", "de", "gb", "au", "sa", "ca", "cn", "rs", "hr",
-               "it", "fr", "at", "nl", "se", "ch", "ie", "tw", "in", "hk"]
 
 
 @asynccontextmanager
@@ -53,38 +49,35 @@ def get_status():
     }
 
 
-async def _run_browser_validator(codes: list[str], regions: list[str]) -> list[dict]:
-    """Run browser_validator.py and return parsed JSON results."""
-    if not codes:
-        return []
+@app.post("/scrape-gutschein")
+async def scrape_gutschein():
+    """Run Playwright-based German Gutschein site scraper.
 
-    results_path = f"/tmp/browser_results_{os.getpid()}.json"
-
+    Returns JSON array of {code, source, raw_description, raw_context}.
+    """
+    logger.info("Running Gutschein scraper")
     proc = await asyncio.create_subprocess_exec(
-        "python", "browser_validator.py",
-        "--codes", *codes,
-        "--regions", *regions,
-        "--headless",
+        "python", "gutschein_scraper.py", "--headless",
         stdout=asyncio.subprocess.PIPE,
         stderr=asyncio.subprocess.PIPE,
     )
     stdout, stderr = await proc.communicate()
     stderr_text = stderr.decode("utf-8", errors="replace")
-
-    # Always log browser validator stderr (contains per-code results)
-    for line in stderr_text.strip().splitlines()[-50:]:
-        logger.info("[browser] %s", line.strip())
+    for line in stderr_text.strip().splitlines()[-30:]:
+        logger.info("[gutschein] %s", line.strip())
 
     if proc.returncode != 0:
-        logger.error("Browser validator failed (exit %d)", proc.returncode)
-        raise RuntimeError(f"Browser validator exited with code {proc.returncode}")
+        logger.error("Gutschein scraper failed (exit %d)", proc.returncode)
+        return {"status": "error", "codes": []}
 
-    # Parse JSON from stdout
     try:
-        return json.loads(stdout.decode("utf-8"))
+        codes = json.loads(stdout.decode("utf-8"))
     except json.JSONDecodeError:
-        logger.error("Failed to parse browser validator output: %s", stdout.decode()[:500])
-        raise RuntimeError("Browser validator returned invalid JSON")
+        logger.error("Gutschein scraper returned invalid JSON")
+        codes = []
+
+    logger.info("Gutschein scraper found %d codes", len(codes))
+    return {"status": "ok", "codes": codes}
 
 
 @app.post("/run")
@@ -136,40 +129,26 @@ async def run_validation(regions: str = ""):
             state["healthy"] = True
             return {"status": "success", "summary": "No codes to validate"}
 
+        # Build brand notes map for codes with "brand only" in notes
+        brand_notes = {}
+        for c in existing:
+            notes = c.get("notes") or ""
+            if "brand only" in notes.lower():
+                brand_notes[c["code"]] = notes
+
         logger.info(
-            "Browser validation: %d pending + %d active = %d unique codes, regions=%s",
-            len(pending_codes), len(active_codes), len(all_codes), requested_regions,
+            "Two-stage validation: %d pending + %d active = %d unique codes, regions=%s, brand_codes=%d",
+            len(pending_codes), len(active_codes), len(all_codes), requested_regions, len(brand_notes),
         )
 
-        # Phase 1: Test all codes in US only (quick filter)
-        logger.info("Phase 1: Testing %d codes in US", len(all_codes))
-        us_results = await _run_browser_validator(all_codes, ["us"])
+        full_results = await validate_codes(all_codes, brand_notes, requested_regions)
 
-        # Identify codes that passed US validation
-        us_valid_codes = []
-        for item in us_results:
-            us_result = item.get("results", {}).get("us", {})
-            if us_result.get("valid"):
-                us_valid_codes.append(item["code"])
-
-        logger.info("Phase 1 complete: %d/%d passed US filter", len(us_valid_codes), len(all_codes))
-
-        # Phase 2: Test US-valid codes in remaining requested regions
-        remaining_regions = [r for r in requested_regions if r != "us"]
-        full_results = us_results  # Start with US results
-
-        if us_valid_codes and remaining_regions:
-            logger.info("Phase 2: Testing %d codes across %d regions",
-                        len(us_valid_codes), len(remaining_regions))
-            regional_results = await _run_browser_validator(us_valid_codes, remaining_regions)
-
-            # Merge regional results into full_results
-            us_map = {item["code"]: item for item in full_results}
-            for item in regional_results:
-                if item["code"] in us_map:
-                    us_map[item["code"]]["results"].update(item.get("results", {}))
-                else:
-                    full_results.append(item)
+        # Count stage-1 survivors for the summary payload.
+        us_valid_codes = [
+            item["code"]
+            for item in full_results
+            if any(r.get("valid") for r in item.get("results", {}).values())
+        ]
 
         # Load AI-generated notes from research.json
         research_notes = {}
@@ -228,3 +207,14 @@ async def run_validation(regions: str = ""):
         return {"status": "failure", "error": str(e)}
     finally:
         state["running"] = False
+
+
+@app.post("/rescue")
+async def rescue_invalid():
+    """One-shot backfill: re-validate every row currently marked `invalid`.
+
+    See services/validator/rescue_backfill.py for the script entry point.
+    """
+    import rescue_backfill
+    summary = await rescue_backfill.run()
+    return {"status": "ok", "summary": summary}
