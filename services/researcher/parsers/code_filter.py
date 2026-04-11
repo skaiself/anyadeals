@@ -44,8 +44,10 @@ def looks_like_referral(context: str) -> bool:
 
 
 def filter_results(results: list[dict]) -> list[dict]:
-    """Drop entries whose code is a false positive or whose raw_context
-    triggers a referral phrase. Preserves all other fields and ordering.
+    """Drop entries whose code is a false positive or whose context text
+    triggers a referral phrase. The context text is `raw_context` if set,
+    otherwise `raw_description` (scrapers use one or the other). Preserves
+    all other fields and input ordering.
     """
     kept: list[dict] = []
     for r in results:

@@ -57,3 +57,13 @@ def test_filter_results_preserves_original_fields():
     results = [{"code": "GOLD60", "source": "reddit", "raw_description": "10% off"}]
     kept = filter_results(results)
     assert kept[0] == results[0]
+
+
+def test_filter_results_checks_referral_in_raw_description_when_raw_context_missing():
+    """When raw_context is absent/empty, raw_description is consulted for referral phrases."""
+    results = [
+        {"code": "ARWAOM", "raw_description": "use my code ARWAOM for a bonus"},
+        {"code": "GOLD60", "raw_description": "10% off your order"},
+    ]
+    kept = filter_results(results)
+    assert {r["code"] for r in kept} == {"GOLD60"}
