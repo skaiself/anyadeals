@@ -213,8 +213,23 @@ async def run_validation(regions: str = ""):
 async def rescue_invalid():
     """One-shot backfill: re-validate every row currently marked `invalid`.
 
-    See services/validator/rescue_backfill.py for the script entry point.
+    Shares the `state["running"]` flag with `/run` so the two cannot execute
+    concurrently. Rescue monkeypatches validator state for its duration, which
+    would silently leak into a simultaneous nightly `/run`.
     """
-    import rescue_backfill
-    summary = await rescue_backfill.run()
-    return {"status": "ok", "summary": summary}
+    if state["running"]:
+        raise HTTPException(status_code=409, detail="Validation already running")
+    state["running"] = True
+    start_time = datetime.now(timezone.utc)
+    try:
+        import rescue_backfill
+        summary = await rescue_backfill.run()
+        state["last_run"] = datetime.now(timezone.utc).isoformat()
+        state["last_result"] = {"mode": "rescue", **summary}
+        return {"status": "ok", "summary": summary}
+    except Exception as e:
+        state["last_error"] = str(e)
+        logger.exception("rescue failed")
+        raise HTTPException(status_code=500, detail=str(e))
+    finally:
+        state["running"] = False
