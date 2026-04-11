@@ -37,7 +37,7 @@ async def validate_codes(
 
         [
           {"code": "GOLD60",
-           "results": {"us": {"valid": True, "discount": "10% off", "min_cart_value": "$60"},
+           "results": {"us": {"valid": True, "discount": "10% off", "min_cart": "$60"},
                        "de": {"valid": False}}},
           ...
         ]
@@ -83,11 +83,15 @@ async def validate_codes(
             })
             continue
         discount = _format_discount(s1.get("discount_pct", 0), s1.get("discount_raw", 0))
-        eligible_regions = stage2.get(code, [])
-        # If stage 2 wasn't run (empty regions list) assume all regions OK.
-        active_regions = eligible_regions or list(regions)
+        eligible_regions = stage2.get(code)
+        if eligible_regions is None:
+            # Stage 2 was not run at all (no survivors) — assume API-level valid means all regions.
+            active_regions = list(regions)
+        else:
+            # Stage 2 ran for this code; `eligible_regions` is the authoritative list (possibly empty).
+            active_regions = eligible_regions
         results: dict[str, dict] = {
-            r: {"valid": True, "discount": discount, "min_cart_value": ""}
+            r: {"valid": True, "discount": discount, "min_cart": ""}
             for r in active_regions
         }
         for r in regions:
