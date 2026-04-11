@@ -6,7 +6,8 @@ Codes are typically in data attributes or visible text elements.
 
 import re
 from sources.base import BaseScraper, logger
-from sources.couponfollow import _strip_html, FALSE_POSITIVES
+from sources.couponfollow import _strip_html
+from parsers.code_filter import is_false_positive
 
 CODE_PATTERN = re.compile(r'\b([A-Z][A-Z0-9]{3,19})\b')
 
@@ -28,7 +29,7 @@ class SimpleCodesScraper(BaseScraper):
         for card in cards:
             codes = CODE_PATTERN.findall(card[:500])
             for code in codes:
-                if code in seen or code in FALSE_POSITIVES or len(code) < 4:
+                if code in seen or is_false_positive(code):
                     continue
                 seen.add(code)
 
