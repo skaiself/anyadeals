@@ -9,21 +9,12 @@ import httpx
 import logging
 
 from sources.base import BaseScraper
+from parsers.code_filter import filter_results, is_false_positive
 
 logger = logging.getLogger("researcher")
 
 # Codes must be 4-20 uppercase alphanumeric, starting with a letter
 CODE_PATTERN = re.compile(r'\b([A-Z][A-Z0-9]{3,19})\b')
-
-# Common false positives from Reddit JSON/HTML
-FALSE_POSITIVES = frozenset({
-    "HTTP", "HTML", "HEAD", "BODY", "META", "LINK", "NONE",
-    "TRUE", "FALSE", "NULL", "JSON", "SELF", "POST", "NSFW",
-    "REDDIT", "SUBREDDIT", "COMMENT", "HTTPS", "HREF", "TITLE",
-    "IHERB", "HERB", "VITAMIN", "PROMO", "CODE", "COUPON",
-    "EDIT", "UPDATE", "DELETED", "REMOVED", "TLDR", "NBSP",
-    "IMGUR", "JPEG", "WEBP",
-})
 
 
 class RedditScraper(BaseScraper):
@@ -57,6 +48,7 @@ class RedditScraper(BaseScraper):
                 )
                 self._extract_codes(posts, "reddit/search", seen, results)
 
+        results = filter_results(results)
         logger.info("[%s] Found %d potential codes", self.name, len(results))
         return results
 
@@ -92,7 +84,7 @@ class RedditScraper(BaseScraper):
 
             codes = CODE_PATTERN.findall(text)
             for code in codes:
-                if code in seen or code in FALSE_POSITIVES:
+                if code in seen or is_false_positive(code):
                     continue
                 seen.add(code)
                 results.append({

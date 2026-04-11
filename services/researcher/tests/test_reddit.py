@@ -1,5 +1,6 @@
 import pytest
-from sources.reddit import RedditScraper, CODE_PATTERN, FALSE_POSITIVES
+from sources.reddit import RedditScraper, CODE_PATTERN
+from parsers.code_filter import FALSE_POSITIVES
 
 
 def test_code_pattern_matches_valid_codes():

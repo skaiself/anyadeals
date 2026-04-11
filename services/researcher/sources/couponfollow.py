@@ -6,14 +6,10 @@ to its nearest offer title/description for discount text.
 
 import re
 from sources.base import BaseScraper, logger
+from parsers.code_filter import filter_results, is_false_positive
 
 TAG_RE = re.compile(r'<[^>]+>')
 WHITESPACE_RE = re.compile(r'\s+')
-
-FALSE_POSITIVES = frozenset({
-    "HTTP", "HTML", "HEAD", "BODY", "META", "LINK", "NONE",
-    "TRUE", "FALSE", "NULL", "HREF", "HTTPS", "NBSP",
-})
 
 
 def _strip_html(text: str) -> str:
@@ -61,7 +57,7 @@ class CouponFollowScraper(BaseScraper):
         seen = set()
 
         for code_pos, code in code_positions:
-            if code in seen or code in FALSE_POSITIVES:
+            if code in seen or is_false_positive(code):
                 continue
             seen.add(code)
 
@@ -85,7 +81,7 @@ class CouponFollowScraper(BaseScraper):
         for block in blocks:
             codes = code_pattern.findall(block[:500])
             for code in codes:
-                if code in seen or len(code) < 4 or code in FALSE_POSITIVES:
+                if code in seen or is_false_positive(code):
                     continue
                 seen.add(code)
                 description = _strip_html(block[:500])[:200]
@@ -96,6 +92,7 @@ class CouponFollowScraper(BaseScraper):
                     "raw_context": block[:200].strip(),
                 })
 
+        results = filter_results(results)
         logger.info("[%s] Found %d potential codes (%d from hrefs, %d from fallback)",
                     self.name, len(results), len(code_positions), len(results) - len(code_positions))
         return results
