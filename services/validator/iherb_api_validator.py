@@ -256,7 +256,7 @@ class IHerbAPIValidator:
                     code,
                     valid=False,
                     message=f"connection failed: {str(exc)[:160]}",
-                    confidence="transient",
+                    confidence="low",
                 )
 
             # Success or permanent rejection — return immediately.
@@ -283,7 +283,7 @@ class IHerbAPIValidator:
         )
         return last_result if last_result is not None else self._format_result(
             code, valid=False, message="unknown transient failure",
-            confidence="transient",
+            confidence="low",
         )
 
     async def _validate_once(self, code: str, product: dict) -> dict:
@@ -307,13 +307,13 @@ class IHerbAPIValidator:
                 return self._format_result(
                     code, valid=False,
                     message="connection failed on add_to_cart",
-                    http_code=0, confidence="transient",
+                    http_code=0, confidence="low",
                 )
             if status >= 500:
                 return self._format_result(
                     code, valid=False,
                     message=f"add_to_cart failed: HTTP {status}",
-                    http_code=status, confidence="transient",
+                    http_code=status, confidence="low",
                 )
             if status >= 400 and status != 402:
                 return self._format_result(
@@ -344,14 +344,14 @@ class IHerbAPIValidator:
             if status == 0:
                 return self._format_result(
                     code, valid=False, message="applyCoupon timed out",
-                    http_code=0, confidence="transient",
+                    http_code=0, confidence="low",
                 )
 
             if status >= 500:
                 return self._format_result(
                     code, valid=False,
                     message=f"applyCoupon HTTP {status}",
-                    http_code=status, confidence="transient",
+                    http_code=status, confidence="low",
                 )
 
             error_msg = (
@@ -620,9 +620,13 @@ def _is_transient(result: dict) -> bool:
     """Decide whether a validation result indicates a transient failure.
 
     Permanent rejections (invalid code, referral code, echo mismatch, and
-    any success) are NOT transient. A dedicated ``confidence="transient"``
-    flag lets the validator tag retry-worthy failures explicitly.
+    any success) are NOT transient.  Transient conditions are connection
+    failures (http_code == 0) and server errors (http_code >= 500) — exactly
+    the cases where retrying makes sense.  The public ``confidence`` field is
+    never set to ``"transient"``; this helper uses ``http_code`` instead so
+    the detection logic stays internal.
     """
     if result.get("valid"):
         return False
-    return result.get("confidence") == "transient"
+    http_code = result.get("http_code", -1)
+    return http_code == 0 or http_code >= 500
