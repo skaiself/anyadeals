@@ -123,3 +123,34 @@ async def test_cascading_failure_after_ten_consecutive_transients():
     with patch.object(v, "_curl", AsyncMock(side_effect=always_transient)):
         with pytest.raises(CascadingFailure):
             await v.validate_many([f"CODE{i}" for i in range(20)], {})
+
+
+@pytest.mark.asyncio
+async def test_cascading_counter_resets_on_non_transient_outcome():
+    """Non-transient outcome mid-sequence must reset the consecutive counter.
+
+    9 transients + 1 permanent-invalid + 9 more transients must NOT raise
+    CascadingFailure. The permanent-invalid resets the consecutive counter
+    so the second run of 9 never reaches the threshold of 10.
+    """
+    v = IHerbAPIValidator()
+
+    async def fake_validate(code, *a, **kw):
+        idx = int(code.replace("CODE", ""))
+        if idx == 9:
+            # Permanent invalid (non-transient) — resets the counter.
+            return IHerbAPIValidator._format_result(
+                code, valid=False, http_code=400, message="Invalid coupon code",
+                confidence="high",
+            )
+        # Transient failure (503).
+        return IHerbAPIValidator._format_result(
+            code, valid=False, http_code=503, message="server error",
+            confidence="low",
+        )
+
+    with patch.object(v, "validate", side_effect=fake_validate):
+        results = await v.validate_many([f"CODE{i}" for i in range(19)], {})
+
+    assert len(results) == 19
+    assert all(not r["valid"] for r in results)

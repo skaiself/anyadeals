@@ -600,6 +600,11 @@ class IHerbAPIValidator:
             if status == 402 and self.proxy_url:
                 raise ProxyQuotaExhausted("Proxy returned 402 on brand search")
             if status != 200 or not isinstance(body, str):
+                logger.warning(
+                    "brand product search for %r returned HTTP %s — "
+                    "using default CART_PRODUCT (brand resolution unavailable)",
+                    brand, status,
+                )
                 return CART_PRODUCT
             m = PRODUCT_ID_RE.search(body)
             if not m:
@@ -629,4 +634,4 @@ def _is_transient(result: dict) -> bool:
     if result.get("valid"):
         return False
     http_code = result.get("http_code", -1)
-    return http_code == 0 or http_code >= 500
+    return http_code == 0 or http_code == 429 or http_code >= 500
