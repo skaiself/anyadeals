@@ -47,3 +47,18 @@ def test_region_sccodes_covers_all_21_regions():
 def test_region_sccodes_values_are_uppercase_two_letter():
     for r, sc in REGION_SCCODES.items():
         assert len(sc) == 2 and sc.isupper(), f"{r} → {sc}"
+
+
+def test_parse_cart_html_rejects_novel_not_applied_reason():
+    """REGRESSION: a 'Not applied: <novel reason>' message must NOT leak as eligible
+    via the substring 'applied' fall-through. This locks in the prefix-check fix.
+    """
+    html = '''
+    <section data-testid="applied-coupons">
+      <div data-testid="applied-coupon-row" data-code="GOLD60">
+        <span class="applied-coupon-status">Not applied: not available for loyalty members</span>
+      </div>
+    </section>
+    '''
+    eligible, reason = parse_cart_html(html, "GOLD60")
+    assert eligible is False, f"novel 'Not applied' reason leaked as eligible: {reason}"

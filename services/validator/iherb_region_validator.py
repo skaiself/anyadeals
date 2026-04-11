@@ -68,7 +68,8 @@ def parse_cart_html(html: str, code: str) -> tuple[bool, str]:
             return False, f"not eligible: {pat.search(status_text).group(0)[:80]}"
 
     # If the status text says "Applied" (any case) we consider it eligible.
-    if "applied" in status_text.lower():
+    # Use startswith to avoid "Not applied: ..." leaking as True.
+    if status_text.strip().lower().startswith("applied"):
         return True, "applied"
 
     return False, f"unknown status: {status_text.strip()[:120]}"
@@ -91,9 +92,15 @@ class IHerbRegionValidator:
         # results is {code: [region, ...]}
     """
 
-    def __init__(self, concurrency: int = 4, jitter_range: tuple[int, int] = (30, 120)):
+    def __init__(
+        self,
+        concurrency: int = 4,
+        jitter_range: tuple[int, int] = (30, 120),
+        fast_mode: bool = False,
+    ):
         self.concurrency = concurrency
         self.jitter_range = jitter_range
+        self.fast_mode = fast_mode
 
     async def validate(
         self,
@@ -137,7 +144,8 @@ class IHerbRegionValidator:
             if not sccode:
                 return RegionResult(code, region, False, f"unknown region {region}")
             jitter = random.randint(*self.jitter_range)
-            await asyncio.sleep(jitter / 10)  # /10 keeps test runs sane; production uses full seconds
+            sleep_seconds = jitter / 10 if self.fast_mode else jitter
+            await asyncio.sleep(sleep_seconds)
             context = await browser.new_context(
                 user_agent=(
                     "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
