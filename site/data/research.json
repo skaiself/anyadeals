@@ -5323,5 +5323,185 @@
     "expiry_date": null,
     "confidence": "low",
     "validation_status": "invalid"
+  },
+  {
+    "code": "D8D9DA",
+    "source": "simplycodes",
+    "discovered_at": "2026-04-12T01:46:44.746066+00:00",
+    "raw_description": "",
+    "raw_context": "simplycodes.com code D8D9DA",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "NATU",
+    "source": "simplycodes",
+    "discovered_at": "2026-04-12T01:46:44.746066+00:00",
+    "raw_description": "",
+    "raw_context": "simplycodes.com code NATU",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "RENEW",
+    "source": "simplycodes",
+    "discovered_at": "2026-04-12T01:46:44.746066+00:00",
+    "raw_description": "",
+    "raw_context": "simplycodes.com code RENEW",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "BARGAINBUDDY",
+    "source": "simplycodes",
+    "discovered_at": "2026-04-12T01:46:44.746066+00:00",
+    "raw_description": "",
+    "raw_context": "simplycodes.com code BARGAINBUDDY",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "M216",
+    "source": "simplycodes",
+    "discovered_at": "2026-04-12T01:46:44.746066+00:00",
+    "raw_description": "",
+    "raw_context": "simplycodes.com code M216",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "CHURCH",
+    "source": "simplycodes",
+    "discovered_at": "2026-04-12T01:46:44.746066+00:00",
+    "raw_description": "",
+    "raw_context": "simplycodes.com code CHURCH",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "TTCEMILY",
+    "source": "simplycodes",
+    "discovered_at": "2026-04-12T01:46:44.746066+00:00",
+    "raw_description": "",
+    "raw_context": "simplycodes.com code TTCEMILY",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "BEWELL10",
+    "source": "simplycodes",
+    "discovered_at": "2026-04-12T01:46:44.746066+00:00",
+    "raw_description": "",
+    "raw_context": "simplycodes.com code BEWELL10",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "WELCOME10",
+    "source": "simplycodes",
+    "discovered_at": "2026-04-12T01:46:44.746066+00:00",
+    "raw_description": "",
+    "raw_context": "simplycodes.com code WELCOME10",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "RAZI",
+    "source": "simplycodes",
+    "discovered_at": "2026-04-12T01:46:44.746066+00:00",
+    "raw_description": "",
+    "raw_context": "simplycodes.com code RAZI",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "BR15",
+    "source": "simplycodes",
+    "discovered_at": "2026-04-12T01:46:44.746066+00:00",
+    "raw_description": "",
+    "raw_context": "simplycodes.com code BR15",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "FOOTPRINT12",
+    "source": "simplycodes",
+    "discovered_at": "2026-04-12T01:46:44.746066+00:00",
+    "raw_description": "",
+    "raw_context": "simplycodes.com code FOOTPRINT12",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
   }
 ]
