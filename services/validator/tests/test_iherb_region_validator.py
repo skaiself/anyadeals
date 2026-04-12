@@ -38,8 +38,9 @@ def test_parse_cart_html_returns_false_when_applied_row_missing():
     assert "no applied" in reason.lower() or "not found" in reason.lower()
 
 
-def test_region_sccodes_covers_all_21_regions():
+def test_region_sccodes_covers_all_23_regions():
     expected = {"us", "kr", "jp", "de", "gb", "au", "sa", "ca", "cn", "rs", "hr",
+                "es", "pl",
                 "it", "fr", "at", "nl", "se", "ch", "ie", "tw", "in", "hk"}
     assert expected.issubset(set(REGION_SCCODES.keys()))
 

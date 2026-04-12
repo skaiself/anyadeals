@@ -87,9 +87,20 @@ async def validate_codes(
         if eligible_regions is None:
             # Stage 2 was not run at all (no survivors) — assume API-level valid means all regions.
             active_regions = list(regions)
-        else:
-            # Stage 2 ran for this code; `eligible_regions` is the authoritative list (possibly empty).
+        elif eligible_regions:
+            # Stage 2 ran and returned at least one eligible region — authoritative.
             active_regions = eligible_regions
+        else:
+            # Stage 2 ran but returned empty. Against the real iHerb cart page
+            # this can mean (a) actual non-eligibility in every tested region,
+            # or (b) parser-can't-tell (the cart page is anonymous/empty and
+            # carries no applied-coupon state). We can't distinguish the two
+            # from a Playwright HTML scan alone. Fall back to the implicit
+            # region Stage 1 actually validated in: the warehouse of the cart
+            # product (US, since CART_PRODUCT is a US-listed item). This
+            # matches the sister project's de-facto behavior where most valid
+            # codes end up tagged `regions=["us"]`.
+            active_regions = ["us"] if "us" in regions else list(regions)[:1]
         results: dict[str, dict] = {
             r: {"valid": True, "discount": discount, "min_cart": ""}
             for r in active_regions

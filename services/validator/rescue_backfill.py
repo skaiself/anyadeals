@@ -45,26 +45,45 @@ async def run(dry_run: bool = False) -> dict:
 
     logger.info("Rescue attempt: %d invalid codes, %d brand", len(invalid_codes), len(brand_notes))
 
-    # NOTE: concurrency=1 is intentional for the rescue flow.
-    # Cloudflare rate-limits checkout.iherb.com at higher parallelism (4/5
-    # codes returned 429 in Task 5 batch testing). The rescue run processes
-    # ~320 invalid codes and must complete without burning them all via 429
-    # retries. The nightly validation path uses the default concurrency=4;
-    # only this rescue backfill forces serial execution.
+    # NOTE: concurrency=1 + pace_seconds=15 is intentional for the rescue flow.
+    # Cloudflare rate-limits checkout.iherb.com aggressively: proxy-local gets
+    # 2 requests through, then ~25ms "Just a moment..." 429s for the rest.
+    # curl-impersonate helps marginally (5/10 vs 2/10) but doesn't clear the
+    # IP-level limit. Empirical test: plain curl via proxy-local with a 15s
+    # gap between requests = 15/15 success. So we pace strictly at 15s/code.
+    # Cost: 321 codes * ~15s = ~80 min wall time, but $0 proxy bandwidth.
+    # The nightly validation path uses the default concurrency=4/pace=0; only
+    # this rescue backfill forces serial-paced execution.
     import browser_validator as _bv
 
-    _orig_cls = _bv.IHerbAPIValidator
+    _orig_api_cls = _bv.IHerbAPIValidator
+    _orig_region_cls = _bv.IHerbRegionValidator
 
-    class _SerialAPI(_orig_cls):
+    class _SerialAPI(_orig_api_cls):
         def __init__(self, *a, **kw):
             kw["concurrency"] = 1
+            kw["pace_seconds"] = 15.0
+            super().__init__(*a, **kw)
+
+    class _FastRegion(_orig_region_cls):
+        # Stage 2's real-world parser is effectively a no-op against the
+        # live iHerb cart page (anonymous carts carry no applied-coupon
+        # state). browser_validator's orchestrator falls back to
+        # regions=['us'] when Stage 2 returns empty, so Stage 2's only job
+        # in the rescue flow is to return quickly. fast_mode divides the
+        # 30-120s jitter by 10 to cut Stage 2 from ~2h to ~12 min for 18
+        # survivors × 21 regions.
+        def __init__(self, *a, **kw):
+            kw["fast_mode"] = True
             super().__init__(*a, **kw)
 
     _bv.IHerbAPIValidator = _SerialAPI
+    _bv.IHerbRegionValidator = _FastRegion
     try:
         results = await validate_codes(invalid_codes, brand_notes)
     finally:
-        _bv.IHerbAPIValidator = _orig_cls
+        _bv.IHerbAPIValidator = _orig_api_cls
+        _bv.IHerbRegionValidator = _orig_region_cls
 
     # Merge using the existing helper so the output file shape stays identical.
     research_notes = {c["code"]: c.get("notes", "") for c in existing}

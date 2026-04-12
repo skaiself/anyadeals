@@ -25,7 +25,7 @@ REGION_SCCODES: dict[str, str] = {
     "au": "AU", "sa": "SA", "ca": "CA", "cn": "CN", "rs": "RS",
     "hr": "HR", "it": "IT", "fr": "FR", "at": "AT", "nl": "NL",
     "se": "SE", "ch": "CH", "ie": "IE", "tw": "TW", "in": "IN",
-    "hk": "HK",
+    "hk": "HK", "es": "ES", "pl": "PL",
 }
 
 _APPLIED_ROW_RE = re.compile(
@@ -97,10 +97,19 @@ class IHerbRegionValidator:
         concurrency: int = 4,
         jitter_range: tuple[int, int] = (30, 120),
         fast_mode: bool = False,
+        proxy_url: str | None = None,
     ):
         self.concurrency = concurrency
         self.jitter_range = jitter_range
         self.fast_mode = fast_mode
+        # Playwright needs an explicit proxy_url — checkout.iherb.com/cart is
+        # behind Cloudflare's "Just a moment..." challenge from datacenter IPs,
+        # so direct connection will always time out on page.goto. We reuse the
+        # same env var as Stage 1 so both stages share the same proxy config.
+        import os
+        if proxy_url is None:
+            proxy_url = os.environ.get("IHERB_PROXY_URL", "")
+        self.proxy_url = proxy_url
 
     async def validate(
         self,
@@ -146,12 +155,15 @@ class IHerbRegionValidator:
             jitter = random.randint(*self.jitter_range)
             sleep_seconds = jitter / 10 if self.fast_mode else jitter
             await asyncio.sleep(sleep_seconds)
-            context = await browser.new_context(
-                user_agent=(
+            context_kwargs = {
+                "user_agent": (
                     "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
                     "(KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36"
                 ),
-            )
+            }
+            if self.proxy_url:
+                context_kwargs["proxy"] = {"server": self.proxy_url}
+            context = await browser.new_context(**context_kwargs)
             await context.add_cookies([{
                 "name": "iher-pref1",
                 "value": f"sccode={sccode}",

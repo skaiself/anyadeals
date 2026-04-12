@@ -104,17 +104,24 @@ class IHerbAPIValidator:
             An empty string disables the proxy entirely (direct connection).
         concurrency: Maximum concurrent ``validate()`` calls inside
             ``validate_many``. Defaults to 4.
+        pace_seconds: Optional delay after each completed code inside
+            ``validate_many``. With ``concurrency=1`` this produces strict
+            serial pacing that defeats Cloudflare's per-IP rate limit on
+            ``checkout.iherb.com`` — tested at 15s/code against proxy-local
+            with 15/15 success. Ignored when ``concurrency > 1``.
     """
 
     def __init__(
         self,
         proxy_url: str | None = None,
         concurrency: int = DEFAULT_CONCURRENCY,
+        pace_seconds: float = 0.0,
     ) -> None:
         if proxy_url is None:
             proxy_url = os.environ.get("IHERB_PROXY_URL", "")
         self.proxy_url = proxy_url  # may be empty string — direct connection
         self.concurrency = concurrency
+        self.pace_seconds = pace_seconds
         # Cache of brand-name → resolved CART_PRODUCT override for brand-only
         # codes. Populated lazily inside validate_many.
         self._brand_cache: dict[str, dict] = {}
@@ -509,7 +516,15 @@ class IHerbAPIValidator:
                 product = await self._resolve_cart_product(
                     code, brand_notes_map.get(code, "")
                 )
-                return await self.validate(code, cart_product=product)
+                result = await self.validate(code, cart_product=product)
+                # Pacing: hold the semaphore while sleeping so concurrency=1
+                # runs strictly serially at the requested rate. When
+                # concurrency > 1 the pace applies per-slot, which is
+                # intentional — higher concurrency means we've already
+                # decided we can absorb more parallel load.
+                if self.pace_seconds > 0 and idx < len(codes) - 1:
+                    await asyncio.sleep(self.pace_seconds)
+                return result
 
         tasks = [
             asyncio.create_task(run_one(i, c)) for i, c in enumerate(codes)
