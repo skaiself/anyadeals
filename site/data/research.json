@@ -837,7 +837,7 @@
     ],
     "expiry_date": null,
     "confidence": "low",
-    "validation_status": "tested"
+    "validation_status": "valid"
   },
   {
     "code": "GOLD60",
@@ -867,7 +867,7 @@
     ],
     "expiry_date": null,
     "confidence": "low",
-    "validation_status": "tested"
+    "validation_status": "valid"
   },
   {
     "code": "THEDAILYBEAST",
@@ -1887,7 +1887,7 @@
     ],
     "expiry_date": null,
     "confidence": "low",
-    "validation_status": "error"
+    "validation_status": "valid"
   },
   {
     "code": "STBEANSUK",
@@ -2157,7 +2157,7 @@
     ],
     "expiry_date": null,
     "confidence": "low",
-    "validation_status": "invalid"
+    "validation_status": "valid"
   },
   {
     "code": "CHRI22",
@@ -2187,7 +2187,7 @@
     ],
     "expiry_date": null,
     "confidence": "low",
-    "validation_status": "invalid"
+    "validation_status": "valid"
   },
   {
     "code": "MSTUA",
@@ -2202,7 +2202,7 @@
     ],
     "expiry_date": null,
     "confidence": "low",
-    "validation_status": "invalid"
+    "validation_status": "valid"
   },
   {
     "code": "KRNEW20",
@@ -2217,7 +2217,7 @@
     ],
     "expiry_date": null,
     "confidence": "low",
-    "validation_status": "invalid"
+    "validation_status": "valid"
   },
   {
     "code": "MARHABA25",
@@ -2232,7 +2232,7 @@
     ],
     "expiry_date": null,
     "confidence": "low",
-    "validation_status": "invalid"
+    "validation_status": "valid"
   },
   {
     "code": "OM183",
@@ -2307,7 +2307,7 @@
     ],
     "expiry_date": null,
     "confidence": "low",
-    "validation_status": "invalid"
+    "validation_status": "valid"
   },
   {
     "code": "VAD049",
@@ -5007,7 +5007,7 @@
     ],
     "expiry_date": null,
     "confidence": "low",
-    "validation_status": "invalid"
+    "validation_status": "valid"
   },
   {
     "code": "TODAY",
@@ -5232,7 +5232,7 @@
     ],
     "expiry_date": null,
     "confidence": "low",
-    "validation_status": "invalid"
+    "validation_status": "valid"
   },
   {
     "code": "SKINBEE50",
@@ -5262,7 +5262,7 @@
     ],
     "expiry_date": null,
     "confidence": "low",
-    "validation_status": "invalid"
+    "validation_status": "valid"
   },
   {
     "code": "CHI22",
@@ -5277,7 +5277,7 @@
     ],
     "expiry_date": null,
     "confidence": "low",
-    "validation_status": "invalid"
+    "validation_status": "valid"
   },
   {
     "code": "C6496048",
@@ -5322,7 +5322,7 @@
     ],
     "expiry_date": null,
     "confidence": "low",
-    "validation_status": "invalid"
+    "validation_status": "valid"
   },
   {
     "code": "D8D9DA",
@@ -5457,7 +5457,7 @@
     ],
     "expiry_date": null,
     "confidence": "low",
-    "validation_status": "invalid"
+    "validation_status": "valid"
   },
   {
     "code": "RAZI",
@@ -5517,6 +5517,6 @@
     ],
     "expiry_date": null,
     "confidence": "low",
-    "validation_status": "pending"
+    "validation_status": "invalid"
   }
 ]
