@@ -2,15 +2,17 @@
 <html>
 <head><title>Cart</title></head>
 <body>
-  <div class="promo-unlock-banner" data-testid="promo-unlock">
+  <script>
+    var i18n = { "promoUnlock": "Add $12.34 to unlock 10% off with GOLD60" };
+  </script>
+
+  <div class="promo-unlock-banner">
     Add $12.34 to your order to unlock 10% off with GOLD60
   </div>
 
-  <section data-testid="applied-coupons">
-    <div data-testid="applied-coupon-row" data-code="EU15N">
-      <span class="applied-coupon-code">EU15N</span>
-      <span class="applied-coupon-status">Not applied: shipping destination is not eligible for this promotion</span>
-    </div>
-  </section>
+  <div data-qa-element="warning-msg-promo">
+    <span>EU15N</span>
+    <span>Your shipping destination is not eligible for this promotion.</span>
+  </div>
 </body>
 </html>

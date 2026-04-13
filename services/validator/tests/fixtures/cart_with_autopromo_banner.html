@@ -2,18 +2,20 @@
 <html>
 <head><title>Cart</title></head>
 <body>
-  <div class="promo-unlock-banner" data-testid="promo-unlock">
+  <script>
+    var i18n = { "promoUnlock": "Add $12.34 to unlock 10% off with GOLD60" };
+  </script>
+
+  <div class="promo-unlock-banner">
     Add $12.34 to your order to unlock 10% off with GOLD60
   </div>
 
-  <section data-testid="applied-coupons">
-    <div data-testid="applied-coupon-row" data-code="TESTCODE123">
-      <span class="applied-coupon-code">TESTCODE123</span>
-      <span class="applied-coupon-status">Applied</span>
-    </div>
-  </section>
+  <div data-qa-element="applied-promo">
+    <span>TESTCODE123</span>
+    <span>TESTCODE123 applied · Save up to $11.14 with this 10% off promo!</span>
+  </div>
 
-  <div data-testid="cart-summary">
+  <div data-qa-element="cart-summary">
     <span>Subtotal: $111.40</span>
     <span>Discount: -$11.14</span>
   </div>

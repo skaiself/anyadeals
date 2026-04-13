@@ -61,22 +61,32 @@ async def validate_codes(
         len(stage1),
     )
 
-    # Stage 2 (Playwright region checker) is currently non-functional against
-    # real iHerb HTML — the cart page carries no applied-coupon state for
-    # anonymous sessions, so the parser always returns empty. Skipping it
-    # avoids wasting ~2h of Playwright loads and prevents the fallback from
-    # overwriting existing good region data with a degraded ['us'] default.
-    #
-    # When Stage 2 is fixed (e.g. by parsing DS_AutoApplyCartPromo from the
-    # cart HTML, or by seeding cart items before loading), re-enable it here.
     survivors = [r["code"] for r in stage1 if r["valid"]]
     logger.info("Stage 1 survivors: %s", survivors)
 
-    # Build output: Stage-1-valid codes get regions=['us'] (the only region
-    # Stage 1 implicitly tests via its US-warehoused cart product). The merge
-    # helper in browser_validate.py will NOT downgrade existing region data
-    # that's richer than this — it only writes regions when the new set is
-    # non-empty, so codes that already have multi-region data keep it.
+    if not survivors:
+        # No codes survived Stage 1 — build failure output and return early.
+        by_code = {r["code"]: r for r in stage1}
+        output: list[dict] = []
+        for code in codes:
+            s1 = by_code.get(code, {"valid": False, "message": "no stage1 result"})
+            output.append({
+                "code": code,
+                "results": {"us": {"valid": False, "message": s1.get("message", "")}},
+            })
+        return output
+
+    # Stage 2: Playwright region checker — tests survivors across all regions.
+    # Uses the iher-pref1 cookie + recommended-items cart seeding + #coupon-input
+    # form to get real eligibility signals from iHerb's React cart page.
+    region_validator = IHerbRegionValidator()
+    stage2 = await region_validator.validate(survivors, regions)
+    logger.info(
+        "Stage 2 complete: %s",
+        {c: len(regs) for c, regs in stage2.items()},
+    )
+
+    # Build output: merge Stage 1 discount info with Stage 2 region data.
     by_code = {r["code"]: r for r in stage1}
     output: list[dict] = []
     for code in codes:
@@ -88,10 +98,16 @@ async def validate_codes(
             })
             continue
         discount = _format_discount(s1.get("discount_pct", 0), s1.get("discount_raw", 0))
-        # Only claim US-valid — the one region Stage 1 actually proves.
-        results: dict[str, dict] = {
-            "us": {"valid": True, "discount": discount, "min_cart": ""},
-        }
+        eligible_regions = stage2.get(code, [])
+        if not eligible_regions:
+            # Stage 2 found zero regions — fall back to US-only from Stage 1.
+            eligible_regions = ["us"]
+        results: dict[str, dict] = {}
+        for reg in regions:
+            if reg in eligible_regions:
+                results[reg] = {"valid": True, "discount": discount, "min_cart": ""}
+            else:
+                results[reg] = {"valid": False}
         output.append({"code": code, "results": results})
 
     return output
