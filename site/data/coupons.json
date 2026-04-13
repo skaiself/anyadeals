@@ -3,29 +3,33 @@
     "code": "WELCOME25",
     "type": "promo",
     "discount": "22% off",
-    "regions": [
-      "us"
-    ],
+    "regions": [],
     "min_cart_value": 40,
-    "status": "region_limited",
+    "status": "invalid",
     "first_seen": "2026-03-10",
     "last_validated": "2026-04-13T09:08:21.059238+00:00",
     "last_failed": null,
     "fail_count": 0,
     "source": "couponfollow.com",
     "stackable_with_referral": true,
-    "notes": "Not eligible: AU, CA, CN, DE, GB, HR, JP, KR, RS, SA, US",
-    "rescued_at": "2026-04-12T09:43:34.175848+00:00"
+    "notes": "Not eligible: AU, CA, CN, DE, GB, HR, JP, KR, RS, SA, US"
   },
   {
     "code": "GOLD60",
     "type": "promo",
     "discount": "10% off",
     "regions": [
+      "ca",
+      "cn",
+      "fr",
+      "gb",
+      "jp",
+      "kr",
+      "tw",
       "us"
     ],
     "min_cart_value": 60,
-    "status": "region_limited",
+    "status": "valid",
     "first_seen": "2026-03-15",
     "last_validated": "2026-04-13T09:08:21.059238+00:00",
     "last_failed": null,
@@ -1057,14 +1061,14 @@
       "us"
     ],
     "min_cart_value": 0,
-    "status": "expired",
+    "status": "invalid",
     "first_seen": "2026-03-27",
     "last_validated": "2026-03-27T10:24:37.622353+00:00",
     "last_failed": null,
     "fail_count": 0,
     "source": "",
     "stackable_with_referral": false,
-    "notes": "Browser-verified: not valid"
+    "notes": ""
   },
   {
     "code": "EU15N",
@@ -1074,14 +1078,14 @@
       "us"
     ],
     "min_cart_value": 0,
-    "status": "expired",
+    "status": "invalid",
     "first_seen": "2026-03-27",
     "last_validated": "2026-03-27T10:24:37.622353+00:00",
     "last_failed": null,
     "fail_count": 0,
     "source": "",
     "stackable_with_referral": false,
-    "notes": "Browser-verified: not valid"
+    "notes": ""
   },
   {
     "code": "IHERB22OFF",
@@ -1581,19 +1585,16 @@
     "code": "ARWAOM",
     "type": "promo",
     "discount": "",
-    "regions": [
-      "us"
-    ],
+    "regions": [],
     "min_cart_value": 0,
-    "status": "region_limited",
+    "status": "invalid",
     "first_seen": "2026-03-28",
     "last_validated": "2026-04-13T09:08:21.059238+00:00",
     "last_failed": null,
     "fail_count": 0,
     "source": "reddit/search",
     "stackable_with_referral": false,
-    "notes": "Not eligible for US shipping. No valid region found.",
-    "rescued_at": "2026-04-12T09:43:34.175848+00:00"
+    "notes": "Not eligible for US shipping. No valid region found."
   },
   {
     "code": "SAIB30",
@@ -1680,19 +1681,16 @@
     "code": "GOLD100",
     "type": "promo",
     "discount": "",
-    "regions": [
-      "us"
-    ],
+    "regions": [],
     "min_cart_value": 0,
-    "status": "region_limited",
+    "status": "invalid",
     "first_seen": "2026-03-28",
     "last_validated": "2026-04-13T09:08:21.059238+00:00",
     "last_failed": null,
     "fail_count": 0,
     "source": "reddit/search",
     "stackable_with_referral": false,
-    "notes": "Not eligible for US shipping. No valid region found.",
-    "rescued_at": "2026-04-12T09:43:34.175848+00:00"
+    "notes": "Not eligible for US shipping. No valid region found."
   },
   {
     "code": "RENEWLIFE",
@@ -1923,19 +1921,16 @@
     "code": "KOC22",
     "type": "promo",
     "discount": "",
-    "regions": [
-      "us"
-    ],
+    "regions": [],
     "min_cart_value": 0,
-    "status": "region_limited",
+    "status": "invalid",
     "first_seen": "2026-04-01",
     "last_validated": "2026-04-13T09:08:21.059238+00:00",
     "last_failed": null,
     "fail_count": 0,
     "source": "browser_validation",
     "stackable_with_referral": false,
-    "notes": "Not eligible: US",
-    "rescued_at": "2026-04-12T09:43:34.175848+00:00"
+    "notes": "Not eligible: US"
   },
   {
     "code": "CHRI22",
@@ -1956,73 +1951,61 @@
     "code": "SAHTEK25",
     "type": "promo",
     "discount": "",
-    "regions": [
-      "us"
-    ],
+    "regions": [],
     "min_cart_value": 0,
-    "status": "region_limited",
+    "status": "invalid",
     "first_seen": "2026-04-01",
     "last_validated": "2026-04-13T09:08:21.059238+00:00",
     "last_failed": null,
     "fail_count": 0,
     "source": "browser_validation",
     "stackable_with_referral": false,
-    "notes": "Not eligible: US",
-    "rescued_at": "2026-04-12T09:43:34.175848+00:00"
+    "notes": "Not eligible: US"
   },
   {
     "code": "MSTUA",
     "type": "promo",
     "discount": "",
-    "regions": [
-      "us"
-    ],
+    "regions": [],
     "min_cart_value": 0,
-    "status": "region_limited",
+    "status": "invalid",
     "first_seen": "2026-04-01",
     "last_validated": "2026-04-13T09:08:21.059238+00:00",
     "last_failed": null,
     "fail_count": 0,
     "source": "browser_validation",
     "stackable_with_referral": false,
-    "notes": "Not eligible: US",
-    "rescued_at": "2026-04-12T09:43:34.175848+00:00"
+    "notes": "Not eligible: US"
   },
   {
     "code": "KRNEW20",
     "type": "promo",
     "discount": "",
-    "regions": [
-      "us"
-    ],
+    "regions": [],
     "min_cart_value": 0,
-    "status": "region_limited",
+    "status": "invalid",
     "first_seen": "2026-04-01",
     "last_validated": "2026-04-13T09:08:21.059238+00:00",
     "last_failed": null,
     "fail_count": 0,
     "source": "browser_validation",
     "stackable_with_referral": false,
-    "notes": "Not eligible: US",
-    "rescued_at": "2026-04-12T09:43:34.175848+00:00"
+    "notes": "Not eligible: US"
   },
   {
     "code": "MARHABA25",
     "type": "promo",
     "discount": "",
-    "regions": [
-      "us"
-    ],
+    "regions": [],
     "min_cart_value": 0,
-    "status": "region_limited",
+    "status": "invalid",
     "first_seen": "2026-04-01",
     "last_validated": "2026-04-13T09:08:21.059238+00:00",
     "last_failed": null,
     "fail_count": 0,
     "source": "browser_validation",
     "stackable_with_referral": false,
-    "notes": "Not eligible: US",
-    "rescued_at": "2026-04-12T09:43:34.175848+00:00"
+    "notes": "Not eligible: US"
   },
   {
     "code": "OM183",
@@ -2088,19 +2071,16 @@
     "code": "NEWKR15",
     "type": "promo",
     "discount": "",
-    "regions": [
-      "us"
-    ],
+    "regions": [],
     "min_cart_value": 0,
-    "status": "region_limited",
+    "status": "invalid",
     "first_seen": "2026-04-02",
     "last_validated": "2026-04-13T09:08:21.059238+00:00",
     "last_failed": null,
     "fail_count": 0,
     "source": "browser_validation",
     "stackable_with_referral": false,
-    "notes": "Not eligible: US",
-    "rescued_at": "2026-04-12T09:43:34.175848+00:00"
+    "notes": "Not eligible: US"
   },
   {
     "code": "VAD049",

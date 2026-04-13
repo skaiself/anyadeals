@@ -80,8 +80,16 @@ def merge_browser_results(existing: list[dict], browser_results: list[dict], res
             old_regions = entry.get("regions", [])
 
             if valid_regions:
-                entry["regions"] = sorted(valid_regions)
-                entry["status"] = status
+                # Don't downgrade existing multi-region data when the
+                # orchestrator only confirms a subset (e.g. Stage 1 proves
+                # US-valid but the code was previously known to work in 8
+                # regions). Keep the richer set; only overwrite if the new
+                # result adds regions or the old list was empty.
+                if old_regions and set(valid_regions).issubset(set(old_regions)):
+                    entry["regions"] = sorted(old_regions)
+                else:
+                    entry["regions"] = sorted(set(old_regions) | set(valid_regions))
+                entry["status"] = status if len(entry["regions"]) > 1 or invalid_regions else "valid"
                 entry["last_validated"] = now
                 entry["fail_count"] = 0
                 entry["last_failed"] = None
