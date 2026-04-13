@@ -5503,5 +5503,20 @@
     "expiry_date": null,
     "confidence": "low",
     "validation_status": "invalid"
+  },
+  {
+    "code": "ACNE",
+    "source": "https://www.rakuten.com/shop/iherb",
+    "discovered_at": "2026-04-13T01:24:18.453238+00:00",
+    "raw_description": "",
+    "raw_context": "coupons and Cash Back\" id=\"f2deb5683e4330106fd89e7d57916c6fb11e13b7\"><div class=\"css-1qngnqa\"><div class=\"css-uj40g1\"><span role=\"img\" aria-label=\"ACNE FREE, Oil Free Acne Cleanser, Acne Treatment, Fr",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
   }
 ]
