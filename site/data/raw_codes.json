@@ -30,9 +30,15 @@
     "raw_context": "couponfollow.com/site/iherb.com#C5303494"
   },
   {
-    "code": "C5989272",
+    "code": "P760480",
     "source": "couponfollow",
     "raw_description": "Up to 1% Cashback*",
+    "raw_context": "couponfollow.com/site/iherb.com#P760480"
+  },
+  {
+    "code": "C5989272",
+    "source": "couponfollow",
+    "raw_description": "Get 15% Off Probiotics",
     "raw_context": "couponfollow.com/site/iherb.com#C5989272"
   },
   {
@@ -180,15 +186,9 @@
     "raw_context": "couponfollow.com/site/iherb.com#P727871"
   },
   {
-    "code": "P724670",
-    "source": "couponfollow",
-    "raw_description": "iHerb Holiday Specials: Get Up to 50% Off",
-    "raw_context": "couponfollow.com/site/iherb.com#P724670"
-  },
-  {
     "code": "C6492110",
     "source": "couponfollow",
-    "raw_description": "Get Up to 20% Off Brands of the Week",
+    "raw_description": "iHerb Holiday Specials: Get Up to 50% Off",
     "raw_context": "couponfollow.com/site/iherb.com#C6492110"
   },
   {

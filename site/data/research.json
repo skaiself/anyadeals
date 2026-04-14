@@ -5518,5 +5518,20 @@
     "expiry_date": null,
     "confidence": "low",
     "validation_status": "invalid"
+  },
+  {
+    "code": "P760480",
+    "source": "couponfollow",
+    "discovered_at": "2026-04-14T01:20:57.190612+00:00",
+    "raw_description": "Up to 1% Cashback*",
+    "raw_context": "couponfollow.com/site/iherb.com#P760480",
+    "discount_type": "percentage",
+    "discount_value": 1,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
   }
 ]
