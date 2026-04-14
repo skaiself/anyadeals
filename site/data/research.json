@@ -5533,5 +5533,65 @@
     "expiry_date": null,
     "confidence": "low",
     "validation_status": "pending"
+  },
+  {
+    "code": "BARAKA20",
+    "source": "hotdeals",
+    "discovered_at": "2026-04-14T01:53:17.995649+00:00",
+    "raw_description": "Get 15% OFF today at iHerb and discover a wide range of deals.",
+    "raw_context": "hotdeals.com code BARAKA20",
+    "discount_type": "percentage",
+    "discount_value": 15,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "WWP248",
+    "source": "hotdeals",
+    "discovered_at": "2026-04-14T01:53:17.995649+00:00",
+    "raw_description": "$5 off New Customer Orders $10 off New Customer Orders of $40 or More at Iherb",
+    "raw_context": "hotdeals.com code WWP248",
+    "discount_type": "fixed",
+    "discount_value": 5,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "PABA",
+    "source": "https://www.rakuten.com/shop/iherb",
+    "discovered_at": "2026-04-14T01:53:17.995649+00:00",
+    "raw_description": "",
+    "raw_context": "coupons and Cash Back\" id=\"81fdb410d45b725417c61070b7a6fe640c0a828c\"><div class=\"css-1qngnqa\"><div class=\"css-uj40g1\"><span role=\"img\" aria-label=\"NOW Foods, PABA, 500 mg, 100 Veg Capsules - Rakuten",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "NADH",
+    "source": "https://www.rakuten.com/shop/iherb",
+    "discovered_at": "2026-04-14T01:53:17.995649+00:00",
+    "raw_description": "",
+    "raw_context": "coupons and Cash Back\",\"image_ctaurl\":\"https://www.rakuten.com/products/neurogan-health-nadh-20-mg/00810068552096_upc\",\"image_imageurl\":\"https://product-image.ebates.com/item-gsp/34f26714ccff28c506a6a",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
   }
 ]
