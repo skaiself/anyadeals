@@ -80,13 +80,14 @@ async def validate_codes(
     # Uses the iher-pref1 cookie + recommended-items cart seeding + #coupon-input
     # form to get real eligibility signals from iHerb's React cart page.
     region_validator = IHerbRegionValidator()
-    stage2 = await region_validator.validate(survivors, regions)
+    stage2 = await region_validator.validate_detailed(survivors, regions)
     logger.info(
         "Stage 2 complete: %s",
-        {c: len(regs) for c, regs in stage2.items()},
+        {c: sum(1 for r in res if r.eligible) for c, res in stage2.items()},
     )
 
-    # Build output: merge Stage 1 discount info with Stage 2 region data.
+    # Build output: merge Stage 1 discount fallback with Stage 2 per-region
+    # data including the discount string parsed from the applied-cart HTML.
     by_code = {r["code"]: r for r in stage1}
     output: list[dict] = []
     for code in codes:
@@ -97,11 +98,26 @@ async def validate_codes(
                 "results": {"us": {"valid": False, "message": s1.get("message", "")}},
             })
             continue
-        discount = _format_discount(s1.get("discount_pct", 0), s1.get("discount_raw", 0))
-        eligible_regions = stage2.get(code, [])
+
+        stage1_discount = _format_discount(
+            s1.get("discount_pct", 0), s1.get("discount_raw", 0),
+        )
+        region_results = stage2.get(code, [])
+        eligible_regions = {r.region for r in region_results if r.eligible}
+
+        # Prefer Stage 2's HTML-extracted discount (e.g. "10% off" from the
+        # applied-count-text). Fall back to Stage 1's API discount, then to
+        # parse_discount_from_text() in the merge helper.
+        stage2_discount = next(
+            (r.discount for r in region_results if r.eligible and r.discount),
+            None,
+        )
+        discount = stage2_discount or stage1_discount
+
         if not eligible_regions:
             # Stage 2 found zero regions — fall back to US-only from Stage 1.
-            eligible_regions = ["us"]
+            eligible_regions = {"us"}
+
         results: dict[str, dict] = {}
         for reg in regions:
             if reg in eligible_regions:

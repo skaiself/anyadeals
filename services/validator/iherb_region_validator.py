@@ -256,7 +256,26 @@ class IHerbRegionValidator:
         codes: Iterable[str],
         regions: Iterable[str] | None = None,
     ) -> dict[str, list[str]]:
-        """Validate codes across regions. Returns {code: [eligible_region, ...]}."""
+        """Validate codes across regions. Returns {code: [eligible_region, ...]}.
+
+        Thin wrapper around ``validate_detailed`` that keeps the legacy
+        shape (just region codes) for backwards compatibility.
+        """
+        detailed = await self.validate_detailed(codes, regions)
+        return {code: [r.region for r in results if r.eligible]
+                for code, results in detailed.items()}
+
+    async def validate_detailed(
+        self,
+        codes: Iterable[str],
+        regions: Iterable[str] | None = None,
+    ) -> dict[str, list[RegionResult]]:
+        """Validate codes across regions, returning full per-region results.
+
+        Unlike ``validate``, the returned list includes both eligible and
+        ineligible regions plus the discount string extracted from the
+        rendered HTML of successful applies.
+        """
         codes = list(codes)
         regions = list(regions) if regions is not None else list(REGION_SCCODES)
         if not codes:
@@ -266,7 +285,7 @@ class IHerbRegionValidator:
         from playwright.async_api import async_playwright
 
         sem = asyncio.Semaphore(self.concurrency)
-        out: dict[str, list[str]] = {c: [] for c in codes}
+        out: dict[str, list[RegionResult]] = {c: [] for c in codes}
 
         async with async_playwright() as pw:
             browser = await pw.chromium.launch(
@@ -283,8 +302,7 @@ class IHerbRegionValidator:
                         if isinstance(r, Exception):
                             logger.warning("region check raised: %s", r)
                             continue
-                        if r.eligible:
-                            out[code].append(r.region)
+                        out[code].append(r)
             finally:
                 await browser.close()
 
