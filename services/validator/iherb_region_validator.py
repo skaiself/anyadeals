@@ -47,6 +47,15 @@ REGION_SCCODES: dict[str, str] = {
     "hk": "HK", "es": "ES", "pl": "PL",
 }
 
+# Region → preferred proxy URL override. Empty by default — all regions use
+# IHERB_PROXY_URL (proxy-local). Gluetun VPN proxies were tested (9001-9010
+# exposed on docker gateway 172.19.0.1) but the country-mismatch between
+# VPN exit IP and iher-pref1 cookie breaks iHerb's "Recommended for you"
+# seeding: items become non-addable when the IP country doesn't match the
+# cookie country. Keeping the hook in place for future use if we get
+# exact-country VPNs (e.g. a real DE config instead of AT).
+REGION_PROXY_MAP: dict[str, str] = {}
+
 CART_URL = "https://checkout.iherb.com/cart"
 
 # Anti-bot constants (inlined from sister project's browser.py)
@@ -328,8 +337,11 @@ class IHerbRegionValidator:
                 "locale": "en-US",
                 "ignore_https_errors": True,
             }
-            if self.proxy_url:
-                context_kwargs["proxy"] = {"server": self.proxy_url}
+            # Prefer a country-matching VPN exit when available; Cloudflare
+            # won't rate-limit these the way it does the host datacenter IP.
+            region_proxy = REGION_PROXY_MAP.get(region, self.proxy_url)
+            if region_proxy:
+                context_kwargs["proxy"] = {"server": region_proxy}
 
             context = await browser.new_context(**context_kwargs)
             await context.add_init_script(ANTI_WEBDRIVER_SCRIPT)
