@@ -5,9 +5,9 @@ import CouponTicket from '@/components/CouponTicket';
 import { getActiveCoupons, getExpiredCoupons, getDashboard, getResearchStats } from '@/lib/data';
 
 export const metadata: Metadata = {
-  title: 'How to Stack iHerb Discounts in March 2026 — AnyaDeals',
+  title: 'How to Stack iHerb Discounts in April 2026 — AnyaDeals',
   description:
-    'Learn how to stack iHerb\'s Rewards Code OFR0296 with official promo codes for up to 20% off supplements — with EU & Balkan shipping tips.',
+    'Learn how to stack iHerb\'s Rewards Code OFR0296 with official promo codes for up to 20% off supplements — worldwide shipping to 180+ countries.',
 };
 
 const SUPPLEMENTS = [
@@ -82,7 +82,7 @@ export default function IHerbCouponsPage() {
             <RevealOnScroll delay={80}>
               <h1 className="headline-lg mb-6">
                 How to Stack iHerb Discounts in{' '}
-                <em className="not-italic text-signal">March 2026</em>:{' '}
+                <em className="not-italic text-signal">April 2026</em>:{' '}
                 The Ultimate Guide.
               </h1>
             </RevealOnScroll>
@@ -90,11 +90,11 @@ export default function IHerbCouponsPage() {
             {/* Intro paragraph */}
             <RevealOnScroll delay={160}>
               <p className="text-lg text-ink-muted font-sans font-light leading-relaxed max-w-2xl border-l-2 border-signal pl-4">
-                iHerb ships to 180+ countries with competitive EU and Balkan rates.
-                For shoppers in Serbia, Croatia, Slovenia, and beyond, it remains the
-                most affordable source for quality supplements. The trick? Layering
-                a Rewards Code <em>first</em>, then applying an official promo code
-                at checkout — letting iHerb automatically pick the better deal.
+                iHerb ships to 180+ countries with fast, affordable delivery worldwide.
+                Whether you're in the US, Europe, Asia, or anywhere else, it's one of
+                the best sources for quality supplements at competitive prices. The trick?
+                Layering a Rewards Code <em>first</em>, then applying an official promo
+                code at checkout — letting iHerb automatically pick the better deal.
               </p>
             </RevealOnScroll>
           </div>
@@ -244,7 +244,7 @@ export default function IHerbCouponsPage() {
                       <code className="font-editorial font-bold text-base tracking-wider text-ink">{coupon.code}</code>
                     </td>
                     <td className="px-6 py-4 text-ink-muted text-xs uppercase tracking-wider">{coupon.type}</td>
-                    <td className="px-6 py-4 font-semibold text-signal">{coupon.discount}</td>
+                    <td className="px-6 py-4 font-semibold text-signal">{coupon.discount || <span className="text-ink-muted font-normal">—</span>}</td>
                     <td className="px-6 py-4">
                       <div className="flex flex-wrap gap-1">
                         {coupon.regions.length >= 7 ? (
@@ -377,7 +377,7 @@ export default function IHerbCouponsPage() {
             <div>
               <h2 className="headline-md font-editorial mb-2">Ready to stack?</h2>
               <p className="text-base text-ink-muted font-sans font-light max-w-md">
-                Open iHerb, build your cart, and apply codes in order. Anya&apos;s picks ship reliably to the EU &amp; Balkans.
+                Open iHerb, build your cart, and apply codes in order. Ships worldwide to 180+ countries.
               </p>
             </div>
             <a
