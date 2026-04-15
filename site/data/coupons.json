@@ -126,7 +126,7 @@
     "fail_count": 1,
     "source": "",
     "stackable_with_referral": false,
-    "notes": "Referral code \u2014 competes with OFR0296"
+    "notes": "Referral code — competes with OFR0296"
   },
   {
     "code": "C5734282",
@@ -929,7 +929,7 @@
   {
     "code": "MYAPP15",
     "type": "promo",
-    "discount": "",
+    "discount": "15% off",
     "regions": [
       "us"
     ],
@@ -947,7 +947,7 @@
   {
     "code": "GOLD120",
     "type": "promo",
-    "discount": "",
+    "discount": "10% off",
     "regions": [
       "cn",
       "hr",
@@ -1129,7 +1129,7 @@
   {
     "code": "RMB299",
     "type": "promo",
-    "discount": "\u00a530 off orders \u00a5299+",
+    "discount": "¥30 off orders ¥299+",
     "regions": [
       "us",
       "de"
@@ -1162,7 +1162,7 @@
   {
     "code": "RMB499",
     "type": "promo",
-    "discount": "\u00a550 off orders \u00a5499+",
+    "discount": "¥50 off orders ¥499+",
     "regions": [
       "us",
       "de"
@@ -1672,7 +1672,7 @@
   {
     "code": "STBEANSUK",
     "type": "promo",
-    "discount": "",
+    "discount": "20% off brand",
     "regions": [
       "us"
     ],
@@ -4780,7 +4780,7 @@
   {
     "code": "WELCOME7",
     "type": "promo",
-    "discount": "",
+    "discount": "7% off",
     "regions": [
       "cn",
       "us"
@@ -5249,7 +5249,7 @@
   {
     "code": "WELCOME10",
     "type": "promo",
-    "discount": "",
+    "discount": "10% off",
     "regions": [
       "us"
     ],
