@@ -11,9 +11,29 @@ from datetime import datetime, timezone
 
 from json_writer import (
     load_coupons_json,
+    parse_discount_from_code,
     parse_discount_from_text,
     write_coupons_json,
 )
+
+
+def _resolve_discount(raw: str, code: str) -> str:
+    """Turn whatever the validator returned into a display string.
+
+    Tries, in order: raw text (from Stage 2 HTML or Stage 1 API), text-pattern
+    parse ("20% off" anywhere in the string), then code-name inference
+    (WELCOME7 -> 7% off, GOLD120 -> not matched, CHI22 -> 22% off).
+    """
+    if raw:
+        return raw
+    amt, typ = parse_discount_from_text(code)
+    if not amt:
+        amt, typ = parse_discount_from_code(code, "percentage")
+    if amt and typ == "percentage":
+        return f"{amt}% off"
+    if amt:
+        return f"${amt} off"
+    return ""
 
 
 def load_browser_results(path: str) -> list[dict]:
@@ -64,15 +84,8 @@ def merge_browser_results(existing: list[dict], browser_results: list[dict], res
         discount = ""
         min_cart_value = 0
         if first_valid:
-            discount = first_valid.get("discount", "")
             min_cart_value = first_valid.get("min_cart", 0)
-            # If discount text is empty, try parsing from code
-            if not discount:
-                amt, typ = parse_discount_from_text(code)
-                if amt and typ == "percentage":
-                    discount = f"{amt}% off"
-                elif amt:
-                    discount = f"${amt} off"
+            discount = _resolve_discount(first_valid.get("discount", ""), code)
 
         if code in coupon_map:
             entry = coupon_map[code]
