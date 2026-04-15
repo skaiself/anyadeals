@@ -5608,5 +5608,35 @@
     "expiry_date": null,
     "confidence": "low",
     "validation_status": "pending"
+  },
+  {
+    "code": "NEWGRABPAY",
+    "source": "hotdeals",
+    "discovered_at": "2026-04-15T02:01:53.468977+00:00",
+    "raw_description": "iHerb brings you 10% OFF on all purchases, plus additional deals to enjoy.",
+    "raw_context": "hotdeals.com code NEWGRABPAY",
+    "discount_type": "percentage",
+    "discount_value": 10,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "LPP101",
+    "source": "https://www.rakuten.com/shop/iherb",
+    "discovered_at": "2026-04-15T02:01:53.468977+00:00",
+    "raw_description": "",
+    "raw_context": "coupons and Cash Back\" id=\"58d5e042d2ee29c1ac1117f03b1296c1318dac02\"><div class=\"css-1qngnqa\"><div class=\"css-uj40g1\"><span role=\"img\" aria-label=\"J.Cat Beauty, Luxe Pro Powder, LPP101 Banana, 1.5 oz",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
   }
 ]
