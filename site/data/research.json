@@ -5593,5 +5593,20 @@
     "expiry_date": null,
     "confidence": "low",
     "validation_status": "invalid"
+  },
+  {
+    "code": "DHEA",
+    "source": "https://www.rakuten.com/shop/iherb",
+    "discovered_at": "2026-04-15T01:33:07.843916+00:00",
+    "raw_description": "",
+    "raw_context": "coupons and Cash Back\" id=\"2873ca936d0acb507954cd86979bbd9d65bf7274\"><div class=\"css-1qngnqa\"><div class=\"css-uj40g1\"><span role=\"img\" aria-label=\"Vitacost, DHEA, 50 mg, 300 Capsules - Rakuten",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
   }
 ]
