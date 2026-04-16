@@ -5638,5 +5638,35 @@
     "expiry_date": null,
     "confidence": "low",
     "validation_status": "pending"
+  },
+  {
+    "code": "P760481",
+    "source": "couponfollow",
+    "discovered_at": "2026-04-16T01:15:52.966464+00:00",
+    "raw_description": "Up to 2.5% Cashback*",
+    "raw_context": "couponfollow.com/site/iherb.com#P760481",
+    "discount_type": "percentage",
+    "discount_value": 5,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "AHAS",
+    "source": "https://www.rakuten.com/shop/iherb",
+    "discovered_at": "2026-04-16T01:15:52.966464+00:00",
+    "raw_description": "",
+    "raw_context": "coupons and Cash Back\" id=\"797f631eecbd43e30d8f22d7ee79e2aee6644593\"><div class=\"css-1qngnqa\"><div class=\"css-uj40g1\"><span role=\"img\" aria-label=\"Petal Fresh, Brightening Body Scrub With AHAS, Mango",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
   }
 ]
