@@ -59,7 +59,6 @@ def merge_browser_results(existing: list[dict], browser_results: list[dict], res
     for item in browser_results:
         code = item["code"]
         results = item.get("results", {})
-        stage1_invalid = item.get("stage1_invalid", False)
 
         valid_regions: list[str] = []
         invalid_regions: list[str] = []
@@ -117,13 +116,11 @@ def merge_browser_results(existing: list[dict], browser_results: list[dict], res
             else:
                 entry["fail_count"] = entry.get("fail_count", 0) + 1
                 entry["last_failed"] = now
-                # Stage 1 (API) rejection means the code is unrecognised by
-                # iHerb — invalidate immediately, no threshold needed.
-                # Stage 2 (cart) failures use a 3-run threshold to avoid a
-                # single bad proxy/browser night wiping real codes.
-                if stage1_invalid or entry["fail_count"] >= 3:
-                    entry["status"] = "invalid"
-                    entry["regions"] = []
+                # Invalidate immediately — proxy health check and canary check
+                # in browser_validator.py ensure Stage 2 results are trustworthy
+                # before we ever reach here.
+                entry["status"] = "invalid"
+                entry["regions"] = []
 
             changes = []
             if old_status != entry["status"]:
