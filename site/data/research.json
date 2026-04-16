@@ -5668,5 +5668,35 @@
     "expiry_date": null,
     "confidence": "low",
     "validation_status": "pending"
+  },
+  {
+    "code": "JPGW25",
+    "source": "hotdeals",
+    "discovered_at": "2026-04-16T01:57:31.024441+00:00",
+    "raw_description": "Save 10% OFF at iHerb today, along with plenty of additional offers.",
+    "raw_context": "hotdeals.com code JPGW25",
+    "discount_type": "percentage",
+    "discount_value": 10,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "ZINT15",
+    "source": "hotdeals",
+    "discovered_at": "2026-04-16T01:57:31.024441+00:00",
+    "raw_description": "Enjoy a 15% off Deal on Zint Super Ingredients When You Enter This IHerb Discount Code",
+    "raw_context": "hotdeals.com code ZINT15",
+    "discount_type": "percentage",
+    "discount_value": 15,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
   }
 ]
