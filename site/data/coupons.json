@@ -1653,7 +1653,7 @@
   {
     "code": "WAGENEW",
     "type": "promo",
-    "discount": "",
+    "discount": "22% off",
     "regions": [
       "gb",
       "us"
@@ -5009,7 +5009,7 @@
   {
     "code": "GOCANADA26",
     "type": "promo",
-    "discount": "",
+    "discount": "15% off",
     "regions": [
       "ca",
       "us"
@@ -5043,7 +5043,7 @@
   {
     "code": "GOODBUY",
     "type": "promo",
-    "discount": "",
+    "discount": "22% off",
     "regions": [
       "hk",
       "tw",
