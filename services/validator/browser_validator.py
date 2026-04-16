@@ -11,7 +11,10 @@ docs/superpowers/specs/2026-04-11-iherb-validator-rescue-design.md for why
 from __future__ import annotations
 
 import logging
+import os
 from typing import Iterable
+
+import httpx
 
 from iherb_api_validator import (
     IHerbAPIValidator,
@@ -21,6 +24,35 @@ from iherb_api_validator import (
 from iherb_region_validator import IHerbRegionValidator, REGION_SCCODES
 
 logger = logging.getLogger("validator")
+
+_PROXY_HEALTH_URL = "https://www.iherb.com/robots.txt"
+_PROXY_HEALTH_TIMEOUT = 15  # seconds
+
+
+async def check_proxy_health() -> bool:
+    """Return True if the Stage 2 proxy can reach iHerb.
+
+    Makes a lightweight GET through IHERB_PROXY_URL. A failure here means
+    Stage 2 results are unreliable — we skip it rather than penalise codes.
+    If no proxy is configured, returns True (direct connection assumed OK).
+    """
+    proxy_url = os.environ.get("IHERB_PROXY_URL", "")
+    if not proxy_url:
+        return True
+    try:
+        async with httpx.AsyncClient(
+            proxy=proxy_url,
+            timeout=_PROXY_HEALTH_TIMEOUT,
+            follow_redirects=True,
+        ) as client:
+            resp = await client.get(_PROXY_HEALTH_URL)
+            ok = resp.status_code < 500
+            if not ok:
+                logger.warning("Proxy health check: HTTP %s", resp.status_code)
+            return ok
+    except Exception as exc:
+        logger.warning("Proxy health check failed: %s", exc)
+        return False
 
 ALL_REGIONS: list[str] = list(REGION_SCCODES)
 
@@ -80,6 +112,28 @@ async def validate_codes(
     # Stage 2: Playwright region checker — tests survivors across all regions.
     # Uses the iher-pref1 cookie + recommended-items cart seeding + #coupon-input
     # form to get real eligibility signals from iHerb's React cart page.
+    #
+    # Guard: if the proxy can't reach iHerb, Stage 2 results are meaningless.
+    # Skip it entirely so fail_counts aren't incremented on a proxy outage.
+    if not await check_proxy_health():
+        logger.error(
+            "Stage 2 skipped — proxy health check failed. "
+            "Returning Stage 1 results only; fail_counts unchanged."
+        )
+        # Return only Stage 1 failures (those are proxy-independent).
+        # Stage 1 survivors are omitted so merge_browser_results leaves them untouched.
+        by_code = {r["code"]: r for r in stage1}
+        output: list[dict] = []
+        for code in codes:
+            s1 = by_code.get(code, {"valid": True})
+            if not s1["valid"]:
+                output.append({
+                    "code": code,
+                    "stage1_invalid": True,
+                    "results": {"us": {"valid": False, "message": s1.get("message", "")}},
+                })
+        return output
+
     region_validator = IHerbRegionValidator()
     stage2 = await region_validator.validate_detailed(survivors, regions)
     logger.info(
