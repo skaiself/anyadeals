@@ -72,6 +72,7 @@ async def validate_codes(
             s1 = by_code.get(code, {"valid": False, "message": "no stage1 result"})
             output.append({
                 "code": code,
+                "stage1_invalid": True,
                 "results": {"us": {"valid": False, "message": s1.get("message", "")}},
             })
         return output
@@ -95,6 +96,7 @@ async def validate_codes(
         if not s1["valid"]:
             output.append({
                 "code": code,
+                "stage1_invalid": True,
                 "results": {"us": {"valid": False, "message": s1.get("message", "")}},
             })
             continue
