@@ -5698,5 +5698,35 @@
     "expiry_date": null,
     "confidence": "low",
     "validation_status": "pending"
+  },
+  {
+    "code": "W1FIF",
+    "source": "couponfollow",
+    "discovered_at": "2026-04-17T01:34:12.571951+00:00",
+    "raw_description": "couponList\" target=\"_blank\" rel=\"nofollow\" data-details-link> See Details <a class=\"btn-reveal offer-cta\" href=\"https://click.",
+    "raw_context": "couponList\" target=\"_blank\" rel=\"nofollow\" data-details-link>\n            See Details\n        </a>\n    </div>\n    <div class=\"right\" data-reveal data-W1FIF=\"NDcsNTAsMzcsMTEyLDExOCw3NQ==\">\n        <a c",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "30PRO",
+    "source": "gutschein/welt.de",
+    "discovered_at": "2026-04-17T01:34:12.571951+00:00",
+    "raw_description": "iHerb Rabattcode: 30%",
+    "raw_context": "gutscheine.welt.de: iHerb Rabattcode: 30%",
+    "discount_type": "percentage",
+    "discount_value": 30,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
   }
 ]
