@@ -2,11 +2,11 @@
   "affiliate_code": "OFR0296",
   "jobs": {
     "researcher": {
-      "last_run": "2026-04-17T01:52:01.405983+00:00",
+      "last_run": "2026-04-17T01:55:53.372150+00:00",
       "status": "success",
       "next_run": "2026-03-22T18:00:00Z",
       "last_error": null,
-      "codes_found": 164
+      "codes_found": 159
     },
     "validator": {
       "last_run": "2026-04-16T07:00:37.190381+00:00",
@@ -27,6 +27,6 @@
     "total_active_codes": 0,
     "total_expired_codes": 9,
     "total_posts_this_week": 0,
-    "last_deploy": "2026-04-17T01:52:01.423272+00:00"
+    "last_deploy": "2026-04-17T01:55:53.387151+00:00"
   }
 }
