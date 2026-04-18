@@ -5728,5 +5728,35 @@
     "expiry_date": null,
     "confidence": "low",
     "validation_status": "invalid"
+  },
+  {
+    "code": "MLT8850",
+    "source": "reddit/search",
+    "discovered_at": "2026-04-18T01:02:26.783416+00:00",
+    "raw_description": "Save Money on iHerb \u2013 Active Promo Code MLT8850 for 10% Off Everything",
+    "raw_context": "Want to **save money on iHerb**? Use the active promo code **MLT8850** and get **10% OFF** your purchase instantly.\n\nThis is one of the most consistent and reliable iHerb coupon codes, working across categories like:\n\n* Immune support\n* Weight management\n* Superfoods\n* Hair, skin &amp; nails supplem",
+    "discount_type": "percentage",
+    "discount_value": 10,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "TERE22",
+    "source": "reddit/search",
+    "discovered_at": "2026-04-18T01:02:26.783416+00:00",
+    "raw_description": "Newest &amp; Best April iHerb Working Codes",
+    "raw_context": "I am back again to share some new iHerb promo codes before they expire :) I've seen so many good ones lately but I've forgotten to post! Lots of wellness, vitamins, skincare, makeup products available right now too !! \n\nUse the referral **DVO4205** first, in order to stack &amp; maximize your saving",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
   }
 ]
