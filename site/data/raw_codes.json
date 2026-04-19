@@ -252,12 +252,6 @@
     "raw_context": "slickdeals.net code NZXT"
   },
   {
-    "code": "BRUNT",
-    "source": "slickdeals",
-    "raw_description": "",
-    "raw_context": "slickdeals.net code BRUNT"
-  },
-  {
     "code": "SHEIN",
     "source": "slickdeals",
     "raw_description": "",
@@ -270,33 +264,39 @@
     "raw_context": "slickdeals.net code CHITA"
   },
   {
+    "code": "BRUNT",
+    "source": "slickdeals",
+    "raw_description": "",
+    "raw_context": "slickdeals.net code BRUNT"
+  },
+  {
     "code": "MERIT",
     "source": "slickdeals",
     "raw_description": "",
     "raw_context": "slickdeals.net code MERIT"
   },
   {
-    "code": "DRIM",
-    "source": "hotdeals",
-    "raw_description": "Enjoy 10% OFF a wide range of Vitamins &amp; Supplements and Home &amp; Garden at iHerb, and explore even more categories while you shop.",
-    "raw_context": "hotdeals.com code DRIM"
+    "code": "EXPERIENCE",
+    "source": "reddit/r/iherb",
+    "raw_description": "BAD EXPERIENCE with IHERB AI Chatbot",
+    "raw_context": "Canadian company UNIUNI is seeking to expand operations in the United States. This is one company that Canada should be ashamed of and not allow to represent the great country of Canada. (My opinion, not a fact, not a slur on Canada.)\n\nOn a recent order from IHERB (\\*) com, delivery was to be made u"
   },
   {
-    "code": "DRJAMES",
-    "source": "hotdeals",
-    "raw_description": "Save 5% OFF at iHerb today and explore additional items.",
-    "raw_context": "hotdeals.com code DRJAMES"
+    "code": "UNIUNI",
+    "source": "reddit/r/iherb",
+    "raw_description": "BAD EXPERIENCE with IHERB AI Chatbot",
+    "raw_context": "Canadian company UNIUNI is seeking to expand operations in the United States. This is one company that Canada should be ashamed of and not allow to represent the great country of Canada. (My opinion, not a fact, not a slur on Canada.)\n\nOn a recent order from IHERB (\\*) com, delivery was to be made u"
   },
   {
-    "code": "NEW20",
-    "source": "hotdeals",
-    "raw_description": "Enjoy 10% OFF your first order. Find top Baby Care selections and Beauty &amp; Personal Care essentials, with other curated items.",
-    "raw_context": "hotdeals.com code NEW20"
+    "code": "CAPS",
+    "source": "reddit/r/iherb",
+    "raw_description": "BAD EXPERIENCE with IHERB AI Chatbot",
+    "raw_context": "Canadian company UNIUNI is seeking to expand operations in the United States. This is one company that Canada should be ashamed of and not allow to represent the great country of Canada. (My opinion, not a fact, not a slur on Canada.)\n\nOn a recent order from IHERB (\\*) com, delivery was to be made u"
   },
   {
-    "code": "GOLD60",
-    "source": "hotdeals",
-    "raw_description": "Discover 10% OFF Household Supplies and Essential Oils, plus many more options at iHerb.",
-    "raw_context": "hotdeals.com code GOLD60"
+    "code": "ANGRY",
+    "source": "reddit/r/iherb",
+    "raw_description": "BAD EXPERIENCE with IHERB AI Chatbot",
+    "raw_context": "Canadian company UNIUNI is seeking to expand operations in the United States. This is one company that Canada should be ashamed of and not allow to represent the great country of Canada. (My opinion, not a fact, not a slur on Canada.)\n\nOn a recent order from IHERB (\\*) com, delivery was to be made u"
   }
 ]
