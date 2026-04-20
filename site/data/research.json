@@ -5758,5 +5758,20 @@
     "expiry_date": null,
     "confidence": "low",
     "validation_status": "valid"
+  },
+  {
+    "code": "P028085",
+    "source": "couponfollow",
+    "discovered_at": "2026-04-20T01:09:18.376790+00:00",
+    "raw_description": "promo%2F760481&amp;dn=iherb.com&amp;tr.ca=P028085&amp;tr.idx=6&amp;tr.co=site%2F",
+    "raw_context": "promo%2F760481&amp;dn=iherb.com&amp;tr.ca=P028085&amp;tr.idx=6&amp;tr.co=site%2F",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
   }
 ]

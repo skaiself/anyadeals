@@ -84,15 +84,9 @@
     "raw_context": "couponfollow.com/site/iherb.com#P760480"
   },
   {
-    "code": "C6491480",
-    "source": "couponfollow",
-    "raw_description": "Get 15% Off Probiotics",
-    "raw_context": "couponfollow.com/site/iherb.com#C6491480"
-  },
-  {
     "code": "P757804",
     "source": "couponfollow",
-    "raw_description": "15% Off with iHerb Discount Code",
+    "raw_description": "Get 15% Off Probiotics",
     "raw_context": "couponfollow.com/site/iherb.com#P757804"
   },
   {
@@ -138,6 +132,12 @@
     "raw_context": "couponfollow.com/site/iherb.com#P751315"
   },
   {
+    "code": "P749288",
+    "source": "couponfollow",
+    "raw_description": "15% Off Immune Support",
+    "raw_context": "couponfollow.com/site/iherb.com#P749288"
+  },
+  {
     "code": "DOCTYPE",
     "source": "couponfollow",
     "raw_description": "<link rel=\"preconnect dns-prefetch\" href=\"https//static.",
@@ -154,6 +154,12 @@
     "source": "couponfollow",
     "raw_description": "CODE \u2022 &#10004; Verified <a class=\"link details-link\" href=\"https://click.",
     "raw_context": "CODE \u2022 &#10004; Verified\n        </div>\n        <a class=\"link details-link\" href=\"https://click."
+  },
+  {
+    "code": "P028085",
+    "source": "couponfollow",
+    "raw_description": "promo%2F760481&amp;dn=iherb.com&amp;tr.ca=P028085&amp;tr.idx=6&amp;tr.co=site%2F",
+    "raw_context": "promo%2F760481&amp;dn=iherb.com&amp;tr.ca=P028085&amp;tr.idx=6&amp;tr.co=site%2F"
   },
   {
     "code": "PROMO",
@@ -180,10 +186,10 @@
     "raw_context": "discount-box ex\" data-nosnippet=\"true\">\n        \n        \n        <div class=\"text\">FREE</div>\n        <div class=\"suffix\">SHIPPING</div>\n    </div>\n    <div class=\"offer-details\">\n        \n        <h"
   },
   {
-    "code": "YETI",
+    "code": "COACH",
     "source": "couponfollow",
-    "raw_description": "codes YETI",
-    "raw_context": "codes</a></li>\n            <li><a class=\"link\" href=\"/site/yeti.com\">YETI"
+    "raw_description": "codes COACH",
+    "raw_context": "codes</a></li>\n            <li><a class=\"link\" href=\"/site/coach.com\">COACH"
   },
   {
     "code": "DOCTYPE",
@@ -276,27 +282,21 @@
     "raw_context": "slickdeals.net code MERIT"
   },
   {
-    "code": "EXPERIENCE",
-    "source": "reddit/r/iherb",
-    "raw_description": "BAD EXPERIENCE with IHERB AI Chatbot",
-    "raw_context": "Canadian company UNIUNI is seeking to expand operations in the United States. This is one company that Canada should be ashamed of and not allow to represent the great country of Canada. (My opinion, not a fact, not a slur on Canada.)\n\nOn a recent order from IHERB (\\*) com, delivery was to be made u"
+    "code": "DOCTYPE",
+    "source": "https://www.rakuten.com/shop/iherb",
+    "raw_description": "",
+    "raw_context": "<!DOCTYPE html><html><head><meta charSet=\"utf-8\"/><meta name=\"X-UA-Compatible\" http-equiv=\"X-UA-Compatible\" content=\"chrome=1,IE=edge\"/><meta name=\"Content-Type\" http-equiv=\"Content-Type\" content=\"tex"
   },
   {
-    "code": "UNIUNI",
-    "source": "reddit/r/iherb",
-    "raw_description": "BAD EXPERIENCE with IHERB AI Chatbot",
-    "raw_context": "Canadian company UNIUNI is seeking to expand operations in the United States. This is one company that Canada should be ashamed of and not allow to represent the great country of Canada. (My opinion, not a fact, not a slur on Canada.)\n\nOn a recent order from IHERB (\\*) com, delivery was to be made u"
+    "code": "GENERIC",
+    "source": "https://www.rakuten.com/shop/iherb",
+    "raw_description": "",
+    "raw_context": "discounts offered directly by iHerb.  Hmmmm</p><p class=\"css-1me75tf\">Mimi Fein</p></div></div></div></div></div></div><div class=\"css-1yxmrz6\"><div class=\"css-rqgsqp\"><div template=\"GENERIC\" class=\"c"
   },
   {
-    "code": "CAPS",
-    "source": "reddit/r/iherb",
-    "raw_description": "BAD EXPERIENCE with IHERB AI Chatbot",
-    "raw_context": "Canadian company UNIUNI is seeking to expand operations in the United States. This is one company that Canada should be ashamed of and not allow to represent the great country of Canada. (My opinion, not a fact, not a slur on Canada.)\n\nOn a recent order from IHERB (\\*) com, delivery was to be made u"
-  },
-  {
-    "code": "ANGRY",
-    "source": "reddit/r/iherb",
-    "raw_description": "BAD EXPERIENCE with IHERB AI Chatbot",
-    "raw_context": "Canadian company UNIUNI is seeking to expand operations in the United States. This is one company that Canada should be ashamed of and not allow to represent the great country of Canada. (My opinion, not a fact, not a slur on Canada.)\n\nOn a recent order from IHERB (\\*) com, delivery was to be made u"
+    "code": "WOW123",
+    "source": "https://www.rakuten.com/shop/iherb",
+    "raw_description": "",
+    "raw_context": "code WOW123 at checkout to receive your"
   }
 ]
