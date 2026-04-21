@@ -5773,5 +5773,20 @@
     "expiry_date": null,
     "confidence": "low",
     "validation_status": "invalid"
+  },
+  {
+    "code": "MAR26WBBPC",
+    "source": "hotdeals",
+    "discovered_at": "2026-04-21T01:55:48.114045+00:00",
+    "raw_description": "15% off Women&#39;s Health, Beauty, Bath &amp; Personal Care",
+    "raw_context": "hotdeals.com code MAR26WBBPC",
+    "discount_type": "percentage",
+    "discount_value": 15,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
   }
 ]
