@@ -9,10 +9,10 @@
       "codes_found": 181
     },
     "validator": {
-      "last_run": "2026-04-21T07:56:47.821177+00:00",
-      "status": "success",
+      "last_run": "2026-04-22T07:44:07.028591+00:00",
+      "status": "failure",
       "next_run": "2026-03-22T20:00:00Z",
-      "last_error": null,
+      "last_error": "",
       "codes_validated": 0
     },
     "poster": {
@@ -27,6 +27,6 @@
     "total_active_codes": 0,
     "total_expired_codes": 9,
     "total_posts_this_week": 0,
-    "last_deploy": "2026-04-22T07:00:00.008896+00:00"
+    "last_deploy": "2026-04-22T08:00:00.020002+00:00"
   }
 }
