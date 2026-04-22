@@ -5848,5 +5848,110 @@
     "expiry_date": null,
     "confidence": "low",
     "validation_status": "pending"
+  },
+  {
+    "code": "MEGAFOOD25",
+    "source": "hotdeals",
+    "discovered_at": "2026-04-22T01:55:39.242078+00:00",
+    "raw_description": "Save 30% OFF on Sports &amp; Fitness and Personal Care while browsing iHerb&#39;s exclusive offers.",
+    "raw_context": "hotdeals.com code MEGAFOOD25",
+    "discount_type": "percentage",
+    "discount_value": 30,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "HEALTH",
+    "source": "hotdeals",
+    "discovered_at": "2026-04-22T01:55:39.242078+00:00",
+    "raw_description": "",
+    "raw_context": "hotdeals.com code HEALTH",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "APREUAPP",
+    "source": "hotdeals",
+    "discovered_at": "2026-04-22T01:55:39.242078+00:00",
+    "raw_description": "Get 20% OFF your order today at iHerb and browse even more offers.",
+    "raw_context": "hotdeals.com code APREUAPP",
+    "discount_type": "percentage",
+    "discount_value": 20,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "KZAUG25",
+    "source": "hotdeals",
+    "discovered_at": "2026-04-22T01:55:39.242078+00:00",
+    "raw_description": "Take 10% OFF now at iHerb and explore additional deals and savings.",
+    "raw_context": "hotdeals.com code KZAUG25",
+    "discount_type": "percentage",
+    "discount_value": 10,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "TREND24",
+    "source": "hotdeals",
+    "discovered_at": "2026-04-22T01:55:39.242078+00:00",
+    "raw_description": "Get up to 44% off Trending Wellness Products with 20% off",
+    "raw_context": "hotdeals.com code TREND24",
+    "discount_type": "percentage",
+    "discount_value": 44,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "OCTSUPP24",
+    "source": "hotdeals",
+    "discovered_at": "2026-04-22T01:55:39.242078+00:00",
+    "raw_description": "Receive an Additional 25% off Your Order",
+    "raw_context": "hotdeals.com code OCTSUPP24",
+    "discount_type": "percentage",
+    "discount_value": 25,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "SEOL26",
+    "source": "hotdeals",
+    "discovered_at": "2026-04-22T01:55:39.242078+00:00",
+    "raw_description": "Shop Sitewide Now\u2014Enjoy 25% off on Every Item",
+    "raw_context": "hotdeals.com code SEOL26",
+    "discount_type": "percentage",
+    "discount_value": 25,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
   }
 ]
