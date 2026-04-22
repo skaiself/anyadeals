@@ -5788,5 +5788,65 @@
     "expiry_date": null,
     "confidence": "low",
     "validation_status": "invalid"
+  },
+  {
+    "code": "DMAPRIL20",
+    "source": "reddit/search",
+    "discovered_at": "2026-04-22T01:28:28.257835+00:00",
+    "raw_description": "(April 20-25) Best &amp; Newest iHerb Promo Codes!",
+    "raw_context": "Hi! This is gonna be an updated post, I've found more new iHerb promo codes so I am here to share them before they expire :) the USA in particular has such good deals right now I'm jealous lol! I've also seen a lot of good deals for self care, bath &amp; body, wellness in general, makeup and skincar",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "SGJANE22",
+    "source": "reddit/search",
+    "discovered_at": "2026-04-22T01:28:28.257835+00:00",
+    "raw_description": "(April 20-25) Best &amp; Newest iHerb Promo Codes!",
+    "raw_context": "Hi! This is gonna be an updated post, I've found more new iHerb promo codes so I am here to share them before they expire :) the USA in particular has such good deals right now I'm jealous lol! I've also seen a lot of good deals for self care, bath &amp; body, wellness in general, makeup and skincar",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "IHERB326",
+    "source": "reddit/search",
+    "discovered_at": "2026-04-22T01:28:28.257835+00:00",
+    "raw_description": "(April 20-25) Best &amp; Newest iHerb Promo Codes!",
+    "raw_context": "Hi! This is gonna be an updated post, I've found more new iHerb promo codes so I am here to share them before they expire :) the USA in particular has such good deals right now I'm jealous lol! I've also seen a lot of good deals for self care, bath &amp; body, wellness in general, makeup and skincar",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "GABA",
+    "source": "https://www.rakuten.com/shop/iherb",
+    "discovered_at": "2026-04-22T01:28:28.257835+00:00",
+    "raw_description": "",
+    "raw_context": "coupons and Cash Back\" id=\"9c74ee95a3ed42dcc5a02d0391e054e39c353483\"><div class=\"css-1qngnqa\"><div class=\"css-uj40g1\"><span role=\"img\" aria-label=\"NOW Foods, GABA With Vitamin B-6, 200 Veg Capsules -",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
   }
 ]
