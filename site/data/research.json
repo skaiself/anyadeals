@@ -5953,5 +5953,65 @@
     "expiry_date": null,
     "confidence": "low",
     "validation_status": "invalid"
+  },
+  {
+    "code": "KKI2241",
+    "source": "reddit/search",
+    "discovered_at": "2026-04-23T01:12:54.304798+00:00",
+    "raw_description": "iHerb referral code: KKI2241 \ud83e\udd17\ud83e\udd17\ud83e\udd17",
+    "raw_context": "iHerb referral code: KKI2241 \ud83e\udd17\ud83e\udd17\ud83e\udd17",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "OIF7186",
+    "source": "reddit/search",
+    "discovered_at": "2026-04-23T01:12:54.304798+00:00",
+    "raw_description": "iHerb coupon code for international shipping discounts 2026 OIF7186 \u2013 save 10% on global health products",
+    "raw_context": "Searching for an **iHerb coupon code for international shipping discounts in 2026**? Use **OIF7186** to get an instant **10% off** your order, no matter where you\u2019re shopping from.\n\nThis long-tail optimized code is ideal for:\n\n* International customers looking for reliable iHerb discounts\n* Lowering",
+    "discount_type": "percentage",
+    "discount_value": 10,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "FINAL",
+    "source": "reddit/search",
+    "discovered_at": "2026-04-23T01:12:54.304798+00:00",
+    "raw_description": "Best iHerb Promo Code April 2026 \u2014 Maximum Verified Discounts Worldwide",
+    "raw_context": "If you need a\u00a0**best iHerb promo code April 2026**, the most reliable option right now is DMU6301 code:\n\n# \u2b50 iHerb Promo Code 2026 (Worldwide) \u2014 DMU6301\n\n**\ud83d\udc49 DMU6301 \u2014 10% OFF everything**\n\n\u2714 Works\u00a0**worldwide (all countries)**  \n\u2714\u00a0**No minimum order**\u00a0(even $5 works)  \n\u2714 Active in\u00a0**April 2026 and ",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "SPRINGSUPP",
+    "source": "https://www.rakuten.com/shop/iherb",
+    "discovered_at": "2026-04-23T01:12:54.304798+00:00",
+    "raw_description": "",
+    "raw_context": "code\":\"SPRINGSUPP\",\"",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
   }
 ]
