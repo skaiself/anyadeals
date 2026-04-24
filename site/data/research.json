@@ -6013,5 +6013,35 @@
     "expiry_date": null,
     "confidence": "low",
     "validation_status": "valid"
+  },
+  {
+    "code": "C6507866",
+    "source": "couponfollow",
+    "discovered_at": "2026-04-24T01:15:47.694444+00:00",
+    "raw_description": "Save 15% Off Your Order With Promo Code",
+    "raw_context": "couponfollow.com/site/iherb.com#C6507866",
+    "discount_type": "percentage",
+    "discount_value": 15,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "P761830",
+    "source": "couponfollow",
+    "discovered_at": "2026-04-24T01:15:47.694444+00:00",
+    "raw_description": "Extra 10% Off on Orders $60&#x2B;",
+    "raw_context": "couponfollow.com/site/iherb.com#P761830",
+    "discount_type": "percentage",
+    "discount_value": 10,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
   }
 ]
