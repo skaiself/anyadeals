@@ -6003,7 +6003,7 @@
     "code": "SPRINGSUPP",
     "source": "https://www.rakuten.com/shop/iherb",
     "discovered_at": "2026-04-23T01:12:54.304798+00:00",
-    "raw_description": "",
+    "raw_description": "Take advantage of 10% OFF savings sitewide at iHerb. Don&#39;t miss out on these great deals!",
     "raw_context": "code\":\"SPRINGSUPP\",\"",
     "discount_type": "unknown",
     "discount_value": 0,
@@ -6037,6 +6037,21 @@
     "raw_context": "couponfollow.com/site/iherb.com#P761830",
     "discount_type": "percentage",
     "discount_value": 10,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "FAMA26",
+    "source": "hotdeals",
+    "discovered_at": "2026-04-24T01:57:20.147684+00:00",
+    "raw_description": "Get 20% OFF today at iHerb and discover a wide range of deals.",
+    "raw_context": "hotdeals.com code FAMA26",
+    "discount_type": "percentage",
+    "discount_value": 20,
     "regions": [
       "us"
     ],
