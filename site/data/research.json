@@ -6058,5 +6058,35 @@
     "expiry_date": null,
     "confidence": "low",
     "validation_status": "valid"
+  },
+  {
+    "code": "C6198677",
+    "source": "couponfollow",
+    "discovered_at": "2026-04-25T01:22:26.033682+00:00",
+    "raw_description": "Up to 2.5% Cashback*",
+    "raw_context": "couponfollow.com/site/iherb.com#C6198677",
+    "discount_type": "percentage",
+    "discount_value": 5,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "ASICS",
+    "source": "couponfollow",
+    "discovered_at": "2026-04-25T01:22:26.033682+00:00",
+    "raw_description": "codes ASICS",
+    "raw_context": "codes</a></li>\n            <li><a class=\"link\" href=\"/site/asics.com\">ASICS",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
   }
 ]
