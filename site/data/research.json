@@ -6088,5 +6088,35 @@
     "expiry_date": null,
     "confidence": "low",
     "validation_status": "invalid"
+  },
+  {
+    "code": "RAPIDFIRE",
+    "source": "https://www.rakuten.com/shop/iherb",
+    "discovered_at": "2026-04-27T01:26:51.476757+00:00",
+    "raw_description": "",
+    "raw_context": "coupons and Cash Back\" id=\"b914278a494f70b9ca3782b25dfad7c66d97b20a\"><div class=\"css-1qngnqa\"><div class=\"css-uj40g1\"><span role=\"img\" aria-label=\"RAPIDFIRE, Collagen Creamer, Unflavored, 7.65 oz (217",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "TXTR",
+    "source": "https://www.rakuten.com/shop/iherb",
+    "discovered_at": "2026-04-27T01:26:51.476757+00:00",
+    "raw_description": "",
+    "raw_context": "coupons and Cash Back\" id=\"7c7dd2469380d666b53d405c852d2a7e3cf95e74\"><div class=\"css-1qngnqa\"><div class=\"css-uj40g1\"><span role=\"img\" aria-label=\"Cantu, TXTR\u2122, Cleansing Oil Shampoo, Color Treated Ha",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
   }
 ]

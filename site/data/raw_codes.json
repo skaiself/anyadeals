@@ -186,6 +186,12 @@
     "raw_context": "codes</a></li>\n            <li><a class=\"link\" href=\"/site/asics.com\">ASICS"
   },
   {
+    "code": "YETI",
+    "source": "couponfollow",
+    "raw_description": "coupons YETI",
+    "raw_context": "coupons</a></li>\n            <li><a class=\"link\" href=\"/site/yeti.com\">YETI"
+  },
+  {
     "code": "DOCTYPE",
     "source": "slickdeals",
     "raw_description": "",
@@ -258,16 +264,16 @@
     "raw_context": "slickdeals.net code SHEIN"
   },
   {
-    "code": "BRUNT",
-    "source": "slickdeals",
-    "raw_description": "",
-    "raw_context": "slickdeals.net code BRUNT"
-  },
-  {
     "code": "CHITA",
     "source": "slickdeals",
     "raw_description": "",
     "raw_context": "slickdeals.net code CHITA"
+  },
+  {
+    "code": "BRUNT",
+    "source": "slickdeals",
+    "raw_description": "",
+    "raw_context": "slickdeals.net code BRUNT"
   },
   {
     "code": "MERIT",
@@ -289,12 +295,6 @@
   },
   {
     "code": "CAPS",
-    "source": "reddit/r/iherb",
-    "raw_description": "BAD EXPERIENCE with IHERB AI Chatbot",
-    "raw_context": "Canadian company UNIUNI is seeking to expand operations in the United States. This is one company that Canada should be ashamed of and not allow to represent the great country of Canada. (My opinion, not a fact, not a slur on Canada.)\n\nOn a recent order from IHERB (\\*) com, delivery was to be made u"
-  },
-  {
-    "code": "ANGRY",
     "source": "reddit/r/iherb",
     "raw_description": "BAD EXPERIENCE with IHERB AI Chatbot",
     "raw_context": "Canadian company UNIUNI is seeking to expand operations in the United States. This is one company that Canada should be ashamed of and not allow to represent the great country of Canada. (My opinion, not a fact, not a slur on Canada.)\n\nOn a recent order from IHERB (\\*) com, delivery was to be made u"
