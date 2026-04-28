@@ -6118,5 +6118,80 @@
     "expiry_date": null,
     "confidence": "low",
     "validation_status": "invalid"
+  },
+  {
+    "code": "KRFA26",
+    "source": "hotdeals",
+    "discovered_at": "2026-04-28T01:56:18.262950+00:00",
+    "raw_description": "Save 20% OFF at iHerb today, along with plenty of additional offers.",
+    "raw_context": "hotdeals.com code KRFA26",
+    "discount_type": "percentage",
+    "discount_value": 20,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "GABBY",
+    "source": "hotdeals",
+    "discovered_at": "2026-04-28T01:56:18.262950+00:00",
+    "raw_description": "Take 10% OFF now at iHerb, plus discover more exciting deals.",
+    "raw_context": "hotdeals.com code GABBY",
+    "discount_type": "percentage",
+    "discount_value": 10,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "FITASH",
+    "source": "hotdeals",
+    "discovered_at": "2026-04-28T01:56:18.262950+00:00",
+    "raw_description": "Worked in 2h \u2022 Avg. Saved $27.66",
+    "raw_context": "hotdeals.com code FITASH",
+    "discount_type": "fixed",
+    "discount_value": 27,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "DUMPLING",
+    "source": "hotdeals",
+    "discovered_at": "2026-04-28T01:56:18.262950+00:00",
+    "raw_description": "Worked in 2h \u2022 Avg. Saved $19.14",
+    "raw_context": "hotdeals.com code DUMPLING",
+    "discount_type": "fixed",
+    "discount_value": 19,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "DETOX25",
+    "source": "hotdeals",
+    "discovered_at": "2026-04-28T01:56:18.262950+00:00",
+    "raw_description": "iHerb has 30% OFF Vitamins &amp; Supplements and Natural Remedies, along with other great selections throughout the store.",
+    "raw_context": "hotdeals.com code DETOX25",
+    "discount_type": "percentage",
+    "discount_value": 30,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
   }
 ]
