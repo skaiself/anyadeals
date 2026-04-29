@@ -837,7 +837,7 @@
     ],
     "expiry_date": null,
     "confidence": "low",
-    "validation_status": "valid"
+    "validation_status": "invalid"
   },
   {
     "code": "GOLD60",
@@ -852,7 +852,7 @@
     ],
     "expiry_date": null,
     "confidence": "low",
-    "validation_status": "valid"
+    "validation_status": "invalid"
   },
   {
     "code": "GOLD120",
@@ -867,7 +867,7 @@
     ],
     "expiry_date": null,
     "confidence": "low",
-    "validation_status": "valid"
+    "validation_status": "invalid"
   },
   {
     "code": "THEDAILYBEAST",
@@ -1797,7 +1797,7 @@
     ],
     "expiry_date": null,
     "confidence": "low",
-    "validation_status": "valid"
+    "validation_status": "invalid"
   },
   {
     "code": "BAK22",
@@ -1887,7 +1887,7 @@
     ],
     "expiry_date": null,
     "confidence": "low",
-    "validation_status": "valid"
+    "validation_status": "invalid"
   },
   {
     "code": "STBEANSUK",
@@ -1902,7 +1902,7 @@
     ],
     "expiry_date": null,
     "confidence": "low",
-    "validation_status": "valid"
+    "validation_status": "invalid"
   },
   {
     "code": "GOLD100",
@@ -5007,7 +5007,7 @@
     ],
     "expiry_date": null,
     "confidence": "low",
-    "validation_status": "valid"
+    "validation_status": "invalid"
   },
   {
     "code": "TODAY",
@@ -5232,7 +5232,7 @@
     ],
     "expiry_date": null,
     "confidence": "low",
-    "validation_status": "valid"
+    "validation_status": "invalid"
   },
   {
     "code": "SKINBEE50",
@@ -5262,7 +5262,7 @@
     ],
     "expiry_date": null,
     "confidence": "low",
-    "validation_status": "valid"
+    "validation_status": "invalid"
   },
   {
     "code": "CHI22",
@@ -5457,7 +5457,7 @@
     ],
     "expiry_date": null,
     "confidence": "low",
-    "validation_status": "valid"
+    "validation_status": "invalid"
   },
   {
     "code": "RAZI",
@@ -5757,7 +5757,7 @@
     ],
     "expiry_date": null,
     "confidence": "low",
-    "validation_status": "valid"
+    "validation_status": "invalid"
   },
   {
     "code": "P028085",
@@ -5802,7 +5802,7 @@
     ],
     "expiry_date": null,
     "confidence": "low",
-    "validation_status": "valid"
+    "validation_status": "invalid"
   },
   {
     "code": "SGJANE22",
@@ -5817,7 +5817,7 @@
     ],
     "expiry_date": null,
     "confidence": "low",
-    "validation_status": "valid"
+    "validation_status": "invalid"
   },
   {
     "code": "IHERB326",
@@ -5832,7 +5832,7 @@
     ],
     "expiry_date": null,
     "confidence": "low",
-    "validation_status": "valid"
+    "validation_status": "invalid"
   },
   {
     "code": "GABA",
@@ -5892,7 +5892,7 @@
     ],
     "expiry_date": null,
     "confidence": "low",
-    "validation_status": "valid"
+    "validation_status": "invalid"
   },
   {
     "code": "KZAUG25",
@@ -6012,7 +6012,7 @@
     ],
     "expiry_date": null,
     "confidence": "low",
-    "validation_status": "valid"
+    "validation_status": "invalid"
   },
   {
     "code": "C6507866",
@@ -6057,7 +6057,7 @@
     ],
     "expiry_date": null,
     "confidence": "low",
-    "validation_status": "valid"
+    "validation_status": "invalid"
   },
   {
     "code": "C6198677",
@@ -6132,7 +6132,7 @@
     ],
     "expiry_date": null,
     "confidence": "low",
-    "validation_status": "valid"
+    "validation_status": "invalid"
   },
   {
     "code": "GABBY",
@@ -6207,7 +6207,7 @@
     ],
     "expiry_date": null,
     "confidence": "low",
-    "validation_status": "pending"
+    "validation_status": "invalid"
   },
   {
     "code": "DRBEST26",
@@ -6222,6 +6222,6 @@
     ],
     "expiry_date": null,
     "confidence": "low",
-    "validation_status": "pending"
+    "validation_status": "invalid"
   }
 ]
