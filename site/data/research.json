@@ -6193,5 +6193,35 @@
     "expiry_date": null,
     "confidence": "low",
     "validation_status": "invalid"
+  },
+  {
+    "code": "20COLLAGENDE",
+    "source": "gutschein/welt.de",
+    "discovered_at": "2026-04-29T01:04:09.284950+00:00",
+    "raw_description": "Erhalten Sie 20% auf Kollagen-Pr\u00e4parate mit diesem iHerb Gutscheincode",
+    "raw_context": "gutscheine.welt.de: Erhalten Sie 20% auf Kollagen-Pr\u00e4parate mit diesem iHerb Gutscheincode",
+    "discount_type": "percentage",
+    "discount_value": 20,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "DRBEST26",
+    "source": "gutschein/welt.de",
+    "discovered_at": "2026-04-29T01:04:09.284950+00:00",
+    "raw_description": "20% Rabatt auf Doctor's Best Supplements mit unserem iHerb Gutschein erhalten",
+    "raw_context": "gutscheine.welt.de: 20% Rabatt auf Doctor's Best Supplements mit unserem iHerb Gutschein erhalten",
+    "discount_type": "percentage",
+    "discount_value": 20,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
   }
 ]
