@@ -6237,7 +6237,7 @@
     ],
     "expiry_date": null,
     "confidence": "low",
-    "validation_status": "pending"
+    "validation_status": "valid"
   },
   {
     "code": "MULTIPLEUSEMAY26WBBP",
@@ -6252,7 +6252,7 @@
     ],
     "expiry_date": null,
     "confidence": "low",
-    "validation_status": "pending"
+    "validation_status": "invalid"
   },
   {
     "code": "SHARIAH",
@@ -6267,7 +6267,7 @@
     ],
     "expiry_date": null,
     "confidence": "low",
-    "validation_status": "pending"
+    "validation_status": "invalid"
   },
   {
     "code": "LAURENROSE",
@@ -6282,7 +6282,7 @@
     ],
     "expiry_date": null,
     "confidence": "low",
-    "validation_status": "pending"
+    "validation_status": "invalid"
   },
   {
     "code": "KTR4420",
@@ -6297,6 +6297,6 @@
     ],
     "expiry_date": null,
     "confidence": "low",
-    "validation_status": "pending"
+    "validation_status": "invalid"
   }
 ]
