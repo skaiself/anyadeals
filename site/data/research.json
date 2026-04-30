@@ -6228,8 +6228,23 @@
     "code": "MAY26WBBPC",
     "source": "https://www.rakuten.com/shop/iherb",
     "discovered_at": "2026-04-30T01:27:05.699764+00:00",
-    "raw_description": "",
+    "raw_description": "MAY26WBBPC\" data-ga-creative_name=\"womens-health_0429\" data-ga-index=\"1\" data-ga-creative_slot=\"promoLandingPrimary\" title=\"Women\u2019s Health\" aria-label=\"20% off women\u2019s health and beauty products with ",
     "raw_context": "code\":\"MAY26WBBPC\",\"",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "MULTIPLEUSEMAY26WBBP",
+    "source": "iherb_official",
+    "discovered_at": "2026-04-30T01:38:10.736296+00:00",
+    "raw_description": ";} <a href=\"https://www.iherb.com/c/womens-health-bbpc?soa=true&pcode=MAY26WBBPC\" class=\"cms-banner-wrapper-root-link\" data-ga-promotion_id=\"107453\" data-ga-promotion_name=\"PCodeMultipleUseMAY26WBBPC\"",
+    "raw_context": "iherb.com official: MULTIPLEUSEMAY26WBBP",
     "discount_type": "unknown",
     "discount_value": 0,
     "regions": [
