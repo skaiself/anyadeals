@@ -6253,5 +6253,35 @@
     "expiry_date": null,
     "confidence": "low",
     "validation_status": "pending"
+  },
+  {
+    "code": "SHARIAH",
+    "source": "hotdeals",
+    "discovered_at": "2026-04-30T01:46:32.747920+00:00",
+    "raw_description": "Worked in 1h \u2022 Avg. Saved $33.19",
+    "raw_context": "hotdeals.com code SHARIAH",
+    "discount_type": "fixed",
+    "discount_value": 33,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "LAURENROSE",
+    "source": "hotdeals",
+    "discovered_at": "2026-04-30T01:46:32.747920+00:00",
+    "raw_description": "iHerb presents 15% OFF for all shoppers, along with many more great deals.",
+    "raw_context": "hotdeals.com code LAURENROSE",
+    "discount_type": "percentage",
+    "discount_value": 15,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
   }
 ]
