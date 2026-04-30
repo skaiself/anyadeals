@@ -6283,5 +6283,20 @@
     "expiry_date": null,
     "confidence": "low",
     "validation_status": "pending"
+  },
+  {
+    "code": "KTR4420",
+    "source": "reddit/search",
+    "discovered_at": "2026-04-30T02:03:03.722012+00:00",
+    "raw_description": "discount code KTR4420",
+    "raw_context": "https://iherb.co/qhjagKKb?rcode=KTR4420&amp;utm\\_medium=appshare Hey! I love ordering my products from iHerb and I think you will, too.\n\nHappy Shopping!",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
   }
 ]
