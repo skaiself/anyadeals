@@ -5993,7 +5993,7 @@
     "min_cart_value": "",
     "status": "region_limited",
     "first_seen": "2026-04-30",
-    "last_validated": "2026-04-30T04:18:13.361292+00:00",
+    "last_validated": "2026-04-30T06:15:29.783373+00:00",
     "last_failed": null,
     "fail_count": 0,
     "source": "browser_validation",
