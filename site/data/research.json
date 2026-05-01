@@ -6312,7 +6312,7 @@
     ],
     "expiry_date": null,
     "confidence": "low",
-    "validation_status": "pending"
+    "validation_status": "valid"
   },
   {
     "code": "SGKOC22",
@@ -6327,7 +6327,7 @@
     ],
     "expiry_date": null,
     "confidence": "low",
-    "validation_status": "pending"
+    "validation_status": "valid"
   },
   {
     "code": "THD04",
@@ -6342,7 +6342,7 @@
     ],
     "expiry_date": null,
     "confidence": "low",
-    "validation_status": "pending"
+    "validation_status": "valid"
   },
   {
     "code": "XIN22",
@@ -6357,6 +6357,6 @@
     ],
     "expiry_date": null,
     "confidence": "low",
-    "validation_status": "pending"
+    "validation_status": "valid"
   }
 ]

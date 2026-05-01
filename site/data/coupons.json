@@ -5993,7 +5993,7 @@
     "min_cart_value": "",
     "status": "region_limited",
     "first_seen": "2026-04-30",
-    "last_validated": "2026-04-30T07:10:23.423102+00:00",
+    "last_validated": "2026-05-01T06:39:24.153407+00:00",
     "last_failed": null,
     "fail_count": 0,
     "source": "browser_validation",
@@ -6056,6 +6056,75 @@
     "last_validated": "",
     "last_failed": "2026-04-30T04:18:13.361292+00:00",
     "fail_count": 1,
+    "source": "browser_validation",
+    "stackable_with_referral": false,
+    "notes": ""
+  },
+  {
+    "code": "APRIL26",
+    "type": "promo",
+    "discount": "26% off",
+    "regions": [
+      "us"
+    ],
+    "min_cart_value": "",
+    "status": "region_limited",
+    "first_seen": "2026-05-01",
+    "last_validated": "2026-05-01T06:39:24.153407+00:00",
+    "last_failed": null,
+    "fail_count": 0,
+    "source": "browser_validation",
+    "stackable_with_referral": false,
+    "notes": ""
+  },
+  {
+    "code": "SGKOC22",
+    "type": "promo",
+    "discount": "22% off",
+    "regions": [
+      "us"
+    ],
+    "min_cart_value": "",
+    "status": "region_limited",
+    "first_seen": "2026-05-01",
+    "last_validated": "2026-05-01T06:39:24.153407+00:00",
+    "last_failed": null,
+    "fail_count": 0,
+    "source": "browser_validation",
+    "stackable_with_referral": false,
+    "notes": ""
+  },
+  {
+    "code": "THD04",
+    "type": "promo",
+    "discount": "23% off",
+    "regions": [
+      "hk",
+      "tw"
+    ],
+    "min_cart_value": "",
+    "status": "region_limited",
+    "first_seen": "2026-05-01",
+    "last_validated": "2026-05-01T06:39:24.153407+00:00",
+    "last_failed": null,
+    "fail_count": 0,
+    "source": "browser_validation",
+    "stackable_with_referral": false,
+    "notes": ""
+  },
+  {
+    "code": "XIN22",
+    "type": "promo",
+    "discount": "22% off",
+    "regions": [
+      "us"
+    ],
+    "min_cart_value": "",
+    "status": "region_limited",
+    "first_seen": "2026-05-01",
+    "last_validated": "2026-05-01T06:39:24.153407+00:00",
+    "last_failed": null,
+    "fail_count": 0,
     "source": "browser_validation",
     "stackable_with_referral": false,
     "notes": ""
