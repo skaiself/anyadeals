@@ -1,5 +1,221 @@
 [
   {
+    "code": "URICOMPONENT",
+    "source": "iherb_official",
+    "raw_description": "cookies = document.cookie.split(\"; \"); for (const cookie of cookies) { const [name, value] = cookie.split(\"=\"); if (name.trim() === cookieName) { return atob(decodeURIComponent(value)); } } return nul",
+    "raw_context": "iherb.com official: URICOMPONENT"
+  },
+  {
+    "code": "CODES",
+    "source": "iherb_official",
+    "raw_description": "st; Sales, Deals &amp; Promos | iHerb <meta name=\"og:description\" content=\"Find iHerb promo codes, discount codes, and",
+    "raw_context": "iherb.com official: CODES"
+  },
+  {
+    "code": "CODE",
+    "source": "iherb_official",
+    "raw_description": "valid for new customers only and exclusions may apply*.\" window.translations.IDS_WELCOME_MAT_WELCOME = \"Welcome to iHerb!\" window.translations.IDS_WELCOME_MAT_LOG_IN_APPLY_PROMO = \"You can apply the p",
+    "raw_context": "iherb.com official: CODE"
+  },
+  {
+    "code": "TIONBANNERPRIMARY",
+    "source": "iherb_official",
+    "raw_description": "\": \\\"devicePlatform\\\", \\\"type\\\": \\\"custom_attribute\\\", \\\"value\\\": \\\"mobileweb\\\"}]], [\\\"or\\\", [\\\"or\\\", {\\\"match\\\": \\\"exact\\\", \\\"name\\\": \\\"bannerLocation\\\", \\\"type\\\": \\\"custom_attribute\\\", \\\"value\\\": \\\"",
+    "raw_context": "iherb.com official: TIONBANNERPRIMARY"
+  },
+  {
+    "code": "TION",
+    "source": "iherb_official",
+    "raw_description": "ntIds\":[],\"key\":\"category-store-category-pill-click-all\"},{\"id\":\"4555221716697088\",\"experimentIds\":[],\"key\":\"time_on_product_description\"},{\"id\":\"4597314916974592\",\"experimentIds\":[],\"key\":\"plp_store_",
+    "raw_context": "iherb.com official: TION"
+  },
+  {
+    "code": "SV2ENABLED",
+    "source": "iherb_official",
+    "raw_description": ",\"5471257517359104\"],\"type\":\"ab\"}]}],\"region\":\"US\"}; var catalogOptimizelyEventsHost = \"https://logx-experimentation.iherb.com\"; var isOptimizelyImpressionEnabled = \"True\"; var isUniversalPromosV2Enab",
+    "raw_context": "iherb.com official: SV2ENABLED"
+  },
+  {
+    "code": "BANNERS",
+    "source": "iherb_official",
+    "raw_description": "\"../utilities/utilities\":12}],8:[function(e,t,n){Object.defineProperty(n,\"__esModule\",{value:!0});n.Constants={serverSideRenderedHeaderVersion:{Off:\"Off\",Version1:\"V1\",Version2:\"V2\"},url:{newCustomerP",
+    "raw_context": "iherb.com official: BANNERS"
+  },
+  {
+    "code": "TIONS",
+    "source": "iherb_official",
+    "raw_description": "ties\":12}],8:[function(e,t,n){Object.defineProperty(n,\"__esModule\",{value:!0});n.Constants={serverSideRenderedHeaderVersion:{Off:\"Off\",Version1:\"V1\",Version2:\"V2\"},url:{newCustomerPCodeBanners:\"/info/",
+    "raw_context": "iherb.com official: TIONS"
+  },
+  {
+    "code": "BANNERIMAGE",
+    "source": "iherb_official",
+    "raw_description": "t_Icon.png\",medium:window.IHERB_STATIC_HOST+\"/static/i/images/placeholder/DoubleHeart_Icon_2x.png\",large:window.IHERB_STATIC_HOST+\"/static/i/images/placeholder/DoubleHeart_Icon_3x.png\"},reviews:{email",
+    "raw_context": "iherb.com official: BANNERIMAGE"
+  },
+  {
+    "code": "FUNCTION",
+    "source": "iherb_official",
+    "raw_description": "ction(e){try{return new URL(e).pathname}catch(e){return null}},getPriceAsNumber:function(e){if(e)return e&&\"number\"==typeof e?e:e&&\"string\"==typeof e?+e.replace(/[^0-9\\.]+[.]*/g,\"\"):void 0},getRewards",
+    "raw_context": "iherb.com official: FUNCTION"
+  },
+  {
+    "code": "FROMCOOKIE",
+    "source": "iherb_official",
+    "raw_description": "?t(r):(r=g(),e=!!(e=h())&&0<e.length,r&&e?void D().then(function(e){if(e&&null!=e.referralCode&&0<e.referralCode.length)return t(e.referralCode)}).catch(function(e){return n(\"\")}):t(\"\"))})},getRewards",
+    "raw_context": "iherb.com official: FROMCOOKIE"
+  },
+  {
+    "code": "BASE64STRING",
+    "source": "iherb_official",
+    "raw_description": "sccode\",t,365,!0,{secure:!0}),m.updateCookie(\"iher-pref1\",\"scurcode\",e,365,!0,{secure:!0}),m.updateCookie(\"iher-pref1\",\"lan\",n,365,!0,{secure:!0}),m.updateCookie(\"iher-pref1\",\"city\",u&&\"SA\"==t?(0,d.en",
+    "raw_context": "iherb.com official: BASE64STRING"
+  },
+  {
+    "code": "OFCONDUCT",
+    "source": "iherb_official",
+    "raw_description": "aryFree:\"/hs/dairy-free\",crueltyFree:\"/hs/cruelty-free\",nonGMO:\"/hs/non-gmo\",aboutUs:\"/info/about\",aboutDrMurray:\"/info/doctormurray\",accessibility:\"/info/accessibility\",affiliates:\"/info/affiliates\",",
+    "raw_context": "iherb.com official: OFCONDUCT"
+  },
+  {
+    "code": "COPIED",
+    "source": "iherb_official",
+    "raw_description": "NotifyMeSuccess\",i[i.AnswerSubmitted=6]=\"AnswerSubmitted\",i[i.QuestionSubmitted=7]=\"QuestionSubmitted\",i[i.FeedbackSubmitted=8]=\"FeedbackSubmitted\",i[i.ReviewSubmitted=9]=\"ReviewSubmitted\",i[i.Rewards",
+    "raw_context": "iherb.com official: COPIED"
+  },
+  {
+    "code": "INFO",
+    "source": "iherb_official",
+    "raw_description": "=function(e,t,n){var r;e&&(r={path:S(),type:null!=(r=e.type)?r:\"\",previousPath:null!=(r=e.previousPath)?r:A(),recommendedExperience:t.getExperimentStringifyKeyValuesV2(n)||void 0},O(r,e.isSpa))},n.add",
+    "raw_context": "iherb.com official: INFO"
+  },
+  {
+    "code": "INFOEXISTS",
+    "source": "iherb_official",
+    "raw_description": "getOwnPropertyDescriptor(n,e))})}return t}({},e);D({event:\"user_auth\",parameters:{interaction_type:e.interactionType,location_detail:e.locationDetail}})},n.gaObjectBuilder=m,n.pushToDataLayer=D,n.view",
+    "raw_context": "iherb.com official: INFOEXISTS"
+  },
+  {
+    "code": "CONSENTOBJECT",
+    "source": "iherb_official",
+    "raw_description": "key:\"updateTempCookie\",value:function(e){this.updateCookie(\"ihr-temse\",\"expires\",e,1/24,!0,{secure:!0})}}]);var p=I,e=(f(k,[{key:\"setUserPreference\",value:function(){this.pollCookie()}},{key:\"base64En",
+    "raw_context": "iherb.com official: CONSENTOBJECT"
+  },
+  {
+    "code": "UNICODE",
+    "source": "iherb_official",
+    "raw_description": "ssionService=E,M.UserService=d,M.animateSideScroll=function(e,t,n,r,o){var i=0,a=window.setInterval(function(){\"left\"==t?e.scrollLeft-=o:e.scrollLeft+=o,(i+=o)>=r&&window.clearInterval(a)},n)},M.b64De",
+    "raw_context": "iherb.com official: UNICODE"
+  },
+  {
+    "code": "ENTITIES",
+    "source": "iherb_official",
+    "raw_description": "):\"\"},M.debounce=function(r,o,i){var a;return function(){var e=this,t=arguments,n=i&&!a;clearTimeout(a),a=setTimeout(function(){a=null,i||r.apply(e,t)},o),n&&r.apply(e,t)}},M.decodeBase64String=x,M.de",
+    "raw_context": "iherb.com official: ENTITIES"
+  },
+  {
+    "code": "POINT",
+    "source": "iherb_official",
+    "raw_description": "t >6|192,63&n|128)}else if(n >12|224,n>>6&63|128,63&n|128)}else{if(!(n >18|240,n>>12&63|128,n>>6&63|128,63&n|128)}}return i}function D(e){return S.toByteArray((e=>{var t;if((e=((t=e).trim?t.trim():t.r",
+    "raw_context": "iherb.com official: POINT"
+  },
+  {
+    "code": "SPECIALCHARACTERS",
+    "source": "iherb_official",
+    "raw_description": "stances).push(e)},remove:function(e){e=(n.canUseDOM?R:n.instances).indexOf(e);(n.canUseDOM?R:n.instances).splice(e,1)}}},this.context=e,(this.canUseDOM=t)||(e.helmet=P({baseTag:[],bodyAttributes:{},en",
+    "raw_context": "iherb.com official: SPECIALCHARACTERS"
+  },
+  {
+    "code": "LANDINGPRIMARY",
+    "source": "iherb_official",
+    "raw_description": "ss=\"cms-banner-wrapper-root-link\" data-ga-promotion_id=\"107703\" data-ga-promotion_name=\"ItemLevelAutoPromo\" data-ga-creative_name=\"professional-brands_042926\" data-ga-index=\"1\" data-ga-creative_slot=\"",
+    "raw_context": "iherb.com official: LANDINGPRIMARY"
+  },
+  {
+    "code": "NEEDED",
+    "source": "iherb_official",
+    "raw_description": "Rules &amp; Exclusions No code needed <a class=\"promo-link\" href=\"https://www.iherb.com/c/professional-brands\" data-ga-promotion_id=\"107703\" data-ga-promotion_name=\"ItemLevelAutoPromo\" data-ga-creat",
+    "raw_context": "iherb.com official: NEEDED"
+  },
+  {
+    "code": "MULTIPLEUSEMAY26WBBP",
+    "source": "iherb_official",
+    "raw_description": ";} <a href=\"https://www.iherb.com/c/womens-health-bbpc?soa=true&pcode=MAY26WBBPC\" class=\"cms-banner-wrapper-root-link\" data-ga-promotion_id=\"107453\" data-ga-promotion_name=\"PCodeMultipleUseMAY26WBBPC\"",
+    "raw_context": "iherb.com official: MULTIPLEUSEMAY26WBBP"
+  },
+  {
+    "code": "MAY26WBBPC",
+    "source": "iherb_official",
+    "raw_description": "MAY26WBBPC\" data-ga-creative_name=\"womens-health_0429\" data-ga-index=\"2\" data-ga-creative_slot=\"promoLandingPrimary\" title=\"Women\u2019s Health\" aria-label=\"20% off women\u2019s health and beauty products with ",
+    "raw_context": "iherb.com official: MAY26WBBPC"
+  },
+  {
+    "code": "BANNER",
+    "source": "iherb_official",
+    "raw_description": "07857\" data-ga-promotion_name=\"ItemLevelAutoPromo\" data-ga-creative_name=\"BOGO-free_0430\" data-ga-index=\"3\" data-ga-creative_slot=\"promoLandingPrimary\" title=\"Buy One, Get One FREE\" aria-label=\"iHerb ",
+    "raw_context": "iherb.com official: BANNER"
+  },
+  {
+    "code": "ONETIMEUSEMYAPP15",
+    "source": "iherb_official",
+    "raw_description": "one;align-self: flex-start;display:block;} <",
+    "raw_context": "iherb.com official: ONETIMEUSEMYAPP15"
+  },
+  {
+    "code": "TING",
+    "source": "iherb_official",
+    "raw_description": "\" data-ga-promotion_name=\"Special\" data-ga-creative_name=\"deals-banner_0416\" data-ga-index=\"5\" data-ga-creative_slot=\"promoLandingPrimary\" title=\"Specials\" aria-label=\"iHerb Discover Our Deals banner ",
+    "raw_context": "iherb.com official: TING"
+  },
+  {
+    "code": "LANDINGBOW",
+    "source": "iherb_official",
+    "raw_description": "View all Brands of the Week More ways to save at iHerb",
+    "raw_context": "iherb.com official: LANDINGBOW"
+  },
+  {
+    "code": "LANDINGWAYSTOSAVE",
+    "source": "iherb_official",
+    "raw_description": "Learn more Extra 10% discount on al",
+    "raw_context": "iherb.com official: LANDINGWAYSTOSAVE"
+  },
+  {
+    "code": "OFFERS",
+    "source": "iherb_official",
+    "raw_description": "tion-banner\" style=\"display: none\"> Be the first to get promo offers and rewards perks straight to your inbox. Be the first to get promo off",
+    "raw_context": "iherb.com official: OFFERS"
+  },
+  {
+    "code": "DOCTYPE",
+    "source": "iherb_official",
+    "raw_description": "<html class=\"ih-public ih-catalog cc-rs en info salesan",
+    "raw_context": "iherb.com official: DOCTYPE"
+  },
+  {
+    "code": "FIRST",
+    "source": "iherb_official",
+    "raw_description": "5% OFF FIRST APP ORDER\"> <img src=\"https://cloudinary.images-iherb.com/image/upload/f_auto,q_auto:eco/images/cms/banners/pdiherbappbanner042525_003pd_sen-us.jpg\" alt=\"SHOP THE iHERB APP",
+    "raw_context": "iherb.com official: FIRST"
+  },
+  {
+    "code": "ORDER",
+    "source": "iherb_official",
+    "raw_description": "5% OFF FIRST APP ORDER\"> <img src=\"https://cloudinary.images-iherb.com/image/upload/f_auto,q_auto:eco/images/cms/banners/pdiherbappbanner042525_003pd_sen-us.jpg\" alt=\"SHOP THE iHERB APP",
+    "raw_context": "iherb.com official: ORDER"
+  },
+  {
+    "code": "SHOP",
+    "source": "iherb_official",
+    "raw_description": "5% OFF FIRST APP ORDER\"> <img src=\"https://cloudinary.images-iherb.com/image/upload/f_auto,q_auto:eco/images/cms/banners/pdiherbappbanner042525_003pd_sen-us.jpg\" alt=\"SHOP THE iHERB APP",
+    "raw_context": "iherb.com official: SHOP"
+  },
+  {
+    "code": "EU15N",
+    "source": "iherb_official",
+    "raw_description": "5% Off Your First Order Use iHerb promo code EU15N . Offer valid for new customers only. Exclusions apply. May not be combined with other offers. Limited time only. <a href=\"https://www.iherb.com/?pco",
+    "raw_context": "iherb.com official: EU15N"
+  },
+  {
     "code": "C5734282",
     "source": "couponfollow",
     "raw_description": "",
@@ -82,221 +298,5 @@
     "source": "couponfollow",
     "raw_description": "Up to 65% off Health and Wellness Deals!",
     "raw_context": "couponfollow.com/site/iherb.com#P760480"
-  },
-  {
-    "code": "P757804",
-    "source": "couponfollow",
-    "raw_description": "Get 15% Off Probiotics",
-    "raw_context": "couponfollow.com/site/iherb.com#P757804"
-  },
-  {
-    "code": "P756677",
-    "source": "couponfollow",
-    "raw_description": "Last Chance Specials Up to 65% Off",
-    "raw_context": "couponfollow.com/site/iherb.com#P756677"
-  },
-  {
-    "code": "P756669",
-    "source": "couponfollow",
-    "raw_description": "Pet Gifts From $2",
-    "raw_context": "couponfollow.com/site/iherb.com#P756669"
-  },
-  {
-    "code": "P753573",
-    "source": "couponfollow",
-    "raw_description": "Up to 65% Off Deals",
-    "raw_context": "couponfollow.com/site/iherb.com#P753573"
-  },
-  {
-    "code": "P752607",
-    "source": "couponfollow",
-    "raw_description": "Free Shipping on $30&#x2B;",
-    "raw_context": "couponfollow.com/site/iherb.com#P752607"
-  },
-  {
-    "code": "P752149",
-    "source": "couponfollow",
-    "raw_description": "Up to 65% Off iHerb Brands",
-    "raw_context": "couponfollow.com/site/iherb.com#P752149"
-  },
-  {
-    "code": "DOCTYPE",
-    "source": "couponfollow",
-    "raw_description": "<link rel=\"preconnect dns-prefetch\" href=\"https//static.",
-    "raw_context": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"utf-8\" />\n    <link rel=\"preconnect dns-prefetch\" href=\"https//static."
-  },
-  {
-    "code": "JFF855",
-    "source": "couponfollow",
-    "raw_description": "code: JFF855 at checkout and find 10\\u002B more",
-    "raw_context": "code: JFF855 at checkout and find 10\\u002B more"
-  },
-  {
-    "code": "CODE",
-    "source": "couponfollow",
-    "raw_description": "CODE \u2022 &#10004; Verified <a class=\"link details-link\" href=\"https://click.",
-    "raw_context": "CODE \u2022 &#10004; Verified\n        </div>\n        <a class=\"link details-link\" href=\"https://click."
-  },
-  {
-    "code": "PROMO",
-    "source": "couponfollow",
-    "raw_description": "PROMO <a class=\"link details-link\" href=\"https://click.",
-    "raw_context": "PROMO\n        </div>\n        <a class=\"link details-link\" href=\"https://click."
-  },
-  {
-    "code": "WITH",
-    "source": "couponfollow",
-    "raw_description": "discount-box ex\" data-nosnippet=\"true\"> $2 WITH",
-    "raw_context": "discount-box ex\" data-nosnippet=\"true\">\n        \n        \n        <div class=\"text\">$2</div>\n        <div class=\"suffix\">WITH"
-  },
-  {
-    "code": "FREE",
-    "source": "couponfollow",
-    "raw_description": "discount-box ex\" data-nosnippet=\"true\"> FREE SHIPPING Free Shipping on $30&#x2B; Save with free shipping on iHerb orders of $30&#x2B;. No",
-    "raw_context": "discount-box ex\" data-nosnippet=\"true\">\n        \n        \n        <div class=\"text\">FREE</div>\n        <div class=\"suffix\">SHIPPING</div>\n    </div>\n    <div class=\"offer-details\">\n        \n        <h"
-  },
-  {
-    "code": "SHIPPING",
-    "source": "couponfollow",
-    "raw_description": "discount-box ex\" data-nosnippet=\"true\"> FREE SHIPPING Free Shipping on $30&#x2B; Save with free shipping on iHerb orders of $30&#x2B;. No",
-    "raw_context": "discount-box ex\" data-nosnippet=\"true\">\n        \n        \n        <div class=\"text\">FREE</div>\n        <div class=\"suffix\">SHIPPING</div>\n    </div>\n    <div class=\"offer-details\">\n        \n        <h"
-  },
-  {
-    "code": "SHEIN",
-    "source": "couponfollow",
-    "raw_description": "codes SHEIN",
-    "raw_context": "codes</a></li>\n            <li><a class=\"link\" href=\"/site/shein.com\">SHEIN"
-  },
-  {
-    "code": "DOCTYPE",
-    "source": "slickdeals",
-    "raw_description": "",
-    "raw_context": "slickdeals.net code DOCTYPE"
-  },
-  {
-    "code": "Z22H2H3DHL",
-    "source": "slickdeals",
-    "raw_description": "65% Off iHerb in May 2026",
-    "raw_context": "slickdeals.net code Z22H2H3DHL"
-  },
-  {
-    "code": "READ",
-    "source": "slickdeals",
-    "raw_description": "",
-    "raw_context": "slickdeals.net code READ"
-  },
-  {
-    "code": "MORE",
-    "source": "slickdeals",
-    "raw_description": "",
-    "raw_context": "slickdeals.net code MORE"
-  },
-  {
-    "code": "ONLY",
-    "source": "slickdeals",
-    "raw_description": "",
-    "raw_context": "slickdeals.net code ONLY"
-  },
-  {
-    "code": "BOGO",
-    "source": "slickdeals",
-    "raw_description": "",
-    "raw_context": "slickdeals.net code BOGO"
-  },
-  {
-    "code": "APR26SW",
-    "source": "slickdeals",
-    "raw_description": "72-hour Sitewide! 15% off over $60 / 20% off over $100 USD at iHerb! Use Code APR26SW. Valid for Europe and MENA. Limit 2 uses per customer with a max discount of $50 USD. Valid until 4/9. Cannot be c",
-    "raw_context": "slickdeals.net code APR26SW"
-  },
-  {
-    "code": "MENA",
-    "source": "slickdeals",
-    "raw_description": "72-hour Sitewide! 15% off over $60 / 20% off over $100 USD at iHerb! Use Code APR26SW. Valid for Europe and MENA. Limit 2 uses per customer with a max discount of $50 USD. Valid until 4/9. Cannot be c",
-    "raw_context": "slickdeals.net code MENA"
-  },
-  {
-    "code": "VISA",
-    "source": "slickdeals",
-    "raw_description": "",
-    "raw_context": "slickdeals.net code VISA"
-  },
-  {
-    "code": "NZXT",
-    "source": "slickdeals",
-    "raw_description": "",
-    "raw_context": "slickdeals.net code NZXT"
-  },
-  {
-    "code": "SHEIN",
-    "source": "slickdeals",
-    "raw_description": "",
-    "raw_context": "slickdeals.net code SHEIN"
-  },
-  {
-    "code": "CHITA",
-    "source": "slickdeals",
-    "raw_description": "",
-    "raw_context": "slickdeals.net code CHITA"
-  },
-  {
-    "code": "BRUNT",
-    "source": "slickdeals",
-    "raw_description": "",
-    "raw_context": "slickdeals.net code BRUNT"
-  },
-  {
-    "code": "EXPERIENCE",
-    "source": "reddit/r/iherb",
-    "raw_description": "BAD EXPERIENCE with IHERB AI Chatbot",
-    "raw_context": "Canadian company UNIUNI is seeking to expand operations in the United States. This is one company that Canada should be ashamed of and not allow to represent the great country of Canada. (My opinion, not a fact, not a slur on Canada.)\n\nOn a recent order from IHERB (\\*) com, delivery was to be made u"
-  },
-  {
-    "code": "UNIUNI",
-    "source": "reddit/r/iherb",
-    "raw_description": "BAD EXPERIENCE with IHERB AI Chatbot",
-    "raw_context": "Canadian company UNIUNI is seeking to expand operations in the United States. This is one company that Canada should be ashamed of and not allow to represent the great country of Canada. (My opinion, not a fact, not a slur on Canada.)\n\nOn a recent order from IHERB (\\*) com, delivery was to be made u"
-  },
-  {
-    "code": "CAPS",
-    "source": "reddit/r/iherb",
-    "raw_description": "BAD EXPERIENCE with IHERB AI Chatbot",
-    "raw_context": "Canadian company UNIUNI is seeking to expand operations in the United States. This is one company that Canada should be ashamed of and not allow to represent the great country of Canada. (My opinion, not a fact, not a slur on Canada.)\n\nOn a recent order from IHERB (\\*) com, delivery was to be made u"
-  },
-  {
-    "code": "ANGRY",
-    "source": "reddit/r/iherb",
-    "raw_description": "BAD EXPERIENCE with IHERB AI Chatbot",
-    "raw_context": "Canadian company UNIUNI is seeking to expand operations in the United States. This is one company that Canada should be ashamed of and not allow to represent the great country of Canada. (My opinion, not a fact, not a slur on Canada.)\n\nOn a recent order from IHERB (\\*) com, delivery was to be made u"
-  },
-  {
-    "code": "CUSTOMER",
-    "source": "reddit/r/iherb",
-    "raw_description": "BAD EXPERIENCE with IHERB AI Chatbot",
-    "raw_context": "Canadian company UNIUNI is seeking to expand operations in the United States. This is one company that Canada should be ashamed of and not allow to represent the great country of Canada. (My opinion, not a fact, not a slur on Canada.)\n\nOn a recent order from IHERB (\\*) com, delivery was to be made u"
-  },
-  {
-    "code": "SERVICE",
-    "source": "reddit/r/iherb",
-    "raw_description": "BAD EXPERIENCE with IHERB AI Chatbot",
-    "raw_context": "Canadian company UNIUNI is seeking to expand operations in the United States. This is one company that Canada should be ashamed of and not allow to represent the great country of Canada. (My opinion, not a fact, not a slur on Canada.)\n\nOn a recent order from IHERB (\\*) com, delivery was to be made u"
-  },
-  {
-    "code": "IMPLEMENTATIONS",
-    "source": "reddit/r/iherb",
-    "raw_description": "BAD EXPERIENCE with IHERB AI Chatbot",
-    "raw_context": "Canadian company UNIUNI is seeking to expand operations in the United States. This is one company that Canada should be ashamed of and not allow to represent the great country of Canada. (My opinion, not a fact, not a slur on Canada.)\n\nOn a recent order from IHERB (\\*) com, delivery was to be made u"
-  },
-  {
-    "code": "PROMISE",
-    "source": "reddit/r/iherb",
-    "raw_description": "BAD EXPERIENCE with IHERB AI Chatbot",
-    "raw_context": "Canadian company UNIUNI is seeking to expand operations in the United States. This is one company that Canada should be ashamed of and not allow to represent the great country of Canada. (My opinion, not a fact, not a slur on Canada.)\n\nOn a recent order from IHERB (\\*) com, delivery was to be made u"
-  },
-  {
-    "code": "DMG2419",
-    "source": "reddit/r/iherb",
-    "raw_description": "10% Off Your Order at iHerb.com",
-    "raw_context": "10% off code at checkout: DMG2419\n\nSee current specials here:\u00a0[https://www.iherb.com/specials](https://www.iherb.com/specials)"
   }
 ]
