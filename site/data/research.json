@@ -2928,7 +2928,7 @@
     "code": "SHEIN",
     "source": "slickdeals",
     "discovered_at": "2026-04-03T07:11:08.059800+00:00",
-    "raw_description": "",
+    "raw_description": "codes SHEIN",
     "raw_context": "slickdeals.net code SHEIN",
     "discount_type": "unknown",
     "discount_value": 0,
@@ -6358,5 +6358,20 @@
     "expiry_date": null,
     "confidence": "low",
     "validation_status": "valid"
+  },
+  {
+    "code": "20COLLAGENUK",
+    "source": "gutschein/welt.de",
+    "discovered_at": "2026-05-02T01:39:13.064990+00:00",
+    "raw_description": "Mit diesem Gutschein erhalten Sie 20% auf Collagen",
+    "raw_context": "gutscheine.welt.de: Mit diesem Gutschein erhalten Sie 20% auf Collagen",
+    "discount_type": "percentage",
+    "discount_value": 20,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
   }
 ]
