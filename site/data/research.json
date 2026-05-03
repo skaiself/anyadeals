@@ -6373,5 +6373,35 @@
     "expiry_date": null,
     "confidence": "low",
     "validation_status": "valid"
+  },
+  {
+    "code": "ACT25",
+    "source": "reddit/search",
+    "discovered_at": "2026-05-03T01:55:33.503280+00:00",
+    "raw_description": "iHerb Promo Codes May 2026 \u2014 Verified Working Coupons (All Countries, Updated Daily)",
+    "raw_context": "This thread includes active, confirmed working iHerb coupons, no expired codes. The list is updated regularly.\n\n**Start with universal iherb code SKINBEE50 and get 10% off. Every offer uses this code, it can be stacked with other offers on app and never expires.**\n\nIt is a reliable iHerb promo code,",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "GOLD",
+    "source": "reddit/search",
+    "discovered_at": "2026-05-03T01:55:33.503280+00:00",
+    "raw_description": "iHerb Promo Codes USA \u2014 May 2026 Verified Working Coupons",
+    "raw_context": "Here is a freshly updated list of\u00a0working and verified iHerb promo codes for United States which will give you up to 22% sitewide.\n\n# Start with DMU6301 \u2014 The Most Reliable iHerb Code\n\nBefore using any USA-specific promotion, enter:\n\n# DMU6301\n\nWhy most regular iHerb shoppers use it first:\n\n\u2714 Consis",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
   }
 ]
