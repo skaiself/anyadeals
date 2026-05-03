@@ -6403,5 +6403,50 @@
     "expiry_date": null,
     "confidence": "low",
     "validation_status": "pending"
+  },
+  {
+    "code": "THYRO10",
+    "source": "simplycodes",
+    "discovered_at": "2026-05-03T01:59:42.813656+00:00",
+    "raw_description": "",
+    "raw_context": "simplycodes.com code THYRO10",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "BUDDY10",
+    "source": "simplycodes",
+    "discovered_at": "2026-05-03T01:59:42.813656+00:00",
+    "raw_description": "",
+    "raw_context": "simplycodes.com code BUDDY10",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
+  },
+  {
+    "code": "JASYRA",
+    "source": "simplycodes",
+    "discovered_at": "2026-05-03T01:59:42.813656+00:00",
+    "raw_description": "",
+    "raw_context": "simplycodes.com code JASYRA",
+    "discount_type": "unknown",
+    "discount_value": 0,
+    "regions": [
+      "us"
+    ],
+    "expiry_date": null,
+    "confidence": "low",
+    "validation_status": "pending"
   }
 ]
